@@ -1,0 +1,12 @@
+*.sw*
+*~
+build/
+bin/
+node_modules/
+vendor/
+.project
+.DS_Store
+phantomjsdriver.log
+.buildpath
+.settings/
+.directory
