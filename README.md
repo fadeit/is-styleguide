@@ -1,13 +1,9 @@
 <img src="http://fadeit.dk/about/img/fadeit-logo@2x.png" alt="The fadeit logo" style="width:200px;"/><br/><br/>
-<h3>fadeit.dk - OLS styleguide</h3>
-<hr/>
-<p>
-Use or die motherf****
-</p>
+<h3>fadeit.dk - OLS Front-end Styleguide</h3>
 <hr/>
 
 <h3>Getting started</h3>
-<p>Just need LESS installed globall via npm then compile to css.</p>
+<p>Just needs LESS installed globally via npm to compile to CSS.</p>
 ```
 $ npm install -g less
 $ lessc style-guide.less > style-guide.css
