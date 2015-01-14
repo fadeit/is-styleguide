@@ -6,7 +6,7 @@
 <p>Just needs LESS installed globally via npm to compile to CSS.</p>
 ```
 $ npm install -g less
-$ lessc style-guide.less > style-guide.css
+$ lessc style-guide.less > style-guide.css -x
 ```
 
 <h4>About fadeit</h4>
