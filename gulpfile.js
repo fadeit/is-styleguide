@@ -9,7 +9,7 @@ gulp.task('less', function(){
       .pipe(less({
         plugins: [cleancss]
       }))
-      .pipe(gulp.dest('dist'));
+      .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('this-styleguide', function(){
@@ -21,8 +21,8 @@ gulp.task('this-styleguide', function(){
 });
 
 gulp.task('watch', function(){
-  gulp.watch('./src/**/*.less', ['default']);
-  gulp.watch('./assets/**/*.less', ['default']);
+  gulp.watch('./src/**/*.less', ['less']);
+  gulp.watch('./assets/**/*.less', ['this-styleguide']);
 });
 
-gulp.task('default', ['less', 'watch']);
+gulp.task('default', ['less', 'this-styleguide', 'watch']);

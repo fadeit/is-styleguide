@@ -2,8 +2,18 @@
  * Importing variables and mixins to keep this file clean
  *
  */
-@import '../variables.less';
-@import '../mixins.less';
+@import '../src/variables.less';
+@import '../src/mixins.less';
+
+.container-fluid {
+  .col(@col_gray_3, b)
+}
+
+article {
+  padding:15px 30px 15px 30px;
+  margin:15px 0 30px;
+  .col(@w, b);
+}
 
 .intro {
   padding:35px 15px;
