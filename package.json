@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/fadeit/ols-styleguide",
   "devDependencies": {
-    "gulp": "^3.8.10"
+    "gulp": "^3.8.10",
+    "gulp-watch": "^3.0.0",
+    "less-plugin-clean-css": "^1.4.0"
   }
 }
