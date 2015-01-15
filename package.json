@@ -1,0 +1,26 @@
+{
+  "name": "ols-styleguide",
+  "version": "0.0.1",
+  "description": "Front-end styleguide for OLS",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fadeit/ols-styleguide.git"
+  },
+  "keywords": [
+    "front-end",
+    "styleguide",
+    "ols"
+  ],
+  "author": "Dan Mindru <mindrudan@gmail.com> (http://mindrudan.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fadeit/ols-styleguide/issues"
+  },
+  "homepage": "https://github.com/fadeit/ols-styleguide",
+  "devDependencies": {
+    "gulp": "^3.8.10"
+  }
+}
