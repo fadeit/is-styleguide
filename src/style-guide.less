@@ -20,3 +20,39 @@
   font-weight: normal;
   font-style: normal;
 }
+
+//Wide Screen Desktop
+@font_size_selector:    "fs_h";
+@line_height_selector:  "lh_h";
+@mobile_font_size_selector:    "m_fs_h";
+@mobile_line_height_selector:  "m_lh_h";
+
+.generate_headings(@max) when (@max > 0) {
+  .generate_headings((@max - 1));
+
+  @font-size: ~"@{font_size_selector}@{max}";
+  @line-height: ~"@{line_height_selector}@{max}";
+  @mobile-font-size: ~"@{mobile_font_size_selector}@{max}";
+  @mobile-line-height: ~"@{mobile_line_height_selector}@{max}";
+
+  h@{max}{
+    font-size: @@mobile-font-size;
+    line-height: @@mobile-line-height;
+
+    @media only screen and (min-width:@bp_md){
+      font-size: @@font-size;
+      line-height: @@line-height;
+    }
+  }
+}
+
+//Generate headings
+.generate_headings(5);
+
+h4{
+  .b();
+}
+
+h5{
+  .b();
+}

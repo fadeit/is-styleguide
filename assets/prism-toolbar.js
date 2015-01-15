@@ -3,6 +3,10 @@
     return;
   }
 
+  // Escape all 'code' element contents
+  escapeAllCode(document.getElementsByTagName('code'));
+
+
   // Grab the location of the ZeroClipboard flash file
   var script = document.getElementsByTagName('script');
   script = script[script.length - 1];
@@ -68,12 +72,26 @@
   });
 
   // Cross-browser click handler
-  function attachClickHandler(element, callback, that)
-  {
+  function attachClickHandler(element, callback, that) {
     if(element.addEventListener) {
       element.addEventListener('click', function() { callback.apply(that) });
     } else if(element.attachEvent) {
       element.attachEvent('onclick',  function() { callback.apply(that) });
     }
   }
+
+  // Escapes Markup
+  function escapeAllCode(code){
+    var i;
+
+    for(i = 0; i <= code.length - 1; i++){
+      code[i].innerHTML = HtmlEncode(code[i].innerHTML);
+      console.log(HtmlEncode(code[i].innerHTML));
+    }
+
+    function HtmlEncode(s){
+      return s.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+    }
+  }
+
 })();

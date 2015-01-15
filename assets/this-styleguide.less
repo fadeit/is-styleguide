@@ -6,13 +6,33 @@
 @import '../src/mixins.less';
 
 .container-fluid {
-  .col(@col_gray_3, b)
+  .col(@col_gray_3, b);
+
+  .row-fluid{
+    @media only screen and (min-width:@bp_md){
+      padding:0 15px 0 15px;
+    }
+  }
 }
 
 article {
   padding:15px 30px 15px 30px;
   margin:15px 0 30px;
   .col(@w, b);
+}
+
+pre[class*="language-"] {
+  margin-top:40px;
+}
+
+#typography{
+  h1, h2, h3, h4, h5{
+    margin:20px 0 0 0;
+  }
+}
+
+.style-heading{
+  .col(@col_gray_6);
 }
 
 .intro {

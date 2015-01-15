@@ -43,7 +43,7 @@
       <section class="col-xs-24 col-md-18">
         <!-- Before you start -->
         <article>
-          <h2>Know before you start</h2>
+          <h2 class="style-heading">Know before you start</h2>
           <p>
             This styleguide uses a fork of Bootstrap from <a href="https://github.com/fadeit/bootstrap" target="_blank">here</a>, without the components that require JavaScript.<br/>
             You can resize this page to see how the styles adapt to different layouts.
@@ -52,18 +52,18 @@
 
         <!-- Colors -->
         <article>
-          <h2>Colors</h2>
+          <h2 class="style-heading">Colors</h2>
           <p>
             The colors in this list are <b>the only colors to be used</b>.
           </p>
 
-          <h3>Conventions</h3>
+          <h3 class="style-heading">Conventions</h3>
           <ul>
             <li>Color variables are prefixed with <b>col</b>.</li>
             <li>Darker, contrasting versions of a color are sufixed with <b>_c</b>: <b>@w</b> (white) and <b>@w_c</b> (white contrast)</li>
           </ul>
 
-          <h3>Color list</h3>
+          <h3 class="style-heading">Color list</h3>
           <p>
             Heads up! Colors are defined in <b>variables.less</b>. The same list can be seen there.
             <br/>
@@ -188,45 +188,52 @@
         </article>
 
         <!-- Typography -->
-        <article>
-          <h2>Typography</h2>
-          <h1 class="hero">Hero heading 1</h1>
-          <h1>Heading 1</h1>
-          <h2>Heading 2</h2>
-          <h3>Heading 3</h3>
-          <h4>Heading 4</h4>
-          <h5>Heading 5</h5>
-          <h6>Heading 6</h6>
+        <article id="typography">
+          <h2 class="style-heading">Typography</h2>
+          <h1>OLS heading .h1</h1>
+          <h2>OLS heading .h2</h2>
+          <h3>OLS heading .h3</h3>
+          <h4>OLS heading .h4</h4>
+          <h5>OLS heading .h5</h5>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><h1>OLS heading .h1</h1>
+<h2>OLS heading .h2</h2>
+<h3>OLS heading .h3</h3>
+<h4>OLS heading .h4</h4>
+<h5>OLS heading .h5</h5></code></pre>
+<!-- end code block -->
+
         </article>
 
         <!-- Scaffolding -->
         <article>
-          <h2>Scaffolding: Layout, Sections &amp; Grid system</h2>
+          <h2 class="style-heading">Scaffolding: Layout, Sections &amp; Grid system</h2>
           <p>The grid system is made out of 24 columns [bootstrap docs]</p>
         </article>
 
         <!-- Buttons -->
         <article>
-          <h2>Buttons &amp; Links</h2>
+          <h2 class="style-heading">Buttons &amp; Links</h2>
         </article>
 
         <!-- Forms -->
         <article>
-          <h2>Forms &amp; Inputs</h2>
+          <h2 class="style-heading">Forms &amp; Inputs</h2>
         </article>
 
         <!-- Animations -->
         <article>
-          <h2>Animations</h2>
+          <h2 class="style-heading">Animations</h2>
         </article>
 
         <!-- Misc -->
         <article>
-          <h2>Misc</h2>
+          <h2 class="style-heading">Misc</h2>
         </article>
 
         <article>
-          <h2>Roadmap</h2>
+          <h2 class="style-heading">Roadmap</h2>
           <ul>
             <li>Alerts &amp; Messages</li>
             <li>Maps</li>
@@ -234,25 +241,6 @@
             <li>Comments / Reviews</li>
             <li>Profiles</li>
           </ul>
-        </article>
-
-        <article>
-<!-- code block -->
-          <pre class="code-toolbar"><code class="language-less" >//LESS syntax
-.style {
-  color:red;
-
-  &:after{
-    font-size: 22px;
-  }
-}</code></pre>
-
-<pre class="code-toolbar"><code class="language-less" >//LESS man
-prop{
-  color:blue;
-}
-</code></pre>
-<!-- end code block -->
         </article>
       </section>
     </section>

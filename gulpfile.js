@@ -2,7 +2,10 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     less = require('gulp-less'),
     LessPluginCleanCSS = require("less-plugin-clean-css"),
-    cleancss = new LessPluginCleanCSS({advanced: true});
+    cleancss = new LessPluginCleanCSS({
+      advanced: true,
+      aggressiveMerging: true
+    });
 
 gulp.task('less', function(){
   gulp.src('./src/style-guide.less')
