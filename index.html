@@ -16,6 +16,7 @@
 
   <!-- Application CSS -->
   <link rel="stylesheet" href="assets/prism.css">
+  <link rel="stylesheet" href="assets/prism-toolbar.css">
   <link rel="stylesheet" href="assets/this-styleguide.css">
   <link rel="stylesheet" href="assets/bootstrap.min.css">
   <link rel="stylesheet" href="dist/style-guide.css">
@@ -189,6 +190,7 @@
         <!-- Typography -->
         <article>
           <h2>Typography</h2>
+          <h1 class="hero">Hero</h1>
         </article>
 
         <!-- Scaffolding -->
@@ -230,14 +232,20 @@
 
         <article>
 <!-- code block -->
-          <pre><code class="language-less" >//LESS syntax
+          <pre class="code-toolbar"><code class="language-less" >//LESS syntax
 .style {
-  font-size:red;
+  color:red;
 
   &:after{
     font-size: 22px;
   }
 }</code></pre>
+
+<pre class="code-toolbar"><code class="language-less" >//LESS man
+prop{
+  color:blue;
+}
+</code></pre>
 <!-- end code block -->
         </article>
       </section>
@@ -246,6 +254,8 @@
 
   <!-- Application JS -->
   <script src="./assets/prism.js"></script>
+  <script src="./assets/ZeroClipboard.min.js"></script>
+  <script src="./assets/prism-toolbar.js"></script>
 </body>
 
 </html>
