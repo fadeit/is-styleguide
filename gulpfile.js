@@ -23,9 +23,24 @@ gulp.task('this-styleguide', function(){
       .pipe(gulp.dest('./assets/'));
 });
 
+gulp.task('copy-styleguide-assets', function(){
+  gulp.src([
+        './assets/**/*-webfont.eot',
+        './assets/**/*-webfont.svg',
+        './assets/**/*-webfont.ttf',
+        './assets/**/*-webfont.woff'
+      ])
+      .pipe(gulp.dest('./dist/styleguide-assets/'));
+});
+
 gulp.task('watch', function(){
   gulp.watch('./src/**/*.less', ['less']);
   gulp.watch('./assets/**/*.less', ['this-styleguide']);
 });
 
-gulp.task('default', ['less', 'this-styleguide', 'watch']);
+gulp.task('default', [
+  'less',
+  'this-styleguide',
+  'copy-styleguide-assets',
+  'watch'
+]);

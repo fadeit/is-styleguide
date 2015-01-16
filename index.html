@@ -41,160 +41,184 @@
       </aside>
 
       <section class="col-xs-24 col-md-18">
-        <!-- Before you start -->
-        <article>
-          <h2 class="style-heading">Know before you start</h2>
-          <p>
-            This styleguide uses a fork of Bootstrap from <a href="https://github.com/fadeit/bootstrap" target="_blank">here</a>, without the components that require JavaScript.<br/>
-            You can resize this page to see how the styles adapt to different layouts.
-          </p>
-        </article>
+        <section class="small-container">
+          <!-- Before you start -->
+          <article>
+            <h2 class="style-heading">Know before you start</h2>
+            <p>
+              This styleguide uses a fork of Bootstrap from <a href="https://github.com/fadeit/bootstrap" target="_blank">here</a>, without the components that require JavaScript.<br/>
+              You can resize this page to see how the styles adapt to different layouts.
+            </p>
+          </article>
 
-        <!-- Colors -->
-        <article>
-          <h2 class="style-heading">Colors</h2>
-          <p>
-            The colors in this list are <b>the only colors to be used</b>.
-          </p>
+          <!-- Colors -->
+          <article id="colors">
+            <h2 class="style-heading">Colors</h2>
+            <p>
+              The colors in this list are <u>the only colors to be used</u>.
+            </p>
 
-          <h3 class="style-heading">Conventions</h3>
-          <ul>
-            <li>Color variables are prefixed with <b>col</b>.</li>
-            <li>Darker, contrasting versions of a color are sufixed with <b>_c</b>: <b>@w</b> (white) and <b>@w_c</b> (white contrast)</li>
-          </ul>
+            <h3 class="style-heading">Conventions</h3>
+            <ul>
+              <li>Color variables are prefixed with <u>col</u>.</li>
+              <li>Darker, contrasting versions of a color are sufixed with <u>_c</u>: <u>@w</u> (white) and <u>@w_c</u> (white contrast)</li>
+            </ul>
 
-          <h3 class="style-heading">Color list</h3>
-          <p>
-            Heads up! Colors are defined in <b>variables.less</b>. The same list can be seen there.
-            <br/>
-            Using <b>Sublime Text</b>? Get the <a href="https://github.com/Monnoroch/ColorHighlighter" target="_blank"><b>Color Highlighter</b></a> package to see the colors in your favorite text editor.
-          </p>
+            <h3 class="style-heading">Color list</h3>
+            <p>
+              <span class="head-up">Colors are defined in <u>variables.less</u>. A full list can also be found there.</span>
+              <br/>
+              Using <u>Sublime Text</u>? Get the <a href="https://github.com/Monnoroch/ColorHighlighter" target="_blank">Color Highlighter</a> package to see the colors in your favorite text editor.
+            </p>
 
-          <p>
-            <span class="ols-tc-fadeit"><b>@col_fadeit</b></span>
-            <span class="ols-bc-fadeit"></span>
-            <span class="hex"><b>HEX</b> #0fade1</span>
-          </p>
+            <p>
+              <span class="ols-tc-fadeit"><b>@col_fadeit</b></span>
+              <span class="ols-bc-fadeit"></span>
+              <span class="hex"><b>HEX</b> #0fade1</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-fadeit_c"><b>@col_fadeit_c</b></span>
-            <span class="ols-bc-fadeit_c"></span>
-            <span class="hex"><b>HEX</b> #057A91</span>
-          </p>
+            <p>
+              <span class="ols-tc-fadeit_c"><b>@col_fadeit_c</b></span>
+              <span class="ols-bc-fadeit_c"></span>
+              <span class="hex"><b>HEX</b> #057A91</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-fadeit_gray"><b>@col_fadeit_gray</b></span>
-            <span class="ols-bc-fadeit_gray"></span>
-            <span class="hex"><b>HEX</b> #D8D8D7</span>
-          </p>
+            <p>
+              <span class="ols-tc-fadeit_gray"><b>@col_fadeit_gray</b></span>
+              <span class="ols-bc-fadeit_gray"></span>
+              <span class="hex"><b>HEX</b> #D8D8D7</span>
+            </p>
 
-          <hr/>
+            <hr/>
 
-          <p>
-            <span class="ols-tc-w"><b>@col_w</b></span>
-            <span class="ols-bc-w"></span>
-            <span class="hex"><b>HEX</b> #FFFFFF</span>
-          </p>
+            <p>
+              <span class="ols-tc-w"><b>@col_w</b></span>
+              <span class="ols-bc-w"></span>
+              <span class="hex"><b>HEX</b> #FFFFFF</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-ws"><b>@col_ws</b></span>
-            <span class="ols-bc-ws"></span>
-            <span class="hex"><b>HEX</b> #F5F5F5</span>
-          </p>
+            <p>
+              <span class="ols-tc-ws"><b>@col_ws</b></span>
+              <span class="ols-bc-ws"></span>
+              <span class="hex"><b>HEX</b> #F5F5F5</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-gray_1"><b>@col_gray_1</b></span>
-            <span class="ols-bc-gray_1"></span>
-            <span class="hex"><b>HEX</b> #F6F7F7</span>
-          </p>
+            <p>
+              <span class="ols-tc-gray_1"><b>@col_gray_1</b></span>
+              <span class="ols-bc-gray_1"></span>
+              <span class="hex"><b>HEX</b> #F6F7F7</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-gray_2"><b>@col_gray_2</b></span>
-            <span class="ols-bc-gray_2"></span>
-            <span class="hex"><b>HEX</b> #F1F1F2</span>
-          </p>
+            <p>
+              <span class="ols-tc-gray_2"><b>@col_gray_2</b></span>
+              <span class="ols-bc-gray_2"></span>
+              <span class="hex"><b>HEX</b> #F1F1F2</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-gray_3"><b>@col_gray_3</b></span>
-            <span class="ols-bc-gray_3"></span>
-            <span class="hex"><b>HEX</b> #F3F3F4</span>
-          </p>
+            <p>
+              <span class="ols-tc-gray_3"><b>@col_gray_3</b></span>
+              <span class="ols-bc-gray_3"></span>
+              <span class="hex"><b>HEX</b> #F3F3F4</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-gray_4"><b>@col_gray_4 = @col_w_c</b></span>
-            <span class="ols-bc-gray_4"></span>
-            <span class="hex"><b>HEX</b> #D8D8D7</span>
-          </p>
+            <p>
+              <span class="ols-tc-gray_4"><b>@col_gray_4 (@col_w_c)</b></span>
+              <span class="ols-bc-gray_4"></span>
+              <span class="hex"><b>HEX</b> #D8D8D7</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-gray_5"><b>@col_gray_5</b></span>
-            <span class="ols-bc-gray_5"></span>
-            <span class="hex"><b>HEX</b> #89898A</span>
-          </p>
+            <p>
+              <span class="ols-tc-gray_5"><b>@col_gray_5</b></span>
+              <span class="ols-bc-gray_5"></span>
+              <span class="hex"><b>HEX</b> #89898A</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-gray_6"><b>@col_gray_6</b></span>
-            <span class="ols-bc-gray_6"></span>
-            <span class="hex"><b>HEX</b> #737375</span>
-          </p>
+            <p>
+              <span class="ols-tc-gray_6"><b>@col_gray_6</b></span>
+              <span class="ols-bc-gray_6"></span>
+              <span class="hex"><b>HEX</b> #737375</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-gray_7"><b>@col_gray_7</b></span>
-            <span class="ols-bc-gray_7"></span>
-            <span class="hex"><b>HEX</b> #404041</span>
-          </p>
+            <p>
+              <span class="ols-tc-gray_7"><b>@col_gray_7</b></span>
+              <span class="ols-bc-gray_7"></span>
+              <span class="hex"><b>HEX</b> #404041</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-gray_8"><b>@col_gray_8</b></span>
-            <span class="ols-bc-gray_8"></span>
-            <span class="hex"><b>HEX</b> #3A3A3C</span>
-          </p>
+            <p>
+              <span class="ols-tc-gray_8"><b>@col_gray_8</b></span>
+              <span class="ols-bc-gray_8"></span>
+              <span class="hex"><b>HEX</b> #3A3A3C</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-text"><b>@col_text</b></span>
-            <span class="ols-bc-text"></span>
-            <span class="hex"><b>HEX</b> #231F20</span>
-          </p>
+            <p>
+              <span class="ols-tc-text"><b>@col_text</b></span>
+              <span class="ols-bc-text"></span>
+              <span class="hex"><b>HEX</b> #231F20</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-b"><b>@col_b</b></span>
-            <span class="ols-bc-b"></span>
-            <span class="hex"><b>HEX</b> #000000</span>
-          </p>
+            <p>
+              <span class="ols-tc-b"><b>@col_b</b></span>
+              <span class="ols-bc-b"></span>
+              <span class="hex"><b>HEX</b> #000000</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-base_1"><b>@col_base_1</b></span>
-            <span class="ols-bc-base_1"></span>
-            <span class="hex"><b>HEX</b> #B0DFD1</span>
-          </p>
+            <p>
+              <span class="ols-tc-base_1"><b>@col_base_1</b></span>
+              <span class="ols-bc-base_1"></span>
+              <span class="hex"><b>HEX</b> #B0DFD1</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-base_2"><b>@col_base_2</b></span>
-            <span class="ols-bc-base_2"></span>
-            <span class="hex"><b>HEX</b> #8FD3A0</span>
-          </p>
+            <p>
+              <span class="ols-tc-base_2"><b>@col_base_2</b></span>
+              <span class="ols-bc-base_2"></span>
+              <span class="hex"><b>HEX</b> #8FD3A0</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-base_3"><b>@col_base_3</b></span>
-            <span class="ols-bc-base_3"></span>
-            <span class="hex"><b>HEX</b> #6EC683</span>
-          </p>
+            <p>
+              <span class="ols-tc-base_3"><b>@col_base_3</b></span>
+              <span class="ols-bc-base_3"></span>
+              <span class="hex"><b>HEX</b> #6EC683</span>
+            </p>
 
-          <p>
-            <span class="ols-tc-base_4"><b>@col_base_4</b></span>
-            <span class="ols-bc-base_4"></span>
-            <span class="hex"><b>HEX</b> #106A3A</span>
-          </p>
-        </article>
+            <p>
+              <span class="ols-tc-base_4"><b>@col_base_4</b></span>
+              <span class="ols-bc-base_4"></span>
+              <span class="hex"><b>HEX</b> #106A3A</span>
+            </p>
+          </article>
 
-        <!-- Typography -->
-        <article id="typography">
-          <h2 class="style-heading">Typography</h2>
-          <h1>OLS heading .h1</h1>
-          <h2>OLS heading .h2</h2>
-          <h3>OLS heading .h3</h3>
-          <h4>OLS heading .h4</h4>
-          <h5>OLS heading .h5</h5>
+          <!-- Typography -->
+          <article id="typography">
+            <h2 class="style-heading">
+              Typography
+            </h2>
+            <p>
+              Use heading 1 (h1) just once per page.<br/>
+              The measure on the left represents font size in pixels, the second line height. (30/40 pixels = 30px font size, 40px font size). Keep in mind that heading 4 and 5 are in bold.<br/>
+              The background in the example is not in the styleguide, the headings <b>have no background</b> by default.<br/><br/>
+              LESS variables are defined as <b>@fs_[heading-number]</b> for font-size (fs) and <b>@lh_[heading-number]</b> for line-heights (lh). Examples: <b>@fs_h1</b>, <b>@lh_h1</b>.
+            </p>
+            <h1 class="typography-ex">
+              <span class="style-detail">Light 30/40 pixels</span>
+              OLS heading .h1
+            </h1>
+            <h2 class="typography-ex">
+              <span class="style-detail">Light 28/30 pixels</span>
+              OLS heading .h2
+            </h2>
+            <h3 class="typography-ex">
+              <span class="style-detail">Light 20/22 pixels</span>
+              OLS heading .h3
+            </h3>
+            <h4 class="typography-ex">
+              <span class="style-detail">Semibold 18/26 pixels</span>
+              OLS heading .h4
+            </h4>
+            <h5 class="typography-ex">
+              <span class="style-detail">Semibold 16/24 pixels</span>
+              OLS heading .h5
+            </h5>
 
 <!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"><h1>OLS heading .h1</h1>
@@ -204,47 +228,200 @@
 <h5>OLS heading .h5</h5></code></pre>
 <!-- end code block -->
 
-        </article>
+            <h3 class="style-heading">Paragraphs</h3>
+            <section class="row-fluid row-paragraph clearfix">
+              <section class="col-xs-24 col-md-18">
+                <p>
+                  <u>This is a default paragraph</u>, dummy text from here on. Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.<br/>
+                  <u>Use line breaks</u> to go to the next line without space.
+                </p>
 
-        <!-- Scaffolding -->
-        <article>
-          <h2 class="style-heading">Scaffolding: Layout, Sections &amp; Grid system</h2>
-          <p>The grid system is made out of 24 columns [bootstrap docs]</p>
-        </article>
+                <p>
+                  <u>This is the default space between paragraphs</u>, dummy text from here on. Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products.
+                </p>
+              </section>
+              <section class="col-xs-24 col-md-6">
+                <span class="style-detail">
+                  Light 15/22 pixels<br/>
+                  Letter-spacing 0.5px<br/>
+                  Margin-bottom 20px
+                </span>
+              </section>
+            </section><!-- row-paragraph -->
 
-        <!-- Buttons -->
-        <article>
-          <h2 class="style-heading">Buttons &amp; Links</h2>
-        </article>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><p>
+  This is a default paragraph, ... <br/>
+  Use line breaks ...
+</p>
 
-        <!-- Forms -->
-        <article>
-          <h2 class="style-heading">Forms &amp; Inputs</h2>
-        </article>
+<p>
+  This is the default space between paragraphs, ...
+</p></code></pre>
+<!-- end code block -->
+            <p class="head-up">
+              LESS variables use the @m_ prefix for the equivalent mobile font sizes/line heights.<br/>
+              For example <b>@m_fs_h1</b> is the mobile correspondent of <b>@fs_h1</b>.
+            </p>
 
-        <!-- Animations -->
-        <article>
-          <h2 class="style-heading">Animations</h2>
-        </article>
+            <h3 class="style-heading">Stand-alone labels</h3>
+            <p>These labels can be used as 'stand-alone' elements that display a short &amp; concise text. They have no action attached (see <a href="#buttons">buttons</a> for that).</p>
 
-        <!-- Misc -->
-        <article>
-          <h2 class="style-heading">Misc</h2>
-        </article>
+            <p class="typography-ex ols-label-lg">
+              Large label <span class="style-detail">Light 28/30</span>
+            </p>
 
-        <article>
-          <h2 class="style-heading">Roadmap</h2>
-          <ul>
-            <li>Alerts &amp; Messages</li>
-            <li>Maps</li>
-            <li>Lists</li>
-            <li>Comments / Reviews</li>
-            <li>Profiles</li>
-          </ul>
-        </article>
-      </section>
-    </section>
-  </section>
+            <p class="typography-ex ols-label-md">
+              Medium label <span class="style-detail">Light 18/26</span>
+            </p>
+
+            <p class="typography-ex ols-label-sm">
+              Small label <span class="style-detail">Light 15/25</span>
+            </p>
+
+            <p>
+              Notice the pattern in the code samples below: labels classes are named <u>ols-label-*</u> and are by default light.<br/>
+              To make them bold or silent (not as obtrusive) add the classes <u>bold</u> or <u>silent</u>.
+              <br/>
+              Each label has an <u>inverse</u> state when it is a child of an element which contains the class <u>inverse</u>. See <a href="#sidebars">sidebars</a> for an example, bold and silent style are exemplified below.
+            </p>
+
+            <p class="typography-ex ols-label-lg">
+              Large label <span class="style-detail">Light 28/30</span>
+            </p>
+
+            <p class="typography-ex ols-label-lg silent">
+              Large label silent<span class="style-detail">Light 28/30 , @col_gray_5</span>
+            </p>
+
+            <p class="typography-ex ols-label-lg bold">
+              Large label bold <span class="style-detail">Semibold 28/30</span>
+            </p>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-lg">
+  Large label
+</p>
+
+<p class="ols-label-lg silent">
+  Large label silent
+</p>
+
+<p class="ols-label-lg bold">
+  Large label
+</p>
+</code></pre>
+
+<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-md">
+  Medium label
+</p>
+
+<p class="ols-label-md silent">
+  Medium label
+</p>
+
+<p class="ols-label-md bold">
+  Medium label bold
+</p></code></pre>
+
+<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-sm">
+  Small label
+</p>
+
+<p class="ols-label-sm silent">
+  Small label silent
+</p>
+
+<p class="ols-label-sm bold">
+  Small label bold
+</p></code></pre>
+<!-- end code block -->
+            <p class="head-up">
+              The code examples use a &lt;p&gt; tag, but headings should be used when appropiate.
+            </p>
+
+            <h3 class="style-heading">Examples - label components</h3>
+            <h4 class="style-heading">Company in result list</h4>
+
+            <ul class="ols-company-result">
+              <li>
+                <figure>
+                  <img src="http://placehold.it/85x85" alt="QuickPot"/>
+                  <figcaption>
+                    <h4 class="ols-label-md">QuickPot</h4>
+                    <h4 class="ols-label-md">Trindsøvej 5, Aarhus C</h4>
+                    <p class="ols-label-sm">25 minutes to your location</p>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><ul class="ols-company-result">
+  <li>
+    <figure>
+      <img src="http://placehold.it/85x85" alt="QuickPot"/>
+      <figcaption>
+        <h4 class="ols-label-md">QuickPot</h4>
+        <h4 class="ols-label-md">Trindsøvej 5, Aarhus C</h4>
+        <p class="ols-label-sm">25 minutes to your location</p>
+      </figcaption>
+    </figure>
+  </li>
+</ul></code></pre>
+<!-- end code block -->
+
+          </article>
+
+          <!-- Scaffolding -->
+          <article>
+            <h2 class="style-heading">Scaffolding: Layout, Sections &amp; Grid system</h2>
+            <p>The grid system is made out of 24 columns [bootstrap docs] - chosen for flexiblity.</p>
+
+            <h3 class="style-heading" id="sidebars">Sidebars</h3>
+
+            <h3 class="style-heading" id="lists">Lists</h3>
+          </article>
+
+          <!-- Buttons -->
+          <article id="buttons">
+            <h2 class="style-heading">Buttons &amp; Links</h2>
+          </article>
+
+          <!-- Forms -->
+          <article>
+            <h2 class="style-heading">Forms &amp; Inputs</h2>
+          </article>
+
+          <!-- Navigation -->
+          <article>
+            <h2 class="style-heading">Navigation</h2>
+          </article>
+
+          <!-- Animations -->
+          <article>
+            <h2 class="style-heading">Animations</h2>
+          </article>
+
+          <!-- Misc -->
+          <article>
+            <h2 class="style-heading">Misc</h2>
+          </article>
+
+          <article>
+            <h2 class="style-heading">Roadmap</h2>
+            <ul>
+              <li>Alerts &amp; Messages</li>
+              <li>Maps</li>
+              <li>Lists</li>
+              <li>Comments / Reviews</li>
+              <li>Profiles</li>
+            </ul>
+          </article>
+        </section> <!-- container -->
+      </section> <!-- col- -->
+
+    </section> <!-- row-fluid -->
+  </section> <!-- container-fluid -->
 
   <!-- Application JS -->
   <script src="./assets/prism.js"></script>
