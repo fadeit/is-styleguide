@@ -235,8 +235,13 @@ span[class*="ols-tc-"]{
  *
  */
 #toc-container{
+  height: 100%;
+  width: 100%;
+
   #table-of-contents{
     padding:15px 20px;
+    height: 100%;
+    overflow: scroll;
 
     li {
       list-style-type: none;
@@ -257,24 +262,29 @@ span[class*="ols-tc-"]{
         .col(@col_gray_8);
       }
     }
-  }
 
-  [class*='toc-list-']{
-    font-size:@fs_small;
-    padding-left:10px;
-  }
+    [class*='toc-list-']{
+      font-size:@fs_small;
+      padding-left:10px;
+    }
 
-  .toc-list-h2{
-    margin-top:10px;
-    padding-left:0;
-    font-size:@fs_h5;
+    .toc-list-h2{
+      margin-top:10px;
+      padding-left:0;
+      font-size:@fs_h5;
+
+      &:first-child{
+        margin-top:0;
+      }
+    }
+
   }
 }
 
 .fixed-table{
   @media only screen and (min-width:@bp_md){
     .fix();
-    top:0px;
+    top:25px;
   }
 }
 
@@ -714,7 +724,7 @@ span[class*="ols-tc-"]{
  * Typography
  *
  */
-#typography {
+#typography-container {
   .typography-ex{
     padding: 20px 10px 20px 10px;
     .col(@ws, b);

@@ -46,16 +46,19 @@
         <section class="small-container">
           <!-- Before you start -->
           <article>
-            <h2 class="style-heading" id="before-you-start">Know before you start</h2>
+            <h2 class="style-heading" id="before-you-start">Before you start</h2>
+            <h3 class="style-heading" id="whats-inside">What's inside</h3>
             <p>
               This styleguide uses a fork of Bootstrap from <a href="https://github.com/fadeit/bootstrap" target="_blank">here</a>, without the components that require JavaScript.<br/>
-              You can resize this page to see how the styles adapt to different layouts.
+              The purpose of this thing is to achieve a more consistent front-end design and keep everybody in the team sane.<br/> It's also meant to cover all (or most) situations that you'll encounter during development, therefore you should <u>never</u> have to create your own element/style.
+              Use the code samples and be happy!<br/><br/>
+              Don't forget, you can resize this page to see how the styles adapt to different viewport sizes!
             </p>
           </article>
 
           <!-- Colors -->
           <article id="colors">
-            <h2 class="style-heading" id="typography">Colors</h2>
+            <h2 class="style-heading" id="colors">Colors</h2>
             <p>
               The colors in this list are <u>the only colors to be used</u>.
             </p>
@@ -191,7 +194,7 @@
           </article>
 
           <!-- Typography -->
-          <article>
+          <article id="typography-container">
             <h2 class="style-heading" id="typography">
               Typography
             </h2>
@@ -462,8 +465,13 @@
 <!-- end code block -->
 
             <h3 class="style-heading" id="map-pages">Map pages</h3>
+            <p>
+              The 'map pages' are all the views that have maps as a central interface element.
+            </p>
             <h4 class="style-heading" id="layout-full-screen">Full screen</h4>
-            <p>The full screen map is used as the entry point of the application.</p>
+            <p>
+              The full screen map is used as the entry point of the application.
+            </p>
             <section class="container-fluid bordered">
               <section class="row-fluid column-row">
                 <span class="fluid-label">.row-fluid</span>
@@ -617,10 +625,10 @@
               <thead>
                 <tr>
                   <th>Element</th>
-                  <th>@bp_sm</th>
-                  <th>@bp_md</th>
-                  <th>@bp_lg</th>
-                  <th>@bp_xl</th>
+                  <th>@bp_sm (> 767px)</th>
+                  <th>@bp_md (> 991px)</th>
+                  <th>@bp_lg (> 1199px)</th>
+                  <th>@bp_xl (> 1599px)</th>
                 </tr>
               </thead>
               <tbody>
@@ -652,9 +660,6 @@
               The <b>[element]-height-[breakpoint]</b> class should be added at the end of the element to avoid conflicts. <br/>
               For example, <b>class="row-fluid col-xs-24 col-md-4 col-height-md"</b> is the correct way of applying the equal column height class.
             </p>
-
-
-            <h3 class="style-heading" id="sidebars">Sidebars</h3>
 
             <h3 class="style-heading" id="lists">Lists</h3>
           </article>
