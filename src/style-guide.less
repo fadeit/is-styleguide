@@ -2,21 +2,21 @@
  * Importing variables and mixins to keep this file clean
  *
  */
-@import './variables.less';
-@import './mixins.less';
+ @import './variables.less';
+ @import './mixins.less';
 
 /*
  * Web fonts
  *
  */
 
-@font-face {
+ @font-face {
   font-family: 'PNL';
   src: url('./styleguide-assets/pnl-webfont.eot');
   src: url('./styleguide-assets/pnl-webfont.eot?#iefix') format('embedded-opentype'),
-       url('./styleguide-assets/pnl-webfont.woff') format('woff'),
-       url('./styleguide-assets/pnl-webfont.ttf') format('truetype'),
-       url('./styleguide-assets/pnl-webfont.svg#proxima_novalight') format('svg');
+  url('./styleguide-assets/pnl-webfont.woff') format('woff'),
+  url('./styleguide-assets/pnl-webfont.ttf') format('truetype'),
+  url('./styleguide-assets/pnl-webfont.svg#proxima_novalight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,9 +25,9 @@
   font-family: 'PNL';
   src: url('./styleguide-assets/pnsb-webfont.eot');
   src: url('./styleguide-assets/pnsb-webfont.eot?#iefix') format('embedded-opentype'),
-       url('./styleguide-assets/pnsb-webfont.woff') format('woff'),
-       url('./styleguide-assets/pnsb-webfont.ttf') format('truetype'),
-       url('./styleguide-assets/pnsb-webfont.svg#proxima_novalight') format('svg');
+  url('./styleguide-assets/pnsb-webfont.woff') format('woff'),
+  url('./styleguide-assets/pnsb-webfont.ttf') format('truetype'),
+  url('./styleguide-assets/pnsb-webfont.svg#proxima_novalight') format('svg');
   font-weight: bold;
   font-style: bold;
 }
@@ -36,29 +36,29 @@
  * Headings: Generating all styles
  *
  */
-  @font_size_selector:    "fs_h";
-  @line_height_selector:  "lh_h";
-  @mobile_font_size_selector:    "m_fs_h";
-  @mobile_line_height_selector:  "m_lh_h";
+ @font_size_selector:    "fs_h";
+ @line_height_selector:  "lh_h";
+ @mobile_font_size_selector:    "m_fs_h";
+ @mobile_line_height_selector:  "m_lh_h";
 
-  .generate_headings(@i) when (@i > 0) {
-    .generate_headings((@i - 1));
+ .generate_headings(@i) when (@i > 0) {
+  .generate_headings((@i - 1));
 
-    @font-size: ~"@{font_size_selector}@{i}";
-    @line-height: ~"@{line_height_selector}@{i}";
-    @mobile-font-size: ~"@{mobile_font_size_selector}@{i}";
-    @mobile-line-height: ~"@{mobile_line_height_selector}@{i}";
+  @font-size: ~"@{font_size_selector}@{i}";
+  @line-height: ~"@{line_height_selector}@{i}";
+  @mobile-font-size: ~"@{mobile_font_size_selector}@{i}";
+  @mobile-line-height: ~"@{mobile_line_height_selector}@{i}";
 
-    h@{i}{
-      font-size: @@mobile-font-size;
-      line-height: @@mobile-line-height;
+  h@{i}{
+    font-size: @@mobile-font-size;
+    line-height: @@mobile-line-height;
 
-      @media only screen and (min-width:@bp_md){
-        font-size: @@font-size;
-        line-height: @@line-height;
-      }
+    @media only screen and (min-width:@bp_md){
+      font-size: @@font-size;
+      line-height: @@line-height;
     }
   }
+}
 
   //Generate headings
   .generate_headings(5);
@@ -67,9 +67,9 @@
  * Headings: Global properties
  *
  */
-  h1, h2, h3, h4, h5{
-    font-family: @ff_light;
-  }
+ h1, h2, h3, h4, h5{
+  font-family: @ff_light;
+}
 
   //fixes h1 h2 first letter kerning
   h1 {
@@ -92,7 +92,7 @@
  * Paragraphs & other typographical elements
  *
  */
-body {
+ body {
   font-weight: 300;
   font-size: 15px;
   line-height: 22px;
@@ -141,10 +141,102 @@ p{
 }
 
 /*
+ * Layout and scaffolding
+ *
+ */
+.container-fluid, .row-fluid{
+  .clearfix();
+}
+
+.container-height-xs {
+  display:table;
+  padding-left:0px;
+  padding-right:0px;
+}
+
+.row-height-xs{
+  display:table-row;
+}
+
+.col-height-xs{
+  display:table-cell;
+  float:none;
+}
+
+@media only screen and (min-width: @bp_sm) {
+  .container-height-sm {
+    display:table;
+    padding-left:0px;
+    padding-right:0px;
+  }
+
+  .row-height-sm {
+    display:table-row;
+  }
+
+  .col-height-sm {
+    display:table-cell;
+    float:none;
+  }
+}
+
+@media only screen and (min-width: @bp_md) {
+  .container-height-md {
+    display:table;
+    padding-left:0px;
+    padding-right:0px;
+  }
+
+  .row-height-md {
+    display:table-row;
+  }
+
+  .col-height-md {
+    display:table-cell;
+    float:none;
+  }
+}
+
+@media only screen and (min-width: @bp_lg) {
+  .container-height-lg {
+    display:table;
+    padding-left:0px;
+    padding-right:0px;
+  }
+
+  .row-height-lg {
+    display:table-row;
+  }
+
+  .col-height-lg {
+    display:table-cell;
+    float:none;
+  }
+}
+
+.height-top{
+  [class*='col-height-']{
+    vertical-align: top;
+  }
+}
+
+.height-bottom{
+    [class*='col-height-']{
+    vertical-align: bottom;
+  }
+}
+
+.height-center{
+  [class*='col-height-']{
+    vertical-align: center;
+  }
+}
+
+/*
  * Lists
  *
  */
-.ols-company-result{
+ .ols-company-result{
   padding:0;
   list-style-type: none;
 
@@ -207,7 +299,7 @@ p{
  * Can be added as a class to any element
  *
  */
-.bold{
+ .bold{
   .b();
 }
 

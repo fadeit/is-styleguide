@@ -37,14 +37,16 @@
 
     <section class="row-fluid">
       <aside class="col-xs-24 col-md-6">
-        Table of contents will go here
+        <section id="toc-container">
+          <ul id="table-of-contents"></ul>
+        </section>
       </aside>
 
       <section class="col-xs-24 col-md-18">
         <section class="small-container">
           <!-- Before you start -->
           <article>
-            <h2 class="style-heading">Know before you start</h2>
+            <h2 class="style-heading" id="before-you-start">Know before you start</h2>
             <p>
               This styleguide uses a fork of Bootstrap from <a href="https://github.com/fadeit/bootstrap" target="_blank">here</a>, without the components that require JavaScript.<br/>
               You can resize this page to see how the styles adapt to different layouts.
@@ -53,18 +55,18 @@
 
           <!-- Colors -->
           <article id="colors">
-            <h2 class="style-heading">Colors</h2>
+            <h2 class="style-heading" id="typography">Colors</h2>
             <p>
               The colors in this list are <u>the only colors to be used</u>.
             </p>
 
-            <h3 class="style-heading">Conventions</h3>
+            <h3 class="style-heading" id="conventions">Conventions</h3>
             <ul>
-              <li>Color variables are prefixed with <u>col</u>.</li>
-              <li>Darker, contrasting versions of a color are sufixed with <u>_c</u>: <u>@w</u> (white) and <u>@w_c</u> (white contrast)</li>
+              <li>Color variables are prefixed with <b>col</b>.</li>
+              <li>Darker, contrasting versions of a color are sufixed with <b>_c</b>: <b>@w</b> (white) and <b>@w_c</b> (white contrast)</li>
             </ul>
 
-            <h3 class="style-heading">Color list</h3>
+            <h3 class="style-heading" id="color-list">Color list</h3>
             <p>
               <span class="head-up">Colors are defined in <u>variables.less</u>. A full list can also be found there.</span>
               <br/>
@@ -189,8 +191,8 @@
           </article>
 
           <!-- Typography -->
-          <article id="typography">
-            <h2 class="style-heading">
+          <article>
+            <h2 class="style-heading" id="typography">
               Typography
             </h2>
             <p>
@@ -228,8 +230,8 @@
 <h5>OLS heading .h5</h5></code></pre>
 <!-- end code block -->
 
-            <h3 class="style-heading">Paragraphs</h3>
-            <section class="row-fluid row-paragraph clearfix">
+            <h3 class="style-heading" id="paragraphs">Paragraphs</h3>
+            <section class="row-fluid row-paragraph">
               <section class="col-xs-24 col-md-18">
                 <p>
                   <u>This is a default paragraph</u>, dummy text from here on. Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.<br/>
@@ -264,7 +266,7 @@
               For example <b>@m_fs_h1</b> is the mobile correspondent of <b>@fs_h1</b>.
             </p>
 
-            <h3 class="style-heading">Stand-alone labels</h3>
+            <h3 class="style-heading" id="stand-alone-labels">Stand-alone labels</h3>
             <p>These labels can be used as 'stand-alone' elements that display a short &amp; concise text. They have no action attached (see <a href="#buttons">buttons</a> for that).</p>
 
             <p class="typography-ex ols-label-lg">
@@ -272,14 +274,17 @@
             </p>
 
 <!-- code block -->
-<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-lg">
+<pre class="code-toolbar"><code class="language-markup"><!-- Large label default -->
+<p class="ols-label-lg">
   Large label
 </p>
 
+<!-- Large label silent -->
 <p class="ols-label-lg silent">
   Large label silent
 </p>
 
+<!-- Large label bold -->
 <p class="ols-label-lg bold">
   Large label
 </p>
@@ -291,14 +296,17 @@
             </p>
 
 <!-- code block -->
-<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-md">
+<pre class="code-toolbar"><code class="language-markup"><!-- Medium label default -->
+<p class="ols-label-md">
   Medium label
 </p>
 
+<!-- Medium label silent -->
 <p class="ols-label-md silent">
   Medium label
 </p>
 
+<!-- Medium label bold -->
 <p class="ols-label-md bold">
   Medium label bold
 </p></code></pre>
@@ -309,22 +317,25 @@
             </p>
 
 <!-- code block -->
-<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-sm">
+<pre class="code-toolbar"><code class="language-markup"><!-- Small label default -->
+<p class="ols-label-sm">
   Small label
 </p>
 
+<!-- Small label silent -->
 <p class="ols-label-sm silent">
   Small label silent
 </p>
 
+<!-- Small label bold -->
 <p class="ols-label-sm bold">
   Small label bold
 </p></code></pre>
 <!-- end code block -->
 
             <p>
-              Notice the pattern in the code samples below: labels classes are named <u>ols-label-*</u> and are by default light.<br/>
-              To make them bold or silent (not as obtrusive) add the classes <u>bold</u> or <u>silent</u>.
+              Notice the pattern in the code samples below: label classes are named <u>ols-label-*</u> and are by default light.<br/>
+              To make them bold or silent (faded) add the classes <u>bold</u> or <u>silent</u>.
               <br/>
               Each label has an <u>inverse</u> state when it is a child of an element which contains the class <u>inverse</u>. See <a href="#sidebars">sidebars</a> for an example, bold and silent style are exemplified below.
             </p>
@@ -345,8 +356,8 @@
               The code examples use a &lt;p&gt; tag, but headings should be used when appropiate.
             </p>
 
-            <h3 class="style-heading">Examples - label components</h3>
-            <h4 class="style-heading">Company in result list</h4>
+            <h3 class="style-heading" id="label-component-examples">Examples - label components</h3>
+            <h4 class="style-heading" id="company-in-result-list">Company in result list</h4>
 
             <ul class="ols-company-result">
               <li>
@@ -379,24 +390,269 @@
 
           <!-- Scaffolding -->
           <article>
-            <h2 class="style-heading">Scaffolding: Layout, Sections &amp; Grid system</h2>
-            <p>The grid system is made out of 24 columns and works exactly as the <a href="http://getbootstrap.com/css/#grid" target="_blank">Bootstrap Grid</a>, times 2. The grid double-up is chosen for flexiblity. In markup, it just means doubling up all the CSS column sizes.</p>
+            <h2 class="style-heading" id="scaffolding-and-layout">Scaffolding: layout &amp; grid system</h2>
+            <p>
+              The grid system is made out of 24 columns and works exactly as the <a href="http://getbootstrap.com/css/#grid" target="_blank">Bootstrap Grid</a>, times 2. The grid double-up is chosen for flexiblity. In markup, it just means doubling up all the CSS column sizes.
+            </p>
+
+            <h3 class="style-heading" id="breakpoints">Breakpoints</h3>
+            <p>
+              There are 4 breakpoints. Properties that do not apply to a breakpoint are available up to a resolution of <u>767 pixels</u>.<br/><br/> LESS variables names: when using (min-height) with media queries, the name of the LESS variable is <b>@bp_[breakpoint_size]</b>. When using (max-height) with media queries, the name of the LESS variable is <b>@bp_[breakpoint_size]_max</b>.<br/>
+              This prevents overlapping when using both min and max height.<br/><br/>
+              It's a good idea to stick with min-height (that's usually a consequence of mobile-first design).<br/>
+            </p>
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>LESS name (min-height)</th>
+                  <th>LESS name (max-height)</th>
+                  <th>When it applies (pixels)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>@bp_sm</td>
+                  <td>@bp_sm_max</td>
+                  <td>> 767px</td>
+                </tr>
+                <tr>
+                  <td>@bp_md</td>
+                  <td>@bp_md_max</td>
+                  <td>> 991px</td>
+                </tr>
+                <tr>
+                  <td>@bp_lg</td>
+                  <td>@bp_lg_max</td>
+                  <td>> 1199px</td>
+                </tr>
+                <tr>
+                  <td>@bp_xl</td>
+                  <td>@bp_xl_max</td>
+                  <td>> 1599px</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              As with Bootstrap, column sizes can be specified in the HTML markup for each breakpoint. A class of <u>col-md-6</u> will have the size of 6 columns on viewports bigger than <u>991 pixels</u>. To get an adaptive layout, column sizes can be stacked on one element.<br/>
+              For example, a class of <u>col-xs-24 col-md-6</u> will have the size of 24 columns up to 991 pixels and 6 columns for viewports bigger than that.
+            </p>
 
             <h3 class="style-heading" id="normal-page">Normal page</h3>
-            <p>Pages are made out of multiple rows, each row containing 24 columns. For mobile devices <u>(col-xs)</u>, the column will take 100% of the width (all 24 columns).</p>
-            <section class="row-fluid bordered">
-              <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
-              <article class="col-xs-24 col-md-12">col-xs-24 col-md-12</article>
-              <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+            <p>
+              Pages are made out of multiple rows, each row containing 24 columns. For mobile devices <u>(col-xs)</u>, the column will take 100% of the width (all 24 columns). The example below is for a page with sidebars on both right and left.
+            </p>
+            <section class="container-fluid bordered">
+              <section class="row-fluid column-row">
+                <span class="fluid-label">.row-fluid</span>
+                <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+                <article class="col-xs-24 col-md-12">col-xs-24 col-md-12</article>
+                <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+              </section>
             </section>
 
 <!-- code block -->
-<pre class="code-toolbar"><code class="language-markup"><section class="row-fluid bordered">
-  <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
-  <article class="col-xs-24 col-md-12">col-xs-24 col-md-12</article>
-  <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid">
+  <section class="row-fluid">
+    <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+    <article class="col-xs-24 col-md-12">col-xs-24 col-md-12</article>
+    <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+  </section>
 </section></code></pre>
 <!-- end code block -->
+
+            <h3 class="style-heading" id="map-pages">Map pages</h3>
+            <h4 class="style-heading" id="layout-full-screen">Full screen</h4>
+            <p>The full screen map is used as the entry point of the application.</p>
+            <section class="container-fluid bordered">
+              <section class="row-fluid column-row">
+                <span class="fluid-label">.row-fluid</span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid">
+  <section class="row-fluid">
+    <article class="col-xs-24">col-xs-24</article>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="style-heading" id="layout-result-list">Result List</h4>
+            <p>
+              The result list is used for displaying search results quickly alongside the map, sorted by location.
+            </p>
+            <section class="container-fluid bordered">
+              <section class="row-fluid col-xs-24 col-md-16 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-16
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+              <section class="row-fluid col-xs-24 col-md-8 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-8
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid">
+  <section class="row-fluid col-xs-24 col-md-16">
+    <article class="col-xs-24">col-xs-24</article>
+  </section>
+  <section class="row-fluid col-xs-24 col-md-8">
+    <article class="col-xs-24">col-xs-24</article>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="style-heading" id="layout-result-detail">Result Detail</h4>
+            <p>Pressing a result from the list will cause a transition to the result detail. The map will then be minimized to a size of 4 columns.</p>
+            <section class="container-fluid bordered">
+              <section class="row-fluid col-xs-24 col-md-4 column-row">
+                <span class="fluid-label">
+                  .row-fluid <br/>
+                  .col-xs-24 <br/>
+                  .col-md-4
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+              <section class="row-fluid col-xs-24 col-md-8 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-8
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+              <section class="row-fluid col-xs-24 col-md-12 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-12
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid">
+  <section class="row-fluid col-xs-24 col-md-4">
+    <span class="fluid-label">
+      .row-fluid .col-xs-24 .col-md-4
+    </span>
+    <article class="col-xs-24">col-xs-24</article>
+  </section>
+  <section class="row-fluid col-xs-24 col-md-8">
+    <span class="fluid-label">
+      .row-fluid .col-xs-24 .col-md-8
+    </span>
+    <article class="col-xs-24">col-xs-24</article>
+  </section>
+  <section class="row-fluid col-xs-24 col-md-12">
+    <span class="fluid-label">
+      .row-fluid .col-xs-24 .col-md-12
+    </span>
+    <article class="col-xs-24">col-xs-24</article>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+            <p>
+              In this example the row heights <u>are not equal</u>. If that's the desired layout, some extra classes need to be added to convert the rows into table rows.
+            </p>
+
+            <section class="container-fluid container-height-md height-top">
+              <section class="row-fluid row-height-md bordered">
+                <section class="row-fluid col-xs-24 col-md-4 column-row col-height-md">
+                  <span class="fluid-label">
+                    .row-fluid <br/>
+                    .col-xs-24 <br/>
+                    .col-md-4
+                    <article class="col-xs-24">
+                         col-xs-24
+                    </article>
+                  </span>
+                </section>
+                <section class="row-fluid col-xs-24 col-md-8 column-row col-height-md">
+                  <span class="fluid-label">
+                    .row-fluid .col-xs-24 .col-md-8
+                    <article class="col-xs-24">
+                         col-xs-24
+                    </article>
+                  </span>
+                </section>
+                <section class="row-fluid col-xs-24 col-md-12 column-row col-height-md">
+                  <span class="fluid-label">
+                    .row-fluid .col-xs-24 .col-md-12
+                    <article class="col-xs-24">
+                         col-xs-24
+                    </article>
+                  </span>
+                </section>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid container-height-md height-top">
+  <section class="row-fluid row-height-md">
+    <section class="row-fluid col-xs-24 col-md-4 col-height-md">
+      <article class="col-xs-24">
+        col-xs-24
+      </article>
+    </section>
+    <section class="row-fluid col-xs-24 col-md-8 col-height-md">
+      <article class="col-xs-24">
+        col-xs-24
+      </article>
+    </section>
+    <section class="row-fluid col-xs-24 col-md-12 col-height-md">
+      <article class="col-xs-24">
+        col-xs-24
+      </article>
+    </section>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+            <p class="head-up">
+              The table transformation will be applied according to the specified breakpoint (similar to how columns work). In this example that is <b>@bp_md</b> or viewport sizes bigger than <b>991 pixels</b>.
+            </p>
+
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>@bp_sm</th>
+                  <th>@bp_md</th>
+                  <th>@bp_lg</th>
+                  <th>@bp_xl</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Container</td>
+                  <td>.container-height-sm</td>
+                  <td>.container-height-md</td>
+                  <td>.container-height-lg</td>
+                  <td>.container-height-xl</td>
+                </tr>
+                <tr>
+                  <td>Row</td>
+                  <td>.row-height-sm</td>
+                  <td>.row-height-md</td>
+                  <td>.row-height-lg</td>
+                  <td>.row-height-xl</td>
+                </tr>
+                <tr>
+                  <td>Column</td>
+                  <td>.col-height-sm</td>
+                  <td>.col-height-md</td>
+                  <td>.col-height-lg</td>
+                  <td>.col-height-xl</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              The <b>[element]-height-[breakpoint]</b> class should be added at the end of the element to avoid conflicts. <br/>
+              For example, <b>class="row-fluid col-xs-24 col-md-4 col-height-md"</b> is the correct way of applying the equal column height class.
+            </p>
+
 
             <h3 class="style-heading" id="sidebars">Sidebars</h3>
 
@@ -405,31 +661,31 @@
 
           <!-- Buttons -->
           <article id="buttons">
-            <h2 class="style-heading">Buttons &amp; Links</h2>
+            <h2 class="style-heading" id="buttons">Buttons &amp; Links</h2>
           </article>
 
           <!-- Forms -->
           <article>
-            <h2 class="style-heading">Forms &amp; Inputs</h2>
+            <h2 class="style-heading" id="forms">Forms &amp; Inputs</h2>
           </article>
 
           <!-- Navigation -->
           <article>
-            <h2 class="style-heading">Navigation</h2>
+            <h2 class="style-heading" id="navigation">Navigation</h2>
           </article>
 
           <!-- Animations -->
           <article>
-            <h2 class="style-heading">Animations</h2>
+            <h2 class="style-heading" id="animations">Animations</h2>
           </article>
 
           <!-- Misc -->
           <article>
-            <h2 class="style-heading">Misc</h2>
+            <h2 class="style-heading" id="misc">Misc</h2>
           </article>
 
           <article>
-            <h2 class="style-heading">Roadmap</h2>
+            <h2 class="style-heading" id="roadmap">Roadmap</h2>
             <ul>
               <li>Alerts &amp; Messages</li>
               <li>Maps</li>

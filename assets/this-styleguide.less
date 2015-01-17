@@ -2,8 +2,8 @@
  * Importing variables and mixins to keep this file clean
  *
  */
-@import '../src/variables.less';
-@import '../src/mixins.less';
+@import "../src/variables.less";
+@import "../src/mixins.less";
 
 /*
  * Variables and mixins for this styleguide
@@ -92,7 +92,8 @@ article {
 }
 
 pre[class*="language-"] {
-  margin-top:-20px;
+  .rel();
+  top:-20px;
   padding:0;
   background:none;
   text-shadow: none;
@@ -168,6 +169,13 @@ span[class*="ols-tc-"]{
   .clearfix();
   padding:0!important;
   margin-bottom:20px;
+  font-size:@fs_small;
+  border:@bst @col_gray_5;
+  border-bottom:none;
+
+  .row-fluid{
+    padding:0!important;
+  }
 
   article {
     margin: 0;
@@ -180,8 +188,96 @@ span[class*="ols-tc-"]{
 
   * {
     border:@bst @col_gray_4;
+    .col(@ws, b);
   }
 }
+
+.column-row{
+  .col(@ws, b);
+
+  .fluid-label{
+    padding:10px;
+    .inline-block();
+    width:100%;
+    background:none;
+    border:none;
+  }
+
+  [class*="col-"]{
+    border:10px solid @ws;
+  }
+
+  * {
+    .col(@col_gray_4, b);
+  }
+}
+
+[class*="container-height-"]{
+  margin-bottom:20px;
+
+  .row-fluid{
+    padding:10px!important;
+
+    .fluid-label{
+      width:100%;
+      background:transparent;
+      padding:0;
+
+      [class*="col-"]{
+        border:none;
+      }
+    }
+  }
+}
+
+/*
+ * Table of contents
+ *
+ */
+#toc-container{
+  #table-of-contents{
+    padding:15px 20px;
+
+    li {
+      list-style-type: none;
+    }
+
+    ul {
+      padding:0;
+
+      li {
+        list-style-type: none;
+      }
+    }
+
+    a {
+      .col(@col_gray_6);
+
+      &:hover{
+        .col(@col_gray_8);
+      }
+    }
+  }
+
+  [class*='toc-list-']{
+    font-size:@fs_small;
+    padding-left:10px;
+  }
+
+  .toc-list-h2{
+    margin-top:10px;
+    padding-left:0;
+    font-size:@fs_h5;
+  }
+}
+
+.fixed-table{
+  @media only screen and (min-width:@bp_md){
+    .fix();
+    top:0px;
+  }
+}
+
 
 /*
  * Color swatches
