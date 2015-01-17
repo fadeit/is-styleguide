@@ -85,14 +85,102 @@ article {
   p{
     margin-bottom:20px;
   }
+
+  ul{
+    margin-bottom:20px;
+  }
 }
 
 pre[class*="language-"] {
-  margin-top:40px;
+  margin-top:-20px;
+  padding:0;
+  background:none;
+  text-shadow: none;
+  overflow: hidden;
+  .border-radius(0);
+  width: 100%;
+  border-top: @bst @col_gray_5;
+  .ta-r();
+
+  &:after {
+    content: "View code < />";
+    .col(@w);
+    font-size:@fs_small;
+    padding:8px 15px;
+    .col(@col_gray_5, b);
+    .inline-block();
+    cursor:pointer;
+    font-family:@ff_default;
+    margin-bottom:20px;
+  }
+
+  &:hover{
+    &:after{
+      .col(@col_gray_7, b);
+    }
+  }
+
+  code[data-language]{
+    .hide();
+    padding:15px 15px 30px 15px;
+    background:@b;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+  }
+
+  .toolbar{
+    .hide();
+    margin-bottom:20px;
+  }
+}
+
+pre[class*="toggled-code"]{
+  .ta-l();
+
+  &:after{
+    .hide();
+  }
+
+  code[data-language]{
+    .block();
+  }
+
+  .toolbar{
+    .block();
+
+    .collapse-code{
+      .col(@col_gray_6, b);
+      .col(@w);
+      .fr();
+    }
+  }
 }
 
 span[class*="ols-tc-"]{
   font-size:13px;
+}
+
+.row-paragraph{
+  margin-bottom: 20px;
+}
+
+.bordered{
+  .clearfix();
+  padding:0!important;
+  margin-bottom:20px;
+
+  article {
+    margin: 0;
+    padding: 0;
+  }
+
+  [class*="col-"]{
+    padding:20px;
+  }
+
+  * {
+    border:@bst @col_gray_4;
+  }
 }
 
 /*
@@ -534,6 +622,7 @@ span[class*="ols-tc-"]{
   .typography-ex{
     padding: 20px 10px 20px 10px;
     .col(@ws, b);
+    margin-bottom:20px;
 
     &:nth-child(even){
       .col(@col_gray_4, b);

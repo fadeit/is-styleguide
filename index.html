@@ -271,13 +271,56 @@
               Large label <span class="style-detail">Light 28/30</span>
             </p>
 
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-lg">
+  Large label
+</p>
+
+<p class="ols-label-lg silent">
+  Large label silent
+</p>
+
+<p class="ols-label-lg bold">
+  Large label
+</p>
+</code></pre>
+<!-- end code block -->
+
             <p class="typography-ex ols-label-md">
               Medium label <span class="style-detail">Light 18/26</span>
             </p>
 
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-md">
+  Medium label
+</p>
+
+<p class="ols-label-md silent">
+  Medium label
+</p>
+
+<p class="ols-label-md bold">
+  Medium label bold
+</p></code></pre>
+<!-- end code block -->
+
             <p class="typography-ex ols-label-sm">
               Small label <span class="style-detail">Light 15/25</span>
             </p>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-sm">
+  Small label
+</p>
+
+<p class="ols-label-sm silent">
+  Small label silent
+</p>
+
+<p class="ols-label-sm bold">
+  Small label bold
+</p></code></pre>
+<!-- end code block -->
 
             <p>
               Notice the pattern in the code samples below: labels classes are named <u>ols-label-*</u> and are by default light.<br/>
@@ -298,44 +341,6 @@
               Large label bold <span class="style-detail">Semibold 28/30</span>
             </p>
 
-<!-- code block -->
-<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-lg">
-  Large label
-</p>
-
-<p class="ols-label-lg silent">
-  Large label silent
-</p>
-
-<p class="ols-label-lg bold">
-  Large label
-</p>
-</code></pre>
-
-<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-md">
-  Medium label
-</p>
-
-<p class="ols-label-md silent">
-  Medium label
-</p>
-
-<p class="ols-label-md bold">
-  Medium label bold
-</p></code></pre>
-
-<pre class="code-toolbar"><code class="language-markup"><p class="ols-label-sm">
-  Small label
-</p>
-
-<p class="ols-label-sm silent">
-  Small label silent
-</p>
-
-<p class="ols-label-sm bold">
-  Small label bold
-</p></code></pre>
-<!-- end code block -->
             <p class="head-up">
               The code examples use a &lt;p&gt; tag, but headings should be used when appropiate.
             </p>
@@ -375,7 +380,23 @@
           <!-- Scaffolding -->
           <article>
             <h2 class="style-heading">Scaffolding: Layout, Sections &amp; Grid system</h2>
-            <p>The grid system is made out of 24 columns [bootstrap docs] - chosen for flexiblity.</p>
+            <p>The grid system is made out of 24 columns and works exactly as the <a href="http://getbootstrap.com/css/#grid" target="_blank">Bootstrap Grid</a>, times 2. The grid double-up is chosen for flexiblity. In markup, it just means doubling up all the CSS column sizes.</p>
+
+            <h3 class="style-heading" id="normal-page">Normal page</h3>
+            <p>Pages are made out of multiple rows, each row containing 24 columns. For mobile devices <u>(col-xs)</u>, the column will take 100% of the width (all 24 columns).</p>
+            <section class="row-fluid bordered">
+              <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+              <article class="col-xs-24 col-md-12">col-xs-24 col-md-12</article>
+              <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+            </section>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="row-fluid bordered">
+  <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+  <article class="col-xs-24 col-md-12">col-xs-24 col-md-12</article>
+  <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+</section></code></pre>
+<!-- end code block -->
 
             <h3 class="style-heading" id="sidebars">Sidebars</h3>
 
@@ -424,6 +445,7 @@
   </section> <!-- container-fluid -->
 
   <!-- Application JS -->
+  <script src="./assets/this-styleguide.js"></script>
   <script src="./assets/prism.js"></script>
   <script src="./assets/ZeroClipboard.min.js"></script>
   <script src="./assets/prism-toolbar.js"></script>

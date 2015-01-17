@@ -209,7 +209,7 @@ pre[class*='language-'] {
 	position: relative;
 }
 pre[class*='language-'] > code[data-language] {
-	overflow: scroll;
+	max-width:100%;
 	display: block;
 }
 pre[class*='language-'] > code[data-language]::before {

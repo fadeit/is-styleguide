@@ -25,6 +25,11 @@
     var toolbar = document.createElement('div');
     toolbar.setAttribute('class', 'toolbar');
 
+    // Close Toolbar button
+    var closeButton = document.createElement('a');
+    closeButton.className = 'collapse-code';
+    closeButton.innerHTML = 'Collapse code';
+
     // View source button
     var linkSource = document.createElement('a');
     linkSource.innerHTML = 'View source';
@@ -67,6 +72,8 @@
 
     // Append the Source link
     toolbar.appendChild(linkSource);
+    // Append the close button
+    toolbar.appendChild(closeButton);
     // Add our toolbar to the <pre> tag
     pre.appendChild(toolbar);
   });
@@ -86,7 +93,6 @@
 
     for(i = 0; i <= code.length - 1; i++){
       code[i].innerHTML = HtmlEncode(code[i].innerHTML);
-      console.log(HtmlEncode(code[i].innerHTML));
     }
 
     function HtmlEncode(s){
