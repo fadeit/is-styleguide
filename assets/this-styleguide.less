@@ -259,6 +259,12 @@ span[class*="ols-tc-"]{
 
     li {
       list-style-type: none;
+
+      &:first-child{
+        .toc-list-h2{
+          margin-top:0;
+        }
+      }
     }
 
     ul {
@@ -286,10 +292,6 @@ span[class*="ols-tc-"]{
       margin-top:10px;
       padding-left:0;
       font-size:@fs_h5;
-
-      &:first-child{
-        margin-top:0;
-      }
     }
 
   }
