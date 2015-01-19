@@ -231,12 +231,40 @@ p{
     vertical-align: center;
   }
 }
+//sidebar: concat
+.ols-aside-contact{
+  .col(@col_gray_5, b);
+
+  header{
+    .clearfix();
+
+    h5.ols-label-sm{
+      .rel();
+      top: 10px;
+      margin-top: 5px;
+      .col(@col_gray_4);
+    }
+  }
+
+  .contact-body{
+    margin-top: 20px;
+    border-top: 1px solid #737375;
+
+    dt{
+      margin-top:20px;
+    }
+
+    dd{
+      .col(@col_gray_4);
+    }
+  }
+}
 
 /*
  * Lists
  *
  */
- .ols-company-result{
+.ols-company-result-list{
   padding:0;
   list-style-type: none;
 
@@ -251,24 +279,6 @@ p{
 
     &:nth-child(even){
       .col(@w, b);
-    }
-
-    figure{
-      img{
-        max-width: 77px;
-        .fl();
-        .border-radius(50%);
-        border: 2px solid @col_base_3;
-
-        @media only screen and (min-width:@bp_md){
-          max-width: 85px;
-        }
-      }
-
-      figcaption{
-        .fl();
-        margin-left:30px;
-      }
     }
 
     [class*='ols-label']{
@@ -294,16 +304,62 @@ p{
   }
 }
 
+//service list
+.ols-service-list{
+  margin:0 0 20px 0;
+
+  ul{
+    list-style-type: none;
+    padding-left:0;
+
+    li{
+      margin-top:20px;
+    }
+  }
+}
+
 /*
  * Global properties
  * Can be added as a class to any element
  *
  */
- .bold{
+.round-image{ //figure
+  img{
+    max-width: 77px;
+    .fl();
+    .border-radius(50%);
+    border: 2px solid @col_base_3;
+
+    @media only screen and (min-width:@bp_md){
+      max-width: 85px;
+    }
+  }
+
+  figcaption{
+    .fl();
+    margin-left:30px;
+  }
+}
+
+.bold{
   .b();
 }
 
 .silent{
   font-weight: 300;
   color: @col_gray_5;
+}
+
+.inverse{
+  [class*="ols-label-"]{
+    .col(@ws);
+  }
+
+  a{
+    .col(@col_gray_4);
+
+    &:hover{
+      .col(@ws);
+    }
+  }
 }
