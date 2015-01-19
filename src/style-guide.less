@@ -326,6 +326,16 @@ p{
 
     li{
       margin-top:20px;
+
+      &:before{
+        font-family: 'ols';
+        content: '\E001';
+        font-size: 11px;
+        margin-right: 5px;
+        .rel();
+        top: 1px;
+        .col(@col_gray_6);
+      }
     }
   }
 }
