@@ -16,6 +16,7 @@ fadeit.dk - OLS Front-end Styleguide
 Gulp will do the dirty work for you and create the styleguide files in `./dist`
 ```
 $ sudo npm install
+$ bower install
 $ gulp
 ```
 
