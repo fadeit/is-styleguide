@@ -44,6 +44,19 @@
   font-style: normal;
 }
 
+.ols-icon{
+  &:after{
+    font-family:"ols";
+    .inline-block();
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    line-height:1;
+    .rel();
+    top:1px;
+  }
+}
+
 /*
  * Headings: Generating all styles
  *
@@ -105,7 +118,7 @@
  *
  */
  body {
-  font-weight: 300;
+  .light();
   font-size: 15px;
   line-height: 22px;
   letter-spacing: 0.5px;
@@ -285,7 +298,7 @@ p{
   list-style-type: none;
 
   a{
-    .clearfix(); //a is a parent, but it's not mandatory to nest the li as a child (much more flexible this way)
+    .clearfix(); //<a> is a parent, but it's not mandatory to nest the li as a child (much more flexible this way)
   }
 
   li{
@@ -308,7 +321,7 @@ p{
 
     [class*='ols-label']{
       margin:0;
-      font-weight: 300;
+      .light();
 
       &:nth-child(1){
         .b();
@@ -362,7 +375,11 @@ p{
 
   ul{
     list-style-type: none;
-    padding-left:0;
+    padding: 0 10px 0 10px;
+
+    @media only screen and (min-width:@bp_md){
+      padding:0;
+    }
 
     li{
       margin-top:20px;
@@ -375,6 +392,95 @@ p{
         .rel();
         top: 1px;
         .col(@col_gray_6);
+      }
+    }
+  }
+}
+
+/*
+ * Navigation
+ *
+ */
+.ols-search-row{
+  .stretch();
+  height:@dropdown_size;
+  .col(@w, b);
+  border:@border_size solid @col_gray_2;
+  border-left:none;
+  .rel();
+  letter-spacing: 2px;
+
+  &:before{
+    content:"";
+    .col(@col_gray_7, b);
+    .stretch(h);
+    width:4px;
+    .abs();
+    left:0;
+    top:0;
+  }
+
+  &:after{
+    content:"";
+    .col(@col_base_3, b);
+    .stretch(h);
+    width:4px;
+    .abs();
+    right:0;
+    top:0;
+  }
+
+  [class*="ols-label-"]{
+    .col(@col_gray_1, b);
+    .col(@col_gray_7);
+    .inline-block();
+    .fl();
+    padding:0 20px 0 20px;
+    height: @dropdown_size - 2 * @border_size;
+    line-height: @dropdown_size - 2 * @border_size;
+  }
+
+  .ols-large-search{
+    .dropdown-toggle, .dropdown-menu{
+      .col(@w, b);
+      .col(@col_gray_6);
+      font-family: @ff_light;
+      font-size: @fs_h1;
+      .light();
+      padding: 0 0 0 20px;
+      border: none;
+      line-height: @dropdown_size - 2 * @border_size;
+      .fl();
+
+      &:active{
+        .col(@col_gray_7);
+      }
+    }
+
+    .dropdown-menu{
+      padding:0px;
+      font-size:@fs_h3;
+      letter-spacing: 1px;
+      min-width: 260px;
+      .col(@col_gray_1, b);
+      border:@bst @col_gray_2;
+
+      li{
+        a{
+          padding:10px 20px 10px 20px;
+
+          &:hover{
+            .col(@col_gray_4, b);
+          }
+        }
+      }
+    }
+
+    .ols-icon{
+      &:after{
+        font-size: 14px;
+        top: -2px;
+        margin-left:10px;
       }
     }
   }
@@ -416,7 +522,7 @@ p{
 }
 
 .silent{
-  font-weight: 300;
+  .light();
   color: @col_gray_6;
 }
 

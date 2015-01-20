@@ -55,13 +55,17 @@ gulp.task('icon-fonts', function(){
         normalize: true
       }))
       .on('codepoints', function(codepoints, options) {
-        var i;
-        var fileContents = '';
+        var i,
+            fileContents = '',
+            cssEscape = '';
 
+        //wild hacky way, has to do for now; works up to i=100
         for(i = 0; i <= codepoints.length - 1; i++){
+          cssEscape = ((i < 10) ? '"\\E00' : '"\\E0');
+
           fileContents +=
-            '.' + codepoints[i].name + ' {\n' +
-              '  content: "\\E00' + (i + 1) + '";\n' +
+            '.' + codepoints[i].name + ':after {\n' +
+              '  content: ' + cssEscape + (i + 1) + '";\n' +
             '}\n\n';
         }
 
