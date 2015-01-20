@@ -464,6 +464,9 @@ p{
       min-width: 260px;
       .col(@col_gray_1, b);
       border:@bst @col_gray_2;
+      border-top:none;
+      margin-top:0;
+      margin-left:-1px;
 
       li{
         a{
@@ -514,6 +517,12 @@ p{
 
   img{
     .fr();
+  }
+}
+
+.no-padding{
+  [class*='row-']{
+    padding:0;
   }
 }
 
