@@ -2,6 +2,8 @@ Wishlist:
   ☐ Colors can be copied to clipboard as code;
   ☐ Add permalinks to 'style-headings'
   ☐ Change # based on scroll
-  ☐ Add icon-fonts
+  ✔ Add icon-fonts @done (15-01-20 11:53)
   ☐ Allow view source for html code
+  ☐ Style select
+  ☐ Find more reasonable way to display colors
   ✔ Add code examples under each element (or well it makes sense) @done (15-01-17 00:52)

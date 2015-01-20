@@ -152,6 +152,10 @@ p{
   }
 }
 
+[class*='ols-label-']{
+  .col(@col_text);
+}
+
 /*
  * Layout and scaffolding
  *
@@ -245,7 +249,7 @@ p{
 }
 //sidebar: concat
 .ols-aside-contact{
-  .col(@col_gray_5, b);
+  .col(@col_gray_6, b);
 
   header{
     .clearfix();
@@ -280,10 +284,14 @@ p{
   padding:0;
   list-style-type: none;
 
+  a{
+    .clearfix(); //a is a parent, but it's not mandatory to nest the li as a child (much more flexible this way)
+  }
+
   li{
     padding: 15px;
     .col(@col_gray_3, b);
-    .clearfix();
+    .animate(@animation_time_short, @transition_default);
 
     @media only screen and (min-width:@bp_md){
       padding: 30px;
@@ -291,6 +299,11 @@ p{
 
     &:nth-child(even){
       .col(@w, b);
+    }
+
+    &:hover{
+      .col(@col_gray_4, b);
+      .animate(@animation_time_short, @transition_default);
     }
 
     [class*='ols-label']{
@@ -312,6 +325,33 @@ p{
       @media only screen and (min-width:@bp_md){
         line-height: 22px;
       }
+    }
+  }
+}
+
+//project list: rectangular images on the right
+.ols-company-project-list{
+  li{
+    padding:0;
+
+    figcaption{
+      padding:30px;
+    }
+  }
+}
+
+//uniform list (no alt. colors)
+.ols-uniform-list{
+  li{
+    .col(@ws, b);
+    border-top:@bst @col_gray_4;
+
+    &:nth-child(even){
+      .col(@ws, b);
+    }
+
+    &:hover{
+      .col(@col_gray_4, b);
     }
   }
 }
@@ -363,13 +403,21 @@ p{
   }
 }
 
+.rectangular-image{
+  .rel();
+
+  img{
+    .fr();
+  }
+}
+
 .bold{
   .b();
 }
 
 .silent{
   font-weight: 300;
-  color: @col_gray_5;
+  color: @col_gray_6;
 }
 
 .inverse{

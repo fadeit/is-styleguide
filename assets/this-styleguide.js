@@ -36,7 +36,7 @@
       toc_last_list,
       toc_nested_list_item,
       toc_container = document.querySelector("#table-of-contents"),
-      toc_items = document.querySelectorAll('.style-heading');
+      toc_items = document.querySelectorAll('.toc-heading');
 
   for(i = 0; i <= toc_items.length - 1; i++) {
     toc_list_item = document.createElement('li');

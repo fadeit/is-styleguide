@@ -73,12 +73,12 @@ article {
     max-width: @max_p_width_xxl;
   }
 
-  .style-heading{
+  .toc-heading{
     .col(@col_gray_6);
     margin:10px 0 10px 0;
   }
 
-  h3.style-heading{
+  h3.toc-heading{
     margin-top:20px;
   }
 
@@ -93,7 +93,7 @@ article {
 //tweaks for displaying the right ols-contact example
 .ols-aside-contact{
   article{
-    .col(@col_gray_5, b);
+    .col(@col_gray_6, b);
   }
 }
 
@@ -106,7 +106,7 @@ pre[class*="language-"] {
   overflow: hidden;
   .border-radius(0);
   width: 100%;
-  border-top: @bst @col_gray_5;
+  border-top: @bst @col_gray_6;
   .ta-r();
 
   &:after {
@@ -114,7 +114,7 @@ pre[class*="language-"] {
     .col(@w);
     font-size:@fs_small;
     padding:8px 15px;
-    .col(@col_gray_5, b);
+    .col(@col_gray_6, b);
     .inline-block();
     cursor:pointer;
     font-family:@ff_default;
@@ -252,6 +252,10 @@ span[class*="ols-tc-"]{
       }
     }
   }
+}
+
+.single-border{
+  border:@bst @col_gray_5;
 }
 
 /*
@@ -454,6 +458,7 @@ span[class*="ols-tc-"]{
     padding:8px 15px;
     margin-right:10px;
     .col(@col_text);
+    border:@bst @col_gray_3;
   }
 
   .ols-tc-base_1{
@@ -530,6 +535,7 @@ span[class*="ols-tc-"]{
     padding:8px 15px;
     margin-right:10px;
     .col(@b);
+    border:@bst @col_gray_3;
   }
 
   .ols-tc-ws{
