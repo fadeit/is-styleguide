@@ -66,7 +66,7 @@
 
 //tocScroll
 (function TocScroll(){
-  var intro_size = document.getElementsByClassName('intro')[0].clientHeight,
+  var intro_size = document.getElementsByClassName('intro')[0].offsetHeight,
       toc_container = document.querySelector('#toc-container'),
       scroll_guard = false;
 
@@ -92,7 +92,7 @@
     else{
       var B= document.body; //IE 'quirks'
       var D= document.documentElement;
-      D= (D.clientHeight)? D: B;
+      D= (D.offsetHeight)? D: B;
       return D.scrollTop;
     }
   }
