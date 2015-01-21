@@ -37,14 +37,14 @@ gulp.task('copy-styleguide-fonts', function(){
         './assets/**/*-webfont.ttf',
         './assets/**/*-webfont.woff'
       ])
-      .pipe(gulp.dest('./dist/styleguide-assets/fonts/'));
+      .pipe(gulp.dest('./dist/fonts/'));
 });
 
 gulp.task('copy-styleguide-images', function(){
   gulp.src([
         './assets/images/**/*'
       ])
-      .pipe(gulp.dest('./dist/styleguide-assets/images/'));
+      .pipe(gulp.dest('./dist/images/'));
 });
 
 gulp.task('icon-fonts', function(){
@@ -71,7 +71,7 @@ gulp.task('icon-fonts', function(){
 
         fs.writeFile('./assets/generated-webfont.less', fileContents);
       })
-      .pipe(gulp.dest('./dist/styleguide-assets/fonts/'));
+      .pipe(gulp.dest('./dist/fonts/'));
 });
 
 gulp.task('watch', function(){
