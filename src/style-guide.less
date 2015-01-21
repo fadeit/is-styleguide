@@ -277,13 +277,15 @@ p{
 
     .round-image{
       img{
-        max-width: 130px;
+        @media only screen and (min-width:@bp_xl){
+          max-width: 130px;
+        }
       }
 
       figcaption{
         margin-left: 15px;
 
-        @media only screen and (min-width:@bp_md){
+        @media only screen and (min-width:@bp_xl){
           margin-top: 20px;
         }
       }
