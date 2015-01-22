@@ -371,7 +371,7 @@
             <ul class="ols-company-result-list">
               <li>
                 <a href="#nowhere">
-                  <figure class="round-image">
+                  <figure class="round-image rounded">
                     <img src="http://placehold.it/85x85" alt="QuickPot"/>
                     <figcaption>
                       <h4 class="ols-label-md">QuickPot</h4>
@@ -385,7 +385,7 @@
 <!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"><ul class="ols-company-result-list">
   <li>
-    <figure class="round-image">
+    <figure class="round-image rounded">
       <img src="http://placehold.it/85x85" alt="Image"/>
       <figcaption>
         <h4 class="ols-label-md">QuickPot</h4>
@@ -479,15 +479,52 @@
 <!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-company-profile">
   <section class="row-fluid">
-    <nav class="col-xs-24 col-md-4">
+    <nav class="col-xs-24 col-md-4 ols-menu-container ols-aside-left">
       col-xs-24 col-md-4
     </nav>
-    <article class="col-xs-24 col-md-14">
+    <article class="col-xs-24 col-md-14 col-md-push-4">
       col-xs-24 col-md-14
     </article>
-    <aside class="col-xs-24 col-md-6">
+    <aside class="row-fluid col-xs-24 col-md-6 ols-aside-contact ols-aside-right">
       col-xs-24 col-md-6
     </aside>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+            <h4 class="toc-heading" id="fixing-sidebars">Fixing sidebars</h4>
+            <p>
+              Sidebar fixing is done with JavaScript (not included in the style guide -> an Angular attribute directive: <u>fixed-component</u>). To fix on the left or right a class is needed on the <u>row-fluid</u> of the element to fix: <u>ols-aside-left</u> and <u>ols-aside-right</u> respectively. An AngularJS template example is provided below.
+            </p>
+            <br/>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-company-profile">
+  <section class="row-fluid">
+    <nav company-profile-navigation fixed-component></nav>
+    <!-- directive template that contains:
+
+    <nav class="col-xs-24 col-md-4 ols-menu-container ols-aside-left">
+      col-xs-24 col-md-4
+    </nav>
+
+     -->
+
+    <article company-main-content></article>
+    <!-- directive template that contains:
+
+    <article class="col-xs-24 col-md-14 col-md-push-4">
+      col-xs-24 col-md-14
+    </article>
+
+     -->
+
+    <aside company-contact-sidebar fixed-component></aside>
+    <!-- directive template that contains:
+
+    <aside class="row-fluid col-xs-24 col-md-6 ols-aside-contact ols-aside-right">
+      col-xs-24 col-md-6
+    </aside>>
+
+     -->
   </section>
 </section></code></pre>
 <!-- end code block -->
@@ -594,7 +631,7 @@
 <!-- end code block -->
 
             <p>
-              In this example the row heights <u>are not equal</u>. If that's the desired layout, some extra classes need to be added to convert the rows into table rows.
+              In this example the row heights <u>are not equal</u>. If that's the desired layout, extra classes need to be added to convert the rows into table rows.
             </p>
 
             <section class="container-fluid ols-result-detail container-height-md height-top">
@@ -789,7 +826,7 @@
               <aside class="row-fluid col-xs-24 col-md-12 col-md-push-6 ols-aside-contact">
                 <article class="col-xs-24 inverse">
                   <header>
-                    <figure class="round-image">
+                    <figure class="round-image rounded">
                       <img src="http://placehold.it/120x120" alt="QuickPot"/>
                       <figcaption>
                         <h5 class="ols-label-sm silent">Contact the office in</h5>
@@ -824,7 +861,7 @@
   <aside class="row-fluid col-xs-24 col-md-8 ols-aside-contact">
     <article class="col-xs-24 inverse">
       <header>
-        <figure class="round-image">
+        <figure class="round-image rounded">
           <img src="http://placehold.it/85x85" alt="Image"/>
           <figcaption>
             <h5 class="ols-label-sm silent">Contact the office in</h5>
@@ -1204,6 +1241,64 @@
           <!-- Navigation -->
           <article>
             <h2 class="toc-heading" id="navigation">Navigation</h2>
+            <h3 class="toc-heading" id="vertical-navigation">Vertical Navigation</h3>
+
+            <section class="container-fluid clearfix spaced">
+              <section class="row-fluid">
+                <nav class="col-xs-24 col-md-8 col-md-push-8 ols-menu-container not-fixed">
+                  <section class="ols-menu">
+                    <ul class="menu-list">
+                      <li>
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Overview</span>
+                        </a>
+                      </li>
+                      <li class="active">
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Active menu</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Projects</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Services</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </section>
+                </nav>
+              </section>
+            </section>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><nav class="col-xs-24 col-md-4 ols-menu-container ols-aside-left">
+  <section class="ols-menu">
+    <ul class="menu-list">
+      <li>
+        <a href="#nowhere">
+          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+          <span>Menu item</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="#nowhere">
+          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+          <span>Active menu item</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</nav></code></pre>
+<!-- end code block -->
+
           </article>
 
           <!-- Animations -->

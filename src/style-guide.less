@@ -117,7 +117,7 @@
  * Paragraphs & other typographical elements
  *
  */
- body {
+body {
   .light();
   font-size: 15px;
   line-height: 22px;
@@ -260,7 +260,7 @@ p{
     vertical-align: center;
   }
 }
-//sidebar: concat
+
 .ols-aside-contact{
   padding: 20px 30px 20px 30px;
   .col(@col_gray_6, b);
@@ -306,6 +306,24 @@ p{
   }
 }
 
+.ols-aside-right, .ols-aside-left{
+  .stretch(h);
+  .abs();
+}
+
+.ols-aside-right{
+  right: 0;
+}
+
+.ols-aside-left{
+  left:0;
+}
+
+.sidebar-fixed{
+  .fix();
+  top: 0;
+  overflow: scroll;
+}
 /*
  * Lists
  *
@@ -507,6 +525,67 @@ p{
   }
 }
 
+.ols-menu-container{
+  border-right:@bst @col_gray_4;
+  border-left:@bstt @col_base_3;
+
+  .ols-menu{
+    .col(@w, b);
+
+    .menu-list{
+      padding-left: 0;
+
+      li{
+        list-style-type: none;
+        border-bottom:@bst @col_gray_4;
+        padding: 5px 10px 5px 10px;
+        .animate(@animation_time_short, @transition_default);
+
+        &:hover{
+          .animate(@animation_time_short, @transition_default);
+          .col(@col_gray_3, b);
+        }
+
+        a{
+          .animate(@animation_time_short, @transition_default);
+          width:100%;
+          color:@col_text;
+          line-height:@menu_image_height;
+          .inline-block();
+
+          .menu-icon{
+            .inline-block();
+            .fl();
+            margin-right:15px;
+            height:@menu_image_height;
+            width:@menu_image_height;
+            background-repeat:no-repeat;
+            background-position: center;
+            background-color:@w;
+          }
+
+          //change these
+          .company-services{
+            background-image: url('/assets/images/icon_menu_services.svg');
+          }
+
+          .company-projects{
+            background-image: url('/assets/images/icon_menu_projects.svg');
+          }
+        }
+      }
+
+      li.active{
+        .col(@col_gray_4, b);
+        .animate(@animation_time_short, @transition_default);
+
+        &:hover{
+          .col(@col_gray_4, b);
+        }
+      }
+    }
+  }
+}
 /*
  * Global properties
  * Can be added as a class to any element
@@ -516,8 +595,8 @@ p{
   img{
     max-width: 77px;
     .fl();
-    .border-radius(50%);
     border: 2px solid @col_base_3;
+    .round();
 
     @media only screen and (min-width:@bp_md){
       max-width: 85px;
@@ -551,6 +630,10 @@ p{
 .silent{
   .light();
   color: @col_gray_6;
+}
+
+.rounded{
+  .round();
 }
 
 .inverse{
