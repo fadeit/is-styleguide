@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     less = require('gulp-less'),
     concat = require('gulp-concat'),
-    iconfont = require('gulp-iconfont'),
+    svgSprite = require('gulp-svg-sprite'),
     LessPluginCleanCSS = require("less-plugin-clean-css"),
     cleancss = new LessPluginCleanCSS({
       advanced: true,
@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 gulp.task('less', function(){
   gulp.src([
         './src/style-guide.less',
-        './assets/generated-webfont.less'
+        './assets/sprites/sprite.less'
       ])
       .pipe(less({
         plugins: [cleancss]
@@ -47,31 +47,32 @@ gulp.task('copy-styleguide-images', function(){
       .pipe(gulp.dest('./dist/images/'));
 });
 
-gulp.task('icon-fonts', function(){
-  gulp.src(['./assets/icon-fonts/*.svg'])
-      .pipe(iconfont({
-        fontName: 'ols',
-        appendCodepoints: true,
-        normalize: true
-      }))
-      .on('codepoints', function(codepoints, options) {
-        var i,
-            fileContents = '',
-            cssEscape = '';
+gulp.task('copy-styleguide-sprites', function(){
+  gulp.src([
+        './assets/sprites/**/*.svg'
+      ])
+      .pipe(gulp.dest('./dist/'));
+});
 
-        //wild hacky way, has to do for now; works up to i=100
-        for(i = 0; i <= codepoints.length - 1; i++){
-          cssEscape = ((i < 10) ? '"\\E00' : '"\\E0');
-
-          fileContents +=
-            '.' + codepoints[i].name + ':after {\n' +
-              '  content: ' + cssEscape + (i + 1) + '";\n' +
-            '}\n\n';
+gulp.task('svg-sprites', function(){
+  var config = {
+    mode: {
+      css: {
+        dest: '',
+        prefix: 'ols-',
+        sprite: 'images/svg-sprite.svg',
+        bust: false,
+        dimensions: true,
+        render: {
+          less: true
         }
+      }
+    }
+  };
 
-        fs.writeFile('./assets/generated-webfont.less', fileContents);
-      })
-      .pipe(gulp.dest('./dist/fonts/'));
+  gulp.src('./assets/svg/*.svg')
+    .pipe(svgSprite(config))
+    .pipe(gulp.dest('./assets/sprites/'));
 });
 
 gulp.task('watch', function(){
@@ -92,6 +93,7 @@ gulp.task('example-page', [
 gulp.task('dist', [
   'copy-styleguide-fonts',
   'copy-styleguide-images',
-  'icon-fonts',
+  'svg-sprites',
+  'copy-styleguide-sprites',
   'less'
 ]);

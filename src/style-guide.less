@@ -44,17 +44,8 @@
   font-style: normal;
 }
 
-.ols-icon{
-  &:after{
-    font-family:"ols";
-    .inline-block();
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-style: normal;
-    line-height:1;
-    .rel();
-    top:1px;
-  }
+.ols-svg{
+  .inline-block();
 }
 
 /*
@@ -420,9 +411,13 @@ p{
       margin-top:20px;
 
       &:before{
-        font-family: 'ols';
-        content: '\E001';
-        font-size: 11px;
+        content:'';
+        .inline-block();
+        background-repeat: no-repeat;
+        background-image: url(images/svg-sprite.svg);
+        background-position: 0 99.84956407772523%;
+        width: 16.26px;
+        height: 13.255px;
         margin-right: 5px;
         .rel();
         top: 1px;
@@ -489,7 +484,7 @@ p{
       .fl();
 
       &:active{
-        .col(@col_gray_7);
+        opacity:0.8;
       }
     }
 
@@ -515,14 +510,27 @@ p{
       }
     }
 
-    .ols-icon{
-      &:after{
-        font-size: 14px;
-        top: -2px;
-        margin-left:10px;
-      }
+    //update
+    .ols-svg{
+      .rel();
+      top:-3px;
+      margin-left:5px;
     }
   }
+}
+
+//add chapter - images
+//change these
+.ols-image-services{
+  //edit cog bg
+}
+
+.ols-image-services{
+  background-image: url('/assets/images/_image_menu_services.svg');
+}
+
+.ols-image-projects{
+  background-image: url('/assets/images/_image_menu_projects.svg');
 }
 
 .ols-menu-container{
@@ -547,7 +555,6 @@ p{
         }
 
         a{
-          .animate(@animation_time_short, @transition_default);
           width:100%;
           color:@col_text;
           line-height:@menu_image_height;
@@ -556,6 +563,7 @@ p{
           .menu-icon{
             .inline-block();
             .fl();
+            border:@bst @col_base_3;
             margin-right:15px;
             height:@menu_image_height;
             width:@menu_image_height;
@@ -563,24 +571,30 @@ p{
             background-position: center;
             background-color:@w;
           }
-
-          //change these
-          .company-services{
-            background-image: url('/assets/images/icon_menu_services.svg');
-          }
-
-          .company-projects{
-            background-image: url('/assets/images/icon_menu_projects.svg');
-          }
         }
       }
 
       li.active{
         .col(@col_gray_4, b);
-        .animate(@animation_time_short, @transition_default);
 
         &:hover{
           .col(@col_gray_4, b);
+        }
+
+        a{
+          cursor:default;
+        }
+      }
+
+      li.highlighted{
+        .col(@col_base_2, b);
+
+        &:hover{
+          .col(lighten(@col_base_2, 5%), b);
+        }
+
+        a{
+          .col(@w);
         }
       }
     }
