@@ -569,7 +569,7 @@ p{
             width:@menu_image_height;
             background-repeat:no-repeat;
             background-position: center;
-            background-color:@w;
+            .col(@w, b);
           }
         }
       }
@@ -595,6 +595,23 @@ p{
 
         a{
           .col(@w);
+
+          .menu-icon{
+            .col(@col_base_3, b);
+          }
+        }
+      }
+
+      li.highlighted.active{
+        .col(@col_base_3, b);
+        border-bottom:@bst darken(@col_base_3, 5%);
+
+        &:hover{
+          .col(@col_base_3, b);
+        }
+
+        a{
+          cursor:default;
         }
       }
     }
