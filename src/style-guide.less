@@ -49,6 +49,104 @@
 }
 
 /*
+ * Forms and inputs (also includes some link styles [outlines/focus])
+ *
+ */
+a,
+textarea,
+input[type] {
+  outline-color: @col_base_2;
+
+  &:focus{
+    outline-style: thin solid;
+    outline-color: @col_base_2;
+  }
+}
+
+textarea,
+input[type] {
+  outline: 0;
+  border: 0;
+  border-bottom:@bstm @col_gray_6;
+
+  &:focus{
+    border-bottom:@bstm @col_base_4;
+  }
+}
+
+textarea{
+  line-height: 2;
+  max-width:100%;
+}
+
+.input-row{
+  margin-top:15px;
+  padding-top:15px;
+  .rel();
+
+  label{
+    .animate(@animation_time_s_short, @transition_default);
+    .stretch();
+    .inline-block();
+    .abs();
+    cursor:text;
+  }
+
+  input[type], textarea{
+    .stretch();
+  }
+
+  textarea{
+    padding-top:0;
+  }
+
+  .placeholder-color(@w);
+  .placeholder-hide();
+  //animate placeholder transitions
+  .placeholder-animate();
+}
+
+.input-row.has-error{
+  label{
+    .col(red);
+  }
+
+  input[type], textarea{
+    border-color:red;
+    .col(red);
+  }
+}
+
+.input-row.input-focused{
+  label{
+    margin-top:-20px;
+    font-size:@fs_small - 1;
+    .col(@col_base_4);
+  }
+
+  input, textarea {
+    border-bottom:@bstm @col_base_4;
+  }
+
+  .placeholder-show();
+  .placeholder-color(@col_gray_6);
+}
+
+/*
+ * Core browser display
+ *
+ */
+::selection{
+  .col(@col_base_2, b);
+  .col(@w);
+}
+::-moz-selection{
+  .col(@col_base_2, b);
+  .col(@w);
+}
+
+
+/*
  * Headings: Generating all styles
  *
  */
@@ -439,7 +537,7 @@ p{
   .rel();
   letter-spacing: 2px;
   margin: 50px 90px 20px 90px;
-  width: calc(100% - @ld_side_margins*2);
+  width: ~"calc(100% - @{ld_side_margins}*2)";
 
   &:before{
     content:"";
@@ -485,6 +583,12 @@ p{
 
       &:active{
         opacity:0.8;
+      }
+
+      &:focus{
+        opacity:0.8;
+        margin-left:-1px;
+        border-left:@bst @col_base_1;
       }
     }
 

@@ -1138,7 +1138,7 @@
           </article>
 
           <!-- Buttons -->
-          <article id="buttons">
+          <article>
             <h2 class="toc-heading" id="buttons">Buttons &amp; Links</h2>
           </article>
 
@@ -1233,6 +1233,69 @@
       </li>
     </ul>
   </nav>
+</section></code></pre>
+<!-- end code block -->
+
+            <h3 class="toc-heading" id="text-input">Text input</h3>
+            <p>
+              This is the default text input. It requires JavaScript to work properly without JavaScript, as it needs an extra class for the focused state.
+              <br/>
+              Focused text inputs need a <u>input-focused</u> class on their parent <u>input-row</u>. Static examples are displayed below.
+            </p>
+
+            <section class="input-row spaced">
+              <label for="name" class="label-sm silent">Name</label>
+              <input type="text" id="name" placeholder="Please type your name" required/>
+            </section>
+
+            <section class="input-row spaced extra-space input-focused">
+              <label for="surname" class="label-sm silent">Surname</label>
+              <input type="text" id="surname" value="Alex" placeholder="Please type your surname"/>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="input-row">
+  <label for="name" class="label-sm silent">Name</label>
+  <input type="text" id="name" placeholder="Please type your name"/>
+</section>
+
+<!-- focused input, requires the 'input-focused' class -->
+<section class="input-row input-focused">
+  <label for="surname" class="label-sm silent">Surname</label>
+  <input type="text" id="surname" placeholder="Please type your surname" value="Alex"/>
+</section></code></pre>
+<!-- end code block -->
+
+            <br/>
+            <p>
+              A dynamic example is shown below, but this style guide doesn't use AngularJS, so it needs to be implemented in the production code. A directive attribute is a great idea. Don't forget to check for the input content (if there is some content, don't remove the input-focused class).<br/>
+              See <b>./assets/this-styleguide.js</b> for an implementation example (Vanilla JS, the <b>function focusTextInput()</b> method).
+            </p>
+
+            <section class="input-row dynamic-input-row spaced">
+              <label for="dynamic-input" class="label-sm silent">Dynamic Input</label>
+              <input type="text" id="dynamic-input" placeholder="Type something"/>
+            </section>
+
+
+            <h3 class="toc-heading" id="textarea">Textarea</h3>
+            <p>
+              The example below is dynamic, but textareas have the same requirement as text inputs: a <u>input-focused</u> class on their parent <u>input-row</u>.
+            </p>
+
+            <section class="input-row dynamic-input-row spaced extra-space">
+              <label for="message" class="label-sm silent">Write a comment</label>
+              <textarea id="message" placeholder="Please type a message here"></textarea>
+            </section>
+
+<pre class="code-toolbar"><code class="language-markup"><section class="input-row">
+  <label for="message" class="label-sm silent">Write a comment</label>
+  <textarea id="message" placeholder="Please type a message here"></textarea>
+</section>
+
+<!-- focused input, requires the 'input-focused' class -->
+<section class="input-row focused-input">
+  <label for="message" class="label-sm silent">Write a comment</label>
+  <textarea id="message" placeholder="Please type a message here"></textarea>
 </section></code></pre>
 <!-- end code block -->
 

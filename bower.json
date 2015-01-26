@@ -27,7 +27,7 @@
     "tests"
   ],
   "devDependencies": {
-    "bootstrap": "fadeit/bootstrap#v3.5"
+    "bootstrap": "fadeit/bootstrap#v3.5.1"
   },
   "dependencies": {
     "prism-toolbar": "dandaniel/prism-toolbar#v2.1.0"
