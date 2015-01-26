@@ -559,6 +559,9 @@ p{
           color:@col_text;
           line-height:@menu_image_height;
           .inline-block();
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
 
           .menu-icon{
             .inline-block();
@@ -575,10 +578,10 @@ p{
       }
 
       li.active{
-        .col(@col_gray_4, b);
+        .col(darken(@col_gray_4, 5%), b);
 
         &:hover{
-          .col(@col_gray_4, b);
+          .col(darken(@col_gray_4, 5%), b);
         }
 
         a{
@@ -588,9 +591,10 @@ p{
 
       li.highlighted{
         .col(@col_base_2, b);
+        border-bottom: @bst darken(@col_base_2, 5%);
 
         &:hover{
-          .col(lighten(@col_base_2, 5%), b);
+          .col(darken(@col_base_2, 5%), b);
         }
 
         a{
@@ -614,9 +618,68 @@ p{
           cursor:default;
         }
       }
-    }
-  }
-}
+
+      li.submenu{
+        padding: 0;
+        border:none;
+
+        ul{
+          li{
+            padding: 5px 10px 0px 17px;
+            .col(@col_gray_3, b);
+            border-bottom:@bst darken(@col_gray_3, 5%);
+
+            &:hover{
+              .col(darken(@col_gray_3, 5%), b);
+            }
+
+            a{
+              line-height: 35px;
+
+              .menu-icon{
+                margin-right:22px;
+                height:@submenu_image_height;
+                width:@submenu_image_height;
+              }
+            }
+          }
+
+          li.active{
+            .col(darken(@col_gray_4, 10%), b);
+
+            &:hover{
+              .col(darken(@col_gray_4, 10%), b);
+            }
+          }
+        }
+
+        ul.highlighted{
+          li{
+            .col(@col_base_2, b);
+            border-bottom:@bst darken(@col_base_2, 5%);
+
+            &:hover{
+              .col(darken(@col_base_2, 5%), b);
+            }
+
+            a{
+              .col(@w);
+            }
+          } //li
+
+          li.active{
+            .col(darken(@col_base_3, 5%), b);
+            border-bottom:@bst darken(@col_base_3, 5%);
+
+            &:hover{
+              .col(darken(@col_base_3, 5%), b);
+            }
+          } //li.active
+        } //ul.highlithed
+      } //submenu
+    } //ul
+  } //ols-menu
+} //ols-menu-container
 /*
  * Global properties
  * Can be added as a class to any element
