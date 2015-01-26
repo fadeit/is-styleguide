@@ -614,11 +614,13 @@ p{
       }
     }
 
-    //update
     .ols-svg{
-      .rel();
-      top:-3px;
-      margin-left:5px;
+      .abs();
+      top: -9999px;
+      bottom: -9999px;
+      left: -9999px;
+      right: -9999px;
+      margin: auto;
     }
   }
 }
@@ -679,6 +681,7 @@ p{
             .col(@w, b);
             .ta-c();
             overflow: hidden;
+            .rel();
           }
         }
       }
