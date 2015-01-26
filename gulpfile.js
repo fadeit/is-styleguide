@@ -56,6 +56,11 @@ gulp.task('copy-styleguide-sprites', function(){
 
 gulp.task('svg-sprites', function(){
   var config = {
+    shape: {
+      spacing: {
+        padding: 10
+      }
+    },
     mode: {
       css: {
         dest: '',
