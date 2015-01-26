@@ -63,6 +63,7 @@ gulp.task('svg-sprites', function(){
         sprite: 'images/svg-sprite.svg',
         bust: false,
         dimensions: true,
+        layout: 'vertical',
         render: {
           less: true
         }
