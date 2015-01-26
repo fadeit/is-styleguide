@@ -615,12 +615,9 @@ p{
     }
 
     .ols-svg{
-      .abs();
-      top: -9999px;
-      bottom: -9999px;
-      left: -9999px;
-      right: -9999px;
-      margin: auto;
+      .rel();
+      top:-3px;
+      margin-left:5px;
     }
   }
 }
@@ -682,6 +679,15 @@ p{
             .ta-c();
             overflow: hidden;
             .rel();
+          }
+
+          .ols-svg{
+            .abs();
+            top: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            right: -9999px;
+            margin: auto;
           }
         }
       }
