@@ -650,7 +650,7 @@ p{
       li{
         list-style-type: none;
         border-bottom:@bst @col_gray_4;
-        padding: 5px 10px 5px 10px;
+        padding: 5px 10px 0px 10px;
         .animate(@animation_time_short, @transition_default);
 
         &:hover{
@@ -670,13 +670,15 @@ p{
           .menu-icon{
             .inline-block();
             .fl();
-            border:@bst @col_base_3;
+            border:@bstm @col_base_3;
             margin-right:15px;
             height:@menu_image_height;
             width:@menu_image_height;
             background-repeat:no-repeat;
             background-position: center;
             .col(@w, b);
+            .ta-c();
+            overflow: hidden;
           }
         }
       }
@@ -705,7 +707,7 @@ p{
           .col(@w);
 
           .menu-icon{
-            .col(@col_base_3, b);
+            .col(lighten(@col_base_3, 5%), b);
           }
         }
       }
