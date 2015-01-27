@@ -93,6 +93,7 @@ textarea{
 .input-row{
   margin-top:15px;
   padding-top:15px;
+  padding-bottom: 30px;
   .rel();
 
   label{
@@ -111,6 +112,12 @@ textarea{
     padding-top:0;
   }
 
+  .help-block(){
+    .abs();
+    margin-top: 0;
+    font-size: 13px;
+  }
+
   .placeholder-color(@w);
   .placeholder-hide();
   //animate placeholder transitions
@@ -125,6 +132,10 @@ textarea{
   input, textarea{
     border-color:red;
     .col(red);
+
+    &:focus{
+      border-color:red;
+    }
   }
 }
 
@@ -627,7 +638,7 @@ p{
 
     .ols-svg{
       .rel();
-      top:-3px;
+      top: 5px;
       margin-left:5px;
     }
   }
