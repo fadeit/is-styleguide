@@ -642,6 +642,85 @@ p{
       margin-left:5px;
     }
   }
+
+  .ols-location-group{
+    .fr();
+
+    .ols-location-label{
+      .col(@w, b);
+    }
+
+    .ols-generic-location{
+      .col(@col_base_3, b);
+      .inline-block();
+      padding:0 10px 0 20px;
+      height: @ld_dropdown_size - 2 * @ld_border_size;
+      line-height: @ld_dropdown_size - 2 * @ld_border_size;
+
+      .ols-round-svg-container{
+        .inline-block();
+        .col(darken(@col_base_3, 10%), b);
+        height: @submenu_image_height;
+        width: @submenu_image_height;
+        .rel();
+        top: -2px;
+        vertical-align: middle;
+
+        .ols-svg{
+          .abs();
+          top: -9999px;
+          bottom: -9999px;
+          left: -9999px;
+          right: -9999px;
+          margin: auto;
+        }
+      }
+
+      input{
+        margin-left:10px;
+        line-height:@lh_h4;
+        font-size:@fs_h4;
+        .col(@w);
+        .col(transparent, b);
+        border-bottom:@bst darken(@col_base_3, 10%);
+        .animate(@animation_time_short, @transition_default);
+
+        &:focus {
+          .animate(@animation_time_short, @transition_default);
+          border-bottom:@bst darken(@col_base_3, 20%);
+        }
+      }
+
+      .ols-icon-geolocate{
+        .pointer();
+        .rel();
+        top: 15px;
+        .animate(@animation_time_short, @transition_default);
+
+        &:hover{
+          opacity:0.8;
+          .animate(@animation_time_short, @transition_default);
+        }
+      }
+
+      .placeholder-color(darken(@col_base_3, 15%));
+    }// end ols-generic-location
+  }
+
+  .ols-search{
+    .fr();
+    border:0;
+    padding:inherit 40px inherit 40px;
+    .col(lighten(@col_base_4, 10%), b);
+    .col(saturate(@col_base_3, 5%));
+    .animate(@animation_time_short, @transition_default);
+
+    &:hover{
+      .col(lighten(@col_base_3, 15%));
+      .col(lighten(@col_base_4, 5%), b);
+      .animate(@animation_time_short, @transition_default);
+    }
+  }
 }
 
 //add chapter - images

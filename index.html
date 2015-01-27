@@ -1167,6 +1167,7 @@
                 </nav>
               </section>
             </section>
+
 <!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"><section class="row-fluid ols-search-row">
   <span class="ols-label-lg">I am looking for</span>
@@ -1234,6 +1235,46 @@
     </ul>
   </nav>
 </section></code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="large-search-button">Large search button</h3>
+            <p>The button to be used in combination with the large search input</p>
+
+            <section class="container-fluid no-padding spaced">
+              <section class="row-fluid ols-search-row tiny-search-row">
+                <span class="ols-label-lg">Look</span>
+
+                <button type="button" class="btn btn-primary ols-label-lg silent ols-search">Search</button>
+
+                <section class="ols-location-group">
+                  <span class="ols-label-lg ols-location-label">in</span>
+                  <section class="ols-generic-location">
+                    <figure class="menu-icon rounded ols-round-svg-container">
+                      <span class="ols-svg ols-icon-location"></span>
+                    </figure>
+                    <input type="text" placeholder="Your location" />
+                    <span class="ols-svg ols-icon-geolocate"></span>
+                  </section>
+                </section>
+              </section><!-- end ols-search-row -->
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="row-fluid ols-search-row tiny-search-row">
+  <span class="ols-label-lg">Look</span>
+
+  <button type="button" class="btn btn-primary ols-label-lg silent ols-search">Search</button>
+
+  <section class="ols-location-group">
+    <span class="ols-label-lg ols-location-label">in</span>
+    <section class="ols-generic-location">
+      <figure class="menu-icon rounded ols-round-svg-container">
+        <span class="ols-svg ols-icon-location"></span>
+      </figure>
+      <input type="text" placeholder="Your location" />
+      <span class="ols-svg ols-icon-geolocate"></span>
+    </section>
+  </section>
+</section>
+</code></pre>
 <!-- end code block -->
 
             <h3 class="toc-heading" id="text-input">Text input</h3>
@@ -1465,8 +1506,8 @@
                   <span class="ols-svg ols-icon-checkmark-gray"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-icon-checkmark-gray
+                  ols-svg<br/>
+                  ols-icon-checkmark-gray
                 </span>
               </section>
 
@@ -1475,8 +1516,8 @@
                   <span class="ols-svg ols-icon-edit-cog"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-icon-edit-cog
+                  ols-svg<br/>
+                  ols-icon-edit-cog
                 </span>
               </section>
 
@@ -1485,8 +1526,8 @@
                   <span class="ols-svg ols-icon-edit-single-cog"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-icon-edit-single-cog
+                  ols-svg<br/>
+                  ols-icon-edit-single-cog
                 </span>
               </section>
 
@@ -1495,8 +1536,8 @@
                   <span class="ols-svg ols-icon-edit-pen"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-icon-edit-pen
+                  ols-svg<br/>
+                  ols-icon-edit-pen
                 </span>
               </section>
 
@@ -1505,8 +1546,8 @@
                   <span class="ols-svg ols-icon-location"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-icon-location
+                  ols-svg<br/>
+                  ols-icon-location
                 </span>
               </section>
 
@@ -1515,8 +1556,8 @@
                   <span class="ols-svg ols-icon-reveal"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-icon-reveal
+                  ols-svg<br/>
+                  ols-icon-reveal
                 </span>
               </section>
 
@@ -1525,8 +1566,8 @@
                   <span class="ols-svg ols-icon-reveal-gray"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-icon-reveal-gray
+                  ols-svg<br/>
+                  ols-icon-reveal-gray
                 </span>
               </section>
 
@@ -1535,8 +1576,8 @@
                   <span class="ols-svg ols-icon-user-blank"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-icon-user-blank
+                  ols-svg<br/>
+                  ols-icon-user-blank
                 </span>
               </section>
 
@@ -1545,8 +1586,8 @@
                   <span class="ols-svg ols-image-contact-information"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-image-contact-information
+                  ols-svg<br/>
+                  ols-image-contact-information
                 </span>
               </section>
 
@@ -1555,8 +1596,8 @@
                   <span class="ols-svg ols-image-menu-projects"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-image-menu-projects
+                  ols-svg<br/>
+                  ols-image-menu-projects
                 </span>
               </section>
 
@@ -1565,8 +1606,18 @@
                   <span class="ols-svg ols-image-menu-services"></span>
                 </span>
                 <span class="icon-class">
-                  .ols-svg<br/>
-                  .ols-image-menu-services
+                  ols-svg<br/>
+                  ols-image-menu-services
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-geolocate"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-geolocate
                 </span>
               </section>
             </section>
