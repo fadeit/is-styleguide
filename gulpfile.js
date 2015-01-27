@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     svgSprite = require('gulp-svg-sprite'),
     LessPluginCleanCSS = require("less-plugin-clean-css"),
+    jshint = require('gulp-jshint'),
     cleancss = new LessPluginCleanCSS({
       advanced: true,
       aggressiveMerging: true
@@ -28,6 +29,12 @@ gulp.task('this-styleguide', function(){
         plugins: [cleancss]
       }))
       .pipe(gulp.dest('./assets/'));
+});
+
+gulp.task('jshint', function() {
+  return gulp.src('./assets/this-styleguide.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('copy-styleguide-fonts', function(){
@@ -82,6 +89,7 @@ gulp.task('svg-sprites', function(){
 });
 
 gulp.task('watch', function(){
+  gulp.watch('./assets/**/*.js', ['jshint']);
   gulp.watch('./src/**/*.less', ['dist']);
   gulp.watch('./assets/**/*.less', ['example-page']);
 });
@@ -97,6 +105,7 @@ gulp.task('example-page', [
 ]);
 
 gulp.task('dist', [
+  'jshint',
   'copy-styleguide-fonts',
   'copy-styleguide-images',
   'svg-sprites',

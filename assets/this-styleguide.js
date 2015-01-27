@@ -41,7 +41,7 @@
     for(i = 0; i <= tocItems.length - 1; i++) {
       tocListItem = document.createElement('li');
       tocAnchor = document.createElement('a');
-      tocAnchor.href = "#"+tocItems[i].id;;
+      tocAnchor.href = "#"+tocItems[i].id;
       tocAnchor.innerHTML = tocItems[i].innerHTML;
 
       //append anchor to list item
@@ -50,7 +50,7 @@
       if(tocLastTag !== tocItems[i].tagName){
         //append list
         if(tocLastList){
-          tocNestedListItem.appendChild(tocLastList)
+          tocNestedListItem.appendChild(tocLastList);
           tocContainer.appendChild(tocNestedListItem);
         }
 
@@ -101,7 +101,7 @@
   (function focusTextInput(){
     var i,
         j,
-        dynamic_input_rows = document.querySelectorAll('.dynamic-input-row')
+        dynamic_input_rows = document.querySelectorAll('.dynamic-input-row');
 
     for(i = 0; i <= dynamic_input_rows.length - 1; i++){
       addInputListenersTo(dynamic_input_rows[i].querySelectorAll('input[type], textarea'));
