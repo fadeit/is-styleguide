@@ -91,9 +91,9 @@ textarea{
  */
 
 .input-row{
-  margin-top:15px;
+  margin-bottom:15px;
   padding-top:15px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   .rel();
 
   label{
@@ -112,31 +112,21 @@ textarea{
     padding-top:0;
   }
 
-  .help-block(){
+  .help-block{
     .abs();
+    top: 42px;
+    left:0;
     margin-top: 0;
     font-size: 13px;
+    .col(@w, b);
+    .inline-block();
+    .stretch();
   }
 
   .placeholder-color(@w);
   .placeholder-hide();
   //animate placeholder transitions
   .placeholder-animate();
-}
-
-.input-row.has-error{
-  label{
-    .col(red);
-  }
-
-  input, textarea{
-    border-color:red;
-    .col(red);
-
-    &:focus{
-      border-color:red;
-    }
-  }
 }
 
 .input-row.input-focused{
@@ -148,12 +138,34 @@ textarea{
 
   input, textarea {
     border-bottom:@bstm @col_base_4;
+
+    &:focus{
+      border-bottom:@bstm @col_base_4;
+    }
   }
 
   .placeholder-show();
   .placeholder-color(@col_gray_6);
 }
 
+.input-row.input-focused.has-error{
+  input, textarea{
+    border-color:@red;
+    .col(@red);
+
+    &:focus{
+      border-color:@red;
+    }
+  }
+}
+
+.input-row.has-error{
+  label{
+    .col(@red);
+  }
+
+  .placeholder-color(@red);
+}
 /*
  * Core browser display
  *
@@ -417,6 +429,36 @@ p{
   }
 }
 
+.ols-aside-edit-map{
+  .col-xs-24{
+    height: 100%;
+
+    .company-map{
+      height:100%;
+    }
+  }
+}
+
+.ols-map-edit-input{
+  .abs();
+  margin: 30px @map_edit_input_margin;
+  padding: 20px 15px 10px 15px;
+  z-index: 1;
+  .col(@w, b);
+  width: ~'calc(100% - @{map_edit_input_margin}*2)';
+}
+
+.ols-profile-header{
+  margin: 30px 30px 10px 20px;
+  padding-left:10px;
+  border-left:@bstm @col_base_3;
+
+  .ols-label-lg{
+    margin-bottom: 0;
+  }
+}
+
+
 .ols-aside-right, .ols-aside-left{
   .stretch(h);
   .abs();
@@ -433,7 +475,7 @@ p{
 .sidebar-fixed{
   .fix();
   top: 0;
-  overflow: scroll;
+  overflow: auto;
 }
 /*
  * Lists
@@ -519,26 +561,32 @@ p{
 .ols-service-list{
   margin:0 0 20px 0;
 
+  .ols-label-md{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   ul{
     list-style-type: none;
     padding: 0 10px 0 10px;
+    margin-bottom:40px;
+    .clearfix();
 
     @media only screen and (min-width:@bp_md){
       padding:0;
     }
 
     li{
-      margin-top:20px;
-
       &:before{
         content:'';
         .inline-block();
         background-repeat: no-repeat;
         background-image: url(images/svg-sprite.svg);
-        background-position: 0 99.84956407772523%;
-        width: 16.26px;
-        height: 13.255px;
+        background-position: 10px 10px;
+        width: 36.26px;
+        height: 33.26px;
         margin-right: 5px;
+        margin-left: -20px;
         .rel();
         top: 1px;
         .col(@col_gray_6);
@@ -665,6 +713,7 @@ p{
         .rel();
         top: -2px;
         vertical-align: middle;
+        overflow: hidden;
 
         .ols-svg{
           .abs();
@@ -710,7 +759,7 @@ p{
   .ols-search{
     .fr();
     border:0;
-    padding:inherit 40px inherit 40px;
+    padding: 0 40px 0 40px;
     .col(lighten(@col_base_4, 10%), b);
     .col(saturate(@col_base_3, 5%));
     .animate(@animation_time_short, @transition_default);
@@ -779,7 +828,6 @@ p{
             .col(@w, b);
             .ta-c();
             overflow: hidden;
-            .rel();
           }
 
           span.ols-svg{
@@ -823,11 +871,11 @@ p{
       }
 
       li.highlighted.active{
-        .col(@col_base_3, b);
+        .col(lighten(@col_base_3, 15%), b);
         border-bottom:@bst darken(@col_base_3, 5%);
 
         &:hover{
-          .col(@col_base_3, b);
+          .col(lighten(@col_base_3, 15%), b);
         }
 
         a{
@@ -871,11 +919,11 @@ p{
 
         ul.highlighted{
           li{
-            .col(@col_base_2, b);
+            .col(darken(@col_base_2, 5%), b);
             border-bottom:@bst darken(@col_base_2, 5%);
 
             &:hover{
-              .col(darken(@col_base_2, 5%), b);
+              .col(darken(@col_base_2, 10%), b);
             }
 
             a{
@@ -884,11 +932,11 @@ p{
           } //li
 
           li.active{
-            .col(darken(@col_base_3, 5%), b);
-            border-bottom:@bst darken(@col_base_3, 5%);
+            .col(darken(@col_base_3, 10%), b);
+            border-bottom:@bst darken(@col_base_3, 15%);
 
             &:hover{
-              .col(darken(@col_base_3, 5%), b);
+              .col(darken(@col_base_3, 10%), b);
             }
           } //li.active
         } //ul.highlithed
