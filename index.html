@@ -1623,7 +1623,7 @@
           <!-- Animations -->
           <article>
             <h2 class="toc-heading" id="animations">Animations</h2>
-            <h3 class="toc-heading" id="loaders-and-spinners">Loaders and spinners</h3>
+            <h3 class="toc-heading" id="loader">Loader</h3>
             <p>
               The loader below should be used while large data requests are being resolved. It's a good idea to set a delay (around 300ms) and a minimum display time (around 500ms).
             </p>
@@ -1638,6 +1638,35 @@
                 </section>
               </section>
             </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"> <section class="ols-loader-container">
+  <section class="ols-label-md silent">Getting things done</section>
+  <section class="ols-loader">
+    <section class="element-animation">
+      <img src="dist/images/ols_loader.svg" width="1180" height="70">
+    </section>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+          <h3 class="toc-heading" id="spinner">Spinner</h3>
+          <p>
+            For quick async requests a spinner should indicate progress. Multiple spinner colors can be used, depending on the context.
+          </p>
+
+          <section class="container-fluid spaced extra-space top-space">
+            <section class="ols-spinner"></section>
+            <section class="ols-spinner light-green-spinner"></section>
+            <section class="ols-spinner gray-spinner"></section>
+            <section class="ols-spinner black-spinner"></section>
+          </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="ols-spinner"></section>
+<section class="ols-spinner light-green-spinner"></section>
+<section class="ols-spinner gray-spinner"></section>
+<section class="ols-spinner black-spinner"></section></code></pre>
+<!-- end code block -->
+
           </article>
 
           <!-- Misc -->

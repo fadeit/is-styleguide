@@ -27,7 +27,7 @@ gulp.task('this-styleguide', function(){
   gulp.src('./assets/this-styleguide.less')
       .pipe(less({
         plugins: [cleancss]
-      }))
+      }).on('error', function(e) {console.log(e)}))
       .pipe(gulp.dest('./assets/'));
 });
 
