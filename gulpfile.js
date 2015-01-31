@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     svgSprite = require('gulp-svg-sprite'),
     LessPluginCleanCSS = require("less-plugin-clean-css"),
+    autoprefixer = require('gulp-autoprefixer'),
     jshint = require('gulp-jshint'),
     cleancss = new LessPluginCleanCSS({
       advanced: true,
@@ -20,6 +21,10 @@ gulp.task('less', function(){
         plugins: [cleancss]
       }))
       .pipe(concat('ols-style-guide.css'))
+      .pipe(autoprefixer({
+            browsers: ['> 1%'],
+            cascade: false
+      }))
       .pipe(gulp.dest('./dist/'));
 });
 

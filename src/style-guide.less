@@ -200,11 +200,11 @@ textarea{
     border-bottom: @bstm @w;
     border-right: @bstm transparent;
     border-left: @bstm transparent;
-    -webkit-animation: spinnerAnimation linear 0.75s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: @animation_time_short;
-    animation-delay: @animation_time_short;
-    border-radius: 100%;
+    .border-radius(50%);
+    animation-name: spinnerAnimation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 0.75s;
   }
 }
 
@@ -1112,26 +1112,17 @@ p{
     .rel();
     margin:15px auto;
     z-index:1;
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); //fixes webkit bug
 
     .element-animation{
       .abs();
       .stretch();
       .stretch(h);
-      animation:loaderAnimation linear 5s;
+      animation-name:loaderAnimation;
       animation-iteration-count: infinite;
       animation-fill-mode: forwards;
-      -webkit-animation: loaderAnimation linear 5s;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-fill-mode:forwards;
-      -moz-animation: loaderAnimation linear 5s;
-      -moz-animation-iteration-count: infinite;
-      -moz-animation-fill-mode:forwards;
-      -o-animation: loaderAnimation linear 5s;
-      -o-animation-iteration-count: infinite;
-      -o-animation-fill-mode:forwards;
-      -ms-animation: loaderAnimation linear 5s;
-      -ms-animation-iteration-count: infinite;
-      -ms-animation-fill-mode:forwards;
+      animation-timing-function: linear;
+      animation-duration: 5s;
 
       img{
         max-width:none;
@@ -1150,18 +1141,12 @@ p{
   border-bottom: @bstm @col_base_3;
   border-right: @bstm transparent;
   border-left: @bstm transparent;
-
-  animation: spinnerAnimation linear 0.75s;
-  animation-iteration-count: infinite;
-  -moz-animation: spinnerAnimation linear 0.75s;
-  -moz-animation-iteration-count: infinite;
-  -o-animation: spinnerAnimation linear 0.75s;
-  -o-animation-iteration-count: infinite;
-  -ms-animation: spinnerAnimation linear 0.75s;
-  -ms-animation-iteration-count: infinite;
-  -webkit-animation: spinnerAnimation linear 0.75s;
-  -webkit-animation-iteration-count: infinite;
   .border-radius(50%);
+
+  animation-name: spinnerAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 0.75s;
 }
 
 .light-green-spinner{
@@ -1199,68 +1184,11 @@ p{
   }
 }
 
-@-moz-keyframes loaderAnimation{
-  0% {
-    transform: translate(-1160px,15px)  ;
-  }
-  100% {
-    transform: translate(0px,15px)  ;
-  }
-}
-
-@-webkit-keyframes loaderAnimation {
-  0% {
-    transform: translate(-1160px,15px)  ;
-  }
-  100% {
-    transform: translate(0px,15px)  ;
-  }
-}
-
-@-o-keyframes loaderAnimation {
-  0% {
-    transform: translate(-1160px,15px)  ;
-  }
-  100% {
-    transform: translate(-0px,15px)  ;
-  }
-}
-
-@-ms-keyframes loaderAnimation {
-  0% {
-    transform: translate(-1160px,15px)  ;
-  }
-  100% {
-    transform: translate(0px,15px)  ;
-  }
-}
-
 //spinner
 @keyframes spinnerAnimation{
-  100% {
-    transform: rotate( 180deg );
+  0% {
+    transform: rotate(0deg);
   }
-}
-
-@-moz-keyframes spinnerAnimation{
-  100% {
-    transform: rotate( 180deg );
-  }
-}
-
-@-webkit-keyframes spinnerAnimation{
-  100% {
-    transform: rotate( 180deg );
-  }
-}
-
-@-o-keyframes spinnerAnimation{
-  100% {
-    transform: rotate( 180deg );
-  }
-}
-
-@-ms-keyframes spinnerAnimation{
   100% {
     transform: rotate( 180deg );
   }
