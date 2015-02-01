@@ -169,6 +169,7 @@ textarea{
 
 .ols-bubbles{
   .bubble-row.conversation-input{
+    margin-top:40px;
     .col(@ws, b);
 
     &:nth-child(odd){
@@ -1162,6 +1163,56 @@ p{
         margin-top:10px;
         font-size:@fs_small;
       }
+    }
+  }
+}
+
+.bubble-row.force-message-left{
+  &:nth-child(even){
+    figure{
+      .fr();
+      right:0;
+    }
+
+    .bubble-message-container{
+      .fl();
+    }
+  }
+
+  &:nth-child(odd){
+    figure{
+      .fr();
+      right:0;
+      left: inherit;
+    }
+
+    .bubble-message-container{
+      .fl();
+    }
+  }
+}
+
+.bubble-row.force-message-right{
+  &:nth-child(even){
+    figure{
+      .fl();
+      left:0;
+    }
+
+    .bubble-message-container{
+      .fr();
+    }
+  }
+
+  &:nth-child(odd){
+    figure{
+      .fl();
+      left:0;
+      right:inherit;
+    }
+
+    .bubble-message-container{
+      .fr();
     }
   }
 }
