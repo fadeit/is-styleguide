@@ -1024,66 +1024,65 @@ p{
     } //ul
   } //ols-menu
 } //ols-menu-container
+
 /*
- * Global properties
- * Can be added as a class to any element
+ * Communication: reviews, messages, comments, etc
  *
  */
-.round-image{ //figure
-  img{
-    max-width: 77px;
-    .fl();
-    border: @bstm @col_base_3;
-    .round();
+.ols-bubbles{
+  .bubble-row{
+    margin-bottom:20px;
+    .rel();
 
-    @media only screen and (min-width:@bp_md){
-      max-width: 85px;
+    &:nth-child(even){
+      figure{
+        .fr();
+        right:0;
+      }
+
+      .bubble-message-container{
+        .fl();
+      }
     }
-  }
 
-  figcaption{
-    .fl();
-    margin-left:30px;
-  }
-}
+    &:nth-child(odd){
+      figure{
+        .fl();
+        left:0;
+      }
 
-.rectangular-image{
-  .rel();
+      .bubble-message-container{
+        .fr();
+      }
+    }
 
-  img{
-    .fr();
-  }
-}
+    figure{
+      .ta-c();
+      vertical-align: middle;
+      .abs();
+      top: ~'calc(50% - 120px/2)';
 
-.no-padding{
-  [class*='row-']{
-    padding:0;
-  }
-}
+      img{
+        float:none;
+        .inline-block();
+      }
 
-.bold{
-  .b();
-}
+      figcaption{
+        margin-top:10px;
+      }
+    }
 
-.silent{
-  .light();
-  color: @col_gray_6;
-}
+    .bubble-message-container{
+      vertical-align: middle;
+      padding:20px;
+      .col(@col_gray_4, b);
+      .border-radius(6px);
 
-.rounded{
-  .round();
-}
-
-.inverse{
-  [class*="ols-label-"]{
-    .col(@ws);
-  }
-
-  a{
-    .col(@col_gray_4);
-
-    &:hover{
-      .col(@ws);
+      .bubble-time{
+        .inline-block();
+        margin-top:10px;
+        font-size:@fs_small;
+      }
     }
   }
 }
@@ -1191,5 +1190,69 @@ p{
   }
   100% {
     transform: rotate( 180deg );
+  }
+}
+
+/*
+ * Global properties
+ * Can be added as a class to any element
+ *
+ */
+.round-image{ //figure
+  img{
+    max-width: 77px;
+    .fl();
+    border: @bstm @col_base_3;
+    .round();
+
+    @media only screen and (min-width:@bp_md){
+      max-width: 85px;
+    }
+  }
+
+  figcaption{
+    .fl();
+    margin-left:30px;
+  }
+}
+
+.rectangular-image{
+  .rel();
+
+  img{
+    .fr();
+  }
+}
+
+.no-padding{
+  [class*='row-']{
+    padding:0;
+  }
+}
+
+.bold{
+  .b();
+}
+
+.silent{
+  .light();
+  color: @col_gray_6;
+}
+
+.rounded{
+  .round();
+}
+
+.inverse{
+  [class*="ols-label-"]{
+    .col(@ws);
+  }
+
+  a{
+    .col(@col_gray_4);
+
+    &:hover{
+      .col(@ws);
+    }
   }
 }

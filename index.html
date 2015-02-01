@@ -37,7 +37,7 @@
 
     <section class="row-fluid">
       <aside class="col-xs-24 col-md-6">
-        <section id="toc-container">
+        <section id="toc-container" class="col-xs-24">
           <ul id="table-of-contents"></ul>
         </section>
       </aside>
@@ -421,6 +421,69 @@
     Relevant extra information
   </span>
 </header></code></pre>
+<!-- end code block -->
+            <h4 class="toc-heading" id="conversation-bubbles">Conversation bubbles</h4>
+            <p>
+              This component can be used in any conversation context, such as: reviews, messages or comments.
+            </p>
+
+            <section class="container-fluid spaced">
+              <section class="ols-bubbles">
+                <section class="row-fluid bubble-row">
+                  <figure class="col-xs-4 col-md-8 col-height-sm round-image rounded">
+                    <img src="http://placehold.it/85x85" alt="Image">
+                    <figcaption>
+                      4 stars by <b>Alex Testman</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-20 col-md-16 col-height-sm bubble-message-container">
+                    <section class="bubble-message">
+                      Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.
+                    </section>
+                    <span class="ols-label-sm silent bubble-time">
+                      5 minutes ago
+                    </span>
+                  </section>
+                </section>
+                <section class="row-fluid bubble-row">
+                  <figure class="col-xs-4 col-md-8 round-image rounded">
+                    <img src="http://placehold.it/85x85" alt="Image">
+                    <figcaption>
+                      4 stars by <b>Alex Testman</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-20 col-md-16 bubble-message-container">
+                    <section class="bubble-message">
+                      Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.<br/><br/>
+
+                      Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.
+                    </section>
+                    <span class="ols-label-sm silent bubble-time">
+                      5 minutes ago
+                    </span>
+                  </section>
+                </section>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="ols-bubbles">
+  <section class="row-fluid bubble-row">
+    <figure class="col-xs-4 col-md-8 col-height-sm round-image rounded">
+      <img src="http://placehold.it/85x85" alt="Image">
+      <figcaption>
+        4 stars by <b>Alex Testman</b>
+      </figcaption>
+    </figure>
+    <section class="col-xs-20 col-md-16 col-height-sm bubble-message-container">
+      <section class="bubble-message">
+        Bubble Text
+      </section>
+      <span class="ols-label-sm silent bubble-time">
+        5 minutes ago
+      </span>
+    </section>
+  </section>
+</section></code></pre>
 <!-- end code block -->
 
           </article>
@@ -925,7 +988,7 @@
             </p>
             <section class="container-fluid ols-company-profile spaced">
               <section class="row-fluid ols-service-list">
-                <ul>
+                <ul class="presentation">
                   <li class="col-xs-24 col-md-8">
                     Check the tire pressure
                   </li>
@@ -951,7 +1014,7 @@
 <pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-company-profile">
   <!-- Other rows will probably be in this container-fluid -->
   <section class="row-fluid ols-service-list">
-    <ul>
+    <ul class="presentation">
       <li class="col-xs-24 col-md-8">
         List item
       </li>
@@ -961,9 +1024,10 @@
 <!-- end code block -->
 
             <h4 class="toc-heading" id="service-list-result-detail">Service list (result detail)</h4>
+            <p>[TODO: not presentation, delete icons]</p>
             <section class="container-fluid ols-result-detail spaced">
               <section class="row-fluid ols-service-list">
-                <ul>
+                <ul class="presentation">
                   <li class="col-xs-24 col-md-12">
                     Check the tire pressure
                   </li>
@@ -988,7 +1052,7 @@
 <!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-result-detail">
   <section class="row-fluid ols-service-list">
-    <ul>
+    <ul class="presentation">
       <li class="col-xs-24 col-md-12">
         List item
       </li>
