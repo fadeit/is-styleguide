@@ -430,13 +430,13 @@
             <section class="container-fluid spaced">
               <section class="ols-bubbles">
                 <section class="row-fluid bubble-row">
-                  <figure class="col-xs-4 col-md-8 col-height-sm round-image rounded">
+                  <figure class="col-xs-6 col-md-8 col-height-sm round-image rounded">
                     <img src="http://placehold.it/85x85" alt="Image">
                     <figcaption>
                       4 stars by <b>Alex Testman</b>
                     </figcaption>
                   </figure>
-                  <section class="col-xs-20 col-md-16 col-height-sm bubble-message-container">
+                  <section class="col-xs-18 col-md-16 col-height-sm bubble-message-container">
                     <section class="bubble-message">
                       Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.
                     </section>
@@ -446,13 +446,13 @@
                   </section>
                 </section>
                 <section class="row-fluid bubble-row">
-                  <figure class="col-xs-4 col-md-8 round-image rounded">
+                  <figure class="col-xs-6 col-md-8 round-image rounded">
                     <img src="http://placehold.it/85x85" alt="Image">
                     <figcaption>
                       4 stars by <b>Alex Testman</b>
                     </figcaption>
                   </figure>
-                  <section class="col-xs-20 col-md-16 bubble-message-container">
+                  <section class="col-xs-18 col-md-16 bubble-message-container">
                     <section class="bubble-message">
                       Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.<br/><br/>
 
@@ -468,13 +468,13 @@
 <!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"><section class="ols-bubbles">
   <section class="row-fluid bubble-row">
-    <figure class="col-xs-4 col-md-8 col-height-sm round-image rounded">
+    <figure class="col-xs-6 col-md-8 col-height-sm round-image rounded">
       <img src="http://placehold.it/85x85" alt="Image">
       <figcaption>
         4 stars by <b>Alex Testman</b>
       </figcaption>
     </figure>
-    <section class="col-xs-20 col-md-16 col-height-sm bubble-message-container">
+    <section class="col-xs-18 col-md-16 col-height-sm bubble-message-container">
       <section class="bubble-message">
         Bubble Text
       </section>
@@ -1201,6 +1201,93 @@
           <article>
             <h2 class="toc-heading" id="buttons">Buttons &amp; Links</h2>
 
+            <h3 class="toc-heading" id="loading-button">Primary button</h3>
+            <p>This is the 'default' button. It supports a 'disabled' state which is also used for loading buttons. A 'dark' primary button is available for primary actions with lower priority, such as sending a message. The dark button can be used by appending the <u>dark</u> class to the <u>btn btn-primary</u> class.</p>
+            <section class="container-fluid spaced">
+              <button type="submit"
+                      class="btn btn-primary">
+                Press me
+              </button>
+              <button type="submit"
+                      class="btn btn-primary"
+                      disabled="disabled">
+                Can't press
+              </button>
+
+              <!-- dark primary button -->
+              <button type="submit"
+                      class="btn btn-primary dark">
+                Press me
+              </button>
+              <button type="submit"
+                      class="btn btn-primary dark"
+                      disabled="disabled">
+                Can't press
+              </button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><button type="submit" class="btn btn-primary">
+  Press me
+</button>
+<!-- disabled button -->
+<button type="submit" class="btn btn-primary" disabled="disabled">
+  Can't press
+</button>
+
+<!-- dark primary button -->
+<button type="submit"
+        class="btn btn-primary dark">
+  Press me
+</button>
+<button type="submit"
+        class="btn btn-primary dark"
+        disabled="disabled">
+  Can't press
+</button></code></pre>
+<!-- end code block -->
+
+            <h3 class="toc-heading" id="secondary-buttons">Secondary buttons</h3>
+            <p>Buttons to be used in other circumstances, such as 'important' (danger). Disabled states are also available for them.</p>
+            <section class="container-fluid spaced">
+              <button type="submit"
+                      class="btn btn-default">
+                Toggle function
+              </button>
+              <button type="submit"
+                      class="btn btn-default"
+                      disabled="disabled">
+                Can't press
+              </button>
+              <button type="submit"
+                      class="btn btn-danger">
+                Delete account
+              </button>
+              <button type="submit"
+                      class="btn btn-danger"
+                      disabled="disabled">
+                Can't press
+              </button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- default button -->
+<button type="submit" class="btn btn-default">
+  Send message
+</button>
+<!-- disabled button -->
+<button type="submit" class="btn btn-default" disabled="disabled">
+  Can't press
+</button>
+
+<!-- important button -->
+<button type="submit" class="btn btn-danger">
+  Delete account
+</button>
+<!-- disabled button -->
+<button type="submit" class="btn btn-danger" disabled="disabled">
+  Can't press
+</button></code></pre>
+<!-- end code block -->
+
             <h3 class="toc-heading" id="loading-button">Loading button</h3>
             <p>All buttons have a loading state that can be triggered by adding the <u>loading</u> class.</p>
 
@@ -1398,7 +1485,7 @@
               <label for="message" class="label-sm silent">Write a comment</label>
               <textarea id="message" placeholder="Please type a message here" rows="2"></textarea>
             </section>
-
+<!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"><section class="input-row">
   <label for="message" class="label-sm silent">Write a comment</label>
   <textarea id="message" placeholder="Please type a message here" rows="2"></textarea>
@@ -1409,6 +1496,63 @@
   <label for="message" class="label-sm silent">Write a comment</label>
   <textarea id="message" placeholder="Please type a message here"></textarea>
 </section></code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="conversation-input">Conversation input</h3>
+            <p>
+              This input should be used with <a href="#conversation-bubbles">conversation bubbles</a> (its layout inherits properties from conversation bubbles).<br/>
+              This input is not dynamic, for more info check out the <a href="#text-input">text input</a> section.
+            </p>
+
+            <form class="ols-bubbles spaced">
+              <section class="row-fluid bubble-row conversation-input">
+                <section class="col-xs-18 col-md-16 col-height-sm bubble-message-container">
+                  <section class="input-row">
+                    <label for="conversation-input" class="label-sm silent">Write a message</label>
+                    <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
+                  </section>
+                </section>
+                <figure class="col-xs-6 col-md-8 col-height-sm round-image rounded">
+                  <img src="http://placehold.it/85x85" alt="Image">
+                  <figcaption>
+                    <b>Alex Testman</b>
+                  </figcaption>
+                </figure>
+              </section>
+              <section class="row-fluid conversation-action">
+                <section class="col-xs-24">
+                  <button type="submit"
+                          class="btn btn-primary dark">
+                    Send message
+                  </button>
+                </section>
+              </section>
+            </form>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><form class="ols-bubbles">
+  <section class="row-fluid bubble-row conversation-input">
+    <section class="col-xs-18 col-md-16 col-height-sm bubble-message-container">
+      <section class="input-row">
+        <label for="conversation-input" class="label-sm silent">Write a message</label>
+        <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
+      </section>
+    </section>
+    <figure class="col-xs-6 col-md-8 col-height-sm round-image rounded">
+      <img src="http://placehold.it/85x85" alt="Image">
+      <figcaption>
+        <b>Alex Testman</b>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="row-fluid conversation-action">
+    <section class="col-xs-24">
+      <button type="submit"
+              class="btn btn-primary dark">
+        Send message
+      </button>
+    </section>
+  </section>
+</form></code></pre>
 <!-- end code block -->
 
           </article>
