@@ -1506,25 +1506,29 @@
 
             <h4 class="toc-heading" id="star-button-percentages">Star button percentages</h4>
             <p>
-              Star buttons can be also used to display percentages (partial stars). Classes are available for each quarter. Use <b>btn-partial</b> with the classes: <b>quarter-partial</b>(25%), <b>half-partial</b>(50%) and <b>thirds-partial</b>. Elements displaying partial stars don't require inputs (they are static anyway). See the result in the example below.<br/><br/>
+              Star buttons can be also used to display percentages (partial stars). Classes are available for each quarter. Use <b>btn-partial</b> with the classes: <b>empty-partial</b> 0%), <b>quarter-partial</b>(25%), <b>half-partial</b>(50%) and <b>thirds-partial</b>. Elements displaying partial stars don't require inputs (they are static anyway). See the result in the example below.<br/><br/>
               Note: for now only the smaller buttons support partials.
             </p>
 
             <form class="container-fluid spaced">
               <fieldset class="ols-rating-group btn-spe-sm">
-                <label class="btn btn-spe btn-star btn-partial btn-activated" for="partial-star2"></label>
+                <label class="btn btn-spe btn-star btn-partial btn-activated empty-partial"></label>
 
-                <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial" for="partial-star3"></label>
+                <label class="btn btn-spe btn-star btn-partial btn-activated"></label>
 
-                <label class="btn btn-spe btn-star btn-activated btn-partial half-partial" for="partial-star4"></label>
+                <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial"></label>
 
-                <label class="btn btn-spe btn-star btn-activated btn-partial quarter-partial" for="partial-star5"></label>
+                <label class="btn btn-spe btn-star btn-activated btn-partial half-partial"></label>
+
+                <label class="btn btn-spe btn-star btn-activated btn-partial quarter-partial"></label>
               </fieldset>
             </form>
 <!-- code block -->
-<pre class="code-toolbar"><code class="language-markup"> <fieldset class="ols-rating-group btn-spe-sm">
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group btn-spe-sm">
+  <label class="btn btn-spe btn-star btn-activated btn-partial empty-partial"></label>
+
   <!-- the full 'static' star requires the btn-activated class -->
-  <label class="btn btn-spe btn-star btn-partial btn-activated"></label>
+  <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
 
   <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial"></label>
 
