@@ -1448,8 +1448,8 @@
 
             <p>Labels are available for the entire group too, when context is needed.</p>
             <form class="container-fluid spaced">
+              <legend class="ols-rating-legend ols-label-sm silent">Please rate your experience</legend>
               <fieldset class="ols-rating-group btn-spe-sm">
-                <legend class="ols-label-sm silent">Please rate your experience</legend>
                 <input type="radio" id="title-star5" name="rating" value="5" />
                 <label class="btn btn-spe btn-star" for="title-star5"></label>
 
@@ -1506,39 +1506,31 @@
 
             <h4 class="toc-heading" id="star-button-percentages">Star button percentages</h4>
             <p>
-              Star buttons can be also used to display percentages. Classes are available for each quarter. Use <b>btn-partial</b> with the classes: <b>quarter-partial</b>(25%), <b>half-partial</b>(50%) and <b>thirds-partial</b>. See the result in the example below.<br/><br/>
+              Star buttons can be also used to display percentages (partial stars). Classes are available for each quarter. Use <b>btn-partial</b> with the classes: <b>quarter-partial</b>(25%), <b>half-partial</b>(50%) and <b>thirds-partial</b>. Elements displaying partial stars don't require inputs (they are static anyway). See the result in the example below.<br/><br/>
               Note: for now only the smaller buttons support partials.
             </p>
 
             <form class="container-fluid spaced">
               <fieldset class="ols-rating-group btn-spe-sm">
-                <input type="radio" id="partial-star2" name="rating" value="2" />
                 <label class="btn btn-spe btn-star btn-partial btn-activated" for="partial-star2"></label>
 
-                <input type="radio" id="partial-star3" name="rating" value="3" />
                 <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial" for="partial-star3"></label>
 
-                <input type="radio" id="partial-star4" name="rating" value="4" />
                 <label class="btn btn-spe btn-star btn-activated btn-partial half-partial" for="partial-star4"></label>
 
-                <input type="radio" id="partial-star5" name="rating" value="5" />
                 <label class="btn btn-spe btn-star btn-activated btn-partial quarter-partial" for="partial-star5"></label>
               </fieldset>
             </form>
 <!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"> <fieldset class="ols-rating-group btn-spe-sm">
   <!-- the full 'static' star requires the btn-activated class -->
-  <input type="radio" id="a-star1" name="rating" value="2" />
-  <label class="btn btn-spe btn-star btn-partial btn-activated" for="a-star1"></label>
+  <label class="btn btn-spe btn-star btn-partial btn-activated"></label>
 
-  <input type="radio" id="a-star2" name="rating" value="3" />
-  <label class="btn btn-spe btn-star btn-partial thirds-partial" for="a-star2"></label>
+  <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial"></label>
 
-  <input type="radio" id="a-star3" name="rating" value="4" />
-  <label class="btn btn-spe btn-star btn-partial half-partial" for="a-star3"></label>
+  <label class="btn btn-spe btn-star btn-activated btn-partial half-partial"></label>
 
-  <input type="radio" id="a-star4" name="rating" value="5" />
-  <label class="btn btn-spe btn-star btn-partial quarter-partial" for="a-star4"></label>
+  <label class="btn btn-spe btn-star btn-activated btn-partial quarter-partial"></label>
 </fieldset></code></pre>
 <!-- end code block -->
 

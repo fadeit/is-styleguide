@@ -385,13 +385,6 @@ textarea{
   .inline-block();
   padding-top:10px;
 
-  legend{
-    border:0;
-    margin-bottom:-10px;
-    margin-left:10px;
-    font-size:@fs_small;
-  }
-
   label.btn-star{
     padding: 0;
     .fr();
@@ -478,6 +471,13 @@ textarea{
   }//input
 }
 
+.ols-rating-legend{
+  border:0;
+  margin-bottom:-10px;
+  margin-left:10px;
+  font-size:@fs_small;
+}
+
 .btn-spe-sm{
   .btn-spe{
     padding: 0;
@@ -502,6 +502,8 @@ textarea{
   }
 
   label.btn-partial, .btn-partial.btn-activated{
+    cursor:default;
+
     &:before{
       .col(@col_gray_5);
     }
