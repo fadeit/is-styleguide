@@ -221,7 +221,7 @@ textarea{
   }//conversation-input
 
   .conversation-action{
-    .dropshadow(inset 0 8px 7px -6px rgba(0,0,0,.1));
+    .dropshadow(inset 0 8px 7px -6px rgba(230, 230, 230, 0.8));
     .col(@ws, b);
     margin-top: -31px;
     .rel();
@@ -229,6 +229,11 @@ textarea{
     padding:15px 30px 13px 30px;
   }
 }//ols-bubbles
+
+/*
+ * Buttons
+ *
+ */
 
 .btn{
   font-family:@ff_light;
@@ -282,6 +287,254 @@ textarea{
   &:hover{
     .col(lighten(@col_base_4, 5%), b);
     border: @bst @col_base_4;
+  }
+}
+
+//fav button
+.btn-spe {
+  .rel();
+  overflow:hidden;
+  margin:0;
+  .border-radius(0);
+  .col(@col_gray_5, b);
+
+  &:after{
+    left: -100%;
+    .animate(@animation_time_short, @transition_default);
+  }
+
+  &:before{
+    speak: none;
+    .rel();
+    -webkit-font-smoothing: antialiased;
+    .animate(@animation_time_short, @transition_default);
+  }
+
+  &:before, &:after{
+    .inline-block();
+    .rel();
+    .ta-c();
+    .stretch();
+  }
+}
+
+/* Pseudo elements for icons */
+.btn-star{
+  &:before {
+    .col(@w);
+    font-size: 26px;
+    line-height: 54px;
+    content: "\2606";
+    backface-visibility: hidden;
+  }
+
+  &:after {
+    .invis();
+    animation-name: dropUp;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    content: "\2605";
+    z-index: 1;
+    font-size: 27px;
+    line-height: 54px;
+    .col(@col_yellow);
+    transform: scale(2.5);
+    opacity: 0;
+    backface-visibility: hidden;
+  }
+
+  &:hover{
+    .col(@w);
+    opacity:0.8;
+
+    &:after{
+      .vis();
+      animation-name: dropDown;
+      animation-duration: 0.3s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+  }
+
+  span{
+    .abs();
+    left:0;
+    top:-3px;
+    .stretch();
+  }
+}
+
+.btn-star.btn-activated {
+  opacity:0.8;
+
+  &:after{
+    .vis();
+    animation-name: dropDown;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
+}
+
+//Group of ratings
+.ols-rating-group{
+  .inline-block();
+  padding-top:10px;
+
+  legend{
+    border:0;
+    margin-bottom:-10px;
+    margin-left:10px;
+    font-size:@fs_small;
+  }
+
+  label.btn-star{
+    padding: 0;
+    .fr();
+    .animate(@animation_time_short, @transition_default);
+    border:none;
+    .col(transparent, b);
+    .dropshadow(none);
+
+    &:after, &:before{
+      .col(@col_gray_6);
+    }
+
+    &:hover{
+      &:after{
+        .col(@col_yellow);
+      }
+
+      span{
+        .animate(@animation_time_short, @transition_default);
+        .col(@col_gray_6);
+      }
+    }
+
+    span{
+      .animate(@animation_time_short, @transition_default);
+      .col(transparent);
+    }
+  }
+
+  &:not(:checked){
+    input{
+      .h();
+    }
+
+    label.btn-star{
+      &:hover{
+        ~label.btn-star{
+
+          &:after{
+            .col(@col_yellow);
+            .vis();
+            animation-name: dropDown;
+            animation-duration: 0.3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+          }
+        }
+      }
+    }
+  }
+
+  input{
+    &:checked ~ label.btn-star{
+      &:after{
+        .col(@col_yellow);
+        .vis();
+        animation-name: dropDown;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+
+      span{
+        opacity:1;
+      }
+    }
+
+    &:checked + label.btn-star:hover,
+    &:checked + label.btn-star:hover ~ label.btn-star,
+    &:checked ~ label.btn-star:hover,
+    &:checked ~ label.btn-star:hover ~ label.btn-star{
+      &:after{
+        .col(darken(@col_yellow, 20%));
+      }
+
+      label.btn-star:hover ~ input:checked ~ label.btn-star{
+        &:after{
+          .col(darken(@col_yellow, 20%));
+        }
+      }
+    }
+  }//input
+}
+
+.btn-spe-sm{
+  .btn-spe{
+    padding: 0;
+    border: 0;
+    width: 40px;
+    line-height: 40px;
+    height: 40px;
+
+    &:before{
+      font-size: 20px;
+      width: 40px;
+      line-height: 40px;
+      height: 40px;
+    }
+
+    &:after{
+      font-size: 21px;
+      width: 40px;
+      line-height: 40px;
+      height: 40px;
+    }
+  }
+
+  label.btn-partial, .btn-partial.btn-activated{
+    &:before{
+      .col(@col_gray_5);
+    }
+
+    &:after{
+      .col(@col_yellow);
+    }
+  }
+
+  .quarter-partial, .half-partial, .thirds-partial{
+     &:after{
+        .abs();
+        left:9px;
+        overflow:hidden;
+     }
+  }
+
+  .quarter-partial{
+    &:after{
+      width:8px;
+    }
+  }
+
+  .half-partial{
+    &:after{
+      width:10px;
+    }
+  }
+
+  .thirds-partial{
+    &:after{
+      width:12px;
+    }
   }
 }
 
@@ -1320,6 +1573,25 @@ p{
   }
   100% {
     transform: rotate( 180deg );
+  }
+}
+
+//star rating pop
+@keyframes dropDown {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes dropUp {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
   }
 }
 

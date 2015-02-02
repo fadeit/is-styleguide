@@ -293,6 +293,11 @@ span[class*="ols-tc-"]{
  */
 #toc-container{
   .stretch(h);
+  width: 100%;
+
+  @media only screen and (min-width:@bp_md){
+    width: 25%;
+  }
 
   #table-of-contents{
     padding:15px 20px;

@@ -37,7 +37,7 @@
 
     <section class="row-fluid">
       <aside class="col-xs-24 col-md-6">
-        <section id="toc-container" class="col-xs-24">
+        <section id="toc-container">
           <ul id="table-of-contents"></ul>
         </section>
       </aside>
@@ -1330,6 +1330,218 @@
                 Loading button
               </button>
             </section>
+
+            <h3 class="toc-heading" id="special-buttons">Special buttons</h3>
+            <h4 class="toc-heading" id="star-button">Star button</h4>
+
+            <section class="container-fluid spaced">
+              <button class="btn btn-spe btn-star"></button>
+              <button class="btn btn-spe btn-star"></button>
+              <button class="btn btn-spe btn-star"></button>
+              <button class="btn btn-spe btn-star"></button>
+              <button class="btn btn-spe btn-star"></button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><button class="btn btn-spe btn-star"></button></code></pre>
+<!-- end code block -->
+
+            <p>Adding the <u>btn-activated</u> class will disable animations and force the star to be yellow.</p>
+
+            <section class="container-fluid spaced">
+              <button class="btn btn-spe btn-star btn-activated"></button>
+              <button class="btn btn-spe btn-star btn-activated"></button>
+              <button class="btn btn-spe btn-star btn-activated"></button>
+              <button class="btn btn-spe btn-star btn-activated"></button>
+              <button class="btn btn-spe btn-star btn-activated"></button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><button class="btn btn-spe btn-star btn-activated"></button></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="star-button">Star button group</h4>
+            <p>The star button group doesn't need any additional class to be dynamic, it will be as glorious as ever with only CSS. It can contain label text for each item if necessary, otherwise a empty label would work.</p>
+            <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group">
+                <input type="radio" id="star5" name="rating" value="5" /><label class="btn btn-spe btn-star" for="star5"><span class="silent">5 stars</span></label>
+                <input type="radio" id="star4" name="rating" value="4" /><label class="btn btn-spe btn-star" for="star4"><span class="silent">4 stars</span></label>
+                <input type="radio" id="star3" name="rating" value="3" /><label class="btn btn-spe btn-star" for="star3"><span class="silent">3 stars</span></label>
+                <input type="radio" id="star2" name="rating" value="2" /><label class="btn btn-spe btn-star" for="star2"><span class="silent">2 stars</span></label>
+                <input type="radio" id="star1" name="rating" value="1" /><label class="btn btn-spe btn-star" for="star1"><span class="silent">1 star</span></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group">
+  <input type="radio" id="a-star" name="rating" value="5" />
+  <label class="btn btn-spe btn-star" for="a-star">
+    <span class="silent">5 stars</span>
+  </label>
+</fieldset></code></pre>
+<!-- end code block -->
+
+             <p>Here's an example without the label text:</p>
+             <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group">
+                <input type="radio" id="labeless-star5" name="rating" value="5" />
+                <label class="btn btn-spe btn-star" for="labeless-star5"></label>
+
+                <input type="radio" id="labeless-star4" name="rating" value="4" />
+                <label class="btn btn-spe btn-star" for="labeless-star4"></label>
+
+                <input type="radio" id="labeless-star3" name="rating" value="3" />
+                <label class="btn btn-spe btn-star" for="labeless-star3"></label>
+
+                <input type="radio" id="labeless-star2" name="rating" value="2" />
+                <label class="btn btn-spe btn-star" for="labeless-star2"></label>
+
+                <input type="radio" id="labeless-star1" name="rating" value="1" />
+                <label class="btn btn-spe btn-star" for="labeless-star1"></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group">
+  <input type="radio" id="a-star" name="rating" value="5" />
+  <label class="btn btn-spe btn-star" for="a-star"></label>
+</fieldset></code></pre>
+<!-- end code block -->
+
+            <p class="head-up">Adding the class <b>btn-spe-sm</b> to the parent of either star buttons and star button groups will decrease the size of the buttons.</p>
+
+            <section class="container-fluid spaced">
+              <section class="parent btn-spe-sm">
+                <button class="btn btn-spe btn-star"></button>
+                <button class="btn btn-spe btn-star btn-activated"></button>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="parent btn-spe-sm">
+  <button class="btn btn-spe btn-star"></button>
+  <button class="btn btn-spe btn-star btn-activated"></button>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="star-button-small">Star button small</h4>
+            <p>Label group with the <u>btn-spe-sm</u> class:</p>
+            <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group btn-spe-sm">
+                <input type="radio" id="small-star5" name="rating" value="5" />
+                <label class="btn btn-spe btn-star" for="small-star5"></label>
+
+                <input type="radio" id="small-star4" name="rating" value="4" />
+                <label class="btn btn-spe btn-star" for="small-star4"></label>
+
+                <input type="radio" id="small-star3" name="rating" value="3" />
+                <label class="btn btn-spe btn-star" for="small-star3"></label>
+
+                <input type="radio" id="small-star2" name="rating" value="2" />
+                <label class="btn btn-spe btn-star" for="small-star2"></label>
+
+                <input type="radio" id="small-star1" name="rating" value="1" />
+                <label class="btn btn-spe btn-star" for="small-star1"></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group btn-spe-sm">
+  <input type="radio" id="a-star" name="rating" value="5" />
+  <label class="btn btn-spe btn-star" for="a-star"></label>
+</fieldset></code></pre>
+<!-- end code block -->
+
+            <p>Labels are available for the entire group too, when context is needed.</p>
+            <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group btn-spe-sm">
+                <legend class="ols-label-sm silent">Please rate your experience</legend>
+                <input type="radio" id="title-star5" name="rating" value="5" />
+                <label class="btn btn-spe btn-star" for="title-star5"></label>
+
+                <input type="radio" id="title-star4" name="rating" value="4" />
+                <label class="btn btn-spe btn-star" for="title-star4"></label>
+
+                <input type="radio" id="title-star3" name="rating" value="3" />
+                <label class="btn btn-spe btn-star" for="title-star3"></label>
+
+                <input type="radio" id="title-star2" name="rating" value="2" />
+                <label class="btn btn-spe btn-star" for="title-star2"></label>
+
+                <input type="radio" id="title-star1" name="rating" value="1" />
+                <label class="btn btn-spe btn-star" for="title-star1"></label>
+              </fieldset>
+            </form>
+
+            <p>One last thing, <u>disabled</u> states are supported on each star element (be it <u>label</u> or <u>button</u>. See the example below.</p>
+            <section class="container-fluid spaced">
+              <section class="parent btn-spe-sm">
+                <button class="btn btn-spe btn-star" disabled="disabled"></button>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="parent btn-spe-sm">
+  <button class="btn btn-spe btn-star" disabled="disabled"></button>
+</section></code></pre>
+<!-- end code block -->
+
+            <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group btn-spe-sm">
+                <input type="radio" id="disabled-star5" name="rating" value="5" />
+                <label class="btn btn-spe btn-star" for="disabled-star5"  disabled="disabled"></label>
+
+                <input type="radio" id="disabled-star4" name="rating" value="4" />
+                <label class="btn btn-spe btn-star" for="disabled-star4"  disabled="disabled"></label>
+
+                <input type="radio" id="disabled-star3" name="rating" value="3" />
+                <label class="btn btn-spe btn-star" for="disabled-star3"  disabled="disabled"></label>
+
+                <input type="radio" id="disabled-star2" name="rating" value="2" />
+                <label class="btn btn-spe btn-star" for="disabled-star2"  disabled="disabled"></label>
+
+                <input type="radio" id="disabled-star1" name="rating" value="1" />
+                <label class="btn btn-spe btn-star" for="disabled-star1"  disabled="disabled"></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group btn-spe-sm">
+  <input type="radio" id="a-star" name="rating" value="5" />
+  <label class="btn btn-spe btn-star" for="a-star" disabled="disabled"></label>
+</fieldset></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="star-button-percentages">Star button percentages</h4>
+            <p>
+              Star buttons can be also used to display percentages. Classes are available for each quarter. Use <b>btn-partial</b> with the classes: <b>quarter-partial</b>(25%), <b>half-partial</b>(50%) and <b>thirds-partial</b>. See the result in the example below.<br/><br/>
+              Note: for now only the smaller buttons support partials.
+            </p>
+
+            <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group btn-spe-sm">
+                <input type="radio" id="partial-star2" name="rating" value="2" />
+                <label class="btn btn-spe btn-star btn-partial btn-activated" for="partial-star2"></label>
+
+                <input type="radio" id="partial-star3" name="rating" value="3" />
+                <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial" for="partial-star3"></label>
+
+                <input type="radio" id="partial-star4" name="rating" value="4" />
+                <label class="btn btn-spe btn-star btn-activated btn-partial half-partial" for="partial-star4"></label>
+
+                <input type="radio" id="partial-star5" name="rating" value="5" />
+                <label class="btn btn-spe btn-star btn-activated btn-partial quarter-partial" for="partial-star5"></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"> <fieldset class="ols-rating-group btn-spe-sm">
+  <!-- the full 'static' star requires the btn-activated class -->
+  <input type="radio" id="a-star1" name="rating" value="2" />
+  <label class="btn btn-spe btn-star btn-partial btn-activated" for="a-star1"></label>
+
+  <input type="radio" id="a-star2" name="rating" value="3" />
+  <label class="btn btn-spe btn-star btn-partial thirds-partial" for="a-star2"></label>
+
+  <input type="radio" id="a-star3" name="rating" value="4" />
+  <label class="btn btn-spe btn-star btn-partial half-partial" for="a-star3"></label>
+
+  <input type="radio" id="a-star4" name="rating" value="5" />
+  <label class="btn btn-spe btn-star btn-partial quarter-partial" for="a-star4"></label>
+</fieldset></code></pre>
+<!-- end code block -->
+
           </article>
 
           <!-- Forms -->
