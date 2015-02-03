@@ -1432,6 +1432,7 @@ p{
 
       .bubble-message{
         white-space: pre;
+        word-break: break-word;
       }
 
       .bubble-time{
@@ -1535,6 +1536,20 @@ p{
     }//element-animation
   }//ols-loader
 }//loader container
+
+.ols-story-container{
+  .ols-loader-container{
+    height: 160px;
+  }
+
+
+  .ols-loader-story{
+    .stretch();
+    margin-top:20px;
+    margin-bottom:20px;
+    .ta-c();
+  }//ols-loader-story
+}
 
 //spinner
 .ols-spinner{
