@@ -16,7 +16,7 @@
   src: url('./fonts/pnl-webfont.eot?#iefix') format('embedded-opentype'),
   url('./fonts/pnl-webfont.woff') format('woff'),
   url('./fonts/pnl-webfont.ttf') format('truetype'),
-  url('./fonts/pnl-webfont.svg#proxima_novalight') format('svg');
+  url('./fonts/pnl-webfont.svg#pnl') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,7 +27,7 @@
   src: url('./fonts/pnsb-webfont.eot?#iefix') format('embedded-opentype'),
   url('./fonts/pnsb-webfont.woff') format('woff'),
   url('./fonts/pnsb-webfont.ttf') format('truetype'),
-  url('./fonts/pnsb-webfont.svg#proxima_novalight') format('svg');
+  url('./fonts/pnsb-webfont.svg#pnl') format('svg');
   font-weight: bold;
   font-style: bold;
 }
@@ -185,6 +185,10 @@ textarea{
       .border-radius(0);
       .stretch(h);
       border: @bstm @col_gray_2;
+
+      img{
+        max-width:85px;
+      }
 
       @media only screen and (min-width:@bp_md){
         margin-right:-20px;
@@ -1367,6 +1371,8 @@ p{
  *
  */
 .ols-bubbles{
+  padding:15px;
+
   .bubble-row{
     margin-bottom:30px;
     .rel();
@@ -1419,14 +1425,19 @@ p{
       .border-radius(6px);
 
       .bubble-message{
-        white-space: pre;
-        word-break: break-word;
+        white-space: pre-line;
       }
 
       .bubble-time{
         .inline-block();
         margin-top:10px;
         font-size:@fs_small;
+      }
+
+      .ols-rating-group{
+        padding-top:0px;
+        margin-left:-2px; //for 'visual' alignment
+        .stretch();
       }
     }
   }
@@ -1482,6 +1493,20 @@ p{
   }
 }
 
+
+.ols-bubbles.small-bubbles{
+  figure{
+    top: ~'calc(50% - 78px/2)';
+
+    img{
+      max-width:45px;
+    }
+
+    figcaption{
+      font-size:@fs_small;
+    }
+  }
+}
 /*
  * Spinners and loaders
  *

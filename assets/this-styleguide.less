@@ -295,10 +295,6 @@ span[class*="ols-tc-"]{
   .stretch(h);
   width: 100%;
 
-  @media only screen and (min-width:@bp_md){
-    width: 25%;
-  }
-
   #table-of-contents{
     padding:15px 20px;
     height: ~"calc(100% - 20px)";
@@ -353,6 +349,12 @@ span[class*="ols-tc-"]{
   @media only screen and (min-width:@bp_md){
     position:fixed!important;
     top:25px;
+  }
+}
+
+#toc-container.fixed-table{
+  @media only screen and (min-width:@bp_md){
+    width: 25%;
   }
 }
 
