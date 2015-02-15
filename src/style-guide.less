@@ -851,6 +851,26 @@ p{
   }
 }
 
+.ols-profile-header.image-header{
+  .rel();
+  padding-left: 75px;
+  border-left:0;
+
+  &:before{
+    content: '';
+    .inline-block();
+    .abs();
+    border-right: @bstm @col_base_3;
+    .stretch(h);
+    margin-left: -12px;
+  }
+
+  img{
+    .abs();
+    padding-top:3px;
+    left:0;
+  }
+}
 
 .ols-aside-right, .ols-aside-left{
   .stretch(h);
