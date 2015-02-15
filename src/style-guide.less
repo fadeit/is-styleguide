@@ -671,6 +671,16 @@ p{
   }
 }
 
+.ols-label-xs{
+  font-size: @m_fs_small;
+  line-height: @m_lh_small;
+
+  @media only screen and (min-width:@bp_md){
+    font-size: @fs_small;
+    line-height: @lh_small;
+  }
+}
+
 [class*='ols-label-']{
   .col(@col_text);
 }

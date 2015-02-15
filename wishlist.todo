@@ -1,17 +1,18 @@
-Wishlist:
-  ☐ Colors can be copied to clipboard as code;
-  ☐ Add permalinks to 'style-headings'
-  ☐ Change # based on scroll
-  ✔ Add icon-fonts @done (15-01-20 11:53)
-  ☐ Allow view source for html code
-  ✔ Style select @done (15-02-01 15:51)
-  ☐ Find more reasonable way to display colors
-  ☐ Fork prism-js? Or create repo for theme
-  ✔ Add spinner animation to styleguide @done (15-02-01 15:51)
-  ☐ Add location (geolocate) animation
-  ✔ Add code examples under each element (or well it makes sense) @done (15-01-17 00:52)
-  ☐ Move example to src-ex
-  ☐ round image
-  ☐ label-xs with font-size @fs_small
+Wishlist (local):
 
-  ☐ Move to JIRA @high
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✘ Colors can be copied to clipboard as code; JIRA @cancelled (15-02-15 01:05) @project(Wishlist)
+ ✘ Add permalinks to 'style-headings'  JIRA @cancelled (15-02-15 01:05) @project(Wishlist)
+ ✘ Change # based on scroll JIRA @cancelled (15-02-15 01:06) @project(Wishlist)
+ ✔ Add icon-fonts @done (15-01-20 11:53) @project(Wishlist)
+ ✘ Allow view source for html code JIRA  @cancelled (15-02-15 01:06) @project(Wishlist)
+ ✔ Style select @done (15-02-01 15:51) @project(Wishlist)
+ ✘ Find more reasonable way to display colors JIRA @cancelled (15-02-15 01:08) @project(Wishlist)
+ ✘ Fork prism-js? Or create repo for theme @cancelled (15-02-15 01:08) @project(Wishlist)
+ ✔ Add spinner animation to styleguide @done (15-02-01 15:51) @project(Wishlist)
+ ✘ Add location (geolocate) animation JIRA  @cancelled (15-02-15 01:08) @project(Wishlist)
+ ✔ Add code examples under each element (or well it makes sense) @done (15-01-17 00:52) @project(Wishlist)
+ ✔ Move example to src-ex JIRA @done (15-02-15 01:09) @project(Wishlist)
+ ✔ label-xs with font-size @fs_small @done (15-02-15 01:13) @project(Wishlist)
+ ✔ Move to JIRA @high @done (15-02-15 01:13) @project(Wishlist)
