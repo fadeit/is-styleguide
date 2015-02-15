@@ -549,6 +549,11 @@ textarea{
   }
 }
 
+.btn-sm{
+  padding: 4px 10px 4px 10px;
+  font-size: @fs_small;
+}
+
 /*
  * Core browser display
  *
@@ -855,6 +860,7 @@ p{
   .rel();
   padding-left: 75px;
   border-left:0;
+  margin-left: -75px;
 
   &:before{
     content: '';
@@ -867,8 +873,9 @@ p{
 
   img{
     .abs();
-    padding-top:3px;
+    padding-top:4px;
     left:0;
+    width:45px;
   }
 }
 

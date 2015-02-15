@@ -1419,7 +1419,7 @@
             <h2 class="toc-heading" id="buttons">Buttons &amp; Links</h2>
 
             <h3 class="toc-heading" id="loading-button">Primary button</h3>
-            <p>This is the 'default' button. It supports a 'disabled' state which is also used for loading buttons. A 'dark' primary button is available for primary actions with lower priority, such as sending a message. The dark button can be used by appending the <u>dark</u> class to the <u>btn btn-primary</u> class.</p>
+            <p>This is the 'normal' button. It supports a 'disabled' state (also used for loading buttons). A 'dark' button is available for primary actions with lower priority, such as sending a message. The dark button can be used by appending the <u>dark</u> class to the <u>btn btn-primary</u> class.</p>
             <section class="container-fluid spaced">
               <button type="submit"
                       class="btn btn-primary">
@@ -1443,10 +1443,11 @@
               </button>
             </section>
 <!-- code block -->
-<pre class="code-toolbar"><code class="language-markup"><button type="submit" class="btn btn-primary">
+<pre class="code-toolbar"><code class="language-markup"><!-- primary button -->
+<button type="submit" class="btn btn-primary">
   Press me
 </button>
-<!-- disabled button -->
+<!-- disabled primary button -->
 <button type="submit" class="btn btn-primary" disabled="disabled">
   Can't press
 </button>
@@ -1456,6 +1457,8 @@
         class="btn btn-primary dark">
   Press me
 </button>
+
+<!-- disabled primary button -->
 <button type="submit"
         class="btn btn-primary dark"
         disabled="disabled">
@@ -1486,11 +1489,11 @@
               </button>
             </section>
 <!-- code block -->
-<pre class="code-toolbar"><code class="language-markup"><!-- default button -->
+<pre class="code-toolbar"><code class="language-markup"><!-- primary button -->
 <button type="submit" class="btn btn-default">
   Send message
 </button>
-<!-- disabled button -->
+<!-- disabled primary button -->
 <button type="submit" class="btn btn-default" disabled="disabled">
   Can't press
 </button>
@@ -1499,15 +1502,103 @@
 <button type="submit" class="btn btn-danger">
   Delete account
 </button>
-<!-- disabled button -->
+<!-- disabled important button -->
 <button type="submit" class="btn btn-danger" disabled="disabled">
   Can't press
 </button></code></pre>
 <!-- end code block -->
+            <h3 class="toc-heading" id="small-buttons">Small buttons</h3>
+            <p>Adding a <u>btn-sm</u> class to any button will decrease the button size.</p>
+            <section class="container-fluid spaced">
+              <button type="submit"
+                      class="btn btn-primary btn-sm">
+                Press me
+              </button>
+
+              <button type="submit"
+                      class="btn btn-primary btn-sm"
+                      disabled="disabled">
+                Press me
+              </button>
+
+              <button type="submit"
+                      class="btn btn-primary btn-sm dark">
+                Press me
+              </button>
+
+              <button type="submit"
+                      class="btn btn-primary btn-sm dark"
+                      disabled="disabled">
+                Press me
+              </button>
+
+              <button type="submit"
+                      class="btn btn-default btn-sm">
+                Toggle this
+              </button>
+
+              <button type="submit"
+                      class="btn btn-default btn-sm"
+                      disabled="disabled">
+                Toggle this
+              </button>
+
+              <button type="submit"
+                      class="btn btn-danger btn-sm">
+                Delete
+              </button>
+
+              <button type="submit"
+                      class="btn btn-danger btn-sm"
+                      disabled="disabled">
+                Delete
+              </button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- small primary button -->
+<button type="submit" class="btn btn-primary btn-sm">
+  Press me
+</button>
+
+<!-- small primary button disabled -->
+<button type="submit" class="btn btn-primary btn-sm" disabled="disabled">
+  Press me
+</button>
+
+<!-- small primary dark button -->
+<button type="submit" class="btn btn-primary btn-sm dark">
+  Press me
+</button>
+
+<!-- small primary dark button disabled -->
+<button type="submit" class="btn btn-primary btn-sm dark" disabled="disabled">
+  Press me
+</button>
+
+<!-- small default button -->
+<button type="submit" class="btn btn-default btn-sm">
+  Toggle this
+</button>
+
+<!-- small default button disabled -->
+<button type="submit" class="btn btn-default btn-sm" disabled="disabled">
+  Toggle this
+</button>
+
+<!-- small important button -->
+<button type="submit" class="btn btn-danger btn-sm">
+  Delete
+</button>
+
+<!-- small important button disabled -->
+<button type="submit" class="btn btn-danger btn-sm" disabled="disabled">
+  Delete
+</button>
+</code></pre>
+<!-- end code block -->
 
             <h3 class="toc-heading" id="loading-button">Loading button</h3>
             <p>All buttons have a loading state that can be triggered by adding the <u>loading</u> class.</p>
-
             <section class="container-fluid spaced">
               <button type="submit"
                       class="btn btn-primary loading"
