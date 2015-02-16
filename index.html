@@ -447,7 +447,7 @@
             <p>
               Use this in combination with photos or logos.
             </p>
-            <section class="container-fluid spaced extra-space">
+            <section class="container-fluid spaced extra-space header-with-image-space">
               <header class="ols-profile-header image-header">
                 <img src="http://placehold.it/45x45" class="rounded" alt="Image">
                 <h2 class="ols-label-lg">
@@ -1595,6 +1595,53 @@
   Delete
 </button>
 </code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="round-buttons">Round buttons</h3>
+            <p>These buttons should be used for 'form steps'. Their main function is to present an overview of the steps, as well as the current step position. This button supports 3 states:</p>
+            <ul>
+              <li>(default - no class): green color &amp; supports hover</li>
+              <li>(disabled - <u>btn-disabled</u>): gray color, transparent, no hover</li>
+              <li>(active - <u>btn-active</u>): dark green color, no hover, no pointer</li>
+            </ul>
+            <p>To center a rounded button group, wrap the buttons elements with a <u>rounded-button-group</u> parent.</p>
+
+            <section class="container-fluid padded spaced rounded-button-group">
+              <a href="#nowhere" class="btn-primary btn-round">
+                <span class="btn-round-inner">1</span>
+                <span class="btn-round-text">Step 1</span>
+              </a>
+
+              <a href="#nowhere" class="btn-primary btn-round btn-active">
+                <span class="btn-round-inner">2</span>
+                <span class="btn-round-text">Step 2</span>
+              </a>
+
+              <a href="#nowhere" class="btn-primary btn-round btn-disabled">
+                <span class="btn-round-inner">3</span>
+                <span class="btn-round-text">Step 3</span>
+              </a>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- optional: wrap the buttons to center them -->
+<section class="rounded-button-group">
+  <!-- default round button -->
+  <a href="#nowhere" class="btn-primary btn-round">
+    <span class="btn-round-inner">1</span>
+    <span class="btn-round-text">Step 1</span>
+  </a>
+
+  <!-- active round button -->
+  <a href="#nowhere" class="btn-primary btn-round btn-active">
+    <span class="btn-round-inner">2</span>
+    <span class="btn-round-text">Step 2 (active)</span>
+  </a>
+
+  <!-- disabled round button -->
+  <a href="#nowhere" class="btn-primary btn-round btn-disabled">
+    <span class="btn-round-inner">3</span>
+    <span class="btn-round-text">Step 3 (disabled)</span>
+  </a>
+</section></code></pre>
 <!-- end code block -->
 
             <h3 class="toc-heading" id="loading-button">Loading button</h3>
