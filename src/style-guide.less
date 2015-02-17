@@ -62,6 +62,10 @@ input {
   }
 }
 
+.help-block {
+  .animate(@animation_time_short, @transition_default);
+}
+
 /* Maybe add something like this to text areas
  *
 
@@ -1112,6 +1116,144 @@ p{
     }
   }
 }
+
+.ols-inline-remove{
+  .animate(@animation_time_v_short, @transition_default);
+  .col(@col_gray_7);
+  .ta-c();
+  .inline-block();
+  .pointer();
+  .fl();
+  margin-right: 10px;
+  margin-bottom:5px;
+
+  &:hover{
+    .animate(@animation_time_v_short, @transition_default);
+    opacity:0.8;
+  }
+
+  &:focus, &:active{
+    opacity:0.8;
+  }
+
+  span{
+    .b();
+    font-size: 22px;
+    .rel();
+    top:-1px;
+  }
+}
+
+/*
+ * Inbox
+ *
+ */
+.ols-thread{
+  min-height:200px;
+  padding:30px 30px 0 30px;
+  border:@bst @ws;
+}
+
+.ols-aside-inbox{
+  border-right:@bst @ws;
+
+  .ols-inbox{
+    height:100%;
+    overflow:auto;
+
+    header{
+      .clearfix();
+      .col(@w, b);
+      border-top:@bst @col_gray_4;
+      border-bottom:@bst @col_gray_4;
+      padding:20px 20px 20px 20px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      .ols-label-lg{
+        line-height: 45px;
+        margin-left:20px;
+      }
+    }
+
+    .ols-company-result-list{
+      margin-bottom:0;
+
+      li{
+        .pointer();
+        padding:20px 10px 10px 30px;
+        border-left:@bstt @col_gray_3;
+
+        //change with SVG sprite
+        figure{
+          .rel();
+
+          .ols-svg{
+            .abs();
+            margin-top: -3px;
+            margin-left: 4px;
+          }
+
+          .unread-count{
+            .abs();
+            left: 26px;
+            top: 9px;
+            .col(@w);
+          }
+
+          img{
+            .inline-block();
+            margin-left:15px;
+            margin-right: 20px;
+            .rel();
+            top: -12px;
+          }
+
+          figcaption{
+            .block();
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-left: 70px;
+            margin-bottom: 10px;
+
+            .ols-label-md{
+              .inline();
+              .silent();
+              margin-bottom:0;
+            }
+
+            .ols-label-sm{
+              .silent();
+              line-height: 20px;
+              font-size:@fs_small;
+            }
+          }
+        }
+        //change with SVG sprite
+      }
+
+      li.unread-thread{
+        border-left:@bstt @col_gray_6;
+
+        figure{
+          figcaption{
+            .ols-label-md{
+              .b();
+              .col(@col_text);
+            }
+
+            .ols-label-sm{
+              .col(@col_text);
+            }
+          }
+        }
+      }//unread-thread
+    }//header
+  }
+}
+
 
 /*
  * Navigation

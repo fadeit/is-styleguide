@@ -1240,28 +1240,28 @@
 </section></code></pre>
 <!-- end code block -->
 
-            <h4 class="toc-heading" id="service-list-result-detail">Service list (result detail)</h4>
-            <p>[TODO: not presentation, delete icons]</p>
+            <h4 class="toc-heading" id="service-list-edit">Service list (edit)</h4>
+            <p>In the company edit page, don't include the class <u>presentation</u> on the parent <u>ul</u>. This will remove the checkmark. It can be replaced with a <b>&times;</b>, which will delete the service.</p>
             <section class="container-fluid ols-result-detail spaced">
               <section class="row-fluid ols-service-list">
-                <ul class="presentation">
+                <ul>
                   <li class="col-xs-24 col-md-12">
-                    Check the tire pressure
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Check the tire pressure
                   </li>
                   <li class="col-xs-24 col-md-12">
-                    Lubrication of door hinges
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Lubrication of door hinges
                   </li>
                   <li class="col-xs-24 col-md-12">
-                    Check wheel bearings
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Check wheel bearings
                   </li>
                   <li class="col-xs-24 col-md-12">
-                    Check power steering fluid
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Check power steering fluid
                   </li>
                   <li class="col-xs-24 col-md-12">
-                    Check the wiper
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Check the wiper
                   </li>
                   <li class="col-xs-24 col-md-12">
-                    Replacing lights
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Replacing lights
                   </li>
                 </ul>
               </section>
@@ -1269,9 +1269,12 @@
 <!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-result-detail">
   <section class="row-fluid ols-service-list">
-    <ul class="presentation">
+    <ul>
       <li class="col-xs-24 col-md-12">
-        List item
+        <span class="ols-inline-remove">
+          <span aria-hidden="true">&times;</span>
+        </span>
+        Check the tire pressure
       </li>
     </ul>
   </section>
@@ -1411,6 +1414,115 @@
   </li>
 </ul></code></pre>
 <!-- end code block -->
+            <h4 class="toc-heading" id="inbox-table-view">Inbox table view</h4>
+            <p>
+              This table view is used for displaying inbox theards. [TODO: Inbox empty]
+            </p>
+            <p class="head-up">The thread list needs to be contained into a <u>ols-aside-inbox</u> section, with <u>ols-inbox</u> as a child.</p>
+            <section class="container-fluid ols-aside-inbox spaced">
+              <section class="ols-inbox">
+                <ul class="ols-company-result-list">
+                  <li class="unread-thread">
+                    <figure>
+                      <span class="ols-svg ols-image-inbox-message-unread"></span>
+                      <span class="ols-label-sm unread-count">5</span>
+
+                      <figcaption>
+                        <h3 class="ols-label-md">J. Message</h3>
+                        <p class="ols-label-sm">5 minutes ago</p>
+                      </figcaption>
+                    </figure>
+                  </li>
+
+                  <li>
+                    <figure>
+                      <span class="ols-svg ols-image-inbox-message"></span>
+                      <span class="ols-label-sm unread-count"></span>
+
+                      <figcaption>
+                        <h3 class="ols-label-md">A. Instant</h3>
+                        <p class="ols-label-sm">30 minutes ago</p>
+                      </figcaption>
+                    </figure>
+                    </figure>
+                  </li>
+                </ul>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="ols-aside-inbox">
+  <section class="ols-inbox">
+    <ul class="ols-company-result-list">
+      <li class="unread-thread">
+        <figure>
+          <span class="ols-svg ols-image-inbox-message-unread"></span>
+          <span class="ols-label-sm unread-count">5</span>
+
+          <figcaption>
+            <h3 class="ols-label-md">J. Message</h3>
+            <p class="ols-label-sm">5 minutes ago</p>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure>
+          <span class="ols-svg ols-image-inbox-message"></span>
+          <span class="ols-label-sm unread-count"></span>
+
+          <figcaption>
+            <h3 class="ols-label-md">A. Instant</h3>
+            <p class="ols-label-sm">30 minutes ago</p>
+          </figcaption>
+        </figure>
+        </figure>
+      </li>
+    </ul>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+            <h4 class="toc-heading" id="inbox-table-with-header">Inbox table with header</h4>
+            <p>
+              The inbox thread list also supports a header before each thread list (<u>ul</u>).
+            </p>
+
+            <section class="container-fluid ols-aside-inbox spaced">
+              <section class="ols-inbox">
+                <header>
+                  <figure class="round-image">
+                    <img src="http://placehold.it/45x45" alt="Image"/>
+                  </figure>
+                  <span class="ols-label-lg">Batman's Inbox</span>
+                </header>
+
+                <ul class="ols-company-result-list">
+                  <li class="unread-thread">
+                    <figure>
+                      <span class="ols-svg ols-image-inbox-message-unread"></span>
+                      <span class="ols-label-sm unread-count">5</span>
+
+                      <figcaption>
+                        <h3 class="ols-label-md">J. Message</h3>
+                        <p class="ols-label-sm">5 minutes ago</p>
+                      </figcaption>
+                    </figure>
+                  </li>
+
+                  <li>
+                    <figure>
+                      <span class="ols-svg ols-image-inbox-message"></span>
+                      <span class="ols-label-sm unread-count"></span>
+
+                      <figcaption>
+                        <h3 class="ols-label-md">A. Instant</h3>
+                        <p class="ols-label-sm">30 minutes ago</p>
+                      </figcaption>
+                    </figure>
+                    </figure>
+                  </li>
+                </ul>
+              </section>
+            </section>
 
           </article>
 
@@ -2418,6 +2530,26 @@
                   ols-icon-success
                 </span>
               </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-image-inbox-message-unread"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-image-inbox-message-unread
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-image-inbox-message"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-image-inbox-message
+                </span>
+              </section>
             </section>
 
           </article>
@@ -2517,10 +2649,10 @@
             <ul>
               <li>Alerts &amp; Messages</li>
               <li>Messaging system</li>
-              <li>Map examples</li>
+              <li><s>Map examples</s></li>
               <li><s>Lists: table view with images</s></li>
               <li>Layout: gallery</li>
-              <li>Comments / Reviews</li>
+              <li><s>Comments / Reviews</s></li>
               <li>Profiles: customer profile (not provider)</li>
             </ul>
           </article>
