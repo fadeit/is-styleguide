@@ -2182,11 +2182,14 @@
             <section class="container-fluid spaced extra-space conversation-input-space white">
               <form class="ols-bubble-input">
                 <section class="row-fluid">
-                  <section class="input-row">
+                  <section class="input-row textarea-row">
+                    <section class="bubble-input-img-container">
+                      <figure class="round-image rounded">
+                        <img src="http://placehold.it/45x45" alt="Image" title="Alex Testman">
+                      </figure>
+                    </section>
+
                     <label for="conversation-input" class="label-sm silent">Write a message</label>
-                    <figure class="round-image rounded">
-                      <img src="http://placehold.it/45x45" alt="Image" title="Alex Testman">
-                    </figure>
                     <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
                   </section>
                 </section>
@@ -2203,27 +2206,126 @@
             </section>
 <!-- code block -->
 <pre class="code-toolbar"><code class="language-markup"><form class="ols-bubble-input">
-    <section class="row-fluid">
-      <section class="input-row">
-        <label for="conversation-input" class="label-sm silent">Write a message</label>
+  <section class="row-fluid">
+    <section class="input-row textarea-row">
+      <section class="bubble-input-img-container">
         <figure class="round-image rounded">
           <img src="http://placehold.it/45x45" alt="Image" title="Alex Testman">
         </figure>
-        <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
       </section>
-    </section>
 
-    <section class="row-fluid conversation-action">
-      <section class="col-xs-24">
-        <button type="submit"
-                class="btn btn-primary dark">
-          Send message
-        </button>
-      </section>
+      <label for="conversation-input" class="label-sm silent">Write a message</label>
+      <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
     </section>
-  </form></code></pre>
+  </section>
+
+  <section class="row-fluid conversation-action">
+    <section class="col-xs-24">
+      <button type="submit"
+              class="btn btn-primary dark">
+        Send message
+      </button>
+    </section>
+  </section>
+</form></code></pre>
 <!-- end code block -->
+            <h3 class="toc-heading" id="conversation-input-with-review">Conversation input w/ review</h3>
 
+            <section class="container-fluid spaced extra-space conversation-input-space white">
+              <form class="ols-bubble-input">
+                <section class="row-fluid">
+                  <section class="input-row textarea-row">
+                    <section class="bubble-input-img-container">
+                      <figure class="round-image rounded">
+                        <img src="http://placehold.it/45x45" alt="Image" title="Alex Testman">
+                      </figure>
+                    </section>
+
+                    <section class="ols-rating-container">
+                      <legend class="ols-rating-legend ols-label-sm silent">
+                        Please leave a review by selecting a star
+                      </legend>
+                      <fieldset class="ols-rating-group btn-spe-sm">
+                        <input type="radio" id="5-stars" name="rating" value="5" ng-model="reviewFormData.stars" btn-radio="'5'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="5-stars"></label>
+
+                        <input type="radio" id="4-stars" name="rating" value="4" ng-model="reviewFormData.stars" btn-radio="'4'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="4-stars"></label>
+
+                        <input type="radio" id="3-stars" name="rating" value="3" ng-model="reviewFormData.stars" btn-radio="'3'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="3-stars"></label>
+
+                        <input type="radio" id="2-stars" name="rating" value="2" ng-model="reviewFormData.stars" btn-radio="'2'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="2-stars"></label>
+
+                        <input type="radio" id="1-star" name="rating" value="1" ng-model="reviewFormData.stars" btn-radio="'1'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="1-star"></label>
+                      </fieldset>
+                    </section>
+
+                    <label for="conversation-input" class="label-sm silent">Write a message</label>
+                    <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
+                  </section>
+                </section>
+
+                <section class="row-fluid conversation-action">
+                  <section class="col-xs-24">
+                    <button type="submit"
+                            class="btn btn-primary dark">
+                      Send message
+                    </button>
+                  </section>
+                </section>
+              </form>
+            </section>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><form class="ols-bubble-input">
+  <section class="row-fluid">
+    <section class="input-row textarea-row">
+      <section class="bubble-input-img-container">
+        <figure class="round-image rounded">
+          <img src="http://placehold.it/45x45" alt="Image" title="Alex Testman">
+        </figure>
+      </section>
+
+      <section class="ols-rating-container">
+        <legend class="ols-rating-legend ols-label-sm silent">
+          Please leave a review by selecting a star
+        </legend>
+        <fieldset class="ols-rating-group btn-spe-sm">
+          <input type="radio" id="5-stars" name="rating" value="5" ng-model="reviewFormData.stars" btn-radio="'5'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="5-stars"></label>
+
+          <input type="radio" id="4-stars" name="rating" value="4" ng-model="reviewFormData.stars" btn-radio="'4'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="4-stars"></label>
+
+          <input type="radio" id="3-stars" name="rating" value="3" ng-model="reviewFormData.stars" btn-radio="'3'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="3-stars"></label>
+
+          <input type="radio" id="2-stars" name="rating" value="2" ng-model="reviewFormData.stars" btn-radio="'2'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="2-stars"></label>
+
+          <input type="radio" id="1-star" name="rating" value="1" ng-model="reviewFormData.stars" btn-radio="'1'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="1-star"></label>
+        </fieldset>
+      </section>
+
+      <label for="conversation-input" class="label-sm silent">Write a message</label>
+      <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
+    </section>
+  </section>
+
+  <section class="row-fluid conversation-action">
+    <section class="col-xs-24">
+      <button type="submit"
+              class="btn btn-primary dark">
+        Send message
+      </button>
+    </section>
+  </section>
+</form></code></pre>
+<!-- end code block -->
           </article>
 
           <!-- Navigation -->
