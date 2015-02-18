@@ -126,7 +126,7 @@ textarea{
 }
 
 .input-row.input-focused{
-  label{
+  label:not(.btn){
     margin-top:-20px;
     font-size:@fs_small - 1;
     .col(@col_base_4);
@@ -182,8 +182,9 @@ textarea{
   }
 
   .input-row.input-focused{
-    label{
-      .h();
+    label:not(.btn){
+      opacity: 0;
+      margin-top:0;
     }
   }
 
@@ -196,12 +197,17 @@ textarea{
 
     label.btn{
       position:static;
+      cursor:pointer;
     }
   }
 
   .textarea-row{
     margin-top:0px;
     padding-top:0px;
+
+    .ols-label-md{
+      margin-bottom: 0;
+    }
 
     textarea{
       border:@bstm @ws;
@@ -212,6 +218,14 @@ textarea{
   .ols-rating-container{
     .stretch();
     margin-bottom:10px;
+
+    .ols-rating-legend{
+      margin-left:0;
+    }
+
+    .ols-rating-group{
+      margin-left: -5px;
+    }
   }
 }
 
