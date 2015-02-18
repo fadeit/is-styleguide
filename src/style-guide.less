@@ -62,6 +62,10 @@ input {
   }
 }
 
+textarea{
+  max-width:100%;
+}
+
 .help-block {
   .animate(@animation_time_short, @transition_default);
 }
@@ -159,72 +163,38 @@ textarea{
   .placeholder-color(@red);
 }
 
-.ols-bubbles{
-  .bubble-row.conversation-input{
-    margin-top:40px;
-    .col(@ws, b);
+.ols-bubble-input{
+  .rel();
 
-    &:nth-child(odd){
-      figure{
-        float:none;
-        left: 0px;
-      }
-
-      .bubble-message-container{
-        float:none;
-      }
+  .input-row.input-focused{
+    label{
+      margin-top: -40px;
     }
+  }
+
+  .input-row{
+    padding-bottom:0;
 
     figure{
-      float:none;
-      .rel();
-      .inline-block();
-      top: -12px;
-      left: 0px;
-      margin-bottom: -25px;
-      margin-right:-5px;
-      padding-bottom:25px;
-      padding-top: 29px;
-      .col(@w, b);
-      .border-radius(0);
-      .stretch(h);
-      border: @bstm @col_gray_2;
+      .abs();
+      left:-60px;
+      top:~'calc(50% - 23px)';
 
       img{
-        max-width:85px;
-      }
-
-      @media only screen and (min-width:@bp_md){
-        margin-right:-20px;
-        padding-top: 25px;
-        padding-bottom:21px;
+        height:45px;
       }
     }
 
-    .bubble-message-container{
-      float:none;
-      .col(@ws, b);
-      .inline-block();
+    label{
+      padding:15px 10px 0px 10px;
+    }
 
-      .input-row{
-        padding-bottom:0px;
-
-        textarea{
-          .col(@ws, b);
-        }
-      }
-    }//bubble message-contaienr
-  }//conversation-input
-
-  .conversation-action{
-    .dropshadow(inset 0 8px 7px -6px rgba(230, 230, 230, 0.8));
-    .col(@ws, b);
-    margin-top: -31px;
-    .rel();
-    z-index: 2;
-    padding:15px 30px 13px 30px;
+    textarea{
+      border:@bstm @ws;
+      padding:15px 10px 0px 10px;
+    }
   }
-}//ols-bubbles
+}
 
 /*
  * Buttons
@@ -910,7 +880,10 @@ p{
 
   .contact-body{
     margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     border-top: 1px solid #737375;
+    border-bottom: 1px solid #737375;
 
     dt{
       margin-top:20px;
@@ -1306,6 +1279,7 @@ p{
 
   .ols-large-search{
     .dropdown-toggle, .dropdown-menu{
+      min-width: 260px;
       .dropshadow(none);
       .col(@w, b);
       .col(@col_gray_6);

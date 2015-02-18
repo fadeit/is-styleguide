@@ -2175,60 +2175,53 @@
 <!-- end code block -->
             <h3 class="toc-heading" id="conversation-input">Conversation input</h3>
             <p>
-              This input should be used with <a href="#conversation-bubbles">conversation bubbles</a> (its layout inherits properties from conversation bubbles).<br/>
-              This input is not dynamic, for more info check out the <a href="#text-input">text input</a> section.
+              This input can be used with <a href="#conversation-bubbles">conversation bubbles</a>.<br/>
+              This example is not dynamic, check out the <a href="#text-input">text input</a> section to see some dynamic examples of inputs.
             </p>
 
-            <form class="ols-bubbles spaced">
-              <section class="row-fluid bubble-row conversation-input">
-                <section class="col-xs-18 col-md-16 col-height-sm bubble-message-container">
+            <section class="container-fluid spaced extra-space conversation-input-space white">
+              <form class="ols-bubble-input">
+                <section class="row-fluid">
                   <section class="input-row">
                     <label for="conversation-input" class="label-sm silent">Write a message</label>
+                    <figure class="round-image rounded">
+                      <img src="http://placehold.it/45x45" alt="Image" title="Alex Testman">
+                    </figure>
                     <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
                   </section>
                 </section>
-                <figure class="col-xs-6 col-md-8 col-height-sm round-image rounded">
-                  <img src="http://placehold.it/85x85" alt="Image">
-                  <figcaption>
-                    <b>Alex Testman</b>
-                  </figcaption>
-                </figure>
-              </section>
-              <section class="row-fluid conversation-action">
-                <section class="col-xs-24">
-                  <button type="submit"
-                          class="btn btn-primary dark">
-                    Send message
-                  </button>
-                </section>
-              </section>
-            </form>
 
+                <section class="row-fluid conversation-action">
+                  <section class="col-xs-24">
+                    <button type="submit"
+                            class="btn btn-primary dark">
+                      Send message
+                    </button>
+                  </section>
+                </section>
+              </form>
+            </section>
 <!-- code block -->
-<pre class="code-toolbar"><code class="language-markup"><form class="ols-bubbles">
-  <section class="row-fluid bubble-row conversation-input">
-    <section class="col-xs-18 col-md-16 col-height-sm bubble-message-container">
+<pre class="code-toolbar"><code class="language-markup"><form class="ols-bubble-input">
+    <section class="row-fluid">
       <section class="input-row">
         <label for="conversation-input" class="label-sm silent">Write a message</label>
+        <figure class="round-image rounded">
+          <img src="http://placehold.it/45x45" alt="Image" title="Alex Testman">
+        </figure>
         <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
       </section>
     </section>
-    <figure class="col-xs-6 col-md-8 col-height-sm round-image rounded">
-      <img src="http://placehold.it/85x85" alt="Image">
-      <figcaption>
-        <b>Alex Testman</b>
-      </figcaption>
-    </figure>
-  </section>
-  <section class="row-fluid conversation-action">
-    <section class="col-xs-24">
-      <button type="submit"
-              class="btn btn-primary dark">
-        Send message
-      </button>
+
+    <section class="row-fluid conversation-action">
+      <section class="col-xs-24">
+        <button type="submit"
+                class="btn btn-primary dark">
+          Send message
+        </button>
+      </section>
     </section>
-  </section>
-</form></code></pre>
+  </form></code></pre>
 <!-- end code block -->
 
           </article>
