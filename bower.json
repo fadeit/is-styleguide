@@ -30,6 +30,7 @@
     "bootstrap": "fadeit/bootstrap#v3.5.1"
   },
   "dependencies": {
-    "prism-toolbar": "dandaniel/prism-toolbar#v2.1.0"
+    "prism-toolbar": "dandaniel/prism-toolbar#v2.1.0",
+    "flag-icon-css": "~0.6.4"
   }
 }
