@@ -2016,6 +2016,8 @@
               This example doesn't use JS, so it won't be interactive. It needs the <u>UI Bootstrap</u> dropdown component to work, see more in their <a href="http://angular-ui.github.io/bootstrap/#/dropdown">docs</a>. (btw, not really the ideal way to display languages)
             </p>
 
+            <p class="head-up">The search bar is not designed to fit in the style guide container (it should take the entire screen width). Therefore, it might look very much broken on smaller viewports. Zoom out a bit to make it fit.</p><br/><br/>
+
             <section class="container-fluid no-padding spaced">
               <section class="row-fluid search-bar navbar-top" id="search-bar">
                 <section class="col-md-3 logo-column">
@@ -2024,7 +2026,7 @@
                 <section class="col-md-15 search-column">
                   <nav class="btn-group ols-category-drop" dropdown="">
                     <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-                      Select a category <i class="ols-svg ols-icon-reveal"></i>
+                      Search for <i class="ols-svg ols-icon-reveal"></i>
                     </button>
                     <ul class="dropdown-menu" role="menu">
                       <li>
@@ -2033,12 +2035,11 @@
                     </ul>
                   </nav>
 
-                  <!-- Add later on, as the project evolves
                   <span class="ols-label-connector">to do</span>
 
                   <span class="ols-search-input-group">
                     <input type="text" placeholder="Type a service"/>
-                  </span>-->
+                  </span>
 
                   <span class="ols-label-connector">in</span>
 
@@ -2082,7 +2083,7 @@
   <section class="col-md-15 search-column">
     <nav class="btn-group ols-category-drop" dropdown="">
       <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-        Select a category <i class="ols-svg ols-icon-reveal"></i>
+        Search for <i class="ols-svg ols-icon-reveal"></i>
       </button>
       <ul class="dropdown-menu" role="menu">
         <li>
@@ -2090,6 +2091,12 @@
         </li>
       </ul>
     </nav>
+
+    <span class="ols-label-connector">to do</span>
+
+    <span class="ols-search-input-group">
+      <input type="text" placeholder="Type a service"/>
+    </span>
 
     <span class="ols-label-connector">in</span>
 
@@ -2122,6 +2129,7 @@
   </section>
 </section></code></pre>
 <!-- end code block -->
+            <p>The 'type a service' input will be present only in the larger version of the search bar. However, it's kept here as an example. Experiments might show that it's a good idea to replace the location input while location is set.</p>
 
             <h3 class="toc-heading" id="search-bar-top-drop">Search top dropdown</h3>
             <p>
@@ -2136,7 +2144,7 @@
                 <section class="col-md-15 search-column">
                   <nav class="btn-group ols-category-drop open" dropdown="">
                     <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-                      Select a category <i class="ols-svg ols-icon-reveal"></i>
+                      Search for <i class="ols-svg ols-icon-reveal"></i>
                     </button>
                     <ul class="dropdown-menu" role="menu">
                       <li>
@@ -2200,7 +2208,7 @@
   <section class="col-md-15 search-column">
     <nav class="btn-group ols-category-drop open" dropdown="">
       <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-        Select a category <i class="ols-svg ols-icon-reveal"></i>
+        Search for <i class="ols-svg ols-icon-reveal"></i>
       </button>
       <ul class="dropdown-menu" role="menu">
         <li>
@@ -2268,7 +2276,7 @@
                 <section class="col-md-15 search-column">
                   <nav class="btn-group ols-category-drop" dropdown="">
                     <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-                      Select a category <i class="ols-svg ols-icon-reveal"></i>
+                      Search for <i class="ols-svg ols-icon-reveal"></i>
                     </button>
                     <ul class="dropdown-menu" role="menu">
                       <li>
@@ -2317,7 +2325,7 @@
   <section class="col-md-15 search-column">
     <nav class="btn-group ols-category-drop" dropdown="">
       <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-        Select a category <i class="ols-svg ols-icon-reveal"></i>
+        Search for <i class="ols-svg ols-icon-reveal"></i>
       </button>
       <ul class="dropdown-menu" role="menu">
         <li>
@@ -2368,7 +2376,7 @@
                 <section class="col-md-15 search-column">
                   <nav class="btn-group ols-category-drop" dropdown="">
                     <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-                      Select a category <i class="ols-svg ols-icon-reveal"></i>
+                      Search for <i class="ols-svg ols-icon-reveal"></i>
                     </button>
                     <ul class="dropdown-menu" role="menu">
                       <li>
@@ -2416,7 +2424,7 @@
   <section class="col-md-15 search-column">
     <nav class="btn-group ols-category-drop" dropdown="">
       <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-        Select a category <i class="ols-svg ols-icon-reveal"></i>
+        Search for <i class="ols-svg ols-icon-reveal"></i>
       </button>
       <ul class="dropdown-menu" role="menu">
         <li>
@@ -2460,7 +2468,6 @@
 
             <h3 class="toc-heading" id="search-bar-top-profile-drop">Search bar profile dropdown</h3>
             <p>The profile dropdown works exactly the same as the <a href="#search-bar-top-drop">category dropdown</a>: it requires a class name (<u>open</u>) to display the dropdown contents.</p>
-
             <section class="container-fluid no-padding white dropdown-container">
               <section class="row-fluid search-bar navbar-top" id="search-bar">
                 <section class="col-md-3 logo-column">
@@ -2469,7 +2476,7 @@
                 <section class="col-md-15 search-column">
                   <nav class="btn-group ols-category-drop" dropdown="">
                     <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-                      Select a category <i class="ols-svg ols-icon-reveal"></i>
+                      Search for <i class="ols-svg ols-icon-reveal"></i>
                     </button>
                     <ul class="dropdown-menu" role="menu">
                       <li>
@@ -2534,7 +2541,7 @@
   <section class="col-md-15 search-column">
     <nav class="btn-group ols-category-drop" dropdown="">
       <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
-        Select a category <i class="ols-svg ols-icon-reveal"></i>
+        Search for <i class="ols-svg ols-icon-reveal"></i>
       </button>
       <ul class="dropdown-menu" role="menu">
         <li>
@@ -2591,10 +2598,175 @@
 </section></code></pre>
 <!-- end code block -->
 
-            <!-- TODO -->
             <h3 class="toc-heading" id="search-bar-mid">Search bar mid</h3>
+
+            <section class="container-fluid no-padding spaced">
+              <section class="row-fluid search-bar navbar-mid" id="search-bar">
+                <section class="col-xs-24 search-column">
+                  <nav class="btn-group ols-category-drop" dropdown="">
+                    <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
+                      Search for <i class="ols-svg ols-icon-reveal"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Plumber</a>
+                      </li>
+                       <li>
+                        <a href="#">Carpenter</a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  <span class="ols-label-connector">to do</span>
+
+                  <span class="ols-search-input-group">
+                    <input type="text" placeholder="Type a service"/>
+                  </span>
+
+                  <span class="ols-label-connector">in</span>
+
+                  <span class="ols-input-location">
+                    <input type="text" placeholder="Type your location"/>
+
+                    <a href="#nowhere" class="ols-geolocate-container" title="locate me">
+                      <span class="ols-svg ols-icon-geolocate"></span>
+
+                      <span class="ols-geolocate-tooltip">Locate me</span>
+                    </a>
+                  </span>
+
+                  <button type="button" class="btn btn-primary dark btn-search">Search</button>
+                </section>
+
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="row-fluid search-bar navbar-mid" id="search-bar">
+  <section class="col-xs-24 search-column">
+    <nav class="btn-group ols-category-drop" dropdown="">
+      <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
+        Search for <i class="ols-svg ols-icon-reveal"></i>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="#">Plumber</a>
+        </li>
+         <li>
+          <a href="#">Carpenter</a>
+        </li>
+      </ul>
+    </nav>
+
+    <span class="ols-label-connector">to do</span>
+
+    <span class="ols-search-input-group">
+      <input type="text" placeholder="Type a service"/>
+    </span>
+
+    <span class="ols-label-connector">in</span>
+
+    <span class="ols-input-location">
+      <input type="text" placeholder="Type your location"/>
+
+      <a href="#nowhere" class="ols-geolocate-container" title="locate me">
+        <span class="ols-svg ols-icon-geolocate"></span>
+
+        <span class="ols-geolocate-tooltip">Locate me</span>
+      </a>
+    </span>
+
+    <button type="button" class="btn btn-primary dark btn-search">Search</button>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+
             <h3 class="toc-heading" id="search-bar-mid-drop">Search mid dropdown</h3>
-            <!-- end TODO -->
+            <section class="container-fluid no-padding spaced dropdown-container white">
+              <section class="row-fluid search-bar navbar-mid" id="search-bar">
+                <section class="col-xs-24 search-column">
+                  <nav class="btn-group ols-category-drop open" dropdown="">
+                    <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
+                      Search for <i class="ols-svg ols-icon-reveal"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Plumber</a>
+                      </li>
+                      <li>
+                        <a href="#">Carpenter</a>
+                      </li>
+                      <li>
+                        <a href="#">Electrician</a>
+                      </li>
+                      <li>
+                        <a href="#">Mechanic</a>
+                      </li>
+                      <li>
+                        <a href="#">Cobbler</a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  <span class="ols-label-connector">to do</span>
+
+                  <span class="ols-search-input-group">
+                    <input type="text" placeholder="Type a service"/>
+                  </span>
+
+                  <span class="ols-label-connector">in</span>
+
+                  <span class="ols-input-location">
+                    <input type="text" placeholder="Type your location"/>
+
+                    <a href="#nowhere" class="ols-geolocate-container" title="locate me">
+                      <span class="ols-svg ols-icon-geolocate"></span>
+
+                      <span class="ols-geolocate-tooltip">Locate me</span>
+                    </a>
+                  </span>
+
+                  <button type="button" class="btn btn-primary dark btn-search">Search</button>
+                </section>
+
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="row-fluid search-bar navbar-mid" id="search-bar">
+  <section class="col-xs-24 search-column">
+    <nav class="btn-group ols-category-drop open" dropdown="">
+      <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
+        Search for <i class="ols-svg ols-icon-reveal"></i>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="#">Plumber</a>
+        </li>
+      </ul>
+    </nav>
+
+    <span class="ols-label-connector">to do</span>
+
+    <span class="ols-search-input-group">
+      <input type="text" placeholder="Type a service"/>
+    </span>
+
+    <span class="ols-label-connector">in</span>
+
+    <span class="ols-input-location">
+      <input type="text" placeholder="Type your location"/>
+
+      <a href="#nowhere" class="ols-geolocate-container" title="locate me">
+        <span class="ols-svg ols-icon-geolocate"></span>
+
+        <span class="ols-geolocate-tooltip">Locate me</span>
+      </a>
+    </span>
+
+    <button type="button" class="btn btn-primary dark btn-search">Search</button>
+  </section>
+</section></code></pre>
+<!-- end code block -->
 
             <h3 class="toc-heading" id="text-input">Text input</h3>
             <p>

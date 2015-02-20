@@ -1346,7 +1346,7 @@ p{
           }
 
           a{
-            padding:10px 25px 10px 25px;
+            padding:10px 15px 10px 15px;
           }
         }
       }
@@ -1355,7 +1355,8 @@ p{
         border:0;
         min-width:200px;
         line-height: inherit;
-        padding: 0 50px 0 10px;
+        padding: 0 50px 0 15px;
+        .ta-l();
         .col(@col_base_4);
       }
 
@@ -1434,6 +1435,52 @@ p{
 .search-bar.navbar-mid{
   .abs();
   top:~"calc(50% - 45px)";
+
+  font-size:@fs_h3;
+
+  .search-column{
+    .ols-category-drop{
+      .dropdown-toggle{
+        font-size:@fs_h3;
+      }
+
+      .dropdown-menu{
+        font-size:@fs_h4;
+        line-height: @lh_h4;
+      }
+    }
+
+    .ols-input-location{
+      input{
+        padding-right: 78px;
+      }
+
+      .ols-geolocate-container{
+        .abs();
+        padding:0;
+        .block();
+        right: 10px;
+        top: 5px;
+        height:@search_bar_size_sm;
+
+        .ols-svg.ols-icon-geolocate{
+          left: 0px;
+        }
+
+        .ols-geolocate-tooltip{
+          top: 5px;
+          padding-left:0;
+          .col(@col_base_4);
+        }
+      }
+    }
+  }
+
+  .btn-search{
+    .fr();
+    font-size:@fs_h3;
+    padding:0 50px 0 50px;
+  }
 }
 
 //small search bar
