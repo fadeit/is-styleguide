@@ -1452,24 +1452,36 @@ p{
 
     .ols-input-location{
       input{
-        padding-right: 78px;
+        padding-right: 0px;
       }
 
       .ols-geolocate-container{
-        .abs();
-        padding:0;
-        .block();
-        right: 10px;
-        top: 5px;
-        height:@search_bar_size_sm;
+        .col(@w, b);
+        height:@search_bar_size;
+        line-height:@search_bar_size;
+        border:0;
+
+        &:hover{
+          border:0;
+          .col(@ws, b);
+          opacity:1;
+
+          .ols-icon-geolocate, .ols-geolocate-tooltip{
+            opacity:0.8;
+          }
+        }
 
         .ols-svg.ols-icon-geolocate{
-          left: 0px;
+          top:10px;
+          left: ~'calc(50% - 29px)';
         }
 
         .ols-geolocate-tooltip{
-          top: 5px;
-          padding-left:0;
+          .stretch();
+          .ta-c();
+          top:10px;
+          padding-left: 0;
+          line-height: 14px;
           .col(@col_base_4);
         }
       }
@@ -1513,6 +1525,8 @@ p{
 //top profile controls
 .profile-top-control{
   .ta-c();
+  line-height: 45px;
+  .col(@w);
 
   a{
     .fr();
