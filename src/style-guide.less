@@ -1434,7 +1434,7 @@ p{
 //the class for the search bar when it is in the middle
 .search-bar.navbar-mid{
   .abs();
-  top:~"calc(50% - 45px)";
+  top:~"calc(50% - @{search_bar_size})";
 
   font-size:@fs_h3;
 
@@ -1460,9 +1460,11 @@ p{
         height:@search_bar_size;
         line-height:@search_bar_size;
         border:0;
+        border-left: @bst @ws;
 
         &:hover{
           border:0;
+          border-left: @bst @col_gray_3;
           .col(@ws, b);
           opacity:1;
 
@@ -1525,7 +1527,7 @@ p{
 //top profile controls
 .profile-top-control{
   .ta-c();
-  line-height: 45px;
+  line-height: @search_bar_size_sm;
   .col(@w);
 
   a{
