@@ -1650,7 +1650,7 @@ p{
   .profile-toggle{
     .fr();
     cursor:pointer;
-    padding:0 10px 0 60px;
+    padding:0 20px 0 60px;
     .rel();
     //.animate(@animation_time_v_short, @transition_default);
 
@@ -1985,6 +1985,14 @@ p{
         line-height:30px;
         font-size:@fs_small;
 
+        &:hover{
+          .ols-icon-reveal{
+            left: -10px;
+            .rel();
+            .animate(@animation_time_v_short, @transition_default);
+          }
+        }
+
         a{
           .col(@col_base_4);
           line-height:@lh_small;
@@ -1993,6 +2001,7 @@ p{
         .ols-icon-reveal{
           height:10px;
           transform:rotate(90deg);
+          .animate(@animation_time_v_short, @transition_default);
         }
       }
     } //ul
