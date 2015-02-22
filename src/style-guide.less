@@ -914,7 +914,7 @@ p{
 }
 
 .ols-aside-contact{
-  .col(@col_gray_6, b);
+  .col(#323232, b);
 
   header{
     a{//contains all elements
@@ -924,33 +924,33 @@ p{
       .clearfix();
       .inline-block();
       .stretch();
-      .col(@col_gray_5, b);
+      .col(#545454, b);
       .fl();
       .animate(@animation_time_short, @transition_default);
 
       &:hover{
-        .col(@col_gray_7, b);
+        .col(@col_gray_5, b);
         .animate(@animation_time_short, @transition_default);
 
-        .ols-image-inbox-message-unread{
-          //from 0 88.524929%;
-          background-position: 0 83.82492863939106%;
+        [class*="ols-image-inbox-message"]{
+          //from 0 83.82492863939106%;
+          background-position: 0 88.524929%;
 
           .animate(@animation_time_short, @transition_default);
         }
 
         [class*="ols-label"]{
-          .col(@ws);
+          .col(@col_gray_8);
           .animate(@animation_time_short, @transition_default);
         }
       }
 
-      .ols-image-inbox-message-unread{
+      [class*="ols-image-inbox-message"]{
         .animate(@animation_time_short, @transition_default);
       }
 
       [class*="ols-label"]{
-        .col(@col_gray_8);
+        .col(@ws);
         .animate(@animation_time_short, @transition_default);
       }
     }
