@@ -914,19 +914,59 @@ p{
 }
 
 .ols-aside-contact{
-  padding: 20px 30px 20px 30px;
   .col(@col_gray_6, b);
 
   header{
-    .clearfix();
+    a{//contains all elements
+      padding: 20px 30px 30px 30px;
+      margin-bottom:20px;
+      border-bottom: @bst @col_gray_7;
+      .clearfix();
+      .inline-block();
+      .stretch();
+      .col(@col_gray_5, b);
+      .fl();
+      .animate(@animation_time_short, @transition_default);
+
+      &:hover{
+        .col(@col_gray_7, b);
+        .animate(@animation_time_short, @transition_default);
+
+        .ols-image-inbox-message-unread{
+          //from 0 88.524929%;
+          background-position: 0 83.82492863939106%;
+
+          .animate(@animation_time_short, @transition_default);
+        }
+
+        [class*="ols-label"]{
+          .col(@ws);
+          .animate(@animation_time_short, @transition_default);
+        }
+      }
+
+      .ols-image-inbox-message-unread{
+        .animate(@animation_time_short, @transition_default);
+      }
+
+      [class*="ols-label"]{
+        .col(@col_gray_8);
+        .animate(@animation_time_short, @transition_default);
+      }
+    }
 
     h5.ols-label-sm{
       .rel();
-      top: 10px;
-      margin-top: 5px;
-      .col(@col_gray_4);
+      top:10px;
     }
 
+    .ols-svg{
+      .rel();
+      transform: scale(1.1);
+      top: 20px;
+    }
+
+    //just for ref, was deleted
     .round-image{
       img{
         @media only screen and (min-width:@bp_xl){
@@ -945,11 +985,8 @@ p{
   }
 
   .contact-body{
-    margin-top: 20px;
+    padding: 20px 30px 40px 30px;
     margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid #737375;
-    border-bottom: 1px solid #737375;
 
     dt{
       margin-top:20px;
