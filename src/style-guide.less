@@ -1581,16 +1581,6 @@ p{
     .ols-category-drop{
       .dropdown-toggle{
         font-size:@fs_h3;
-
-        [class*='ols-icon-reveal']{
-          top: auto;
-          height: 30px;
-          width: 30px;
-          right: 0;
-          bottom: -27px;
-          left: ~'calc(50% - 22px)';
-          transform: scale(2);
-        }
       }
 
       .dropdown-menu{
@@ -1872,8 +1862,11 @@ p{
     width: 30px;
     height: 30px;
     border:@bstm @col_base_3;
-    margin-top:8px;
+    margin-top:9px;
+    margin-left:5px;
     overflow:hidden;
+    .fr();
+    border:0;
     .animate(@animation_time_v_short, @transition_default);
 
     &:hover, &:focus{
