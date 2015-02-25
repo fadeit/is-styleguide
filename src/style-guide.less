@@ -1704,6 +1704,127 @@ p{
   }
 }
 
+.search-bar.simple.rollercoaster{
+  line-height:@search_bar_size_lg;
+
+  input{
+    padding:0 30px 0 30px;
+  }
+
+  .search-column{
+    .ols-input-location{
+      .ols-geolocate-container{
+        height:@search_bar_size_lg;
+        line-height:@search_bar_size_lg;
+
+        .ols-icon-geolocate{
+          top:45px;
+        }
+      }
+    }
+  }
+
+    .controls{
+      .abs();
+      width:@search_bar_size_lg;
+      line-height:20px;
+      font-size:@fs_body;
+      .col(@col_text);
+      .ta-c();
+
+      img{
+        .inline-block();
+        vertical-align: middle;
+      }
+    }
+
+    .prev{
+      top: -90px;
+
+      &:before{
+        content: "";
+        width: 0;
+        top: -10px;
+        position: relative;
+        display: inline-block;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 25px solid rgb(237, 237, 237);
+      }
+    }
+
+    .next{
+      bottom: -90px;
+
+      &:after{
+        content: "";
+        width: 0;
+        bottom: -10px;
+        position: relative;
+        display: inline-block;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-top: 25px solid rgb(237, 237, 237);
+      }
+    }
+
+    ul{
+      margin-bottom:0;
+    }
+
+      li{
+        width:@search_bar_size_lg;
+        height:@search_bar_size_lg;
+        border:@bst @col_gray_4;
+
+        &:hover, &:focus{
+          a{
+            .col(@w, b);
+          }
+        }
+
+        a{
+          .stretch();
+          .stretch(h);
+          padding:5px;
+          .col(@w, b);
+        }
+      }
+
+      figure{
+        .stretch();
+        .fl();
+        line-height: 30px;
+        margin-top:10px;
+
+        figcaption{
+          margin-top:5px;
+        }
+      }
+
+        img{
+          max-width:100px;
+          max-height:100px;
+          vertical-align: top;
+        }
+
+    .inner-search-wrapper{
+      width: ~"calc(100% - @{search_bar_size_lg})";
+      .fr();
+    }
+
+      .ols-label-connector{
+        opacity:1;
+        .col(@col_gray_6);
+      }
+
+      .btn-search{
+        font-size:@fs_h2;
+      }
+}
+
 //small search bar
 .search-bar.navbar-top{
   height:@search_bar_size_sm + 2px; //2px for borders
