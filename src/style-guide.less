@@ -1398,13 +1398,13 @@ p{
           font-family: @ff_light;
 
           &:nth-child(odd){
-            .col(@col_gray_2, b);
+            .col(@w, b);
           }
 
-          &:hover{
+          &:hover, &:focus{
             a{
-              .col(@w);
-              .col(@col_base_3, b);
+              .col(@col_text);
+              .col(@col_gray_3, b);
             }
           }
 
