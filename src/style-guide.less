@@ -1739,7 +1739,7 @@ p{
       .animate(@animation_time_short, @transition_default);
 
       &:hover{
-        .col(@col_base_3);
+        //.col(@col_base_3);
         .animate(@animation_time_short, @transition_default);
       }
 
@@ -2304,12 +2304,14 @@ p{
       li.navigation{
         line-height:30px;
         font-size:@fs_small;
+        .animate(@animation_time_v_short, @transition_default);
 
         &:hover{
+          .animate(@animation_time_v_short, @transition_default);
+          margin-left: -10px;
+
           .ols-icon-reveal{
-            left: -10px;
             .rel();
-            .animate(@animation_time_v_short, @transition_default);
           }
         }
 
