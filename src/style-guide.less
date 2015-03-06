@@ -1349,6 +1349,8 @@ p{
   height:@search_bar_size + 2px; //2px for borders
   line-height:@search_bar_size;
   border:@bst @col_nav_transparent;
+  border-left: 0;
+  border-right: 0;
   .col(@col_nav_transparent, b);
   .col(@w);
   .rel();
@@ -1615,7 +1617,8 @@ p{
 //the class for the search bar when it is in the middle
 .search-bar.navbar-mid{
   .abs();
-  top:~"calc(50% - @{search_bar_size})";
+  //top:~"calc(50% - @{search_bar_size})";
+  top:200px;
   .col(transparent, b);
   border:0;
 
@@ -1705,20 +1708,22 @@ p{
 }
 
 .search-bar.simple.rollercoaster{
-  line-height:@search_bar_size_lg;
+  line-height:@search_bar_size;
 
   input{
     padding:0 30px 0 30px;
   }
 
   .search-column{
+    .col(rgba(245, 245, 245, 0.95), b);
+
     .ols-input-location{
       .ols-geolocate-container{
-        height:@search_bar_size_lg;
-        line-height:@search_bar_size_lg;
+        height:@search_bar_size;
+        line-height:@search_bar_size;
 
         .ols-icon-geolocate{
-          top:45px;
+          top:10px;
         }
       }
     }
@@ -1727,46 +1732,73 @@ p{
     .controls{
       .abs();
       width:@search_bar_size_lg;
-      line-height:20px;
+      line-height:40px;
       font-size:@fs_body;
-      .col(@col_text);
+      .col(@col_base_4);
       .ta-c();
+      .animate(@animation_time_short, @transition_default);
+
+      &:hover{
+        .col(@col_base_3);
+        .animate(@animation_time_short, @transition_default);
+      }
 
       img{
+        max-width:45px;
+        max-height:45px;
+        .rel();
+        top: -2px;
         .inline-block();
-        vertical-align: middle;
+        //.fr();
       }
     }
 
     .prev{
-      top: -90px;
+      top: -100px;
 
       &:before{
         content: "";
         width: 0;
-        top: -10px;
-        position: relative;
-        display: inline-block;
+        margin: 0 auto 15px auto;
+        .block();
         height: 0;
-        border-left: 40px solid transparent;
-        border-right: 40px solid transparent;
-        border-bottom: 25px solid rgb(237, 237, 237);
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 15px solid @col_base_2;
+        .rel();
+        .animate(@animation_time_short, @transition_default);
+      }
+
+      &:hover{
+        &:before{
+          .animate(@animation_time_short, @transition_default);
+          margin-top: -10px;
+          margin-bottom:10px;
+        }
       }
     }
 
     .next{
-      bottom: -90px;
+      bottom: -100px;
 
       &:after{
         content: "";
         width: 0;
-        bottom: -10px;
-        position: relative;
-        display: inline-block;
+        margin: 15px auto 0 auto;
+        .block();
         height: 0;
-        border-left: 40px solid transparent;
-        border-right: 40px solid transparent;
-        border-top: 25px solid rgb(237, 237, 237);
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 15px solid @col_base_2;
+        .animate(@animation_time_short, @transition_default);
+      }
+
+      &:hover{
+        &:after{
+          .animate(@animation_time_short, @transition_default);
+          margin-bottom: -10px;
+          margin-top:10px;
+        }
       }
     }
 
@@ -1778,6 +1810,10 @@ p{
         width:@search_bar_size_lg;
         height:@search_bar_size_lg;
         border:@bst @col_gray_4;
+
+        &:nth-child(6n){
+          border:@bst @col_gray_4;
+        }
 
         &:hover, &:focus{
           a{
@@ -1810,19 +1846,47 @@ p{
           vertical-align: top;
         }
 
+    .ols-category-drop.open{
+      .toggle-dropdown:not(.dropdown-contents), .controls{
+        opacity:0.6;
+      }
+
+      .toggle-dropdown:not(.dropdown-contents){
+        li{
+          &:hover, &:focus{
+            a{
+              .animate(@animation_time_short, @transition_default);
+              .col(@ws, b);
+              .col(@col_gray_7);
+            }
+
+            img{
+              .animate(@animation_time_short, @transition_default);
+              transform:scale(1);
+            }
+          }
+        }
+      }
+    }
+
     .inner-search-wrapper{
+      padding-top: (@search_bar_size_lg - @search_bar_size)/2!important; //important not needed for prod
       width: ~"calc(100% - @{search_bar_size_lg})";
       .fr();
-    }
 
       .ols-label-connector{
         opacity:1;
         .col(@col_gray_6);
+        .col(#E4E4E4, b);
       }
 
       .btn-search{
-        font-size:@fs_h2;
+        font-size:@fs_h3;
+        font-family:@ff_light;
+        font-weight: 300;
+        letter-spacing:1px;
       }
+    }
 }
 
 //small search bar
