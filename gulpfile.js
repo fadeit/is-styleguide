@@ -77,7 +77,7 @@ gulp.task('svg-sprites', function(){
       css: {
         dest: '',
         prefix: 'ols-',
-        sprite: 'images/svg-sprite.svg',
+        sprite: '../images/svg-sprite.svg',
         bust: false,
         dimensions: true,
         layout: 'vertical',
