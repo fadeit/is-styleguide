@@ -25,7 +25,7 @@ gulp.task('less', function(){
             browsers: ['> 1%'],
             cascade: false
       }))
-      .pipe(gulp.dest('./dist/'));
+      .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('this-styleguide', function(){
