@@ -10,7 +10,18 @@
  *
  */
 
- @font-face {
+@font-face {
+  font-family: 'PNL';
+  src: url('../fonts/pnl-webfont.eot');
+  src: url('../fonts/pnl-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/pnl-webfont.woff') format('woff'),
+  url('../fonts/pnl-webfont.ttf') format('truetype'),
+  url('../fonts/pnl-webfont.svg#pnl') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'PNL';
   src: url('../fonts/pnl-webfont.eot');
   src: url('../fonts/pnl-webfont.eot?#iefix') format('embedded-opentype'),
@@ -29,7 +40,7 @@
   url('../fonts/pnsb-webfont.ttf') format('truetype'),
   url('../fonts/pnsb-webfont.svg#pnl') format('svg');
   font-weight: bold;
-  font-style: bold;
+  font-style: normal;
 }
 
 .ols-svg{
@@ -923,7 +934,7 @@ p{
 
   header{
     a{//contains all elements
-      padding: 20px 30px 30px 30px;
+      padding: 10px 15px 15px 15px;
       margin-bottom:20px;
       border-bottom: @bst @col_gray_7;
       .clearfix();
@@ -950,6 +961,10 @@ p{
         }
       }
 
+      @media only screen and (min-width:@bp_sm){
+        padding: 20px 30px 30px 30px;
+      }
+
       [class*="ols-image-inbox-message"]{
         .animate(@animation_time_short, @transition_default);
       }
@@ -968,7 +983,15 @@ p{
     .ols-svg{
       .rel();
       transform: scale(1.1);
-      top: 20px;
+      top: 15px;
+      .fr();
+      margin-right:10px;
+
+      @media only screen and (min-width:@bp_sm){
+        top: 20px;
+        margin-right:0;
+        .fl();
+      }
     }
 
     //just for ref, was deleted
@@ -990,8 +1013,12 @@ p{
   }
 
   .contact-body{
-    padding: 20px 30px 40px 30px;
+    padding: 10px 15px 20px 15px;
     margin-bottom: 20px;
+
+    @media only screen and (min-width:@bp_md){
+      padding: 20px 30px 40px 30px;
+    }
 
     dt{
       margin-top:20px;
@@ -1351,36 +1378,6 @@ p{
  * Navigation
  *
  */
-.burger {
-  .rel();
-  .inline-block();
-  .col(@w, b);
-  height: 2px;
-  width: 15px;
-  margin-left: 5px;
-  top: -4px;
-}
-
-.burger:before, .burger:after {
-  content: "";
-  .abs();
-  top: 10px;
-  left: 0;
-  width: 15px;
-  height: 2px;
-}
-
-.burger:before{
-  top:-5px;
-  .col(@w, b);
-}
-
-.burger:after{
-  top: auto;
-  bottom:-5px;
-  .col(@w, b);
-}
-
 .search-bar{
   height:@search_bar_size + 2px; //2px for borders
   line-height:@search_bar_size;
@@ -2116,16 +2113,6 @@ p{
         //letter-spacing:1px;
         .fr();
       }
-
-      .searching-location-mobile{
-        padding-top:20px;
-        .col(@col_text);
-        .ta-c();
-
-        @media only screen and (min-width:@bp_sm){
-          .h();
-        }
-      }
     }
 }
 
@@ -2136,10 +2123,12 @@ p{
 
   .search-column{
     .rel();
+    .h();
     margin-top:@search_bar_size_sm + 2px;
 
     @media only screen and (min-width:@bp_sm){
       top:0;
+      .block();
     }
 
     .ols-category-drop{
@@ -2220,6 +2209,22 @@ p{
   }
 }
 
+.search-bar.navbar-top.search-toggled{
+  .search-column{
+    .block();
+  }
+}
+
+.searching-location-mobile{
+  padding-top:20px;
+  .col(@col_text);
+  .ta-c();
+
+  @media only screen and (min-width:@bp_sm){
+    .h();
+  }
+}
+
 //top profile controls
 .profile-top-control{
   .ta-c();
@@ -2278,11 +2283,17 @@ p{
 
     @media only screen and (min-width:@bp_sm){
       border:0;
+      .fr();
     }
 
     @media only screen and (min-width:@bp_md){
-      .fr();
       margin-left:0;
+    }
+
+    .glyphicon-menu-hamburger{
+      .col(@w);
+      margin-left: 5px;
+      top:2px;
     }
 
     img{
@@ -2348,9 +2359,9 @@ p{
       left:0;
       right:auto;
 
-      @media only screen and (min-width:@bp_sm){
-        right:0;
-        left:auto;
+      @media only screen and (@bp_sm){
+        left: auto;
+        right: 0;
       }
 
       li{
@@ -2469,14 +2480,24 @@ p{
 
   .ols-menu{
     .col(@w, b);
+    .clearfix();
 
     ul{
       padding-left: 0;
+      display: flex;
+      flex-wrap:nowrap;
+      margin-bottom:0;
+
+      @media only screen and (min-width:@bp_md){
+        .block();
+        margin-bottom:10px;
+      }
 
       li{
+        font-size:@m_fs_small;
         list-style-type: none;
         border:@bst @col_gray_4;
-        padding: 5px 10px 0px 10px;
+        padding: 5px 10px 10px 10px;
         .animate(@animation_time_short, @transition_default);
 
         &:hover{
@@ -2485,6 +2506,8 @@ p{
         }
 
         @media only screen and (min-width:@bp_sm){
+          padding-bottom:0;
+          font-size:@fs_body;
           border:0;
           border-bottom:@bst @col_gray_4;
         }
@@ -2493,7 +2516,7 @@ p{
           .animate(@animation_time_short, @transition_default);
           width:100%;
           color:@col_text;
-          line-height:@menu_image_height;
+          line-height:@lh_small;
           .inline-block();
           .ta-c();
 
@@ -2503,6 +2526,7 @@ p{
 
           @media only screen and (min-width:@bp_sm){
             .ta-l();
+            line-height:@menu_image_height;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
@@ -2527,8 +2551,14 @@ p{
           }
 
           figure.menu-icon{
-            margin-bottom: -19px;
-            margin-top: 2px;
+            margin-bottom: -3px;
+            margin-top: -2px;
+
+            .glyphicon-envelope{
+              font-size:@fs_body;
+              .col(@col_base_3);
+              top: 16px;
+            }
 
             @media only screen and (min-width:@bp_sm){
               margin-bottom:0;
@@ -2750,21 +2780,38 @@ p{
     }
 
     figure{
-      .ta-c();
-      vertical-align: middle;
-      .abs();
-      top: ~'calc(50% - 120px/2)';
+      margin-bottom:10px;
+
+      @media only screen and (min-width:@bp_sm){
+        margin-bottom:0;
+        .ta-c();
+        vertical-align: middle;
+        .abs();
+        top: ~'calc(50% - 120px/2)';
+      }
 
       img{
-        float:none;
+        .fl();
         .inline-block();
+
+        @media only screen and (min-width:@bp_sm){
+          float:none;
+        }
       }
 
       figcaption{
-        margin-top:10px;
-        .stretch();
-        .ta-c();
-        margin-left: 0;
+        .inline();
+        width: auto;
+        margin-left: 10px;
+        padding-top:10px;
+
+        @media only screen and (min-width:@bp_sm){
+          margin-top:10px;
+          .stretch();
+          .ta-c();
+          margin-left: 0;
+          padding-top:0;
+        }
       }
     }
 
