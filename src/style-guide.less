@@ -1404,7 +1404,7 @@ p{
   border-left: 0;
   border-right: 0;
   .col(@col_nav_transparent, b);
-  .col(@w);
+  .col(@col_base_4);
   .rel();
   z-index: 10;
 
@@ -1412,6 +1412,7 @@ p{
     .ta-c();
     //margin-right: -2px;
     line-height: inherit;
+    .col(@col_base_2, b);
     .h();
 
     @media only screen and (min-width:@bp_sm){
@@ -1517,7 +1518,7 @@ p{
       .fl();
       .inline-block();
       line-height:inherit;
-      .col(@ws);
+      .col(@col_base_4);
       padding:0 10px 0 10px;
     }
 
@@ -1876,7 +1877,7 @@ p{
         &:before{
           .animate(@animation_time_short, @transition_default);
           margin-top: -10px;
-          margin-bottom:10px;
+          margin-bottom:25px;
         }
       }
     }
@@ -1900,7 +1901,7 @@ p{
         &:after{
           .animate(@animation_time_short, @transition_default);
           margin-bottom: -10px;
-          margin-top:10px;
+          margin-top:25px;
         }
       }
     }
@@ -1991,7 +1992,7 @@ p{
         .rel();
 
         @media only screen and (min-width:@bp_sm){
-          margin-top:10px;
+          padding-top:10px;
           .fl();
         }
 
@@ -2079,7 +2080,7 @@ p{
             &:after{
               bottom: -36px;
               transform: rotateY(180deg) rotateX(180deg) rotateZ(45deg);
-              border-bottom: 17px solid @col_base_2;
+              border-bottom: 17px solid @w;
               .animate(@animation_time_short, @transition_default);
             }
           }
@@ -2179,6 +2180,7 @@ p{
       }
 
       .dropdown-menu{
+        z-index: 1;
         top:@search_bar_size_sm + 1px;
       }
     }
@@ -2260,14 +2262,14 @@ p{
 .profile-top-control{
   .ta-c();
   line-height: @search_bar_size_sm;
-  .col(@w);
+  .col(@col_base_4);
 
   a{
     .fr();
-    .col(@w);
+    .col(@col_base_4);
 
     &:hover, &:focus{
-      .col(@ws);
+      .col(@col_base_3);
     }
   }
 
@@ -2301,6 +2303,7 @@ p{
   .profile-toggle{
     .fl();
     margin-left: -13px;
+    margin-right: 10px;
     cursor:pointer;
     padding:0 20px 0 60px;
     .rel();
@@ -2456,6 +2459,50 @@ p{
     }
   }
 
+  .message-toggle{
+    .border-radius(50%);
+    .col(@w, b);
+    height:40px;
+    width:40px;
+    margin-top: 3px;
+    .animate(@animation_time_v_short, @transition_default);
+
+    .ols-svg{
+      transform: scale(0.7);
+      top: -4px;
+      left: -4px;
+      .rel();
+    }
+
+    .ols-image-inbox-message{
+      &:after{
+        content:"";
+        width:10px;
+        height:10px;
+        .border-radius(50%);
+        .inline-block();
+        .abs();
+        .col(@red, b);
+        bottom:10px;
+        right:10px;
+      }
+    }
+
+    .ols-image-inbox-message-unread{
+      &:after{
+        content:"";
+        width:10px;
+        height:10px;
+        .border-radius(50%);
+        .inline-block();
+        .abs();
+        .col(@col_base_2, b);
+        bottom:10px;
+        right:10px;
+      }
+    }
+  }
+
   /* top lang control, maybe remove later*/
   .ols-language-control{
     width: 30px;
@@ -2487,15 +2534,14 @@ p{
 
   .ols-language-control{
     .col(rgba(255, 255, 255, 0.9), b);
-    .col(@col_gray_7);
+    .col(@col_base_4);
     line-height: 29px;
+    margin-top: 13px;
+    width: 20px;
+    height: 20px;
 
     &:first-child{
       margin-right:10px;
-    }
-
-    img{
-      .h();
     }
   }
 
@@ -2516,15 +2562,19 @@ p{
     ul{
       padding-left: 0;
       display: flex;
-      flex-wrap:nowrap;
+      flex-wrap:wrap;
       margin-bottom:0;
 
       @media only screen and (min-width:@bp_md){
         .block();
         margin-bottom:10px;
+        .fl();
       }
 
       li{
+        flex-basis:25%;
+        flex-grow: 1;
+        flex-shrink: 0;
         font-size:@m_fs_small;
         list-style-type: none;
         border:@bst @col_gray_4;
@@ -2675,6 +2725,8 @@ p{
       li.submenu{
         padding: 0;
         border:none;
+        flex-basis:75%;
+        display:flex;
 
         ul{
           li{
@@ -2694,9 +2746,13 @@ p{
               line-height: 35px;
 
               .menu-icon{
-                margin-right:22px;
+                margin-right: 3px;
                 height:@submenu_image_height;
                 width:@submenu_image_height;
+
+                @media only screen and (min-width:@bp_sm){
+                  margin-right:22px;
+                }
               }
             }
           }
