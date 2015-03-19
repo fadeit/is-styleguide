@@ -2572,7 +2572,7 @@ p{
 }
 
 .profile-top-control.top-profile{
-  z-index: 10000;
+  z-index: 1010;
   //border-bottom:@bst @col_base_2;
 
   .ols-language-control{
@@ -3032,7 +3032,6 @@ p{
   }
 }
 
-
 .ols-bubbles.small-bubbles{
   figure{
     top: ~'calc(50% - 78px/2)';
@@ -3046,6 +3045,21 @@ p{
     }
   }
 }
+
+//modals
+.modal-backdrop{
+  .col(#10321D, b);
+}
+
+.modal-content{
+  padding: 10px;
+  border: @bst @ws;
+
+  @media only screen and (min-width:@bp_sm){
+    padding:20px;
+  }
+}
+
 /*
  * Spinners and loaders
  *
