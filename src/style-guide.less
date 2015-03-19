@@ -318,7 +318,7 @@ textarea{
   .col(@col_base_4, b);
   border: @bst darken(@col_base_4, 5%);
 
-  &:hover{
+  &:hover, &:focus{
     .col(lighten(@col_base_4, 5%), b);
     border: @bst @col_base_4;
   }
@@ -1550,6 +1550,7 @@ p{
       }
 
       .ols-geolocate-container{
+        outline:0;
         .fl();
         padding: 0 10px 0 10px;
         cursor:pointer;
@@ -1580,6 +1581,7 @@ p{
     }
 
     .btn-search{
+      outline:0;
       padding:0 30px 0 30px;
       border:0;
       line-height: inherit;
@@ -2029,12 +2031,22 @@ p{
       }
 
       .current-drop-item{
+        outline:0;
+
+        &:focus{
+          opacity:0.8;
+
+          img{
+            .animate(@animation_time_short, @transition_default);
+            transform:scale(1.2);
+          }
+        }
+
         figure{
           .animate(@animation_time_short, @transition_default);
 
           &:after{
             content:"";
-            outline:0;
             .abs();
             border-left: 17px solid transparent;
             border-bottom: 15px solid @col_base_3;
@@ -2043,7 +2055,7 @@ p{
             .animate(@animation_time_short, @transition_default);
           }
 
-          &:hover{
+          &:hover, &:focus{
             &:after{
               border-bottom: 15px solid @col_base_1;
               .animate(@animation_time_short, @transition_default);
@@ -2328,7 +2340,6 @@ p{
 
   .profile-toggle{
     .fl();
-    margin-left: -13px;
     margin-right: 10px;
     cursor:pointer;
     padding:0 20px 0 60px;
@@ -2339,6 +2350,7 @@ p{
     @media only screen and (min-width:@bp_sm){
       border:0;
       .fr();
+      margin-left: -13px;
     }
 
     @media only screen and (min-width:@bp_md){
@@ -2589,11 +2601,15 @@ p{
   }
 
   .profile-toggle{
-    padding-left:10px;
+    padding-left: 60px;
 
     @media only screen and (min-width:@bp_sm){
       margin-left: 5px;
     }
+  }
+
+  .profile-toggle.logged-in{
+    padding-left:10px;
   }
 }
 
