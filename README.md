@@ -1,4 +1,4 @@
-<img src="http://fadeit.dk/about/img/fadeit-logo@2x.png" alt="The fadeit logo" style="width:200px;"/><br/><br/>
+<img src="http://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/><br/><br/>
 ===================
 
 ####About fadeit
