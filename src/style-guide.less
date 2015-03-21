@@ -1041,10 +1041,16 @@ p{
 
     dt{
       margin-top:20px;
+      .col(@w);
+      .b();
     }
 
     dd{
       .col(@col_gray_4);
+
+      img{
+        max-height: 17px;
+      }
     }
   }
 }
@@ -1174,6 +1180,32 @@ p{
 
       @media only screen and (min-width:@bp_md){
         line-height: 22px;
+      }
+    }
+
+    figure.round-image{
+      figcaption{
+        .inline-block();
+        width: ~'calc(100% - 115px)';
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+
+        .ols-label-md{
+          .inline();
+          width: 100%;
+
+          &:first-child{
+            &:after{
+              content:'\A';
+              white-space: pre;
+            }
+          }
+        }
+
+        p.ols-label-sm{
+          margin-top: 14px;
+        }
       }
     }
   }
@@ -1355,7 +1387,7 @@ p{
           .unread-count{
             .abs();
             left: 26px;
-            top: 9px;
+            top: 11px;
             .col(@w);
           }
 
@@ -1547,7 +1579,7 @@ p{
         .ta-l();
         .col(@col_base_4);
 
-        @media only screen and (min-width:@bp_sm){
+        @media only screen and (min-width:@bp_md){
           min-width:200px;
         }
       }
@@ -1582,6 +1614,18 @@ p{
 
       input{
         .fl();
+
+        @media only screen and (min-width:@bp_sm){
+          max-width: 170px;
+        }
+
+        @media only screen and (min-width:@bp_md){
+          max-width:none;
+        }
+
+        @media only screen and (min-width:@bp_lg){
+          min-width: 300px;
+        }
       }
 
       .ols-geolocate-container{
@@ -2619,7 +2663,7 @@ p{
   }
 
   .ols-language-control.active{
-    opacity:0.7;
+    opacity:0.5;
     cursor:default;
   }
   /* end top lang control*/
@@ -2736,7 +2780,7 @@ p{
 
           .menu-icon{
             .inline-block();
-            border:@bstm @col_base_3;
+            border:@bstm rgba(121, 143, 163, 0.35);
             height:@menu_image_height;
             width:@menu_image_height;
             background-repeat:no-repeat;
