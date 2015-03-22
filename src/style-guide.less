@@ -1204,7 +1204,7 @@ p{
         }
 
         p.ols-label-sm{
-          margin-top: 14px;
+          margin-top: 0px;
         }
       }
     }
@@ -1269,7 +1269,7 @@ p{
         .inline-block();
         background-repeat: no-repeat;
         background-image: url(../images/svg-sprite.svg);
-        background-position: -42% 18.9%;
+        background-position: -42% 18.4%;
         width: 36.26px;
         height: 23.26px;
         margin-right: 8px;
@@ -2352,6 +2352,14 @@ p{
       .rel();
       width: ~"calc(50% - 45px)";
 
+      &:after{
+        .rel();
+        top: 3px;
+        margin-right: -5px;
+        width: 16px;
+        height: 16px
+      }
+
       @media only screen and (min-width:@bp_sm){
         width:auto;
       }
@@ -2455,7 +2463,7 @@ p{
       .col(@col_base_1, b);
       top: 3px;
       left: 10px;
-      background-position: 47% 72.4%;
+      background-position: 47% 70.4%;
       width: 40px;
       height: 40px;
     }
