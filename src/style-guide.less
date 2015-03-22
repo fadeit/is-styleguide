@@ -1211,6 +1211,15 @@ p{
   }
 }
 
+.ols-grid-result-list{
+  .ols-result-list-row{
+    @media only screen and (min-width:@bp_sm){
+      .col(@w, b);
+      border:@bst @col_gray_4;
+    }
+  }
+}
+
 //project list: rectangular images on the right
 .ols-company-project-list{
   li{
@@ -2333,7 +2342,7 @@ p{
     .ols-label-connector{
       .h();
 
-      @media only screen and (min-width:@bp_sm){
+      @media only screen and (min-width:@bp_lg){
         .inline-block();
       }
     }
@@ -2374,9 +2383,12 @@ p{
 }
 
 .searching-location-mobile{
-  padding-top:20px;
+  padding-top: 20px;
   .col(@col_text);
   .ta-c();
+  .col(@w, b);
+  margin-bottom: 0;
+  padding-bottom: 20px;
 
   @media only screen and (min-width:@bp_sm){
     .h();
@@ -2475,7 +2487,7 @@ p{
       .h();
       .animate(@animation_time_short, @transition_default);
 
-      @media only screen and (min-width:@bp_sm){
+      @media only screen and (min-width:@bp_md){
         .inline-block();
       }
     }
@@ -2495,7 +2507,7 @@ p{
       .col(transparent, b);
       .animate(@animation_time_short, @transition_default);
 
-      @media only screen and (min-width:@bp_sm){
+      @media only screen and (min-width:@bp_md){
         padding:0 38px 0 5px;
         //min-width:200px;
       }
@@ -2984,35 +2996,37 @@ p{
           } //li.active
         } //ul.highlithed
       } //submenu
-
-      li.navigation{
-        line-height:30px;
-        font-size:@fs_small;
-        .animate(@animation_time_v_short, @transition_default);
-
-        &:hover{
-          .animate(@animation_time_v_short, @transition_default);
-          margin-left: -10px;
-
-          .ols-icon-reveal{
-            .rel();
-          }
-        }
-
-        a{
-          .col(@col_base_4);
-          line-height:@lh_small;
-        }
-
-        .ols-icon-reveal{
-          height:10px;
-          transform:rotate(90deg);
-          .animate(@animation_time_v_short, @transition_default);
-        }
-      }
     } //ul
   } //ols-menu
 } //ols-menu-container
+
+.navigation-anchor{
+  line-height:40px;
+  .inline-block();
+  font-size:@fs_small;
+  width:100%;
+  .animate(@animation_time_v_short, @transition_default);
+
+  &:hover{
+    .animate(@animation_time_v_short, @transition_default);
+    margin-left: -10px;
+
+    .ols-icon-reveal{
+      .rel();
+    }
+  }
+
+  a{
+    .col(@col_base_4);
+    line-height:@lh_small;
+  }
+
+  .ols-icon-reveal{
+    height:10px;
+    transform:rotate(90deg);
+    .animate(@animation_time_v_short, @transition_default);
+  }
+}
 
 /*
  * Communication: reviews, messages, comments, etc
