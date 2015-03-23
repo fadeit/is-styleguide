@@ -1938,85 +1938,6 @@ p{
     }
   }
 
-    //HIDDEN
-    .controls{
-      .h();
-      .abs();
-      width:@search_bar_size_lg;
-      line-height:40px;
-      font-size:@fs_body;
-      .col(@col_base_4);
-      .ta-c();
-      .animate(@animation_time_short, @transition_default);
-
-      &:hover{
-        //.col(@col_base_3);
-        .animate(@animation_time_short, @transition_default);
-      }
-
-      /*@media only screen and (min-width:@bp_sm){
-        .block();
-      }*/
-
-      img{
-        max-width:45px;
-        max-height:45px;
-        .rel();
-        top: -2px;
-        .inline-block();
-        //.fr();
-      }
-    }
-
-    .prev{
-      top: -100px;
-
-      &:before{
-        content: "";
-        width: 0;
-        margin: 0 auto 15px auto;
-        .block();
-        height: 0;
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        border-bottom: 15px solid @col_base_2;
-        .rel();
-        .animate(@animation_time_short, @transition_default);
-      }
-
-      &:hover{
-        &:before{
-          .animate(@animation_time_short, @transition_default);
-          margin-top: -10px;
-          margin-bottom:25px;
-        }
-      }
-    }
-
-    .next{
-      bottom: -100px;
-
-      &:after{
-        content: "";
-        width: 0;
-        margin: 15px auto 0 auto;
-        .block();
-        height: 0;
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        border-top: 15px solid @col_base_2;
-        .animate(@animation_time_short, @transition_default);
-      }
-
-      &:hover{
-        &:after{
-          .animate(@animation_time_short, @transition_default);
-          margin-bottom: -10px;
-          margin-top:25px;
-        }
-      }
-    }
-
     .dropdown-contents{
       .animate(@animation_time_v_short, @transition_default);
       .block();
@@ -2174,11 +2095,6 @@ p{
     .ols-category-drop.open{
       .toggle-dropdown:not(.dropdown-contents){
         opacity:0.7;
-      }
-
-      .controls{
-        .animate(@animation_time_short, @transition_default);
-        opacity:0;
       }
 
       .toggle-dropdown:not(.dropdown-contents){
