@@ -2345,12 +2345,48 @@ p{
 }
 
 .searching-location-mobile{
-  padding-top: 20px;
-  .col(@col_text);
-  .ta-c();
-  .col(@w, b);
-  margin-bottom: 0;
-  padding-bottom: 20px;
+  font-size:@fs_body;
+  line-height:@lh_body;
+
+  .inner-mobile-location{
+    .col(@col_base_4);
+    .ta-c();
+    .col(@col_nav_transparent, b);
+    margin-bottom: 0;
+
+    small{
+      .inline-block();
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .glyphicon{
+        height: 22px;
+        width: 22px;
+        padding-top: 4px;
+        padding-left: 2px;
+        .col(@col_base_4, b);
+        .col(@w);
+        border-radius: 50%;
+        margin-left: 3px;
+      }
+    }
+
+    input.my_location{
+      width: 100%;
+      padding: 20px 50px 20px 30px;
+      .col(@ws, b);
+      text-decoration: underline;
+    }
+  }
+
+  .location-edit-container{
+    .glyphicon{
+      .abs();
+      right: 10px;
+      top: 21px;
+      font-size: 24px;
+    }
+  }
 
   @media only screen and (min-width:@bp_sm){
     .h();
@@ -2712,6 +2748,7 @@ p{
       flex-wrap:wrap;
       margin-bottom:0;
       max-width: 100%;
+      width: 100%;
 
       @media only screen and (min-width:@bp_sm){
         align-items: center;
@@ -3008,10 +3045,11 @@ p{
 
   &:hover{
     .animate(@animation_time_v_short, @transition_default);
-    margin-left: -5px;
 
     .ols-icon-reveal{
       .rel();
+      .animate(@animation_time_v_short, @transition_default);
+      transform:rotate(90deg) translateY(5px);
     }
   }
 
