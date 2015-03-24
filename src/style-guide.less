@@ -1006,7 +1006,7 @@ p{
       .fr();
       margin-right:10px;
 
-      @media only screen and (min-width:@bp_sm){
+      @media only screen and (min-width:@bp_lg){
         top: 20px;
         margin-right:0;
         .fl();
@@ -1035,7 +1035,7 @@ p{
     padding: 10px 15px 20px 15px;
     margin-bottom: 20px;
 
-    @media only screen and (min-width:@bp_md){
+    @media only screen and (min-width:@bp_sm){
       padding: 20px 30px 40px 30px;
     }
 
@@ -1060,6 +1060,7 @@ p{
     height: 100%;
 
     .company-map{
+      min-height:300px;
       height:100%;
     }
   }
@@ -1138,6 +1139,7 @@ p{
 .ols-company-result-list{
   padding:0;
   list-style-type: none;
+  .clearfix();
 
   a{
     .clearfix(); //<a> is a parent, but it's not mandatory to nest the li as a child (much more flexible this way)
@@ -1336,7 +1338,7 @@ p{
   border-right:@bst @ws;
   top: 0;
 
-  @media only screen and (min-width:@bp_md){
+  @media only screen and (min-width:@bp_sm){
     padding-top:@search_bar_size_sm + 2;
   }
 
@@ -1352,6 +1354,10 @@ p{
   .ols-inbox{
     height:100%;
     overflow:auto;
+
+    @media only screen and (min-width:@bp_sm){
+      height:~'calc(100% - 47px)';
+    }
 
     header{
       .clearfix();
@@ -1458,6 +1464,14 @@ p{
 
     @media only screen and (min-width:@bp_sm){
       .h();
+    }
+  }
+
+  .hidden-back-to-search{
+    .h();
+
+    @media only screen and (min-width:@bp_sm){
+      .inline-block();
     }
   }
 
@@ -1635,6 +1649,14 @@ p{
         @media only screen and (min-width:@bp_lg){
           min-width: 300px;
         }
+
+        @media only screen and (min-width:@bp_xl){
+          min-width: 400px;
+        }
+
+        @media only screen and (min-width:@bp_xxl){
+          min-width: 500px;
+        }
       }
 
       .ols-geolocate-container{
@@ -1674,6 +1696,30 @@ p{
       border:0;
       line-height: inherit;
       .fl();
+
+      @media only screen and (min-width:@bp_sm){
+        padding: 0 15px 0 18px;
+      }
+
+      @media only screen and (min-width:@bp_md){
+        padding:0 30px 0 30px;
+      }
+
+      .glyphicon{
+        @media only screen and (min-width:@bp_md){
+          .h();
+        }
+      }
+
+      .search-text{
+        @media only screen and (min-width:@bp_sm){
+          .h();
+        }
+
+        @media only screen and (min-width:@bp_md){
+          .inline-block();
+        }
+      }
     }
   }
 }
@@ -2667,7 +2713,11 @@ p{
       margin-bottom:0;
       max-width: 100%;
 
-      @media only screen and (min-width:@bp_md){
+      @media only screen and (min-width:@bp_sm){
+        align-items: center;
+      }
+
+      @media only screen and (min-width:@bp_lg){
         .block();
         margin-bottom:10px;
         .fl();
@@ -2693,6 +2743,11 @@ p{
           font-size:@fs_body;
           border:0;
           border-bottom:@bst @col_gray_4;
+          border-right:@bst @col_base_1;
+        }
+
+        @media only screen and (min-width:@bp_lg){
+          border-right:0;
         }
 
         a{
@@ -2713,10 +2768,6 @@ p{
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-          }
-
-          span{
-            .inline();
           }
 
           .menu-icon{
@@ -2757,6 +2808,12 @@ p{
             }
           }
 
+          span{
+            @media only screen and (min-width:@bp_sm){
+              .inline();
+            }
+          }
+
           span:not(.ols-svg){
             width: 100%;
             .fl();
@@ -2774,6 +2831,12 @@ p{
             left: -9999px;
             right: -9999px;
             margin: auto;
+          }
+
+          span.short-edit{
+            @media only screen and (min-width:@bp_sm){
+              .h();
+            }
           }
 
           .ols-icon-bounce-map-top{
@@ -2835,6 +2898,10 @@ p{
         display:flex;
 
         @media only screen and (min-width:@bp_sm){
+          flex-basis:50%;
+        }
+
+        @media only screen and (min-width:@bp_lg){
           .block();
         }
 
@@ -2852,6 +2919,14 @@ p{
               a{
                 .col(@col_gray_6);
               }
+            }
+
+            @media only screen and (min-width:@bp_sm){
+              padding: 12px 10px 8px 17px;
+            }
+
+            @media only screen and (min-width:@bp_lg){
+              padding: 5px 10px 0px 17px;
             }
 
             a{
@@ -2928,11 +3003,12 @@ p{
   .inline-block();
   font-size:@fs_small;
   width:100%;
+  border-bottom:@bst @col_gray_4;
   .animate(@animation_time_v_short, @transition_default);
 
   &:hover{
     .animate(@animation_time_v_short, @transition_default);
-    margin-left: -10px;
+    margin-left: -5px;
 
     .ols-icon-reveal{
       .rel();
