@@ -1856,7 +1856,7 @@ p{
 .search-bar.navbar-mid{
   .abs();
   //top:~"calc(50% - @{search_bar_size})";
-  top:200px;
+  top:190px;
   .col(transparent, b);
   border:0;
   font-size:@fs_h3;
@@ -2351,7 +2351,7 @@ p{
   .inner-mobile-location{
     .col(@col_base_4);
     .ta-c();
-    .col(@col_nav_transparent, b);
+    .col(lighten(@col_base_2, 10%), b);
     margin-bottom: 0;
 
     small{
@@ -2518,7 +2518,8 @@ p{
     }
 
     .dropdown-menu{
-      min-width:201px; //var profile toggle width
+      //min-width:201px; //var profile toggle width
+      min-width: 230px; //var profile toggle width
       width:100%;
       //margin: 0 -1px 0 0;
       padding: 0;
