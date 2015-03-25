@@ -1401,9 +1401,12 @@ p{
 
           .unread-count{
             .abs();
-            left: 26px;
-            top: 11px;
+            left: 19px;
+            .ta-c();
+            top: 9px;
+            width: 20px;
             .col(@w);
+            font-family:@ff_default;
           }
 
           img{
@@ -1856,7 +1859,7 @@ p{
 .search-bar.navbar-mid{
   .abs();
   //top:~"calc(50% - @{search_bar_size})";
-  top:190px;
+  top: 150px;
   .col(transparent, b);
   border:0;
   font-size:@fs_h3;
@@ -2376,6 +2379,7 @@ p{
       padding: 20px 50px 20px 30px;
       .col(@ws, b);
       text-decoration: underline;
+      font-size:16px;
     }
   }
 
