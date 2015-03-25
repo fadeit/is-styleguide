@@ -379,9 +379,10 @@ textarea{
     backface-visibility: hidden;
   }
 
-  &:hover{
+  &:hover, &:focus{
     .col(@w);
     opacity:0.8;
+    outline:0;
 
     &:after{
       .vis();
@@ -431,7 +432,7 @@ textarea{
       .col(@col_gray_6);
     }
 
-    &:hover{
+    &:hover, &:focus{
       &:after{
         .col(@col_yellow);
       }
@@ -454,7 +455,7 @@ textarea{
     }
 
     label.btn-star{
-      &:hover{
+      &:hover, &:focus{
         ~label.btn-star{
 
           &:after{
@@ -491,12 +492,17 @@ textarea{
     &:checked + label.btn-star:hover,
     &:checked + label.btn-star:hover ~ label.btn-star,
     &:checked ~ label.btn-star:hover,
-    &:checked ~ label.btn-star:hover ~ label.btn-star{
+    &:checked ~ label.btn-star:hover ~ label.btn-star,
+    &:checked + label.btn-star:focus,
+    &:checked + label.btn-star:focus ~ label.btn-star,
+    &:checked ~ label.btn-star:focus,
+    &:checked ~ label.btn-star:focus ~ label.btn-star{
       &:after{
         .col(darken(@col_yellow, 20%));
       }
 
-      label.btn-star:hover ~ input:checked ~ label.btn-star{
+      label.btn-star:hover ~ input:checked ~ label.btn-star,
+      label.btn-star:focus ~ input:checked ~ label.btn-star{
         &:after{
           .col(darken(@col_yellow, 20%));
         }
@@ -1143,6 +1149,13 @@ p{
 
   a{
     .clearfix(); //<a> is a parent, but it's not mandatory to nest the li as a child (much more flexible this way)
+    .inline-block();
+    outline:0;
+    width:100%;
+
+    &:focus{
+      opacity:0.8;
+    }
   }
 
   li{
@@ -1159,7 +1172,8 @@ p{
       .col(@w, b);
     }
 
-    &:hover{
+
+    &:hover, &:focus{
       .col(@col_gray_4, b);
       .animate(@animation_time_short, @transition_default);
     }
@@ -1640,6 +1654,12 @@ p{
 
       input{
         .fl();
+        .animate(@animation_time_v_short, @transition_default);
+
+        &:focus{
+          .animate(@animation_time_v_short, @transition_default);
+          .col(lighten(@col_nav_transparent, 20%), b);
+        }
 
         @media only screen and (min-width:@bp_sm){
           max-width: 170px;
@@ -2445,6 +2465,7 @@ p{
     padding:0 10px 0 60px;
     .rel();
     border-radius: 10px;
+    outline:0;
     //.animate(@animation_time_v_short, @transition_default);
 
     @media only screen and (min-width:@bp_sm){
@@ -2500,12 +2521,13 @@ p{
     }
 
     .dropdown-toggle{
+      .inline-block();
+      outline:0;
       border:0;
       padding:0 10px 0 10px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      .block();
       .col(transparent, b);
       .animate(@animation_time_short, @transition_default);
 
@@ -2603,6 +2625,7 @@ p{
   }
 
   .message-toggle{
+    outline:0;
     .border-radius(50%);
     .col(@w, b);
     height:40px;
@@ -2613,6 +2636,11 @@ p{
     .rel();
     .fl();
     .animate(@animation_time_v_short, @transition_default);
+
+    &:hover, &:focus{
+      opacity:0.7;
+      .animate(@animation_time_v_short, @transition_default);
+    }
 
     .ols-svg{
       transform: scale(0.7);
@@ -2669,6 +2697,7 @@ p{
 
   /* top lang control, maybe remove later*/
   .ols-language-control{
+    outline:0;
     width: 30px;
     height: 30px;
     border:@bstm @col_base_3;
@@ -2793,6 +2822,7 @@ p{
         }
 
         a{
+          outline:0;
           .animate(@animation_time_short, @transition_default);
           width:100%;
           color:@col_text;
@@ -2800,8 +2830,12 @@ p{
           .inline-block();
           .ta-c();
 
-          &:hover{
+          &:hover, &:focus{
             .animate(@animation_time_short, @transition_default);
+          }
+
+          &:focus{
+            opacity:0.7;
           }
 
           @media only screen and (min-width:@bp_sm){
@@ -3048,19 +3082,20 @@ p{
   border-bottom:@bst @col_gray_4;
   .animate(@animation_time_v_short, @transition_default);
 
-  &:hover{
-    .animate(@animation_time_v_short, @transition_default);
-
-    .ols-icon-reveal{
-      .rel();
-      .animate(@animation_time_v_short, @transition_default);
-      transform:rotate(90deg) translateY(5px);
-    }
-  }
-
   a{
     .col(@col_base_4);
     line-height:@lh_small;
+    outline:0;
+
+    &:hover, &:focus{
+      .animate(@animation_time_v_short, @transition_default);
+
+      .ols-icon-reveal{
+        .rel();
+        .animate(@animation_time_v_short, @transition_default);
+        transform:rotate(90deg) translateY(5px);
+      }
+    }
   }
 
   .ols-icon-reveal{
