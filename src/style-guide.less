@@ -324,6 +324,17 @@ textarea{
   }
 }
 
+//TODO:
+//add to sg docs
+.btn.stretch{
+  width:100%;
+  margin-bottom:10px;
+
+  @media only screen and (min-width:@bp_xs){
+    width:auto;
+  }
+}
+
 //fav button
 .btn-spe {
   .rel();
@@ -1578,6 +1589,13 @@ p{
   }
 
   .search-column{
+    .clearfix();
+    .col(@w, b);
+
+    @media only screen and (min-width:@bp_sm){
+      .col(transparent, b);
+    }
+
     input{
       border: 0;
       padding: 0 10px 0 10px;
@@ -2852,6 +2870,8 @@ p{
           line-height:@lh_small;
           .inline-block();
           .ta-c();
+          min-height:68px;
+          .rel();
 
           &:hover, &:focus{
             .animate(@animation_time_short, @transition_default);
@@ -2862,11 +2882,22 @@ p{
           }
 
           @media only screen and (min-width:@bp_sm){
+            height:auto;
             .ta-l();
             line-height:@menu_image_height;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
+          }
+
+          span.abs-label{
+            .abs();
+            left:0;
+            bottom:0;
+
+            @media only screen and (min-width:@bp_sm){
+              position:static;
+            }
           }
 
           .menu-icon{
