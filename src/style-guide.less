@@ -621,13 +621,18 @@ textarea{
 }
 
 .btn-round{
-  font-size:@fs_body;
+  font-size:@m_fs_small;
   font-weight: bold;
   .ta-c();
   .inline-block();
   .clearfix();
-  padding:10px;
+  padding:5px;
   border: 0;
+
+  @media only screen and (min-width:@bp_sm){
+    padding:10px;
+    font-size:@fs_body;
+  }
 
   &:hover, &:focus{
     .col(transparent, b);
@@ -645,14 +650,21 @@ textarea{
   }
 
   .btn-round-inner{
-    width:45px;
-    height:45px;
-    line-height:45px;
-    margin:0 auto 10px auto;
+    width:35px;
+    height:35px;
+    line-height:35px;
+    margin:0 auto 5px auto;
     .rounded();
     .block();
     .col(@col_base_3, b);
     .animate(@animation_time_short, @transition_default);
+
+    @media only screen and (min-width:@bp_sm){
+      width:45px;
+      height:45px;
+      line-height:45px;
+      margin:0 auto 10px auto;
+    }
   }
 
   .btn-round-text{
