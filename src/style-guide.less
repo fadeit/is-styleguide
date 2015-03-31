@@ -1020,13 +1020,14 @@ p{
       .fl();
       .animate(@animation_time_short, @transition_default);
 
-      &:hover{
+      &:hover, &:focus{
+        outline:0;
         .col(@col_gray_5, b);
         .animate(@animation_time_short, @transition_default);
 
         [class*="ols-image-inbox-message"]{
           //from 0 83.82492863939106%;
-          background-position: 0 88.524929%;
+          background-position: 0 89.8%;
 
           .animate(@animation_time_short, @transition_default);
         }
@@ -2521,14 +2522,28 @@ p{
     }
   }
 
+  .btn.btn-round.list-business{
+    margin-right:20px;
+  }
+
   .profile-toggle{
     .fr();
     cursor:pointer;
-    padding:0 10px 0 60px;
+    //padding:0 10px 0 60px;
+    padding:0 5px 0 10px;
     .rel();
     border-radius: 10px;
     outline:0;
-    //.animate(@animation_time_v_short, @transition_default);
+    .animate(@animation_time_v_short, @transition_default);
+
+    &:hover, &:focus{
+      opacity:0.8;
+      .animate(@animation_time_v_short, @transition_default);
+
+      [class*="ols-icon-lock-"]{
+        transform:scale(1.1);
+      }
+    }
 
     @media only screen and (min-width:@bp_sm){
       border:0;
@@ -2809,7 +2824,7 @@ p{
   }
 
   .profile-toggle{
-    padding-left: 60px;
+    //padding-left: 60px;
     .fl();
 
     .ols-icon-lock-white{
