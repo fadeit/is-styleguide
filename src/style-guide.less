@@ -1033,6 +1033,7 @@ p{
         }
 
         [class*="ols-label"]{
+          text-transform: capitalize;
           .col(@col_gray_8);
           .animate(@animation_time_short, @transition_default);
         }
@@ -1686,12 +1687,6 @@ p{
           min-width:200px;
         }
       }
-
-      .ols-svg.ols-icon-reveal, .ols-svg.ols-icon-reveal-gray, .ols-svg.ols-icon-reveal-white{
-        height: 30px;
-        width: 30px;
-        right:0;
-      }
     }
 
     .ols-category-drop.open{
@@ -1733,15 +1728,15 @@ p{
         }
 
         @media only screen and (min-width:@bp_lg){
-          min-width: 300px;
+          min-width: 250px;
         }
 
         @media only screen and (min-width:@bp_xl){
-          min-width: 400px;
+          min-width: 350px;
         }
 
         @media only screen and (min-width:@bp_xxl){
-          min-width: 500px;
+          min-width: 450px;
         }
       }
 
@@ -2096,7 +2091,17 @@ p{
           width:@search_bar_size_lg;
         }
 
+        @media only screen and (min-width:@bp_md){
+          &:nth-child(4n+5){
+            clear:both;
+          }
+        }
+
         @media only screen and (min-width:@bp_lg){
+          &:nth-child(4n+5){
+            clear:none;
+          }
+
           &:nth-child(7n){
             clear:both;
           }
@@ -2530,7 +2535,7 @@ p{
     .fr();
     cursor:pointer;
     //padding:0 10px 0 60px;
-    padding:0 5px 0 10px;
+    padding:0 5px 0 0;
     .rel();
     border-radius: 10px;
     outline:0;
@@ -2548,8 +2553,8 @@ p{
     @media only screen and (min-width:@bp_sm){
       border:0;
       //.fr();
-      margin-left: -13px;
-      margin-right: 10px;
+      //margin-left: -13px;
+      //margin-right: 10px;
     }
 
     @media only screen and (min-width:@bp_md){
@@ -2580,16 +2585,13 @@ p{
       height: 40px;
     }
 
-    [class*="ols-icon-reveal"]{
-      .abs();
-      top: ~'calc(50% - 14px)';
-      right: 0px;
-      .h();
-      .animate(@animation_time_short, @transition_default);
-
-      @media only screen and (min-width:@bp_md){
-        .inline-block();
-      }
+    //triangle
+    .glyphicon-triangle-bottom{
+      font-size: 17px;
+      .rel();
+      top: 4px;
+      margin-left: 4px;
+      .animate(@animation_time_v_short, @transition_default);
     }
 
     img.rounded{
@@ -2606,17 +2608,17 @@ p{
       overflow: hidden;
       text-overflow: ellipsis;
       .col(transparent, b);
-      .animate(@animation_time_short, @transition_default);
+      .animate(@animation_time_v_short, @transition_default);
 
-      @media only screen and (min-width:@bp_md){
-        padding:0 38px 0 5px;
+      /*@media only screen and (min-width:@bp_md){
+        padding:0 38px 0 15px;
         //min-width:200px;
-      }
+      }*/
 
       &:hover, &:focus{
-        .animate(@animation_time_short, @transition_default);
+        .animate(@animation_time_v_short, @transition_default);
         opacity:0.8;
-        .col(@col_base_1, b);
+        .col(rgba(240, 240, 240, 0.2), b);
       }
     }
 
@@ -2689,6 +2691,14 @@ p{
     padding-right: 0px;
     padding-left:0px;
 
+    .glyphicon-triangle-bottom{
+      .h();
+
+      @media only screen and (min-width:@bp_md){
+        .inline-block();
+      }
+    }
+
     &:hover, &:focus{
       opacity:1;
     }
@@ -2699,11 +2709,12 @@ p{
 
     .dropdown-toggle{
       opacity:0.7;
-      .col(@col_base_2, b);
+      //.col(@col_base_2, b);
       .animate(@animation_time_v_short, @transition_default);
 
-      [class*="ols-icon-reveal"]{
-        transform: rotateZ(180deg) translateY(2px);
+      //triangle
+      .glyphicon-triangle-bottom{
+        transform: rotateX(180deg) translateY(3px);
         .animate(@animation_time_v_short, @transition_default);
       }
     }
@@ -2777,7 +2788,8 @@ p{
   .inner-language-controls{
     .inline-block();
     .fr();
-    margin-left: -10px;
+    //margin-left: -10px;
+    margin-left: 5px;
   }
 
   /* top lang control, maybe remove later*/
@@ -2825,14 +2837,14 @@ p{
 
   .profile-toggle{
     //padding-left: 60px;
-    .fl();
+    //.fl();
 
     .ols-icon-lock-white{
       .h();
     }
 
     @media only screen and (min-width:@bp_sm){
-      margin-left: 5px;
+      //margin-left: 5px;
       .fr();
     }
   }
@@ -2850,9 +2862,9 @@ p{
   .profile-toggle.logged-in{
     padding-left:0px;
 
-    @media only screen and (min-width:@bp_sm){
+    /*@media only screen and (min-width:@bp_sm){
       padding-left:10px;
-    }
+    }*/
   }
 }
 
