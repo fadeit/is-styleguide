@@ -1,0 +1,14 @@
+{
+  "name": "prism-toolbar",
+  "homepage": "https://github.com/dandaniel/prism-toolbar",
+  "version": "2.1.0",
+  "_release": "2.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.0",
+    "commit": "e4a846dd5941b233ed74f2e60c46cbf60cd0f73f"
+  },
+  "_source": "git://github.com/dandaniel/prism-toolbar.git",
+  "_target": "v2.1.0",
+  "_originalSource": "dandaniel/prism-toolbar"
+}
