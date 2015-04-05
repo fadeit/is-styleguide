@@ -1,0 +1,2828 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" data-ng-controller="AppCtrl">
+<head>
+  <title>OLS Front-end Styleguide</title>
+
+  <!-- General META -->
+  <meta charset="utf-8">
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Semantic META -->
+  <meta name="description" content="OLS Front-end Styleguide">
+  <meta name="author" content="fadeit ApS">
+  <meta name="keywords" content="fadeit, software, development, design agency, mobile, web, applications, systems, aarhus, denmark">
+
+  <!-- Application CSS -->
+  <link rel="stylesheet" href="assets/prism.css">
+  <link rel="stylesheet" href="vendor/prism-toolbar/source/prism-toolbar.css">
+  <link rel="stylesheet" href="assets/this-styleguide.css">
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="dist/css/ols-style-guide.css?31January2015-18:59">
+
+  <!-- HTML5 Shim -->
+  <!--[if lt IE 9]>
+     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <section class="container-fluid">
+    <header class="intro">
+      <section class="row-fluid">
+        <h1>OLS Front-end Styleguide</h1>
+      </section>
+    </header>
+
+    <section class="row-fluid">
+      <aside class="col-xs-24 col-md-6 col-xl-4">
+        <section id="toc-container">
+          <ul id="table-of-contents"></ul>
+        </section>
+      </aside>
+
+      <section class="col-xs-24 col-md-18 col-xl-20">
+        <section class="small-container">
+          <!-- Before you start -->
+          <article>
+            <h2 class="toc-heading" id="before-you-start">Before you start</h2>
+            <h3 class="toc-heading" id="whats-inside">What's inside</h3>
+            <p>
+              This styleguide uses a fork of Bootstrap from <a href="https://github.com/fadeit/bootstrap" target="_blank">here</a>, without the components that require JavaScript.<br/>
+              The purpose of this thing is to achieve a more consistent front-end design and keep everybody in the team sane.<br/> It's also meant to cover all (or most) situations that you'll encounter during development, therefore you should <u>never</u> have to create your own element/style.
+              Use the code samples and be happy!<br/><br/>
+              Don't forget, you can resize this page to see how the styles adapt to different viewport sizes!
+            </p>
+          </article>
+
+          <!-- Colors -->
+          <article id="colors">
+            <h2 class="toc-heading" id="colors">Colors</h2>
+            <p>
+              The colors in this list are <u>the only colors to be used</u>.
+            </p>
+
+            <h3 class="toc-heading" id="conventions">Conventions</h3>
+            <ul>
+              <li>Color variables are prefixed with <b>col</b>.</li>
+              <li>Darker, contrasting versions of a color are sufixed with <b>_c</b>: <b>@w</b> (white) and <b>@w_c</b> (white contrast)</li>
+            </ul>
+
+            <h3 class="toc-heading" id="color-list">Color list</h3>
+            <p>
+              <span class="head-up">Colors are defined in <u>variables.less</u>. A full list can also be found there.</span>
+              <br/>
+              Using <u>Sublime Text</u>? Get the <a href="https://github.com/Monnoroch/ColorHighlighter" target="_blank">Color Highlighter</a> package to see the colors in your favorite text editor.
+            </p>
+
+            <p>
+              <span class="ols-tc-fadeit"><b>@col_fadeit</b></span>
+              <span class="ols-bc-fadeit"></span>
+              <span class="hex"><b>HEX</b> #0fade1</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-fadeit_c"><b>@col_fadeit_c</b></span>
+              <span class="ols-bc-fadeit_c"></span>
+              <span class="hex"><b>HEX</b> #057A91</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-fadeit_gray"><b>@col_fadeit_gray</b></span>
+              <span class="ols-bc-fadeit_gray"></span>
+              <span class="hex"><b>HEX</b> #D8D8D7</span>
+            </p>
+
+            <hr/>
+
+            <p>
+              <span class="ols-tc-w"><b>@col_w</b></span>
+              <span class="ols-bc-w"></span>
+              <span class="hex"><b>HEX</b> #FFFFFF</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-ws"><b>@col_ws</b></span>
+              <span class="ols-bc-ws"></span>
+              <span class="hex"><b>HEX</b> #F5F5F5</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-gray_1"><b>@col_gray_1</b></span>
+              <span class="ols-bc-gray_1"></span>
+              <span class="hex"><b>HEX</b> #F6F7F7</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-gray_2"><b>@col_gray_2</b></span>
+              <span class="ols-bc-gray_2"></span>
+              <span class="hex"><b>HEX</b> #F1F1F2</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-gray_3"><b>@col_gray_3</b></span>
+              <span class="ols-bc-gray_3"></span>
+              <span class="hex"><b>HEX</b> #F3F3F4</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-gray_4"><b>@col_gray_4</b></span>
+              <span class="ols-bc-gray_4"></span>
+              <span class="hex"><b>HEX</b> #E8E8E8</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-gray_5"><b>@col_gray_5 (@col_w_c)</b></span>
+              <span class="ols-bc-gray_5"></span>
+              <span class="hex"><b>HEX</b> #D8D8D7</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-gray_6"><b>@col_gray_6</b></span>
+              <span class="ols-bc-gray_6"></span>
+              <span class="hex"><b>HEX</b> #89898A</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-gray_7"><b>@col_gray_7</b></span>
+              <span class="ols-bc-gray_7"></span>
+              <span class="hex"><b>HEX</b> #737375</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-gray_8"><b>@col_gray_8</b></span>
+              <span class="ols-bc-gray_8"></span>
+              <span class="hex"><b>HEX</b> #404041</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-gray_9"><b>@col_gray_9</b></span>
+              <span class="ols-bc-gray_9"></span>
+              <span class="hex"><b>HEX</b> #3A3A3C</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-text"><b>@col_text</b></span>
+              <span class="ols-bc-text"></span>
+              <span class="hex"><b>HEX</b> #231F20</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-b"><b>@col_b</b></span>
+              <span class="ols-bc-b"></span>
+              <span class="hex"><b>HEX</b> #000000</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-base_1"><b>@col_base_1</b></span>
+              <span class="ols-bc-base_1"></span>
+              <span class="hex"><b>HEX</b> #CAEFF8</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-base_2"><b>@col_base_2</b></span>
+              <span class="ols-bc-base_2"></span>
+              <span class="hex"><b>HEX</b> #8CCFE1</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-base_3"><b>@col_base_3</b></span>
+              <span class="ols-bc-base_3"></span>
+              <span class="hex"><b>HEX</b> #4998DE</span>
+            </p>
+
+            <p>
+              <span class="ols-tc-base_4"><b>@col_base_4</b></span>
+              <span class="ols-bc-base_4"></span>
+              <span class="hex"><b>HEX</b> #3C80BC</span>
+            </p>
+          </article>
+
+          <!-- Typography -->
+          <article id="typography-container">
+            <h2 class="toc-heading" id="typography">
+              Typography
+            </h2>
+            <p>
+              Use heading 1 (h1) just once per page.<br/>
+              The measure on the left represents font size in pixels, the second line height. (30/40 pixels = 30px font size, 40px font size). Keep in mind that heading 4 and 5 are in bold.<br/>
+              The background in the example is not in the styleguide, the headings <b>have no background</b> by default.<br/><br/>
+              LESS variables are defined as <b>@fs_[heading-number]</b> for font-size (fs) and <b>@lh_[heading-number]</b> for line-heights (lh). Examples: <b>@fs_h1</b>, <b>@lh_h1</b>.
+            </p>
+            <h1 class="typography-ex">
+              <span class="style-detail">Light 30/40 pixels</span>
+              OLS heading .h1
+            </h1>
+            <h2 class="typography-ex">
+              <span class="style-detail">Light 28/30 pixels</span>
+              OLS heading .h2
+            </h2>
+            <h3 class="typography-ex">
+              <span class="style-detail">Light 20/22 pixels</span>
+              OLS heading .h3
+            </h3>
+            <h4 class="typography-ex">
+              <span class="style-detail">Semibold 18/26 pixels</span>
+              OLS heading .h4
+            </h4>
+            <h5 class="typography-ex">
+              <span class="style-detail">Semibold 16/24 pixels</span>
+              OLS heading .h5
+            </h5>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><h1>OLS heading .h1</h1>
+<h2>OLS heading .h2</h2>
+<h3>OLS heading .h3</h3>
+<h4>OLS heading .h4</h4>
+<h5>OLS heading .h5</h5></code></pre>
+<!-- end code block -->
+
+            <h3 class="toc-heading" id="paragraphs">Default paragraph</h3>
+            <section class="row-fluid row-paragraph">
+              <section class="col-xs-24 col-md-18">
+                <p>
+                  <u>This is a normal paragraph</u>, dummy text from here on. Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.<br/>
+                  <u>Use line breaks</u> to go to the next line without space.
+                </p>
+
+                <p>
+                  <u>This is the default space between paragraphs</u>, dummy text from here on. Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products.
+                </p>
+              </section>
+              <section class="col-xs-24 col-md-6">
+                <span class="style-detail">
+                  Light 15/22 pixels<br/>
+                  Letter-spacing 0.5px<br/>
+                  Margin-bottom 20px
+                </span>
+              </section>
+            </section><!-- row-paragraph -->
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><p>
+  This is a default paragraph, ... <br/>
+  Use line breaks ...
+</p>
+
+<p>
+  This is the default space between paragraphs, ...
+</p></code></pre>
+<!-- end code block -->
+            <p class="head-up">
+              LESS variables use the @m_ prefix for the equivalent mobile font sizes/line heights.<br/>
+              For example <b>@m_fs_h1</b> is the mobile correspondent of <b>@fs_h1</b>.
+            </p>
+
+            <h3 class="toc-heading" id="stand-alone-labels">Stand-alone labels</h3>
+            <p>These labels can be used as 'stand-alone' elements that display a short &amp; concise text. They have no action attached (see <a href="#buttons">buttons</a> for that).</p>
+
+            <p class="typography-ex ols-label-lg">
+              Large label <span class="style-detail">Light 28/30</span>
+            </p>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- Large label default -->
+<p class="ols-label-lg">
+  Large label
+</p>
+
+<!-- Large label silent -->
+<p class="ols-label-lg silent">
+  Large label silent
+</p>
+
+<!-- Large label bold -->
+<p class="ols-label-lg bold">
+  Large label
+</p>
+</code></pre>
+<!-- end code block -->
+
+            <p class="typography-ex ols-label-md">
+              Medium label <span class="style-detail">Light 18/26</span>
+            </p>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- Medium label default -->
+<p class="ols-label-md">
+  Medium label
+</p>
+
+<!-- Medium label silent -->
+<p class="ols-label-md silent">
+  Medium label
+</p>
+
+<!-- Medium label bold -->
+<p class="ols-label-md bold">
+  Medium label bold
+</p></code></pre>
+<!-- end code block -->
+
+            <p class="typography-ex ols-label-sm">
+              Small label <span class="style-detail">Light 15/25</span>
+            </p>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- Small label default -->
+<p class="ols-label-sm">
+  Small label
+</p>
+
+<!-- Small label silent -->
+<p class="ols-label-sm silent">
+  Small label silent
+</p>
+
+<!-- Small label bold -->
+<p class="ols-label-sm bold">
+  Small label bold
+</p></code></pre>
+<!-- end code block -->
+
+            <p class="typography-ex ols-label-xs">
+              Extra small label <span class="style-detail">Light 13/18</span>
+            </p>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- Extra small label default -->
+<p class="ols-label-xs">
+  Extra small label
+</p>
+
+<!-- Extra small label silent -->
+<p class="ols-label-xs silent">
+  Extra small label silent
+</p>
+
+<!-- Extra small label bold -->
+<p class="ols-label-xs bold">
+  Extra small label bold
+</p></code></pre>
+<!-- end code block -->
+
+            <p>
+              Notice the pattern in the code samples below: label classes are named <u>ols-label-*</u> and are by default light.<br/>
+              To make them bold or silent (faded) add the classes <u>bold</u> or <u>silent</u>.
+              <br/>
+              Each label has an <u>inverse</u> state when it is a child of an element which contains the class <u>inverse</u>. See <a href="#sidebars">sidebars</a> for an example; bold and silent style are exemplified below.
+            </p>
+
+            <p class="typography-ex ols-label-lg">
+              Large label <span class="style-detail">Light 28/30</span>
+            </p>
+
+            <p class="typography-ex ols-label-lg silent">
+              Large label silent<span class="style-detail">Light 28/30 , @col_gray_6</span>
+            </p>
+
+            <p class="typography-ex ols-label-lg bold">
+              Large label bold <span class="style-detail">Semibold 28/30</span>
+            </p>
+
+            <p class="head-up">
+              The code examples use a &lt;p&gt; tag, but headings should be used when appropiate.
+            </p>
+
+            <h3 class="toc-heading" id="combine-label-usage">Combined label usage</h3>
+            <h4 class="toc-heading" id="company-in-result-list">Company in result list</h4>
+
+            <ul class="ols-company-result-list">
+              <li>
+                <a href="#nowhere">
+                  <figure class="round-image rounded">
+                    <img src="http://placehold.it/85x85" alt="QuickPot"/>
+                    <figcaption>
+                      <h4 class="ols-label-md">QuickPot</h4>
+                      <h4 class="ols-label-md">Trindsøvej 5, Aarhus C</h4>
+                      <p class="ols-label-sm">25 minutes to your location</p>
+                    </figcaption>
+                  </figure>
+                </a>
+              </li>
+            </ul>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><ul class="ols-company-result-list">
+  <li>
+    <figure class="round-image rounded">
+      <img src="http://placehold.it/85x85" alt="Image"/>
+      <figcaption>
+        <h4 class="ols-label-md">QuickPot</h4>
+        <h4 class="ols-label-md">Trindsøvej 5, Aarhus C</h4>
+        <p class="ols-label-sm">25 minutes to your location</p>
+      </figcaption>
+    </figure>
+  </li>
+</ul></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="profile-header-label">Profile header label</h4>
+            <p>
+              This label group will be used to display the title of the current page in a profile. It should provide a hint that helps the user identify the page purpose. The small label is optional and shouldn't be included if it doesn't provide useful information.
+            </p>
+
+            <section class="container-fluid spaced extra-space">
+              <header class="ols-profile-header">
+                <h2 class="ols-label-lg">
+                  Edit contact information for the office in
+                </h2>
+                <span class="label-sm silent">
+                  Risdalsvej 42, 8260 Viby J
+                </span>
+              </header>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><header class="ols-profile-header">
+  <h2 class="ols-label-lg">
+    Relevant title
+  </h2>
+  <span class="label-sm silent">
+    Relevant extra information
+  </span>
+</header></code></pre>
+<!-- end code block -->
+            <h4 class="toc-heading" id="profile-header-with-image">Profile header with image</h4>
+            <p>
+              Use this in combination with photos or logos.
+            </p>
+            <section class="container-fluid spaced extra-space header-with-image-space">
+              <header class="ols-profile-header image-header">
+                <img src="http://placehold.it/45x45" class="rounded" alt="Image">
+                <h2 class="ols-label-lg">
+                  J. Member
+                </h2>
+                <span class="label-sm silent">
+                  Surfing the web since December 2014
+                </span>
+              </header>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><header class="ols-profile-header image-header">
+  <img src="http://placehold.it/45x45" class="rounded" alt="Image">
+  <h2 class="ols-label-lg">
+    J. Member
+  </h2>
+  <span class="label-sm silent">
+    Surfing the web since December 2014
+  </span>
+</header></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="conversation-bubbles">Conversation bubbles</h4>
+            <p>
+              This component can be used in any conversation context, such as: reviews, messages or comments. By default it will alternate message positions, but it can force them to the left or right by adding the class <u>force-message-left</u> or <u>force-message-right</u> to the <u>bubble-row</u>.
+            </p>
+            <p class="head-up">Look out for white space, it's going to be displayed in the bubbles!</p>
+
+            <section class="container-fluid spaced">
+              <section class="ols-bubbles">
+                <section class="row-fluid bubble-row">
+                  <figure class="col-xs-6 col-md-8 col-height-sm round-image rounded">
+                    <img src="http://placehold.it/85x85" alt="Image">
+                    <figcaption>
+                      by <b>Alex Testman</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-18 col-md-16 col-height-sm bubble-message-container">
+                    <section class="bubble-message">Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</section>
+                    <span class="ols-label-sm silent bubble-time">
+                      5 minutes ago
+                    </span>
+                  </section>
+                </section>
+                 <section class="row-fluid bubble-row force-message-right">
+                  <figure class="col-xs-6 col-md-8 col-height-sm round-image rounded">
+                    <img src="http://placehold.it/85x85" alt="Image">
+                    <figcaption>
+                      by <b>Jack Testman</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-18 col-md-16 col-height-sm bubble-message-container">
+                    <section class="bubble-message">Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.</section>
+                    <span class="ols-label-sm silent bubble-time">
+                      7 minutes ago
+                    </span>
+                  </section>
+                </section>
+                <section class="row-fluid bubble-row">
+                  <figure class="col-xs-6 col-md-8 round-image rounded">
+                    <img src="http://placehold.it/85x85" alt="Image">
+                    <figcaption>
+                      by <b>Alex Testman</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-18 col-md-16 bubble-message-container">
+                    <section class="bubble-message">Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.<br/><br/>
+
+                      Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</section>
+                    <span class="ols-label-sm silent bubble-time">
+                      10 minutes ago
+                    </span>
+                  </section>
+                </section>
+                <section class="row-fluid bubble-row">
+                  <figure class="col-xs-6 col-md-8 round-image rounded">
+                    <img src="http://placehold.it/85x85" alt="Image">
+                    <figcaption>
+                      by <b>Jane Testgirl</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-18 col-md-16 bubble-message-container">
+                    <section class="bubble-message">Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</section>
+                    <span class="ols-label-sm silent bubble-time">
+                      25 minutes ago
+                    </span>
+                  </section>
+                </section>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="ols-bubbles">
+  <section class="row-fluid bubble-row">
+    <figure class="col-xs-6 col-md-8 col-height-sm round-image rounded">
+      <img src="http://placehold.it/85x85" alt="Image">
+      <figcaption>
+        by <b>Alex Testman</b>
+      </figcaption>
+    </figure>
+    <section class="col-xs-18 col-md-16 col-height-sm bubble-message-container">
+      <section class="bubble-message">
+        Bubble Text
+      </section>
+      <span class="ols-label-sm silent bubble-time">
+        5 minutes ago
+      </span>
+    </section>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="small-conversation-bubbles">Small conversation bubbles</h4>
+            <p>
+              Conversation bubbles are also available in a smaller size, with reduced spacing and smaller image sizes.
+            </p>
+
+            <section class="container-fluid spaced">
+              <section class="ols-bubbles small-bubbles">
+                <section class="row-fluid bubble-row">
+                  <figure class="col-xs-3 col-md-4 col-height-sm round-image rounded">
+                    <img src="http://placehold.it/45x45" alt="Image">
+                    <figcaption>
+                      by <b>Alex Testman</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-21 col-md-20 col-height-sm bubble-message-container">
+                    <section class="bubble-message">Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</section>
+                    <span class="ols-label-sm silent bubble-time">
+                      5 minutes ago
+                    </span>
+                  </section>
+                </section>
+                <section class="row-fluid bubble-row">
+                  <figure class="col-xs-3 col-md-4 round-image rounded">
+                    <img src="http://placehold.it/85x85" alt="Image">
+                    <figcaption>
+                      by <b>Jane Testgirl</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-21 col-md-20 bubble-message-container">
+                    <section class="bubble-message">Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</section>
+                    <span class="ols-label-sm silent bubble-time">
+                      25 minutes ago
+                    </span>
+                  </section>
+                </section>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="ols-bubbles small-bubbles">
+  <section class="row-fluid bubble-row">
+    <figure class="col-xs-3 col-md-4 col-height-sm round-image rounded">
+      <img src="http://placehold.it/45x45" alt="Image">
+      <figcaption>
+        by <b>Alex Testman</b>
+      </figcaption>
+    </figure>
+    <section class="col-xs-21 col-md-20 col-height-sm bubble-message-container">
+      <section class="bubble-message">Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</section>
+      <span class="ols-label-sm silent bubble-time">
+        5 minutes ago
+      </span>
+    </section>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+            <p class="head-up">Small conversation bubbles reduce the column size of images (and increase the text size) via column width. Small columns have the <u>col-xs-3 col-md-4</u>, default ones <u>col-xs-6 col-md-8</u>.</p>
+
+            <h4 class="toc-heading" id="bubbles-with-rating">Bubbles with ratings</h4>
+            <p>
+              (Essentially reviews) Use these for showing comments that have a start rating attached.
+            </p>
+
+              <section class="container-fluid spaced">
+              <section class="ols-bubbles small-bubbles">
+                <section class="row-fluid bubble-row">
+                  <figure class="col-xs-3 col-md-4 col-height-sm round-image rounded">
+                    <img src="http://placehold.it/45x45" alt="Image">
+                    <figcaption>
+                      by <b>Alex Testman</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-21 col-md-20 col-height-sm bubble-message-container">
+                    <fieldset class="ols-rating-group btn-spe-sm">
+                      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+                      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+                      <label class="btn btn-spe btn-star btn-activated btn-partial quarter-partial"></label>
+
+                      <label class="btn btn-spe btn-star btn-activated btn-partial empty-partial"></label>
+
+                      <label class="btn btn-spe btn-star btn-activated btn-partial empty-partial"></label>
+                    </fieldset>
+                    <section class="bubble-message">Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</section>
+                    <span class="ols-label-sm silent bubble-time">5 minutes ago</span>
+                  </section>
+                </section>
+                <section class="row-fluid bubble-row">
+                  <figure class="col-xs-3 col-md-4 round-image rounded">
+                    <img src="http://placehold.it/85x85" alt="Image">
+                    <figcaption>
+                      by <b>Jane Testgirl</b>
+                    </figcaption>
+                  </figure>
+                  <section class="col-xs-21 col-md-20 bubble-message-container">
+                    <fieldset class="ols-rating-group btn-spe-sm">
+                      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+                      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+                      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+                      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+                      <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial"></label>
+                    </fieldset>
+                    <section class="bubble-message">Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</section>
+                    <span class="ols-label-sm silent bubble-time">
+                      25 minutes ago
+                    </span>
+                  </section>
+                </section>
+              </section>
+            </section>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="row-fluid bubble-row">
+  <figure class="col-xs-3 col-md-4 round-image rounded">
+    <img src="http://placehold.it/85x85" alt="Image">
+    <figcaption>
+      by <b>Jane Testgirl</b>
+    </figcaption>
+  </figure>
+  <section class="col-xs-21 col-md-20 bubble-message-container">
+    <fieldset class="ols-rating-group btn-spe-sm">
+      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+      <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+      <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial"></label>
+    </fieldset>
+    <section class="bubble-message">Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</section>
+    <span class="ols-label-sm silent bubble-time">
+      25 minutes ago
+    </span>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+          </article>
+
+          <!-- Scaffolding -->
+          <article>
+            <h2 class="toc-heading" id="scaffolding-and-layout">Scaffolding: layout &amp; grid system</h2>
+            <p class="head-up">
+              <!-- TODO: Update with responsive changes -->
+              There have been a lot of big changes with the implementation of responsive design, therefore some bits might be missing from the SG. Please double check with an example from the working application until everything is up to date.
+            </p>
+            <p>
+              The grid system is made out of 24 columns and works exactly as the <a href="http://getbootstrap.com/css/#grid" target="_blank">Bootstrap Grid</a>, times 2. The grid double-up is chosen for flexiblity. In markup, it just means doubling up all the CSS column sizes.
+            </p>
+
+            <h3 class="toc-heading" id="breakpoints">Breakpoints</h3>
+            <p>
+              There are 4 breakpoints. Properties that do not apply to a breakpoint are available up to a resolution of <u>767 pixels</u>.<br/><br/> LESS variables names: when using (min-height) with media queries, the name of the LESS variable is <b>@bp_[breakpoint_size]</b>. When using (max-height) with media queries, the name of the LESS variable is <b>@bp_[breakpoint_size]_max</b>.<br/>
+              This prevents overlapping when using both min and max height.<br/><br/>
+              It's a good idea to stick with min-height (that's usually a consequence of mobile-first design).<br/>
+            </p>
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>LESS name (min-height)</th>
+                  <th>LESS name (max-height)</th>
+                  <th>When it applies (pixels)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>@bp_sm</td>
+                  <td>@bp_sm_max</td>
+                  <td>> 767px</td>
+                </tr>
+                <tr>
+                  <td>@bp_md</td>
+                  <td>@bp_md_max</td>
+                  <td>> 991px</td>
+                </tr>
+                <tr>
+                  <td>@bp_lg</td>
+                  <td>@bp_lg_max</td>
+                  <td>> 1199px</td>
+                </tr>
+                <tr>
+                  <td>@bp_xl</td>
+                  <td>@bp_xl_max</td>
+                  <td>> 1599px</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              As with Bootstrap, column sizes can be specified in the HTML markup for each breakpoint. A class of <u>col-md-6</u> will have the size of 6 columns on viewports bigger than <u>991 pixels</u>. To get an adaptive layout, column sizes can be stacked on one element.<br/>
+              For example, a class of <u>col-xs-24 col-md-6</u> will have the size of 24 columns up to 991 pixels and 6 columns for viewports bigger than that.
+            </p>
+
+            <h3 class="toc-heading" id="normal-page">Normal page</h3>
+            <p>
+              Pages are made out of multiple rows, each row containing 24 columns. For mobile devices <u>(col-xs)</u>, the column will take 100% of the width (all 24 columns). The example below is for a page with sidebars on both right and left.
+            </p>
+            <section class="container-fluid bordered">
+              <section class="row-fluid column-row">
+                <span class="fluid-label">.row-fluid</span>
+                <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+                <article class="col-xs-24 col-md-12">col-xs-24 col-md-12</article>
+                <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+              </section>
+            </section>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-normal-page">
+  <section class="row-fluid">
+    <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+    <article class="col-xs-24 col-md-12">col-xs-24 col-md-12</article>
+    <aside class="col-xs-24 col-md-6">col-xs-24 col-md-6</aside>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="company-profile">Company profile</h3>
+            <p>
+              Company profiles have a similar layout to normal pages, but they require a different class on the container: <b>ols-company-profile</b>.<br/>
+              Moreover, the article in the center (usually between a left nav and a right sidebar) should have the class <b>company-content</b>.
+            </p>
+            <br/>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-company-profile">
+  <section class="row-fluid">
+    <nav class="col-xs-24 col-md-4 ols-menu-container ols-aside-left">
+      col-xs-24 col-md-4
+    </nav>
+    <article class="col-xs-24 col-md-14 col-md-push-4 company-content">
+      col-xs-24 col-md-14
+    </article>
+    <aside class="row-fluid col-xs-24 col-md-6 ols-aside-contact ols-aside-right">
+      col-xs-24 col-md-6
+    </aside>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+            <h4 class="toc-heading" id="fixing-sidebars">Fixing sidebars</h4>
+            <p>
+              Sidebar fixing is done with JavaScript (not included in the style guide -> an Angular attribute directive: <u>fixed-component</u>). To fix on the left or right a class is needed on the <u>row-fluid</u> of the element to fix: <u>ols-aside-left</u> and <u>ols-aside-right</u> respectively. An AngularJS template example is provided below.
+            </p>
+            <br/>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-company-profile">
+  <section class="row-fluid">
+    <nav company-profile-navigation fixed-component></nav>
+    <!-- directive template that contains:
+
+    <nav class="col-xs-24 col-md-4 ols-menu-container ols-aside-left">
+      col-xs-24 col-md-4
+    </nav>
+
+     -->
+
+    <article company-main-content></article>
+    <!-- directive template that contains:
+
+    <article class="col-xs-24 col-md-14 col-md-push-4 company-content">
+      col-xs-24 col-md-14
+    </article>
+
+     -->
+
+    <aside company-contact-sidebar fixed-component></aside>
+    <!-- directive template that contains:
+
+    <aside class="row-fluid col-xs-24 col-md-6 ols-aside-contact ols-aside-right">
+      col-xs-24 col-md-6
+    </aside>>
+
+     -->
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+            <h3 class="toc-heading" id="map-pages">Map pages</h3>
+            <p>
+              The 'map pages' are all the views that have maps as a central interface element.
+            </p>
+            <h4 class="toc-heading" id="layout-full-screen">Full screen</h4>
+            <p>
+              The full screen map is used as the entry point of the application.
+            </p>
+            <section class="container-fluid bordered">
+              <section class="row-fluid column-row">
+                <span class="fluid-label">.row-fluid</span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-full-screen">
+  <section class="row-fluid">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="layout-result-list">Result list</h4>
+            <p>
+              The result list is used for displaying search results quickly alongside the map, sorted by location.
+            </p>
+            <section class="container-fluid bordered">
+              <section class="row-fluid col-xs-24 col-md-16 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-16
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+              <aside class="row-fluid col-xs-24 col-md-8 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-8
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </aside>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-result-list">
+  <section class="row-fluid col-xs-24 col-md-16">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </section>
+  <aside class="row-fluid col-xs-24 col-md-8">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </aside>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="layout-result-detail">Result detail</h4>
+            <p>Pressing a result from the list will cause a transition to the result detail. The map will then be minimized to a size of 4 columns.</p>
+            <section class="container-fluid bordered">
+              <aside class="row-fluid col-xs-24 col-md-4 column-row">
+                <span class="fluid-label">
+                  .row-fluid <br/>
+                  .col-xs-24 <br/>
+                  .col-md-4
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </aside>
+              <section class="row-fluid col-xs-24 col-md-8 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-8
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+              <section class="row-fluid col-xs-24 col-md-12 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-12
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-result-detail">
+  <aside class="row-fluid col-xs-24 col-md-4">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </aside>
+  <section class="row-fluid col-xs-24 col-md-8">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </section>
+  <section class="row-fluid col-xs-24 col-md-12">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+            <p>
+              In this example the row heights <u>are not equal</u>. If that's the desired layout, extra classes need to be added to convert the rows into table rows.
+            </p>
+
+            <section class="container-fluid ols-result-detail container-height-md height-top">
+              <section class="row-fluid row-height-md bordered">
+                <aside class="row-fluid col-xs-24 col-md-4 column-row col-height-md">
+                  <span class="fluid-label">
+                    .row-fluid <br/>
+                    .col-xs-24 <br/>
+                    .col-md-4
+                    <article class="col-xs-24">
+                         col-xs-24
+                    </article>
+                  </span>
+                </aside>
+                <section class="row-fluid col-xs-24 col-md-8 column-row col-height-md">
+                  <span class="fluid-label">
+                    .row-fluid .col-xs-24 .col-md-8
+                    <article class="col-xs-24">
+                         col-xs-24
+                    </article>
+                  </span>
+                </section>
+                <section class="row-fluid col-xs-24 col-md-12 column-row col-height-md">
+                  <span class="fluid-label">
+                    .row-fluid .col-xs-24 .col-md-12
+                    <article class="col-xs-24">
+                         col-xs-24
+                    </article>
+                  </span>
+                </section>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-result-detail container-height-md height-top">
+  <section class="row-fluid row-height-md">
+    <aside class="row-fluid col-xs-24 col-md-4 col-height-md">
+      <article class="col-xs-24">
+        col-xs-24
+      </article>
+    </aside>
+    <section class="row-fluid col-xs-24 col-md-8 col-height-md">
+      <article class="col-xs-24">
+        col-xs-24
+      </article>
+    </section>
+    <section class="row-fluid col-xs-24 col-md-12 col-height-md">
+      <article class="col-xs-24">
+        col-xs-24
+      </article>
+    </section>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+            <p class="head-up">
+              The table transformation will be applied according to the specified breakpoint (similar to how columns work). In this example that is <b>@bp_md</b> or viewport sizes bigger than <b>991 pixels</b>.
+            </p>
+
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>@bp_sm (> 767px)</th>
+                  <th>@bp_md (> 991px)</th>
+                  <th>@bp_lg (> 1199px)</th>
+                  <th>@bp_xl (> 1599px)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Container</td>
+                  <td>.container-height-sm</td>
+                  <td>.container-height-md</td>
+                  <td>.container-height-lg</td>
+                  <td>.container-height-xl</td>
+                </tr>
+                <tr>
+                  <td>Row</td>
+                  <td>.row-height-sm</td>
+                  <td>.row-height-md</td>
+                  <td>.row-height-lg</td>
+                  <td>.row-height-xl</td>
+                </tr>
+                <tr>
+                  <td>Column</td>
+                  <td>.col-height-sm</td>
+                  <td>.col-height-md</td>
+                  <td>.col-height-lg</td>
+                  <td>.col-height-xl</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              The <b>[element]-height-[breakpoint]</b> class should be added at the end of the element to avoid conflicts. <br/>
+              For example, <b>class="row-fluid col-xs-24 col-md-4 col-height-md"</b> is the correct way of applying the equal column height class.
+            </p>
+
+            <h4 class="toc-heading" id="company-project-view">Company project view</h4>
+            <section class="container-fluid ols-company-project bordered">
+              <nav class="row-fluid col-xs-24 col-md-2 column-row">
+                <span class="fluid-label">
+                  .row-fluid <br/>
+                  .col-xs-24 <br/>
+                  .col-md-2
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </nav>
+              <section class="row-fluid col-xs-24 col-md-4 column-row">
+                <span class="fluid-label">
+                  .row-fluid <br/>
+                  .col-xs-24 <br/>
+                  .col-md-4
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+              <section class="row-fluid col-xs-24 col-md-12 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-12
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </section>
+              <aside class="row-fluid col-xs-24 col-md-6 column-row">
+                <span class="fluid-label">
+                  .row-fluid .col-xs-24 .col-md-6
+                </span>
+                <article class="col-xs-24">col-xs-24</article>
+              </aside>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-company-project">
+  <nav class="row-fluid col-xs-24 col-md-2">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </nav>
+  <section class="row-fluid col-xs-24 col-md-4">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </section>
+  <section class="row-fluid col-xs-24 col-md-12">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </section>
+  <aside class="row-fluid col-xs-24 col-md-6">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </aside>
+</section></code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="sidebars">Sidebars</h3>
+            <h4 class="toc-heading" id="contact-sidebar">Contact sidebar</h4>
+            <p>
+              The contact sidebar is positioned on the right, but does not float in it's place. It needs to be 'pushed' by 18 columns from the left.
+            </p>
+            <section class="container-fluid bordered">
+              <section class="row-fluid col-xs-24 col-md-18 column-row">
+                Pushing ->
+              </section>
+              <aside class="row-fluid col-xs-24 col-md-6 column-row">
+                <span class="fluid-label">
+                  (Contact Sidebar)<br/>
+                  .row-fluid .col-xs-24<br/>
+                  .col-md-6
+                </span>
+                <article class="col-xs-24">
+                  col-xs-24
+                </article>
+              </aside>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid">
+  <section class="row-fluid col-xs-24 col-md-18">
+    (Pushing)
+  </section>
+  <aside class="row-fluid col-xs-24 col-md-6 ols-aside-contact">
+    <article class="col-xs-24">
+      col-xs-24
+    </article>
+  </aside>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="contact-sidebar-example">Contact sidebar example</h4>
+            <p>
+              The example below uses the <u>inverse</u> label state.
+            </p>
+
+            <section class="container-fluid spaced">
+              <aside class="row-fluid col-xs-24 col-md-12 col-md-push-6 ols-aside-contact no-padding">
+                <article class="col-xs-24 inverse">
+                  <header>
+                    <a href="#nowhere">
+                      <section class="col-xs-24 col-md-20">
+                        <h5 class="ols-label-sm silent">Message the office in</h5>
+                        <!-- Will be replaced by custom dropdown -->
+                        <span class="ols-label-lg">Aarhus C</span>
+                      </section>
+
+                      <section class="col-xs-24 col-md-4">
+                        <i class="ols-svg ols-image-inbox-message"></i>
+                      </section>
+                    </a>
+                  </header>
+
+                  <dl class="contact-body">
+                    <dt class="ols-label-md silent">E-mail</dt>
+                    <dd class="ols-label-sm"><a href="mailto:8000@quickpot.dk">8000@quickpot.dk</a></dd>
+
+                    <dt class="ols-label-md silent">Phone number</dt>
+                    <dd class="ols-label-sm">86 15 85 44</dd>
+
+                    <dt class="ols-label-md silent">Head of department</dt>
+                    <dd class="ols-label-sm">Thomas Drasbæk</dd>
+
+                    <dt class="ols-label-md silent">Opening hours</dt>
+                    <dd class="ols-label-sm">Mon - Fri: 8-17</dd>
+                    <dd class="ols-label-sm">Sat - Sun: Closed</dd>
+                  </dl>
+                </article>
+              </aside>
+            </section>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid">
+  <section class="row-fluid col-xs-24 col-md-16">
+    (Pushing)
+  </section>
+  <aside class="row-fluid col-xs-24 col-md-8 ols-aside-contact">
+    <article class="col-xs-24 inverse">
+      <header>
+        <a href="#nowhere">
+          <section class="col-xs-24 col-md-20">
+            <h5 class="ols-label-sm silent">Message the office in</h5>
+            <!-- Will be replaced by custom dropdown -->
+            <span class="ols-label-lg">Aarhus C</span>
+          </section>
+
+          <section class="col-xs-24 col-md-4">
+            <i class="ols-svg ols-image-inbox-message"></i>
+          </section>
+        </a>
+      </header>
+
+      <dl class="contact-body">
+        <dt class="ols-label-md silent">E-mail</dt>
+        <dd class="ols-label-sm"><a href="mailto:8000@quickpot.dk">8000@quickpot.dk</a></dd>
+
+        <dt class="ols-label-md silent">Phone number</dt>
+        <dd class="ols-label-sm">86 15 85 44</dd>
+
+        <dt class="ols-label-md silent">Head of department</dt>
+        <dd class="ols-label-sm">Thomas Drasbæk</dd>
+
+        <dt class="ols-label-md silent">Opening hours</dt>
+        <dd class="ols-label-sm">Mon - Fri: 8-17</dd>
+        <dd class="ols-label-sm">Sat - Sun: Closed</dd>
+      </dl>
+    </article>
+  </aside>
+</section></code></pre>
+<!-- end code block -->
+
+            <h3 class="toc-heading" id="lists-and-tables">Lists &amp; tables</h3>
+            <h4 class="toc-heading" id="service-list-profile">Service list (profile)</h4>
+            <p>
+              This is the service (tag) list that has to be used for company profiles. <a href="#layout-result-detail">Result detail</a> layouts will display this list differently.
+            </p>
+            <section class="container-fluid ols-company-profile spaced">
+              <section class="row-fluid ols-service-list">
+                <ul class="presentation">
+                  <li class="col-xs-24 col-md-8">
+                    Check the tire pressure
+                  </li>
+                  <li class="col-xs-24 col-md-8">
+                    Lubrication of door hinges
+                  </li>
+                  <li class="col-xs-24 col-md-8">
+                    Check wheel bearings
+                  </li>
+                  <li class="col-xs-24 col-md-8">
+                    Check power steering fluid
+                  </li>
+                  <li class="col-xs-24 col-md-8">
+                    Check the wiper
+                  </li>
+                  <li class="col-xs-24 col-md-8">
+                    Replacing lights
+                  </li>
+                </ul>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-company-profile">
+  <!-- Other rows will probably be in this container-fluid -->
+  <section class="row-fluid ols-service-list">
+    <ul class="presentation">
+      <li class="col-xs-24 col-md-8">
+        List item
+      </li>
+    </ul>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="service-list-edit">Service list (edit)</h4>
+            <p>In the company edit page, don't include the class <u>presentation</u> on the parent <u>ul</u>. This will remove the checkmark. It can be replaced with a <b>&times;</b>, which will delete the service.</p>
+            <section class="container-fluid ols-result-detail spaced">
+              <section class="row-fluid ols-service-list">
+                <ul>
+                  <li class="col-xs-24 col-md-12">
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Check the tire pressure
+                  </li>
+                  <li class="col-xs-24 col-md-12">
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Lubrication of door hinges
+                  </li>
+                  <li class="col-xs-24 col-md-12">
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Check wheel bearings
+                  </li>
+                  <li class="col-xs-24 col-md-12">
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Check power steering fluid
+                  </li>
+                  <li class="col-xs-24 col-md-12">
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Check the wiper
+                  </li>
+                  <li class="col-xs-24 col-md-12">
+                    <span class="ols-inline-remove"><span aria-hidden="true">&times;</span></span>Replacing lights
+                  </li>
+                </ul>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="container-fluid ols-result-detail">
+  <section class="row-fluid ols-service-list">
+    <ul>
+      <li class="col-xs-24 col-md-12">
+        <span class="ols-inline-remove">
+          <span aria-hidden="true">&times;</span>
+        </span>
+        Check the tire pressure
+      </li>
+    </ul>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="table-view">Table view</h4>
+            <p>
+              The table view layout is similar to the <a href="#company-in-result-list">Company in result list example.</a>
+            <p>
+            <ul class="ols-company-result-list single-border">
+              <li>
+                <a href="#nowhere">
+                  <h4 class="ols-label-md bold">List item title #1</h4>
+                  <p class="ols-label-sm">
+                    One intersting new item to have in a list.<br/>
+                    Synergistically synthesize premier e-tailers rather than inexpensive methodologies. Appropriately build stand-alone interfaces without world-class technologies.
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#nowhere">
+                  <h4 class="ols-label-md bold">List item title #2</h4>
+                  <p class="ols-label-sm">
+                    Another interesting item to have in the list.<br/>
+                    Appropriately innovate stand-alone web-readiness for functional convergence.
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#nowhere">
+                  <h4 class="ols-label-md bold">List item title #3</h4>
+                  <p class="ols-label-sm">
+                    Yet one more interesting item to have in the list.<br/>
+                    Enthusiastically syndicate timely leadership via client-centric e-commerce. Monotonectally pontificate cross-platform vortals rather than premium ROI.
+                  </p>
+                </a>
+              </li>
+            </ul>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><ul class="ols-company-result-list">
+  <li>
+    <a href="#nowhere">
+      <h4 class="ols-label-md bold">
+        Title
+      </h4>
+      <p class="ols-label-sm">
+        Content
+      </p>
+    </a>
+  </li>
+</ul></code></pre>
+<!-- end code block -->
+            <p class="head-up">
+              Table views can also be <u>without anchors</u> or have only one background color (instead of alternating). See the examples below.
+            </p>
+            <p>
+              Use the class <u>ols-uniform-list</u> to display one background. The following example does not contain anchor tags, just the list contents.
+            </p>
+
+             <ul class="ols-company-result-list ols-uniform-list single-border">
+              <li>
+                <h4 class="ols-label-md bold">List item title #1</h4>
+                <p class="ols-label-sm">
+                  One intersting new item to have in a list.<br/>
+                  Synergistically synthesize premier e-tailers rather than inexpensive methodologies. Appropriately build stand-alone interfaces without world-class technologies.
+                </p>
+              </li>
+              <li>
+                <h4 class="ols-label-md bold">List item title #2</h4>
+                <p class="ols-label-sm">
+                  Another interesting item to have in the list.<br/>
+                  Appropriately innovate stand-alone web-readiness for functional convergence.
+                </p>
+              </li>
+              <li>
+                <h4 class="ols-label-md bold">List item title #3</h4>
+                <p class="ols-label-sm">
+                  Yet one more interesting item to have in the list.<br/>
+                  Enthusiastically syndicate timely leadership via client-centric e-commerce. Monotonectally pontificate cross-platform vortals rather than premium ROI.
+                </p>
+              </li>
+            </ul>
+
+            <h4 class="toc-heading" id="table-view-with-image">Table view /w image</h4>
+            <p>
+              Table views support images to the right and left. The left image is always round, while the right image is rectangular. A left image example is available <a href="#company-in-result-list">here</a>. A right image example is provided below.<br/><br/>
+              Note that the list requires one more class to display rectangle images in each row: <u>ols-company-project-list</u>. Image sizes may vary in this view.
+            </p>
+
+            <ul class="ols-company-result-list ols-company-project-list ols-uniform-list single-border">
+              <li>
+                <a href="#nowhere">
+                  <figure class="rectangular-image">
+                    <img src="http://placehold.it/120x180" alt="QuickPot"/>
+                    <figcaption>
+                      <h4 class="ols-label-md bold">List item title #1</h4>
+                      <p class="ols-label-sm">
+                        One intersting new item to have in a list.<br/>
+                        Synergistically synthesize premier e-tailers rather than inexpensive methodologies. Appropriately build stand-alone interfaces without world-class technologies.
+                      </p>
+                    </figcaption>
+                  </figure>
+                </a>
+              </li>
+              <li>
+                <a href="#nowhere">
+                  <figure class="rectangular-image">
+                    <img src="http://placehold.it/180x180" alt="QuickPot"/>
+                    <figcaption>
+                      <h4 class="ols-label-md bold">List item title #2</h4>
+                      <p class="ols-label-sm">
+                        Another interesting item to have in the list.<br/>
+                        Appropriately innovate stand-alone web-readiness for functional convergence.
+                      </p>
+                    </figcaption>
+                  </figure>
+                </a>
+              </li>
+            </ul>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><ul class="ols-company-result-list ols-company-project-list ols-uniform-list">
+  <li>
+    <a href="#nowhere">
+      <figure class="rectangular-image">
+        <img src="http://placehold.it/120x180" alt="Image"/>
+        <figcaption>
+          <h4 class="ols-label-md bold">
+            Title
+          </h4>
+          <p class="ols-label-sm">
+            Content
+          </p>
+        </figcaption>
+      </figure>
+    </a>
+  </li>
+</ul></code></pre>
+<!-- end code block -->
+            <h4 class="toc-heading" id="inbox-table-view">Inbox table view</h4>
+            <p>
+              This table view is used for displaying inbox theards. [TODO: Inbox empty]
+            </p>
+            <p class="head-up">The thread list needs to be contained into a <u>ols-aside-inbox</u> section, with <u>ols-inbox</u> as a child.</p>
+            <section class="container-fluid ols-aside-inbox spaced">
+              <section class="ols-inbox">
+                <ul class="ols-company-result-list">
+                  <li class="unread-thread">
+                    <figure>
+                      <span class="ols-svg ols-image-inbox-message-unread"></span>
+                      <span class="ols-label-sm unread-count">5</span>
+
+                      <figcaption>
+                        <h3 class="ols-label-md">J. Message</h3>
+                        <p class="ols-label-sm">5 minutes ago</p>
+                      </figcaption>
+                    </figure>
+                  </li>
+
+                  <li>
+                    <figure>
+                      <span class="ols-svg ols-image-inbox-message"></span>
+                      <span class="ols-label-sm unread-count"></span>
+
+                      <figcaption>
+                        <h3 class="ols-label-md">A. Instant</h3>
+                        <p class="ols-label-sm">30 minutes ago</p>
+                      </figcaption>
+                    </figure>
+                    </figure>
+                  </li>
+                </ul>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="ols-aside-inbox">
+  <section class="ols-inbox">
+    <ul class="ols-company-result-list">
+      <li class="unread-thread">
+        <figure>
+          <span class="ols-svg ols-image-inbox-message-unread"></span>
+          <span class="ols-label-sm unread-count">5</span>
+
+          <figcaption>
+            <h3 class="ols-label-md">J. Message</h3>
+            <p class="ols-label-sm">5 minutes ago</p>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure>
+          <span class="ols-svg ols-image-inbox-message"></span>
+          <span class="ols-label-sm unread-count"></span>
+
+          <figcaption>
+            <h3 class="ols-label-md">A. Instant</h3>
+            <p class="ols-label-sm">30 minutes ago</p>
+          </figcaption>
+        </figure>
+        </figure>
+      </li>
+    </ul>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+            <h4 class="toc-heading" id="inbox-table-with-header">Inbox table with header</h4>
+            <p>
+              The inbox thread list also supports a header before each thread list (<u>ul</u>).
+            </p>
+
+            <section class="container-fluid ols-aside-inbox spaced">
+              <section class="ols-inbox">
+                <header>
+                  <figure class="round-image">
+                    <img src="http://placehold.it/45x45" alt="Image"/>
+                  </figure>
+                  <span class="ols-label-lg">Batman's Inbox</span>
+                </header>
+
+                <ul class="ols-company-result-list">
+                  <li class="unread-thread">
+                    <figure>
+                      <span class="ols-svg ols-image-inbox-message-unread"></span>
+                      <span class="ols-label-sm unread-count">5</span>
+
+                      <figcaption>
+                        <h3 class="ols-label-md">J. Message</h3>
+                        <p class="ols-label-sm">5 minutes ago</p>
+                      </figcaption>
+                    </figure>
+                  </li>
+
+                  <li>
+                    <figure>
+                      <span class="ols-svg ols-image-inbox-message"></span>
+                      <span class="ols-label-sm unread-count"></span>
+
+                      <figcaption>
+                        <h3 class="ols-label-md">A. Instant</h3>
+                        <p class="ols-label-sm">30 minutes ago</p>
+                      </figcaption>
+                    </figure>
+                    </figure>
+                  </li>
+                </ul>
+              </section>
+            </section>
+
+          </article>
+
+          <!-- Buttons -->
+          <article>
+            <h2 class="toc-heading" id="buttons">Buttons &amp; Links</h2>
+
+            <h3 class="toc-heading" id="loading-button">Primary button</h3>
+            <p>This is the 'normal' button. It supports a 'disabled' state (also used for loading buttons). A 'dark' button is available for primary actions with lower priority, such as sending a message. The dark button can be used by appending the <u>dark</u> class to the <u>btn btn-primary</u> class.</p>
+            <section class="container-fluid spaced">
+              <button type="submit"
+                      class="btn btn-primary">
+                Press me
+              </button>
+              <button type="submit"
+                      class="btn btn-primary"
+                      disabled="disabled">
+                Can't press
+              </button>
+
+              <!-- dark primary button -->
+              <button type="submit"
+                      class="btn btn-primary dark">
+                Press me
+              </button>
+              <button type="submit"
+                      class="btn btn-primary dark"
+                      disabled="disabled">
+                Can't press
+              </button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- primary button -->
+<button type="submit" class="btn btn-primary">
+  Press me
+</button>
+<!-- disabled primary button -->
+<button type="submit" class="btn btn-primary" disabled="disabled">
+  Can't press
+</button>
+
+<!-- dark primary button -->
+<button type="submit"
+        class="btn btn-primary dark">
+  Press me
+</button>
+
+<!-- disabled primary button -->
+<button type="submit"
+        class="btn btn-primary dark"
+        disabled="disabled">
+  Can't press
+</button></code></pre>
+<!-- end code block -->
+
+            <h3 class="toc-heading" id="secondary-buttons">Secondary buttons</h3>
+            <p>Buttons to be used in other circumstances, such as 'important' (danger). Disabled states are also available for them.</p>
+            <section class="container-fluid spaced">
+              <button type="submit"
+                      class="btn btn-default">
+                Toggle function
+              </button>
+              <button type="submit"
+                      class="btn btn-default"
+                      disabled="disabled">
+                Can't press
+              </button>
+              <button type="submit"
+                      class="btn btn-danger">
+                Delete account
+              </button>
+              <button type="submit"
+                      class="btn btn-danger"
+                      disabled="disabled">
+                Can't press
+              </button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- primary button -->
+<button type="submit" class="btn btn-default">
+  Send message
+</button>
+<!-- disabled primary button -->
+<button type="submit" class="btn btn-default" disabled="disabled">
+  Can't press
+</button>
+
+<!-- important button -->
+<button type="submit" class="btn btn-danger">
+  Delete account
+</button>
+<!-- disabled important button -->
+<button type="submit" class="btn btn-danger" disabled="disabled">
+  Can't press
+</button></code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="small-buttons">Small buttons</h3>
+            <p>Adding a <u>btn-sm</u> class to any button will decrease the button size.</p>
+            <section class="container-fluid spaced">
+              <button type="submit"
+                      class="btn btn-primary btn-sm">
+                Press me
+              </button>
+
+              <button type="submit"
+                      class="btn btn-primary btn-sm"
+                      disabled="disabled">
+                Press me
+              </button>
+
+              <button type="submit"
+                      class="btn btn-primary btn-sm dark">
+                Press me
+              </button>
+
+              <button type="submit"
+                      class="btn btn-primary btn-sm dark"
+                      disabled="disabled">
+                Press me
+              </button>
+
+              <button type="submit"
+                      class="btn btn-default btn-sm">
+                Toggle this
+              </button>
+
+              <button type="submit"
+                      class="btn btn-default btn-sm"
+                      disabled="disabled">
+                Toggle this
+              </button>
+
+              <button type="submit"
+                      class="btn btn-danger btn-sm">
+                Delete
+              </button>
+
+              <button type="submit"
+                      class="btn btn-danger btn-sm"
+                      disabled="disabled">
+                Delete
+              </button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- small primary button -->
+<button type="submit" class="btn btn-primary btn-sm">
+  Press me
+</button>
+
+<!-- small primary button disabled -->
+<button type="submit" class="btn btn-primary btn-sm" disabled="disabled">
+  Press me
+</button>
+
+<!-- small primary dark button -->
+<button type="submit" class="btn btn-primary btn-sm dark">
+  Press me
+</button>
+
+<!-- small primary dark button disabled -->
+<button type="submit" class="btn btn-primary btn-sm dark" disabled="disabled">
+  Press me
+</button>
+
+<!-- small default button -->
+<button type="submit" class="btn btn-default btn-sm">
+  Toggle this
+</button>
+
+<!-- small default button disabled -->
+<button type="submit" class="btn btn-default btn-sm" disabled="disabled">
+  Toggle this
+</button>
+
+<!-- small important button -->
+<button type="submit" class="btn btn-danger btn-sm">
+  Delete
+</button>
+
+<!-- small important button disabled -->
+<button type="submit" class="btn btn-danger btn-sm" disabled="disabled">
+  Delete
+</button>
+</code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="round-buttons">Round buttons</h3>
+            <p>These buttons should be used for 'form steps'. Their main function is to present an overview of the steps, as well as the current step position. This button supports 3 states:</p>
+            <ul>
+              <li>(default - no class): green color &amp; supports hover</li>
+              <li>(disabled - <u>btn-disabled</u>): gray color, transparent, no hover</li>
+              <li>(active - <u>btn-active</u>): dark green color, no hover, no pointer</li>
+            </ul>
+            <p>To center a rounded button group, wrap the buttons elements with a <u>rounded-button-group</u> parent.</p>
+
+            <section class="container-fluid padded spaced rounded-button-group">
+              <a href="#nowhere" class="btn-primary btn-round">
+                <span class="btn-round-inner">1</span>
+                <span class="btn-round-text">Step 1</span>
+              </a>
+
+              <a href="#nowhere" class="btn-primary btn-round btn-active">
+                <span class="btn-round-inner">2</span>
+                <span class="btn-round-text">Step 2</span>
+              </a>
+
+              <a href="#nowhere" class="btn-primary btn-round btn-disabled">
+                <span class="btn-round-inner">3</span>
+                <span class="btn-round-text">Step 3</span>
+              </a>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- optional: wrap the buttons to center them -->
+<section class="rounded-button-group">
+  <!-- default round button -->
+  <a href="#nowhere" class="btn-primary btn-round">
+    <span class="btn-round-inner">1</span>
+    <span class="btn-round-text">Step 1</span>
+  </a>
+
+  <!-- active round button -->
+  <a href="#nowhere" class="btn-primary btn-round btn-active">
+    <span class="btn-round-inner">2</span>
+    <span class="btn-round-text">Step 2 (active)</span>
+  </a>
+
+  <!-- disabled round button -->
+  <a href="#nowhere" class="btn-primary btn-round btn-disabled">
+    <span class="btn-round-inner">3</span>
+    <span class="btn-round-text">Step 3 (disabled)</span>
+  </a>
+</section></code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="inline-round-buttons">Inline round buttons</h3>
+            <p>A compressed version of the rounded buttons, without descriptive text underneath.</p>
+            <section class="container-fluid padded spaced rounded-button-group">
+              <a href="#nowhere" class="btn-primary btn-round btn-inline">
+                <span class="btn-round-inner">Go</span>
+              </a>
+
+              <a href="#nowhere" class="btn-primary btn-round btn-inline btn-active">
+                <span class="btn-round-inner">Ok</span>
+              </a>
+
+              <a href="#nowhere" class="btn-primary btn-round btn-inline btn-disabled">
+                <span class="btn-round-inner">No</span>
+              </a>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><!-- optional: wrap the buttons to center them -->
+<section class="rounded-button-group">
+  <a href="#nowhere" class="btn-primary btn-round btn-inline">
+    <span class="btn-round-inner">Go</span>
+  </a>
+
+  <a href="#nowhere" class="btn-primary btn-round btn-inline btn-active">
+    <span class="btn-round-inner">Ok</span>
+  </a>
+
+  <a href="#nowhere" class="btn-primary btn-round btn-inline btn-disabled">
+    <span class="btn-round-inner">No</span>
+  </a>
+</section></code></pre>
+<!-- end code block -->
+
+
+            <h3 class="toc-heading" id="loading-button">Loading button</h3>
+            <p>All buttons have a loading state that can be triggered by adding the <u>loading</u> class.</p>
+            <section class="container-fluid spaced">
+              <button type="submit"
+                      class="btn btn-primary loading"
+                      disabled="disabled">
+                Loading button
+              </button>
+            </section>
+
+            <h3 class="toc-heading" id="special-buttons">Special buttons</h3>
+            <h4 class="toc-heading" id="star-button">Star button</h4>
+
+            <section class="container-fluid spaced">
+              <button class="btn btn-spe btn-star"></button>
+              <button class="btn btn-spe btn-star"></button>
+              <button class="btn btn-spe btn-star"></button>
+              <button class="btn btn-spe btn-star"></button>
+              <button class="btn btn-spe btn-star"></button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><button class="btn btn-spe btn-star"></button></code></pre>
+<!-- end code block -->
+
+            <p>Adding the <u>btn-activated</u> class will disable animations and force the star to be yellow.</p>
+
+            <section class="container-fluid spaced">
+              <button class="btn btn-spe btn-star btn-activated"></button>
+              <button class="btn btn-spe btn-star btn-activated"></button>
+              <button class="btn btn-spe btn-star btn-activated"></button>
+              <button class="btn btn-spe btn-star btn-activated"></button>
+              <button class="btn btn-spe btn-star btn-activated"></button>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><button class="btn btn-spe btn-star btn-activated"></button></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="star-button">Star button group</h4>
+            <p>The star button group doesn't need any additional class to be dynamic, it will be as glorious as ever with only CSS. It can contain label text for each item if necessary, otherwise a empty label would work.</p>
+            <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group">
+                <input type="radio" id="star5" name="rating" value="5" /><label class="btn btn-spe btn-star" for="star5"><span class="silent">5 stars</span></label>
+                <input type="radio" id="star4" name="rating" value="4" /><label class="btn btn-spe btn-star" for="star4"><span class="silent">4 stars</span></label>
+                <input type="radio" id="star3" name="rating" value="3" /><label class="btn btn-spe btn-star" for="star3"><span class="silent">3 stars</span></label>
+                <input type="radio" id="star2" name="rating" value="2" /><label class="btn btn-spe btn-star" for="star2"><span class="silent">2 stars</span></label>
+                <input type="radio" id="star1" name="rating" value="1" /><label class="btn btn-spe btn-star" for="star1"><span class="silent">1 star</span></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group">
+  <input type="radio" id="a-star" name="rating" value="5" />
+  <label class="btn btn-spe btn-star" for="a-star">
+    <span class="silent">5 stars</span>
+  </label>
+</fieldset></code></pre>
+<!-- end code block -->
+
+             <p>Here's an example without the label text:</p>
+             <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group">
+                <input type="radio" id="labeless-star5" name="rating" value="5" />
+                <label class="btn btn-spe btn-star" for="labeless-star5"></label>
+
+                <input type="radio" id="labeless-star4" name="rating" value="4" />
+                <label class="btn btn-spe btn-star" for="labeless-star4"></label>
+
+                <input type="radio" id="labeless-star3" name="rating" value="3" />
+                <label class="btn btn-spe btn-star" for="labeless-star3"></label>
+
+                <input type="radio" id="labeless-star2" name="rating" value="2" />
+                <label class="btn btn-spe btn-star" for="labeless-star2"></label>
+
+                <input type="radio" id="labeless-star1" name="rating" value="1" />
+                <label class="btn btn-spe btn-star" for="labeless-star1"></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group">
+  <input type="radio" id="a-star" name="rating" value="5" />
+  <label class="btn btn-spe btn-star" for="a-star"></label>
+</fieldset></code></pre>
+<!-- end code block -->
+
+            <p class="head-up">Adding the class <b>btn-spe-sm</b> to the parent of either star buttons and star button groups will decrease the size of the buttons.</p>
+
+            <section class="container-fluid spaced">
+              <section class="parent btn-spe-sm">
+                <button class="btn btn-spe btn-star"></button>
+                <button class="btn btn-spe btn-star btn-activated"></button>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="parent btn-spe-sm">
+  <button class="btn btn-spe btn-star"></button>
+  <button class="btn btn-spe btn-star btn-activated"></button>
+</section></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="star-button-small">Star button small</h4>
+            <p>Label group with the <u>btn-spe-sm</u> class:</p>
+            <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group btn-spe-sm">
+                <input type="radio" id="small-star5" name="rating" value="5" />
+                <label class="btn btn-spe btn-star" for="small-star5"></label>
+
+                <input type="radio" id="small-star4" name="rating" value="4" />
+                <label class="btn btn-spe btn-star" for="small-star4"></label>
+
+                <input type="radio" id="small-star3" name="rating" value="3" />
+                <label class="btn btn-spe btn-star" for="small-star3"></label>
+
+                <input type="radio" id="small-star2" name="rating" value="2" />
+                <label class="btn btn-spe btn-star" for="small-star2"></label>
+
+                <input type="radio" id="small-star1" name="rating" value="1" />
+                <label class="btn btn-spe btn-star" for="small-star1"></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group btn-spe-sm">
+  <input type="radio" id="a-star" name="rating" value="5" />
+  <label class="btn btn-spe btn-star" for="a-star"></label>
+</fieldset></code></pre>
+<!-- end code block -->
+
+            <p>Labels are available for the entire group too, when context is needed.</p>
+            <form class="container-fluid spaced">
+              <legend class="ols-rating-legend ols-label-sm silent">Please rate your experience</legend>
+              <fieldset class="ols-rating-group btn-spe-sm">
+                <input type="radio" id="title-star5" name="rating" value="5" />
+                <label class="btn btn-spe btn-star" for="title-star5"></label>
+
+                <input type="radio" id="title-star4" name="rating" value="4" />
+                <label class="btn btn-spe btn-star" for="title-star4"></label>
+
+                <input type="radio" id="title-star3" name="rating" value="3" />
+                <label class="btn btn-spe btn-star" for="title-star3"></label>
+
+                <input type="radio" id="title-star2" name="rating" value="2" />
+                <label class="btn btn-spe btn-star" for="title-star2"></label>
+
+                <input type="radio" id="title-star1" name="rating" value="1" />
+                <label class="btn btn-spe btn-star" for="title-star1"></label>
+              </fieldset>
+            </form>
+
+            <p>One last thing, <u>disabled</u> states are supported on each star element (be it <u>label</u> or <u>button</u>. See the example below.</p>
+            <section class="container-fluid spaced">
+              <section class="parent btn-spe-sm">
+                <button class="btn btn-spe btn-star" disabled="disabled"></button>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="parent btn-spe-sm">
+  <button class="btn btn-spe btn-star" disabled="disabled"></button>
+</section></code></pre>
+<!-- end code block -->
+
+            <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group btn-spe-sm">
+                <input type="radio" id="disabled-star5" name="rating" value="5" />
+                <label class="btn btn-spe btn-star" for="disabled-star5"  disabled="disabled"></label>
+
+                <input type="radio" id="disabled-star4" name="rating" value="4" />
+                <label class="btn btn-spe btn-star" for="disabled-star4"  disabled="disabled"></label>
+
+                <input type="radio" id="disabled-star3" name="rating" value="3" />
+                <label class="btn btn-spe btn-star" for="disabled-star3"  disabled="disabled"></label>
+
+                <input type="radio" id="disabled-star2" name="rating" value="2" />
+                <label class="btn btn-spe btn-star" for="disabled-star2"  disabled="disabled"></label>
+
+                <input type="radio" id="disabled-star1" name="rating" value="1" />
+                <label class="btn btn-spe btn-star" for="disabled-star1"  disabled="disabled"></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group btn-spe-sm">
+  <input type="radio" id="a-star" name="rating" value="5" />
+  <label class="btn btn-spe btn-star" for="a-star" disabled="disabled"></label>
+</fieldset></code></pre>
+<!-- end code block -->
+
+            <h4 class="toc-heading" id="star-button-percentages">Star button percentages</h4>
+            <p>
+              Star buttons can be also used to display percentages (partial stars). Classes are available for each quarter. Use <b>btn-partial</b> with the classes: <b>empty-partial</b> 0%), <b>quarter-partial</b>(25%), <b>half-partial</b>(50%) and <b>thirds-partial</b>. Elements displaying partial stars don't require inputs (they are static anyway). See the result in the example below.<br/><br/>
+              Note: for now only the smaller buttons support partials.
+            </p>
+
+            <form class="container-fluid spaced">
+              <fieldset class="ols-rating-group btn-spe-sm">
+                <label class="btn btn-spe btn-star btn-partial btn-activated empty-partial"></label>
+
+                <label class="btn btn-spe btn-star btn-partial btn-activated"></label>
+
+                <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial"></label>
+
+                <label class="btn btn-spe btn-star btn-activated btn-partial half-partial"></label>
+
+                <label class="btn btn-spe btn-star btn-activated btn-partial quarter-partial"></label>
+              </fieldset>
+            </form>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><fieldset class="ols-rating-group btn-spe-sm">
+  <label class="btn btn-spe btn-star btn-activated btn-partial empty-partial"></label>
+
+  <!-- the full 'static' star requires the btn-activated class -->
+  <label class="btn btn-spe btn-star btn-activated btn-partial"></label>
+
+  <label class="btn btn-spe btn-star btn-activated btn-partial thirds-partial"></label>
+
+  <label class="btn btn-spe btn-star btn-activated btn-partial half-partial"></label>
+
+  <label class="btn btn-spe btn-star btn-activated btn-partial quarter-partial"></label>
+</fieldset></code></pre>
+<!-- end code block -->
+
+          </article>
+
+          <!-- Forms -->
+          <article>
+            <h2 class="toc-heading" id="forms">Forms &amp; Inputs</h2>
+            <h3 class="toc-heading" id="search-bar-top">Search bar</h3>
+            <p>
+              The default position for the search bar. For the large, mid positioned bar go <a href="#search-bar-mid">here</a>.<br/>
+              This example doesn't use JS, so it won't be interactive. It needs the <u>UI Bootstrap</u> dropdown component to work, see more in their <a href="http://angular-ui.github.io/bootstrap/#/dropdown">docs</a>.
+            </p>
+
+            <p class="head-up">The search bar is not designed to fit in the style guide container (it should take the entire screen width). Therefore, it might look very much broken on smaller viewports. Zoom out a bit to make it fit.</p><br/><br/>
+
+            <p>TODO: Add examples from dev.</p>
+
+            <h3 class="toc-heading" id="text-input">Text input</h3>
+            <p>
+              This is the default text input. It requires JavaScript to work properly without JavaScript, as it needs an extra class for the focused state.
+              <br/>
+              Focused text inputs need a <u>input-focused</u> class on their parent <u>input-row</u>. Static examples are displayed below.
+            </p>
+
+            <section class="input-row spaced">
+              <label for="name" class="label-sm silent">Name</label>
+              <input type="text" id="name" placeholder="Please type your name" required/>
+            </section>
+
+            <section class="input-row spaced extra-space input-focused">
+              <label for="surname" class="label-sm silent">Surname</label>
+              <input type="text" id="surname" value="Alex" placeholder="Please type your surname"/>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="input-row">
+  <label for="name" class="label-sm silent">Name</label>
+  <input type="text" id="name" placeholder="Please type your name"/>
+</section>
+
+<!-- focused input, requires the 'input-focused' class -->
+<section class="input-row input-focused">
+  <label for="surname" class="label-sm silent">Surname</label>
+  <input type="text" id="surname" placeholder="Please type your surname" value="Alex"/>
+</section></code></pre>
+<!-- end code block -->
+
+            <br/>
+            <p>
+              A dynamic example is shown below, but this style guide doesn't use AngularJS, so it needs to be implemented in the production code. A directive attribute is a great idea. Don't forget to check for the input content (if there is some content, don't remove the input-focused class).<br/>
+              See <b>./assets/this-styleguide.js</b> for an implementation example (Vanilla JS, the <b>function focusTextInput()</b> method).
+            </p>
+
+            <section class="input-row dynamic-input-row spaced">
+              <label for="dynamic-input" class="label-sm silent">Dynamic Input</label>
+              <input type="text" id="dynamic-input" placeholder="Type something"/>
+            </section>
+
+
+            <h3 class="toc-heading" id="textarea">Textarea</h3>
+            <p>
+              The example below is dynamic, but textareas have the same requirement as text inputs: a <u>input-focused</u> class on their parent <u>input-row</u>.
+            </p>
+
+            <section class="input-row dynamic-input-row spaced extra-space">
+              <label for="message" class="label-sm silent">Write a comment</label>
+              <textarea id="message" placeholder="Please type a message here" rows="2"></textarea>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="input-row">
+  <label for="message" class="label-sm silent">Write a comment</label>
+  <textarea id="message" placeholder="Please type a message here" rows="2"></textarea>
+</section>
+
+<!-- focused input, requires the 'input-focused' class -->
+<section class="input-row focused-input">
+  <label for="message" class="label-sm silent">Write a comment</label>
+  <textarea id="message" placeholder="Please type a message here"></textarea>
+</section></code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="conversation-input">Conversation input</h3>
+            <p>
+              This input can be used with <a href="#conversation-bubbles">conversation bubbles</a>.<br/>
+              This example is not dynamic, check out the <a href="#text-input">text input</a> section to see some dynamic examples of inputs.
+            </p>
+
+            <section class="container-fluid spaced extra-space conversation-input-space top-space">
+              <form class="ols-bubble-input">
+                <section class="row-fluid">
+                  <section class="input-row textarea-row">
+                    <section class="bubble-input-img-container">
+                      <figure class="round-image rounded">
+                        <img src="http://placehold.it/45x45" alt="Image" title="Alex Testman">
+                      </figure>
+                    </section>
+
+                    <label for="conversation-input" class="label-sm silent">Write a message</label>
+                    <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
+                  </section>
+                </section>
+
+                <section class="row-fluid conversation-action">
+                  <section class="col-xs-24">
+                    <button type="submit"
+                            class="btn btn-primary dark">
+                      Send message
+                    </button>
+                  </section>
+                </section>
+              </form>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><form class="ols-bubble-input">
+  <section class="row-fluid">
+    <section class="input-row textarea-row">
+      <section class="bubble-input-img-container">
+        <figure class="round-image rounded">
+          <img src="http://placehold.it/45x45" alt="Image" title="Alex Testman">
+        </figure>
+      </section>
+
+      <label for="conversation-input" class="label-sm silent">Write a message</label>
+      <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
+    </section>
+  </section>
+
+  <section class="row-fluid conversation-action">
+    <section class="col-xs-24">
+      <button type="submit"
+              class="btn btn-primary dark">
+        Send message
+      </button>
+    </section>
+  </section>
+</form></code></pre>
+<!-- end code block -->
+            <h3 class="toc-heading" id="conversation-input-with-review">Conversation input w/ review</h3>
+
+            <section class="container-fluid spaced extra-space top-space">
+              <form class="ols-bubble-input">
+                <section class="row-fluid">
+                  <section class="input-row textarea-row">
+                    <section class="ols-rating-container">
+                      <legend class="ols-rating-legend ols-label-sm silent">
+                        Please leave a review by selecting a star
+                      </legend>
+                      <fieldset class="ols-rating-group btn-spe-sm">
+                        <input type="radio" id="5-stars" name="rating" value="5" ng-model="reviewFormData.stars" btn-radio="'5'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="5-stars"></label>
+
+                        <input type="radio" id="4-stars" name="rating" value="4" ng-model="reviewFormData.stars" btn-radio="'4'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="4-stars"></label>
+
+                        <input type="radio" id="3-stars" name="rating" value="3" ng-model="reviewFormData.stars" btn-radio="'3'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="3-stars"></label>
+
+                        <input type="radio" id="2-stars" name="rating" value="2" ng-model="reviewFormData.stars" btn-radio="'2'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="2-stars"></label>
+
+                        <input type="radio" id="1-star" name="rating" value="1" ng-model="reviewFormData.stars" btn-radio="'1'" uncheckable class="star-radio" />
+                        <label class="btn btn-spe btn-star" for="1-star"></label>
+                      </fieldset>
+                    </section>
+
+                    <label for="conversation-input" class="label-sm silent">Write a message</label>
+                    <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
+                  </section>
+                </section>
+
+                <section class="row-fluid conversation-action">
+                  <section class="col-xs-24">
+                    <button type="submit"
+                            class="btn btn-primary dark">
+                      Send message
+                    </button>
+                  </section>
+                </section>
+              </form>
+            </section>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><form class="ols-bubble-input">
+  <section class="row-fluid">
+    <section class="input-row textarea-row">
+      <section class="ols-rating-container">
+        <legend class="ols-rating-legend ols-label-sm silent">
+          Please leave a review by selecting a star
+        </legend>
+        <fieldset class="ols-rating-group btn-spe-sm">
+          <input type="radio" id="5-stars" name="rating" value="5" ng-model="reviewFormData.stars" btn-radio="'5'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="5-stars"></label>
+
+          <input type="radio" id="4-stars" name="rating" value="4" ng-model="reviewFormData.stars" btn-radio="'4'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="4-stars"></label>
+
+          <input type="radio" id="3-stars" name="rating" value="3" ng-model="reviewFormData.stars" btn-radio="'3'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="3-stars"></label>
+
+          <input type="radio" id="2-stars" name="rating" value="2" ng-model="reviewFormData.stars" btn-radio="'2'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="2-stars"></label>
+
+          <input type="radio" id="1-star" name="rating" value="1" ng-model="reviewFormData.stars" btn-radio="'1'" uncheckable class="star-radio" />
+          <label class="btn btn-spe btn-star" for="1-star"></label>
+        </fieldset>
+      </section>
+
+      <label for="conversation-input" class="label-sm silent">Write a message</label>
+      <textarea id="conversation-input" placeholder="Please type a message here" rows="4"></textarea>
+    </section>
+  </section>
+
+  <section class="row-fluid conversation-action">
+    <section class="col-xs-24">
+      <button type="submit"
+              class="btn btn-primary dark">
+        Send message
+      </button>
+    </section>
+  </section>
+</form></code></pre>
+<!-- end code block -->
+          </article>
+
+          <!-- Navigation -->
+          <article>
+            <h2 class="toc-heading" id="navigation">Navigation</h2>
+            <h3 class="toc-heading" id="vertical-navigation">Vertical Navigation</h3>
+
+            <section class="container-fluid clearfix spaced">
+              <section class="row-fluid">
+                <nav class="col-xs-24 col-md-8 col-md-push-8 ols-menu-container not-fixed">
+                  <section class="ols-menu">
+                    <ul>
+                      <li class="highlighted">
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Highlighted</span>
+                        </a>
+                      </li>
+                      <li class="highlighted active">
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Highlighted active (long)</span>
+                        </a>
+                      </li>
+                      <li class="submenu">
+                        <ul class="highlighted">
+                          <li class="active">
+                            <a href="#nowhere">
+                              <img class="menu-icon rounded" src="http://placehold.it/35x35"/>
+                              <span>Highlighted active submenu (long)</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#nowhere">
+                              <img class="menu-icon rounded" src="http://placehold.it/35x35"/>
+                              <span>Highlighted submenu</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Overview</span>
+                        </a>
+                      </li>
+                      <li class="active">
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Active menu</span>
+                        </a>
+                      </li>
+                      <li class="submenu">
+                        <ul>
+                          <li class="active">
+                            <a href="#nowhere">
+                              <img class="menu-icon rounded" src="http://placehold.it/35x35"/>
+                              <span>Active submenu</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#nowhere">
+                              <img class="menu-icon rounded" src="http://placehold.it/35x35"/>
+                              <span>Submenu</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Projects</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Services</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </section>
+                </nav>
+              </section>
+            </section>
+
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><nav class="col-xs-24 col-md-4 ols-menu-container ols-aside-left">
+  <section class="ols-menu">
+    <ul>
+      <li class="highlighted">
+        <a href="#nowhere">
+          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+          <span>Highlighted</span>
+        </a>
+      </li>
+      <li class="highlighted active">
+        <a href="#nowhere">
+          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+          <span>Highlighted active (long)</span>
+        </a>
+      </li>
+      <li class="submenu">
+        <ul class="highlighted">
+          <li class="active">
+            <a href="#nowhere">
+              <img class="menu-icon rounded" src="http://placehold.it/35x35"/>
+              <span>Highlighted active submenu (long)</span>
+            </a>
+          </li>
+          <li>
+            <a href="#nowhere">
+              <img class="menu-icon rounded" src="http://placehold.it/35x35"/>
+              <span>Highlighted submenu</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#nowhere">
+          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+          <span>Menu item</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="#nowhere">
+          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+          <span>Active menu</span>
+        </a>
+      </li>
+      <li class="submenu">
+        <ul>
+          <li class="active">
+            <a href="#nowhere">
+              <img class="menu-icon rounded" src="http://placehold.it/35x35"/>
+              <span>Active submenu</span>
+            </a>
+          </li>
+          <li>
+            <a href="#nowhere">
+              <img class="menu-icon rounded" src="http://placehold.it/35x35"/>
+              <span>Submenu</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav></code></pre>
+<!-- end code block -->
+
+            <h3 class="toc-heading" id="vertical-navigation">Search result navigation</h3>
+            <p>Use this after a user navigates to a company page from the search results.</p>
+
+            <section class="container-fluid clearfix spaced">
+              <section class="row-fluid">
+                <nav class="col-xs-24 col-md-8 col-md-push-8 ols-menu-container not-fixed">
+                  <section class="ols-menu">
+                    <ul>
+                      <li class="navigation">
+                        <a href="#nowhere">
+                          <i class="ols-svg ols-icon-reveal"></i> back to search
+                        </a>
+                      </li>
+                      <li class="highlighted">
+                        <a href="#nowhere">
+                          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+                          <span>Highlighted</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </section>
+                </nav>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><nav class="col-xs-24 col-md-8 col-md-push-8 ols-menu-container not-fixed">
+  <section class="ols-menu">
+    <ul>
+      <li class="navigation">
+        <a href="#nowhere">
+          <i class="ols-svg ols-icon-reveal"></i> back to search
+        </a>
+      </li>
+      <li class="highlighted">
+        <a href="#nowhere">
+          <img class="menu-icon rounded" src="http://placehold.it/50x50"/>
+          <span>Highlighted</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</nav></code></pre>
+<!-- end code block -->
+
+          </article>
+
+          <!-- Icons and images -->
+          <article>
+            <h2 class="toc-heading" id="icons-and-images">Icons &amp; images</h2>
+            <p>
+              Icons are generated using gulp-iconfont. Graphical elements that are too complicated to be made into an icon font are treated like images
+            </p>
+            <h3 class="toc-heading" id="svg-icon">Icons</h3>
+            <section class="container-fluid spaced">
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-checkmark-gray"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-checkmark-gray
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-edit-cog"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-edit-cog
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-edit-single-cog"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-edit-single-cog
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-edit-pen"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-edit-pen
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-location"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-location
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-reveal"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-reveal
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-reveal-gray"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-reveal-gray
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-reveal-white"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-reveal-white
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-user-blank"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-user-blank
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-image-contact-information"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-image-contact-information
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-image-menu-projects"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-image-menu-projects
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-image-menu-services"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-image-menu-services
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-geolocate"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-geolocate
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-geolocate-white"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-geolocate-white
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-geolocate-sm"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-geolocate-sm
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-geolocate-white-sm"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-geolocate-white-sm
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-danger"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-danger
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-success"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-success
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-image-inbox-message-unread"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-image-inbox-message-unread
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-image-inbox-message"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-image-inbox-message
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-bounce-map-bottom"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-bounce-map-bottom
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-bounce-map-top"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-bounce-map-top
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-bounce-map-bottom-sm"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-bounce-map-bottom-sm
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-bounce-map-top-sm"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-bounce-map-top-sm
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-wave-map"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-wave-map
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-lock-blue"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-lock-blue
+                </span>
+              </section>
+
+              <section class="col-xs-12 col-sm-8 col-md-6 col-xl-4 svg-icon">
+                <span class="svg-container">
+                  <span class="ols-svg ols-icon-lock-white"></span>
+                </span>
+                <span class="icon-class">
+                  ols-svg<br/>
+                  ols-icon-lock-white
+                </span>
+              </section>
+            </section>
+
+          </article>
+
+          <!-- Animations -->
+          <article>
+            <h2 class="toc-heading" id="animations">Animations</h2>
+            <h3 class="toc-heading" id="loader">Loader</h3>
+            <p>
+              The loader below should be used while large data requests are being resolved. It's a good idea to set a delay (around 300ms) and a minimum display time (around 500ms).
+            </p>
+
+            <section class="container-fluid spaced">
+              <section class="ols-loader-container">
+                <section class="ols-label-md silent">Getting things done</section>
+                <section class="ols-loader">
+                  <section class="element-animation">
+                    <img src="dist/images/ols_loader.svg" width="1180" height="70">
+                  </section>
+                </section>
+              </section>
+            </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="ols-loader-container">
+  <section class="ols-label-md silent">Getting things done</section>
+  <section class="ols-loader">
+    <section class="element-animation">
+      <img src="dist/images/ols_loader.svg" width="1180" height="70">
+    </section>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+          <h4 class="toc-heading" id="story-loader">Loader with a story</h4>
+          <p>This loader should be used for initializing the application or large sub-sections of it.</p>
+          <section class="container-fluid spaced ols-story-container">
+            <section class="ols-loader-container">
+              <section class="ols-loader">
+                <br/>Loading<br/>...
+              </section>
+            </section>
+            <section class="ols-loader-story">
+              <section class="ols-label-lg">
+                Pushing hamsters on the treadmill
+              </section>
+              <section class="ols-label-sm silent">
+                Notice: no animals were harmed while loading this page
+              </section>
+            </section>
+          </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="ols-story-container">
+  <section class="ols-loader-container">
+    <section class="ols-loader">
+      <br/>Loading<br/>...
+    </section>
+  </section>
+  <section class="ols-loader-story">
+    <section class="ols-label-lg">
+      Pushing hamsters on the treadmill
+    </section>
+    <section class="ols-label-sm silent">
+      Notice: no animals were harmed while loading this page
+    </section>
+  </section>
+</section></code></pre>
+<!-- end code block -->
+
+          <h3 class="toc-heading" id="spinner">Spinner</h3>
+          <p>
+            For quick async requests a spinner should indicate progress. Multiple spinner colors can be used, depending on the context.
+          </p>
+
+          <section class="container-fluid spaced extra-space top-space">
+            <section class="ols-spinner"></section>
+            <section class="ols-spinner light-green-spinner"></section>
+            <section class="ols-spinner gray-spinner"></section>
+            <section class="ols-spinner black-spinner"></section>
+            <section class="ols-spinner white-spinner"></section>
+          </section>
+<!-- code block -->
+<pre class="code-toolbar"><code class="language-markup"><section class="ols-spinner"></section>
+<section class="ols-spinner light-green-spinner"></section>
+<section class="ols-spinner gray-spinner"></section>
+<section class="ols-spinner black-spinner"></section>
+<section class="ols-spinner white-spinner"></section></code></pre>
+<!-- end code block -->
+
+          </article>
+
+          <!-- Misc -->
+          <article>
+            <h2 class="toc-heading" id="misc">Misc</h2>
+          </article>
+
+          <article>
+            <h2 class="toc-heading" id="roadmap">Roadmap</h2>
+            <ul>
+              <li>Alerts &amp; Messages</li>
+              <li>Messaging system</li>
+              <li><s>Map examples</s></li>
+              <li><s>Lists: table view with images</s></li>
+              <li>Layout: gallery</li>
+              <li><s>Comments / Reviews</s></li>
+              <li>Profiles: customer profile (not provider)</li>
+            </ul>
+          </article>
+        </section> <!-- container -->
+      </section> <!-- col- -->
+
+    </section> <!-- row-fluid -->
+  </section> <!-- container-fluid -->
+
+  <!-- Application JS -->
+  <script src="assets/this-styleguide.js"></script>
+  <script src="assets/prism.js"></script>
+  <script src="vendor/prism-toolbar/source/ZeroClipboard.min.js"></script>
+  <script src="vendor/prism-toolbar/source/prism-toolbar.js"></script>
+</body>
+
+</html>
