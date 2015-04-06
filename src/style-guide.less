@@ -84,11 +84,6 @@ textarea{
 .dropdown-menu{
   border:0;
   box-shadow: 0 1px 5px 1px rgba(0,0,0,0.2);
-
-  .glyphicon{
-    .rel();
-    top:2px;
-  }
 }
 
 .btn-group{
@@ -289,9 +284,7 @@ textarea{
   font-family:@ff_light;
   font-size:@fs_body;
 
-  .glyphicon{
-    .rel();
-    top:2px;
+  .fa{
     margin-right:3px;
     margin-left:-2px;
   }
@@ -300,8 +293,13 @@ textarea{
 .btn{
   padding: 9px 16px 9px 16px;
   .dropshadow(0 0 7px -2px rgba(0, 0, 0, 0.2));
+  border:0;
+  .animate(@animation_time_v_short, @transition_default);
 
-  .animate(@animation_time_s_short, @transition_default);
+  &:hover{
+    border:0;
+    .animate(@animation_time_v_short, @transition_default);
+  }
 
   .ols-spinner{
     .rel();
@@ -312,6 +310,15 @@ textarea{
 
 .btn-info{
   .col(@col_gray_7);
+}
+
+.btn-default{
+  border:@bst rgba(0, 0, 0, 0.15);
+
+  &:hover{
+    border:@bst rgba(0, 0, 0, 0.2);
+    .dropshadow(0 0 7px -2px rgba(0, 0, 0, 0.1));
+  }
 }
 
 .btn.loading{
@@ -339,11 +346,11 @@ textarea{
 
 .btn-primary.dark{
   .col(@col_base_4, b);
-  border: @bst darken(@col_base_4, 5%);
+  //border: @bst darken(@col_base_4, 5%);
 
   &:hover, &:focus{
     .col(lighten(@col_base_4, 5%), b);
-    border: @bst @col_base_4;
+    //border: @bst @col_base_4;
   }
 }
 
@@ -632,12 +639,10 @@ textarea{
 }
 
 .btn-sm{
-  padding: 4px 10px 4px 10px;
+  padding: 6px 12px 6px 12px;
   font-size: @fs_small;
 
-  .glyphicon{
-    .rel();
-    top:2px;
+  .fa{
     margin-right:3px;
   }
 }
@@ -1006,45 +1011,22 @@ p{
 }
 
 .ols-aside-contact{
-  .col(#323232, b);
+  .col(@col_base_4, b);
+  box-shadow: 0 0 4px rgba(0,0,0,.07), -2px 4px 8px rgba(0,0,0,.14);
 
   header{
-    a{//contains all elements
-      padding: 10px 15px 15px 15px;
+    .inner-header{//contains all elements
+      padding: 20px 15px 15px 15px;
       margin-bottom:20px;
-      border-bottom: @bst @col_gray_7;
+      border-bottom: @bst darken(@col_base_4, 3%);
       .clearfix();
       .inline-block();
       .stretch();
-      .col(#545454, b);
+      //.col(@col_base_4, b);
       .fl();
-      .animate(@animation_time_short, @transition_default);
-
-      &:hover, &:focus{
-        outline:0;
-        .col(@col_gray_5, b);
-        .animate(@animation_time_short, @transition_default);
-
-        [class*="ols-image-inbox-message"]{
-          //from 0 83.82492863939106%;
-          background-position: 0 89.8%;
-
-          .animate(@animation_time_short, @transition_default);
-        }
-
-        [class*="ols-label"]{
-          text-transform: capitalize;
-          .col(@col_gray_8);
-          .animate(@animation_time_short, @transition_default);
-        }
-      }
 
       @media only screen and (min-width:@bp_sm){
-        padding: 20px 30px 30px 30px;
-      }
-
-      [class*="ols-image-inbox-message"]{
-        .animate(@animation_time_short, @transition_default);
+        padding: 30px 30px 30px 30px;
       }
 
       [class*="ols-label"]{
@@ -1072,20 +1054,12 @@ p{
       }
     }
 
-    //just for ref, was deleted
-    .round-image{
-      img{
-        @media only screen and (min-width:@bp_xl){
-          max-width: 130px;
-        }
-      }
+    .im-container{
+      padding-top:20px;
 
-      figcaption{
-        margin-left: 15px;
-
-        @media only screen and (min-width:@bp_xl){
-          margin-top: 20px;
-        }
+      .btn{
+        border:0;
+        width:100%;
       }
     }
   }
@@ -1110,6 +1084,10 @@ p{
       img{
         max-height: 17px;
       }
+    }
+
+    dd.phone-number{
+      font-family:@ff_default;
     }
   }
 }
@@ -1142,6 +1120,10 @@ p{
   .ols-label-lg{
     margin-bottom: 0;
   }
+
+  .rounded{
+    border:@bstm rgba(121, 143, 163, 0.35);
+  }
 }
 
 .ols-profile-header.image-header{
@@ -1161,7 +1143,6 @@ p{
 
   img{
     .abs();
-    padding-top:4px;
     left:0;
     width:45px;
   }
@@ -1527,6 +1508,21 @@ p{
           }
         }
       }//unread-thread
+
+      li.empty-inbox{
+        .col(@col_gray_4, b);
+        min-height:50px;
+        cursor:default;
+        .inline-block();
+        width: 100%;
+        .fl();
+
+        span{
+          &:nth-child(1){
+            font-weight:300;
+          }
+        }
+      }
     }//header
   }
 }
@@ -1640,7 +1636,7 @@ p{
     .ols-svg{
       .abs();
       margin-left:10px;
-      margin-right:10px;
+      //margin-right:10px;
       top: ~'calc(50% - 15px)';
     }
 
@@ -1786,7 +1782,7 @@ p{
         padding:0 30px 0 30px;
       }
 
-      .glyphicon{
+      .fa{
         @media only screen and (min-width:@bp_md){
           .h();
         }
@@ -2328,6 +2324,7 @@ p{
 
 //small search bar
 .search-bar.navbar-top{
+  box-shadow: 0 0 4px rgba(0,0,0,.07),0 4px 8px rgba(0,0,0,.14);
   height:@search_bar_size_sm + 2px; //2px for borders
   line-height:@search_bar_size_sm;
 
@@ -2350,7 +2347,7 @@ p{
       }
 
       .dropdown-toggle{
-        left: -1px;
+        //left: -1px;
         width:100%;
 
         @media only screen and (min-width:@bp_md){
@@ -2417,6 +2414,8 @@ p{
     .btn-search{
       .rel();
       width: ~"calc(50% - 45px)";
+      top:-1px;
+      height:@search_bar_size_sm + 2px;
 
       &:after{
         .rel();
@@ -2442,19 +2441,22 @@ p{
 .searching-location-mobile{
   font-size:@fs_body;
   line-height:@lh_body;
+  .rel();
+  top: -2px;
 
   .inner-mobile-location{
     .col(@col_base_4);
     .ta-c();
     .col(lighten(@col_base_2, 10%), b);
     margin-bottom: 0;
+    padding: 0 5px 0 5px;
 
     small{
       .inline-block();
       padding-top: 20px;
       padding-bottom: 20px;
 
-      .glyphicon{
+      .fa{
         height: 22px;
         width: 22px;
         padding-top: 4px;
@@ -2472,11 +2474,12 @@ p{
       .col(@ws, b);
       text-decoration: underline;
       font-size:16px;
+      margin-bottom: 0px;
     }
   }
 
   .location-edit-container{
-    .glyphicon{
+    .fa{
       .abs();
       right: 10px;
       top: 21px;
@@ -2565,9 +2568,10 @@ p{
       margin-left:0;
     }
 
-    .glyphicon-menu-hamburger{
+    .fa-bars{
       .col(@col_base_4);
       margin-left: 5px;
+      margin-right: 5px;
       top:3px;
     }
 
@@ -2590,10 +2594,10 @@ p{
     }
 
     //triangle
-    .glyphicon-triangle-bottom{
+    .fa-caret-down{
       font-size: 17px;
       .rel();
-      top: 4px;
+      top: 2px;
       margin-left: 4px;
       .animate(@animation_time_v_short, @transition_default);
     }
@@ -2695,7 +2699,7 @@ p{
     padding-right: 0px;
     padding-left:0px;
 
-    .glyphicon-triangle-bottom{
+    .fa-caret-down{
       .h();
 
       @media only screen and (min-width:@bp_md){
@@ -2717,8 +2721,8 @@ p{
       .animate(@animation_time_v_short, @transition_default);
 
       //triangle
-      .glyphicon-triangle-bottom{
-        transform: rotateX(180deg) translateY(3px);
+      .fa-caret-down{
+        transform: rotateX(180deg);
         .animate(@animation_time_v_short, @transition_default);
       }
     }
@@ -2731,7 +2735,6 @@ p{
     height:40px;
     width:40px;
     margin-top: 3px;
-    margin-left: 10px;
     margin-right: 5px;
     .rel();
     .fl();
@@ -2740,6 +2743,10 @@ p{
     &:hover, &:focus{
       opacity:0.7;
       .animate(@animation_time_v_short, @transition_default);
+    }
+
+    @media only screen and (min-width:@bp_md){
+      margin-left: 10px;
     }
 
     .ols-svg{
@@ -2793,7 +2800,10 @@ p{
     .inline-block();
     .fr();
     //margin-left: -10px;
-    margin-left: 5px;
+
+    @media only screen and (min-width:@bp_md){
+      margin-left: 5px;
+    }
   }
 
   /* top lang control, maybe remove later*/
@@ -2874,8 +2884,10 @@ p{
 
 //vertical menu
 .ols-menu-container{
-  border-right:@bst @col_gray_4;
+  //border-right:@bst @col_gray_4;
   border-left:@bstt @col_base_3;
+  box-shadow: 0 0 4px rgba(0,0,0,.07),2px 4px 8px rgba(0,0,0,.14);
+  z-index:2;
 
   .ols-menu{
     .col(@w, b);
@@ -2905,7 +2917,8 @@ p{
         flex-shrink: 0;
         font-size:@m_fs_small;
         list-style-type: none;
-        border:@bst @col_gray_4;
+        border-right:@bst @col_gray_4;
+        border-bottom:@bst @col_gray_4;
         padding: 5px 10px 10px 10px;
         .animate(@animation_time_short, @transition_default);
 
@@ -2986,7 +2999,8 @@ p{
             margin-bottom: -3px;
             margin-top: -2px;
 
-            .glyphicon-envelope{
+            .fa-envelope-o{
+              .rel();
               font-size:@fs_body;
               .col(@col_base_3);
               top: 16px;
