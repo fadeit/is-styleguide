@@ -2479,6 +2479,7 @@ p{
   line-height:@lh_body;
   .rel();
   top: -2px;
+  .boxshadow-bottom();
 
   .inner-mobile-location{
     .col(@col_base_4);
@@ -2531,7 +2532,7 @@ p{
 //top profile controls
 .profile-top-control{
   .ta-c();
-  line-height: @search_bar_size_sm;
+  line-height: @search_bar_size_sm + 2px;
   .col(@col_base_4);
 
   a{
@@ -2588,7 +2589,7 @@ p{
       opacity:0.8;
       .animate(@animation_time_v_short, @transition_default);
 
-      [class*="ols-icon-lock-"]{
+      [class*="ols-icon-lock-"], .fa{
         transform:scale(1.1);
       }
     }
@@ -2629,13 +2630,25 @@ p{
       height: 40px;
     }
 
-    //triangle
+    //triangle - now question mark
+    .fa-question-circle{
+      margin-right:2px;
+      .animate(@animation_time_v_short, @transition_default);
+
+      &:before{
+        font-size: 18px;
+        //top: 1px;
+        .rel();
+        margin-left: 5px;
+        .animate(@animation_time_v_short, @transition_default);
+      }
+    }
+
     .fa-caret-down{
       font-size: 17px;
       .rel();
-      top: 2px;
+      top: 1px;
       margin-left: 4px;
-      .animate(@animation_time_v_short, @transition_default);
     }
 
     img.rounded{
@@ -2761,8 +2774,8 @@ p{
       .animate(@animation_time_v_short, @transition_default);
 
       //triangle
-      .fa-caret-down{
-        transform: rotateX(180deg);
+      .fa-question-circle{
+        transform:scale(1.1);
         .animate(@animation_time_v_short, @transition_default);
       }
     }
@@ -2890,6 +2903,11 @@ p{
   }
 
   .profile-toggle{
+    [class*="ols-icon-"]{
+      .rel();
+      top: 1px;
+    }
+
     .ols-icon-lock-white{
       .h();
     }
