@@ -2666,6 +2666,10 @@ p{
             .col(@w);
             .col(@col_base_2, b);
             .animate(@animation_time_short, @transition_default);
+
+            span{
+              .col(@w);
+            }
           }
         }
 
@@ -2864,13 +2868,8 @@ p{
   }
 
   .dropdown-menu{
-    left:0;
-    right:auto;
-
-    @media only screen and (min-width:@bp_sm){
-      left:auto;
-      right:0;
-    }
+    left: auto;
+    right: 0;
   }
 
   .profile-toggle.logged-in{
