@@ -1012,7 +1012,7 @@ p{
 
 .ols-aside-contact{
   .col(@col_base_4, b);
-  box-shadow: 0 0 4px rgba(0,0,0,.07), -2px 4px 8px rgba(0,0,0,.14);
+  .boxshadow-left();
 
   header{
     .inner-header{//contains all elements
@@ -1065,11 +1065,11 @@ p{
   }
 
   .contact-body{
-    padding: 10px 15px 20px 15px;
+    padding: 10px 15px 50px 15px;
     margin-bottom: 20px;
 
     @media only screen and (min-width:@bp_sm){
-      padding: 20px 30px 40px 30px;
+      padding: 20px 30px 80px 30px;
     }
 
     dt{
@@ -1386,7 +1386,9 @@ p{
 
 .ols-aside-inbox{
   border-right:@bst @ws;
+  .boxshadow-right();
   top: 0;
+  z-index: 2;
 
   @media only screen and (min-width:@bp_sm){
     padding-top:@search_bar_size_sm + 2;
@@ -2328,7 +2330,7 @@ p{
 
 //small search bar
 .search-bar.navbar-top{
-  box-shadow: 0 0 4px rgba(0,0,0,.07),0 4px 8px rgba(0,0,0,.14);
+  .boxshadow-bottom();
   height:@search_bar_size_sm + 2px; //2px for borders
   line-height:@search_bar_size_sm;
 
@@ -2885,7 +2887,7 @@ p{
 .ols-menu-container{
   //border-right:@bst @col_gray_4;
   border-left:@bstt @col_base_3;
-  box-shadow: 0 0 4px rgba(0,0,0,.07),2px 4px 8px rgba(0,0,0,.14);
+  .boxshadow-right();
   z-index:2;
 
   .ols-menu{
