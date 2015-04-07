@@ -83,7 +83,7 @@ textarea{
 //dropdown menu box shadow + z-index for the button
 .dropdown-menu{
   border:0;
-  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  .boxshadow-round();
 }
 
 .btn-group{
@@ -1261,6 +1261,14 @@ p{
       }
     }
   }
+
+  a.active, li.active{
+    .col(rgba(188, 223, 231, 0.25), b);
+
+    &:hover, &:focus, &:nth-child(even), &:nth-child(odd){
+      .col(rgba(188, 223, 231, 0.25), b);
+    }
+  }
 }
 
 .ols-grid-result-list{
@@ -1385,7 +1393,7 @@ p{
 }
 
 .ols-aside-inbox{
-  border-right:@bst @ws;
+  //border-right:@bst @ws;
   .boxshadow-right();
   top: 0;
   z-index: 2;
@@ -1525,6 +1533,28 @@ p{
           &:nth-child(1){
             font-weight:300;
           }
+        }
+      }
+
+      li.active{
+        .col(@col_base_4, b);
+        .boxshadow-round-inset();
+
+        &:hover, &:focus, &:nth-child(even), &:nth-child(odd){
+          .col(@col_base_4, b);
+        }
+
+        figure{
+          figcaption{
+            [class*="ols-label-"]{
+              .col(@w);
+            }
+          }
+        }
+
+        .ols-svg{
+          opacity: 0.5;
+          .animate(@animation_time_short, @transition_default);
         }
       }
     }//header
@@ -2076,7 +2106,7 @@ p{
       margin-top:30px;
       margin-bottom:50px;
       width: 100%;
-      box-shadow: 0 2px 10px rgba(0,0,0,.2);
+      .boxshadow-round();
 
       @media only screen and (min-width:@bp_sm){
         .abs();
