@@ -2589,7 +2589,7 @@ p{
       opacity:0.8;
       .animate(@animation_time_v_short, @transition_default);
 
-      [class*="ols-icon-lock-"], .fa{
+      [class*="ols-icon-lock-"], .fa-caret-down, .fa-question-circle{
         transform:scale(1.1);
       }
     }
@@ -2724,6 +2724,11 @@ p{
           overflow: hidden;
           padding:10px;
           //.animate(@animation_time_short, @transition_default);
+
+          .fa{
+            min-width:20px;
+            .ta-c();
+          }
         }
       }//li in dropdown menu
 
