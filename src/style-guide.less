@@ -2856,31 +2856,6 @@ p{
       margin-left: 5px;
     }
   }
-
-  /* top lang control, maybe remove later*/
-  .ols-language-control{
-    outline:0;
-    width: 30px;
-    height: 30px;
-    border:@bstm @col_base_3;
-    margin-top:9px;
-    margin-left:5px;
-    overflow:hidden;
-    .fr();
-    border:0;
-    .animate(@animation_time_v_short, @transition_default);
-
-    &:hover, &:focus{
-      opacity:0.7;
-      .animate(@animation_time_v_short, @transition_default);
-    }
-  }
-
-  .ols-language-control.active{
-    opacity:0.5;
-    cursor:default;
-  }
-  /* end top lang control*/
 }
 
 .profile-top-control.top-profile{
@@ -2888,13 +2863,6 @@ p{
   //border-bottom:@bst @col_base_2;
 
   .ols-language-control{
-    .col(rgba(255, 255, 255, 0.9), b);
-    .col(@col_base_4);
-    line-height: 29px;
-    margin-top: 13px;
-    width: 20px;
-    height: 20px;
-
     &:first-child{
       margin-right:10px;
     }
@@ -2922,12 +2890,45 @@ p{
 
   .profile-toggle.logged-in{
     padding-left:0px;
-
-    /*@media only screen and (min-width:@bp_sm){
-      padding-left:10px;
-    }*/
   }
 }
+
+/* top lang control*/
+
+.ols-language-control{
+  outline:0;
+  width: 20px;
+  height: 20px;
+  border:@bstm @col_base_3;
+  margin-top: 13px;
+  margin-left:5px;
+  overflow:hidden;
+  .fr();
+  border:0;
+  .animate(@animation_time_v_short, @transition_default);
+
+  &:hover, &:focus{
+    opacity:0.7;
+    .animate(@animation_time_v_short, @transition_default);
+  }
+}
+
+.ols-language-control.large{
+  width:35px;
+  height:35px;
+  margin-left:10px;
+
+  @media only screen and (min-width:@bp_xl){
+    width:45px;
+    height:45px;
+  }
+}
+
+.ols-language-control.active{
+  opacity:0.5;
+  cursor:default;
+}
+/* end top lang control*/
 
 //vertical menu
 .ols-menu-container{
