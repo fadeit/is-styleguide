@@ -1965,7 +1965,7 @@ p{
 
 //the class for the search bar when it is in the middle
 .search-bar.navbar-mid{
-  .abs();
+  .rel();
   //top:~"calc(50% - @{search_bar_size})";
   top: 150px;
   .col(transparent, b);
@@ -2913,20 +2913,22 @@ p{
   }
 }
 
-.ols-language-control.large{
-  width:35px;
-  height:35px;
-  margin-left:10px;
-
-  @media only screen and (min-width:@bp_xl){
-    width:45px;
-    height:45px;
-  }
-}
-
 .ols-language-control.active{
   opacity:0.5;
   cursor:default;
+}
+
+.language-controls.large{
+  .ols-language-control{
+    width:35px;
+    height:35px;
+    margin-left:10px;
+
+    @media only screen and (min-width:@bp_xl){
+      width:45px;
+      height:45px;
+    }
+  }
 }
 /* end top lang control*/
 
@@ -3604,13 +3606,17 @@ p{
  */
 .round-image{ //figure
   img{
-    max-width: 77px;
+    height: 77px;//var
+    width: 77px;
+    overflow: hidden;
+    background-color: rgba(219, 219, 219, 0.4);
     .fl();
     border: @bst rgba(121, 143, 163, 0.35);
     .round();
 
     @media only screen and (min-width:@bp_md){
-      max-width: 85px;
+      height: 85px; //var
+      width: 85px;
     }
   }
 
