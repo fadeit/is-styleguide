@@ -168,6 +168,7 @@ textarea{
     margin-top:-20px;
     font-size:@fs_small - 1;
     .col(@col_base_4);
+    .block();
   }
 
   label.required{
@@ -2962,7 +2963,7 @@ p{
       }
 
       li{
-        flex-basis:25%;
+        //flex-basis:25%;
         flex-grow: 1;
         flex-shrink: 0;
         font-size:@m_fs_small;
@@ -2989,7 +2990,7 @@ p{
           border-right:0;
         }
 
-        a{
+        a, section{
           outline:0;
           .animate(@animation_time_short, @transition_default);
           width:100%;
@@ -3105,19 +3106,6 @@ p{
         }
       }
 
-      li.active{
-        .col(darken(@col_gray_4, 4%), b);
-
-        &:hover{
-          .col(darken(@col_gray_4, 4%), b);
-        }
-
-        a{
-          cursor:default;
-          .col(@col_gray_7);
-        }
-      }
-
       li.highlighted{
         .col(@col_base_3, b);
         border-bottom: @bst darken(@col_base_3, 10%);
@@ -3135,30 +3123,35 @@ p{
         }
       }
 
-      li.highlighted.active{
+      li.highlighted.active, li.active{
         .col(darken(@col_base_3, 15%), b);
-        border-bottom:@bst darken(@col_base_3, 17%);
-        border-top:@bst darken(@col_base_3, 17%);
+        //border-bottom:@bst darken(@col_base_3, 17%);
+        //border-top:@bst darken(@col_base_3, 17%);
 
         &:hover{
           .col(darken(@col_base_3, 15%), b);
         }
 
-        a{
+        a, section{
           cursor:default;
-          .col(lighten(@col_base_3, 15%));
+          .col(lighten(@col_base_4, 35%));
+
+          &:focus{
+            opacity:1;
+          }
         }
       }
 
       li.submenu{
         padding: 0;
         border:none;
-        flex-basis:75%;
+        //flex-basis:75%;
         display:flex;
+        //width:100%;
 
-        @media only screen and (min-width:@bp_sm){
+        /*@media only screen and (min-width:@bp_sm){
           flex-basis:50%;
-        }
+        }*/
 
         @media only screen and (min-width:@bp_lg){
           .block();
@@ -3168,52 +3161,54 @@ p{
           width:100%;
           margin-bottom:0;
 
-          li{
-            padding: 5px 10px 0px 17px;
-            .col(@col_gray_3, b);
-            border-bottom:@bst darken(@col_gray_3, 5%);
+          @media only screen and (min-width:@bp_lg){
+            li{
+              padding: 5px 10px 5px 17px;
+              .col(@col_gray_3, b);
+              border-bottom:@bst darken(@col_gray_3, 5%);
 
-            &:hover{
-              .col(darken(@col_gray_3, 5%), b);
+              &:hover{
+                .col(darken(@col_gray_3, 5%), b);
+
+                a{
+                  .col(@col_gray_6);
+                }
+              }
+
+              @media only screen and (min-width:@bp_sm){
+                padding: 12px 10px 8px 17px;
+              }
+
+              @media only screen and (min-width:@bp_lg){
+                padding: 5px 10px 5px 17px;
+              }
+
+              a{
+                line-height: 35px;
+
+                .menu-icon{
+                  margin-right: 10px;
+                  height:@submenu_image_height;
+                  width:@submenu_image_height;
+
+                  @media only screen and (min-width:@bp_sm){
+                    margin-right:22px;
+                  }
+                }
+              }
+            }
+
+            li.active{
+              .col(@col_gray_4, b);
+              border-bottom:@bst darken(@col_gray_4, 5%);
+
+              &:hover{
+                .col(@col_gray_4, b);
+              }
 
               a{
                 .col(@col_gray_6);
               }
-            }
-
-            @media only screen and (min-width:@bp_sm){
-              padding: 12px 10px 8px 17px;
-            }
-
-            @media only screen and (min-width:@bp_lg){
-              padding: 5px 10px 0px 17px;
-            }
-
-            a{
-              line-height: 35px;
-
-              .menu-icon{
-                margin-right: 3px;
-                height:@submenu_image_height;
-                width:@submenu_image_height;
-
-                @media only screen and (min-width:@bp_sm){
-                  margin-right:22px;
-                }
-              }
-            }
-          }
-
-          li.active{
-            .col(@col_gray_4, b);
-            border-bottom:@bst darken(@col_gray_4, 5%);
-
-            &:hover{
-              .col(@col_gray_4, b);
-            }
-
-            a{
-              .col(@col_gray_6);
             }
           }
         }
