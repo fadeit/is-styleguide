@@ -261,7 +261,8 @@ textarea{
     }
 
     textarea{
-      border:@bstm @ws;
+      //border:@bstm @ws;
+      border:0;
       padding:10px 10px 0 10px;
     }
   }
@@ -3415,7 +3416,7 @@ blockquote{
     .bubble-message-container{
       vertical-align: middle;
       padding:20px;
-      .col(@col_gray_4, b);
+      .col(fade(@col_text_light_blue, 20%), b);
       .border-radius(6px);
 
       .bubble-message{
