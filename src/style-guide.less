@@ -159,6 +159,12 @@ textarea{
     .stretch();
   }
 
+  [tooltip]{
+    .abs();
+    left: -20px;
+    top: 20px;
+  }
+
   .placeholder-color(@w);
   .placeholder-hide();
   //animate placeholder transitions
@@ -1127,7 +1133,6 @@ blockquote{
 
       [class*="ols-label"]{
         .col(@ws);
-        .animate(@animation_time_short, @transition_default);
       }
     }
 
@@ -1176,16 +1181,14 @@ blockquote{
 
     dd{
       .col(@col_gray_4);
+      font-family:Arial, sans-serif;
+      letter-spacing: 0;
 
       img{
-        max-height: 17px;
-        left: -7px;
-        position: relative;
+        max-height: 18px;
+        //left: -7px;
+        //position: relative;
       }
-    }
-
-    dd.phone-number{
-      font-family:@ff_default;
     }
   }
 }
