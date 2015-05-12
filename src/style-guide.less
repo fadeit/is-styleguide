@@ -1735,6 +1735,7 @@ blockquote{
       .navbar-logo{
         .inline-block();
         max-height: 40px;
+        max-width: 119px; //IE 11 Fix
         padding: 5px;
         top:-2px;
         .rel();
@@ -2429,6 +2430,7 @@ blockquote{
         }
 
         input{
+          min-height:@search_bar_size; //IE 11 Fix
           padding:0 10px 0 10px;
 
           @media only screen and (min-width:@bp_sm){
@@ -2502,6 +2504,7 @@ blockquote{
 
     .ols-input-location{
       input{
+        height:@search_bar_size_sm; //IE 11 Fix
         padding-right:40px;
         .h();
 
