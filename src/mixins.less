@@ -54,10 +54,6 @@
   ::-moz-placeholder {
      color: @color;
   }
-
-  :-ms-input-placeholder {
-     color: @color;
-  }
 }
 
 .placeholder-animate(){
@@ -70,10 +66,6 @@
   }
 
   ::-moz-placeholder {
-     .animate-opacity(@animation_time_v_short, @transition_default);
-  }
-
-  :-ms-input-placeholder {
      .animate-opacity(@animation_time_v_short, @transition_default);
   }
 }
@@ -92,7 +84,7 @@
   }
 
   :-ms-input-placeholder {
-     opacity:0;
+     color:#FAFAFA;
   }
 }
 
@@ -110,7 +102,7 @@
   }
 
   :-ms-input-placeholder {
-     opacity:1;
+    color:black;
   }
 }
 

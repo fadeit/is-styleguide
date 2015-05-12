@@ -76,6 +76,10 @@ input {
   }
 }
 
+input[type="text"]{
+  min-height: 24px; //IE 11 Fix
+}
+
 textarea{
   max-width:100%;
 }
@@ -1418,7 +1422,9 @@ blockquote{
 
   .fa-times-circle{
     .col(@red);
-    font-size:17px;
+    .rel();
+    font-size:21px;
+    top:2px;
 
     &:hover{
       .col(darken(@red, 10%));
@@ -1449,12 +1455,13 @@ blockquote{
         font-style: normal;
         font-weight: 400;
         line-height: 1;
-        font-size:17px;
+        font-size:21px;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        margin-right: 5px;
+        margin-right: 8px;
         .rel();
-        top: 1px;
+        top: 2px;
+        left:1px;
         .col(@col_base_3);
       }
     }
@@ -1735,10 +1742,14 @@ blockquote{
       .navbar-logo{
         .inline-block();
         max-height: 40px;
-        max-width: 119px; //IE 11 Fix
+        max-width: 40px; //IE 11 Fix (up to lg)
         padding: 5px;
         top:-2px;
         .rel();
+
+        @media only screen and (min-width:@bp_lg){
+          max-width: 119px; //IE 11 Fix
+        }
       }
     }
   }
@@ -3017,6 +3028,11 @@ blockquote{
     opacity:0.7;
     .animate(@animation_time_v_short, @transition_default);
   }
+
+  img{
+    width:20px; //IE 11 Fix
+    height:20px; //IE 11 Fix
+  }
 }
 
 .ols-language-control.active{
@@ -3030,9 +3046,19 @@ blockquote{
     height:35px;
     margin-left:10px;
 
+    img{
+      height:35px; //IE 11 Fix
+      width:35px; //IE 11 Fix
+    }
+
     @media only screen and (min-width:@bp_xl){
       width:45px;
       height:45px;
+
+      img{
+        width:45px; //IE 11 Fix
+        height:45px; //IE 11 Fix
+      }
     }
   }
 }
