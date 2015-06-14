@@ -1,13 +1,13 @@
 {
-  "name": "ols-styleguide",
+  "name": "is-styleguide",
   "version": "0.1.0",
-  "homepage": "https://github.com/fadeit/ols-styleguide",
-  "description": "OLS Front-end Styleguide",
+  "homepage": "https://github.com/fadeit/is-styleguide",
+  "description": "is Front-end Styleguide",
   "moduleType": [
     "amd"
   ],
   "keywords": [
-    "OLS",
+    "is",
     "fadeit",
     "style",
     "guide",

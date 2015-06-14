@@ -73,7 +73,7 @@
   position:static!important;
 }
 
-.ols-search-row.tiny-search-row{
+.is-search-row.tiny-search-row{
   margin: 50px 10px 20px 10px;
   width: ~"calc(100% - 20px)";
 }
@@ -131,8 +131,8 @@ article {
     margin-bottom:20px;
   }
 }
-//tweaks for displaying the right ols-contact example
-.ols-aside-contact{
+//tweaks for displaying the right is-contact example
+.is-aside-contact{
   article{
     padding:0;
     margin:0;
@@ -206,7 +206,7 @@ pre[class*="toggled-code"]{
   }
 }
 
-span[class*="ols-tc-"]{
+span[class*="is-tc-"]{
   font-size:13px;
 }
 
@@ -217,7 +217,7 @@ span[class*="ols-tc-"]{
 .spaced{
   margin-bottom:20px;
 
-  .ols-profile-header{
+  .is-profile-header{
     margin-left: 30px;
   }
 }
@@ -402,7 +402,7 @@ span[class*="ols-tc-"]{
  *
  */
 //text colors
-[class*='ols-tc-']{
+[class*='is-tc-']{
   .ta-c();
   .fl();
   .inline-block();
@@ -413,98 +413,98 @@ span[class*="ols-tc-"]{
 }
 
 #colors {
-  .ols-tc-fadeit{
+  .is-tc-fadeit{
     .col(@col_fadeit);
   }
 
-  .ols-tc-fadeit_c{
+  .is-tc-fadeit_c{
     .col(@col_fadeit_c);
   }
 
-  .ols-tc-fadeit_gray{
+  .is-tc-fadeit_gray{
     .col(@col_fadeit_gray);
   }
 
-  .ols-tc-gray_1{
+  .is-tc-gray_1{
     .col(@col_gray_1);
   }
 
-  .ols-tc-gray_2{
+  .is-tc-gray_2{
     .col(@col_gray_2);
   }
 
-  .ols-tc-gray_3{
+  .is-tc-gray_3{
     .col(@col_gray_3);
   }
 
-  .ols-tc-gray_4{
+  .is-tc-gray_4{
     .col(@col_gray_4);
   }
 
-  .ols-tc-gray_5{
+  .is-tc-gray_5{
     .col(@col_gray_5);
   }
 
-  .ols-tc-gray_6{
+  .is-tc-gray_6{
     .col(@col_gray_6);
   }
 
-  .ols-tc-gray_7{
+  .is-tc-gray_7{
     .col(@col_gray_7);
   }
 
-  .ols-tc-gray_8{
+  .is-tc-gray_8{
     .col(@col_gray_8);
   }
 
-  .ols-tc-gray_9{
+  .is-tc-gray_9{
     .col(@w, b);
     .col(@col_gray_9);
     border:@bst @col_gray_4;
   }
 
-  .ols-tc-text{
+  .is-tc-text{
     .col(@w, b);
     .col(@col_text);
     border:@bst @col_gray_4;
   }
 
-  .ols-tc-base_1{
+  .is-tc-base_1{
     .col(@col_base_1);
   }
 
-  .ols-tc-base_2{
+  .is-tc-base_2{
     .col(@col_base_2);
   }
 
-  .ols-tc-base_3{
+  .is-tc-base_3{
     .col(@col_base_3);
   }
 
-  .ols-tc-base_4{
+  .is-tc-base_4{
     .col(@col_base_4);
   }
 
-  .ols-tc-w{
+  .is-tc-w{
     .col(@w);
   }
 
-  .ols-tc-w_c{
+  .is-tc-w_c{
     .col(@w_c);
   }
 
-  .ols-tc-b{
+  .is-tc-b{
     .col(@w, b);
     .col(@b);
     border:@bst @col_gray_4;
   }
 
-  .ols-tc-ws{
+  .is-tc-ws{
     .col(@ws);
   }
 
 //backgrounds
-  [class*='ols-bc-']{
+  [class*='is-bc-']{
     width:120px;
     height:41px;
     .fl();
@@ -513,88 +513,88 @@ span[class*="ols-tc-"]{
     margin-right:10px;
   }
 
-  .ols-bc-fadeit{
+  .is-bc-fadeit{
     .col(@col_fadeit, b);
   }
 
-  .ols-bc-fadeit_c{
+  .is-bc-fadeit_c{
     .col(@col_fadeit_c, b);
   }
 
-  .ols-bc-fadeit_gray{
+  .is-bc-fadeit_gray{
     .col(@col_fadeit_gray, b);
   }
 
-  .ols-bc-gray_1{
+  .is-bc-gray_1{
     .col(@col_gray_1, b);
   }
 
-  .ols-bc-gray_2{
+  .is-bc-gray_2{
     .col(@col_gray_2, b);
   }
 
-  .ols-bc-gray_3{
+  .is-bc-gray_3{
     .col(@col_gray_3, b);
   }
 
-  .ols-bc-gray_4{
+  .is-bc-gray_4{
     .col(@col_gray_4, b);
   }
 
-  .ols-bc-gray_5{
+  .is-bc-gray_5{
     .col(@col_gray_5, b);
   }
 
-  .ols-bc-gray_6{
+  .is-bc-gray_6{
     .col(@col_gray_6, b);
   }
 
-  .ols-bc-gray_7{
+  .is-bc-gray_7{
     .col(@col_gray_7, b);
   }
 
-  .ols-bc-gray_8{
+  .is-bc-gray_8{
     .col(@col_gray_8, b);
   }
 
-  .ols-bc-gray_9{
+  .is-bc-gray_9{
     .col(@col_gray_9, b);
   }
 
-  .ols-bc-text{
+  .is-bc-text{
     .col(@col_text, b);
   }
 
-  .ols-bc-base_1{
+  .is-bc-base_1{
     .col(@col_base_1, b);
   }
 
-  .ols-bc-base_2{
+  .is-bc-base_2{
     .col(@col_base_2, b);
   }
 
-  .ols-bc-base_3{
+  .is-bc-base_3{
     .col(@col_base_3, b);
   }
 
-  .ols-bc-base_4{
+  .is-bc-base_4{
     .col(@col_base_4, b);
   }
 
-  .ols-bc-w{
+  .is-bc-w{
     .col(@w, b);
     border:@bst @col_gray_4;
   }
 
-  .ols-bc-w_c{
+  .is-bc-w_c{
     .col(@w_c, b);
   }
 
-  .ols-bc-b{
+  .is-bc-b{
     .col(@b, b);
   }
 
-  .ols-bc-ws{
+  .is-bc-ws{
     .col(@ws, b);
   }
 
@@ -611,7 +611,7 @@ span[class*="ols-tc-"]{
  *
  */
 //tweaks for the menu
-.ols-menu-container{
+.is-menu-container{
   ul{
     margin-bottom:0px;
   }

@@ -20,7 +20,7 @@ gulp.task('less', function(){
       .pipe(less({
         plugins: [cleancss]
       }))
-      .pipe(concat('ols-style-guide.css'))
+      .pipe(concat('is-style-guide.css'))
       .pipe(autoprefixer({
             browsers: ['> 1%'],
             cascade: false
@@ -76,7 +76,7 @@ gulp.task('svg-sprites', function(){
     mode: {
       css: {
         dest: '',
-        prefix: 'ols-',
+        prefix: '.is-',
         sprite: '../images/svg-sprite.svg',
         bust: false,
         dimensions: true,
