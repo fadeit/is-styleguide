@@ -26,6 +26,10 @@
     "test",
     "tests"
   ],
+  "main": {
+    "development": "/dist/**/*",
+    "production": "/dist/**/*"
+  },
   "devDependencies": {
     "bootstrap": "fadeit/bootstrap#v3.5.5"
   },
