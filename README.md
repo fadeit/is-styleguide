@@ -7,7 +7,7 @@ We love and are really good at designing &amp; developing beautiful software, we
 See more at [fadeit.dk](http://fadeit.dk/about)
 
 
-fadeit.dk - OLS Front-end Styleguide
+fadeit.dk - IS Front-end Styleguide
 ===================
 
 
