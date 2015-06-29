@@ -51,6 +51,10 @@
  * Forms and inputs (also includes some link styles [outlines/focus])
  *
  */
+label{
+  font-weight: normal;
+}
+
 a,
 textarea,
 input {
@@ -1134,17 +1138,36 @@ p{
   width: ~'calc(100% - @{map_edit_input_margin}*2)';
 }
 
-.is-profile-header{
-  margin: 0 0 40px -10px;
-  padding-left:10px;
-  border-left:@bstm @col_base_3;
+.is-header{
+  @header_offset: 10px;
+  padding: @gs*2 @gs*2 @gs @gs*2 + @header_offset;
+  .col(@col_base_4, b);
+
+  h2{
+    margin-top:0;
+    color:@w;
+  }
 
   .is-label-lg{
     margin-bottom: 0;
   }
+
+  .silent{
+    color:@ws;
+  }
+
+  &__inner{
+    margin: 0 0 @gs -@header_offset;
+    border-left:@bstm @col_base_3;
+    padding: @gs;
+
+    &__input{
+      padding:@gs*2 0;
+    }
+  }
 }
 
-.is-profile-header.image-header{
+.is-header.image-header{
   .rel();
   padding-left: 75px;
   border-left:0;
@@ -1165,6 +1188,11 @@ p{
     left:0;
     width:45px;
   }
+}
+
+.is-footer{
+  margin-top: @gs*2;
+  padding:0 @gs*2;
 }
 
 .is-aside-right, .is-aside-left{
@@ -2543,7 +2571,72 @@ p{
 /*
  * NEW! IS-specific el
  */
+.is-list{
+  .is-subheader{
+    padding-left:@gs @gs*2;
+  }
 
+  .is-list-item{
+    .rel();
+    padding:@gs @gs*2;
+
+    &:nth-child(odd){
+      .col(@col_gray_3, b);
+    }
+
+    &__avatar.md-avatar{
+      padding-top:@gs/2;
+      font-size: 30px;
+    }
+
+    &__btn.md-fab{
+      top:@gs*2;
+      right:@gs*2;
+      transform:none;
+
+      .fa{
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+.is-plus{
+  .fix();
+  bottom:@gs;
+  right:@gs;
+
+  &__trigger{
+    .md-fab{
+      font-size:20px;
+      line-height:35px;
+    }
+  }
+
+  &__actions{
+    md-icon.fa{
+      color:@col_gray_6;
+      line-height:25px;
+    }
+  }
+}
+
+.is-status{
+  @status_size: 10px;
+
+  width:@status_size;
+  height:@status_size;
+  border-radius:50%;
+  .inline-block();
+
+  &--off{
+    .col(@red, b);
+  }
+
+  &--on{
+    .col(@col_green, b);
+  }
+}
 /*
  * Flex-row
  */
