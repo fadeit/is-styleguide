@@ -1153,7 +1153,7 @@ p{
   }
 
   .silent{
-    color:@ws;
+    color:@w;
   }
 
   &__inner{
@@ -1163,6 +1163,14 @@ p{
 
     &__input{
       padding:@gs*2 0;
+    }
+  }
+
+  &--hue1{
+    .col(@col_base_2, b);
+
+    .is-header__inner{
+      border-left:@bstm @col_base_1;
     }
   }
 }
@@ -2612,6 +2620,12 @@ p{
 
       .fa{
         line-height:25px;
+      }
+    }
+
+    .md-fab[type="file"]{
+      .fa{
+        line-height:20px;
       }
     }
   }
