@@ -2580,7 +2580,7 @@ p{
     .rel();
     padding:@gs @gs*2;
 
-    &:nth-child(odd){
+    &:nth-child(even){
       .col(@col_gray_3, b);
     }
 
@@ -2609,7 +2609,10 @@ p{
   &__trigger{
     .md-fab{
       font-size:20px;
-      line-height:35px;
+
+      .fa{
+        line-height:25px;
+      }
     }
   }
 
@@ -2628,6 +2631,7 @@ p{
   height:@status_size;
   border-radius:50%;
   .inline-block();
+  .rel();
 
   &--off{
     .col(@red, b);
