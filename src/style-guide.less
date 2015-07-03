@@ -2334,6 +2334,7 @@ p{
   .is-list-item{
     .rel();
     padding:@gs @gs*2;
+    .col(@w, b);
 
     &:nth-child(even){
       .col(@col_gray_3, b);
@@ -2641,8 +2642,8 @@ p{
         font-weight: 400;
         padding: 0 16px;
 
-        &:first-child{
-          border-top-left-radius: @br;
+        &:last-child{
+          border-top-right-radius: @br;
         }
 
         .fa{
@@ -2656,19 +2657,20 @@ p{
         padding: 0;
         .col(@col_gray_3, b);
 
-        &:last-child{
-          border-top-right-radius: @br;
+        &:first-child{
+          border-top-left-radius: @br;
         }
 
         md-icon{
           line-height: 22px;
           margin-left: @gs;
+          top: 6px;
         }
 
         input{
           margin-bottom: -1px;
           padding: 0px 5px;
-          width: 40px;
+          width: 55px;
           margin-left: 35px;
         }
 
@@ -2738,7 +2740,7 @@ p{
 
         md-input-container{
           margin-right: @gs;
-          flex-basis:25%;
+          flex-basis:20%;
           flex-direction:row;
           flex-wrap:wrap;
           //own flex props
@@ -2830,10 +2832,88 @@ p{
     .boxshadow-left();
     .rel();
 
+    .close-button{
+      .abs();
+      top:-15px;
+      right:-20px;
+      .col(@red);
+      height:@gs*2;
+      line-height:42px;
+      width:38px;
+
+      .fa{
+        font-size:24px;
+        border-radius:50%;
+
+        &:after{
+          content:"";
+          .abs();
+          width:100%;
+          height:100%;
+          .col(@w, b);
+        }
+      }
+    }
+
     ul{
+      .fr();
       height:100%;
       overflow: auto;
       padding-bottom:@gs*2;
+
+      li.is-list-item{
+        padding:0;
+        margin-bottom:@gs;
+
+        figure{
+          outline:0;
+        }
+
+        figcaption{
+          width: 100%;
+          padding: @gs/2;
+          .col(rgba(0, 0, 0, 0.5), b);
+          .col(@w);
+
+          .duration{
+            .fr();
+            font-size:@fs_small;
+          }
+        }
+
+        img{
+          cursor:ns-resize;
+        }
+      }
+
+      li.new-slide{
+        width:100%;
+        min-height:130px;
+        .rel();
+
+        .md-button{
+          width: 100%;
+          height: 100%;
+          .abs();
+          margin:0;
+          padding:0;
+          .col(@col_gray_5, b);
+          .col(@col_gray_7);
+          white-space: normal;
+          transition: color @animation_time_short @transition_default;
+
+          &:hover, &:focus{
+            transition: color @animation_time_short @transition_default;
+            .col(@col_gray_8);
+          }
+
+          .fa{
+            font-size: 34px;
+            width:100%;
+            .ta-c();
+          }
+        }
+      }
     }
   }
 }
