@@ -2624,6 +2624,7 @@ p{
     max-width: 100px;
     .inline-block();
     margin-left: 16px;
+    cursor: move;
 
     &:first-child{
       margin-left:0;
@@ -2636,6 +2637,11 @@ p{
     .ta-c();
     top: 20px;
     .col(@col_gray_7);
+  }
+
+  li&__tip {
+    width:100%;
+    max-width:none;
   }
 }
 
