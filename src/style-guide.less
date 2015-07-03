@@ -2641,7 +2641,7 @@ p{
         padding: 0 16px;
 
         &:first-child{
-          border-top-left-radius: 3px;
+          border-top-left-radius: @br;
         }
 
         .fa{
@@ -2656,7 +2656,7 @@ p{
         .col(@col_gray_3, b);
 
         &:last-child{
-          border-top-right-radius: 3px;
+          border-top-right-radius: @br;
         }
 
         md-icon{
@@ -2720,7 +2720,7 @@ p{
         .rel();
       }
 
-      .md-button{
+      .close-button{
         .abs();
         right:@gs/2;
         top:@gs;
@@ -2736,7 +2736,7 @@ p{
         display:flex;
 
         md-input-container{
-          padding-right: @gs;
+          margin-right: @gs;
           flex-basis:25%;
           flex-direction:row;
           flex-wrap:wrap;
@@ -2751,6 +2751,11 @@ p{
             padding: 0;
           }
 
+          .md-button{
+            margin:0;
+            min-width: 0;
+          }
+
           p{
             order: 0;
             margin-top:@gs;
@@ -2762,15 +2767,53 @@ p{
         }
 
         &__controls{
+          //control size
+          @ctrl_size: 40px;
+
+          border-radius:@br;
+          .col(@col_gray_4, b);
+          padding: 2px 0;
           width:100%;
           display:flex;
+          min-height:@ctrl_size;
 
-          a, input, button{
+          a, input, button, md-select{
+            margin-top:0;
+            margin-bottom:0;
             flex-basis:100%;
+            .col(@col_text);
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border-right: @bstm @col_gray_5;
+          }
+
+          .md-input{
+            padding:0 @gs;
+            .ta-l();
+          }
+
+          md-select{
+            md-select-label{
+              border-bottom: 0;
+              padding:0 @gs;
+              width:100%;
+              .ta-l();
+            }
           }
 
           .colorpicker{
             flex-shrink: 0;
+          }
+
+          &--single{
+            .col(transparent, b);
+            padding:0;
+
+            .md-button{
+              border:0;
+              min-height:@ctrl_size;
+            }
           }
         }
       }
@@ -2846,6 +2889,79 @@ p{
     .fa{
       font-size:30px;
       margin-bottom:10px;
+    }
+  }
+}
+
+/*
+ * Color picker enhancements
+ */
+.colorpicker{
+  flex-shrink: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  .sp-replacer{
+    border: 0;
+    padding: @gs/2 @gs;
+  }
+
+  .sp-dd{
+    .rel();
+    top:-1px;
+  }
+}
+//Color picker container
+.sp-container{
+  border-radius: @br;
+  .col(@w, b);
+  border: @bst @col_gray_5;
+  .boxshadow-round();
+  padding: 8px;
+
+  input{
+    line-height:30px;
+    min-height:30px;
+    padding:0 @gs/2;
+  }
+
+  .sp-button-container{
+    margin-top: 10px;
+    .fl();
+  }
+
+  .sp-cancel{
+    //Don't display cancel, clicking anywhere outside the box will cancel (same behaviour in PS, AI, Sketch, etc.)
+    display:none;
+    font-family:@ff_default;
+    .col(@col_text);
+    font-size:@fs_small;
+
+    &:hover, &:focus{
+      text-decoration: none;
+    }
+  }
+
+  .sp-choose{
+    font-family:@ff_default;
+    background:0;
+    .col(@col_gray_4, b);
+    .col(@col_text);
+    border:@bst @col_gray_5;
+    font-size:@fs_small;
+    padding:@gs/2 @gs;
+
+    &:hover, &:focus{
+      outline:0;
+      border:@bst @col_gray_5;
+      background:0;
+      .col(@col_gray_5, b);
+      .col(@b);
+    }
+
+    &:active{
+      box-shadow: none;
     }
   }
 }
