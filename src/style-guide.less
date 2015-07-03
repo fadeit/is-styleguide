@@ -2885,8 +2885,15 @@ p{
           cursor:ns-resize;
         }
       }
+    }
 
-      li.new-slide{
+
+    ul.new-slide{
+      .col(@col_gray_6, b);
+      flex-shrink: 0;
+      padding-bottom: 16px;
+
+      li{
         width:100%;
         min-height:130px;
         .rel();
