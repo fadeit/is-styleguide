@@ -1405,9 +1405,12 @@ p{
 }
 
 .is-aside-right, .is-aside-left{
-  .stretch(h);
-
   @media only screen and (min-width:@bp_sm){
+    .rel();
+  }
+
+  @media only screen and (min-width:@bp_lg){
+    .stretch(h);
     .abs();
   }
 }
@@ -1424,7 +1427,7 @@ p{
   top: 0;
   overflow: auto;
 
-  @media only screen and (min-width:@bp_sm){
+  @media only screen and (min-width:@bp_lg){
     .fix();
   }
 }
