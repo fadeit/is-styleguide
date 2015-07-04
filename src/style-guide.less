@@ -105,7 +105,9 @@ header, section, footer, article{
     }
   }
 
-  //Hue 5
+  /*
+   * Hue 5
+   */
   .hue-5{
     .col(darken(@hue500, 15%), b);
 
@@ -152,7 +154,9 @@ header, section, footer, article{
     }
   }
 
-  //Green
+  /*
+   * Green
+   */
   .hue-green{
     .col(darken(@col_green, 15%), b);
 
@@ -198,6 +202,9 @@ header, section, footer, article{
     }
   }
 
+  /*
+   * Purple
+   */
   .hue-purple{
     .col(@col_purple, b);
 
@@ -252,9 +259,7 @@ header, section, footer, article{
   &:focus{
     outline:0;
   }
-}
 
-.md-button{
   .fa-raised{
     .rel();
     top:1px;
@@ -262,6 +267,18 @@ header, section, footer, article{
   }
 }
 
+//Input additions
+md-input-container.input-dark{
+  input, textarea, .fa{
+    .col(@w);
+    .col(transparent, b);
+  }
+}
+
+md-input-container.input-slim{
+  padding-bottom:0;
+  padding-top:0;
+}
 /*
  * Forms and inputs (also includes some link styles [outlines/focus])
  *
