@@ -254,6 +254,14 @@ header, section, footer, article{
   }
 }
 
+.md-button{
+  .fa-raised{
+    .rel();
+    top:1px;
+    margin-right:@gs/4;
+  }
+}
+
 /*
  * Forms and inputs (also includes some link styles [outlines/focus])
  *
@@ -2401,6 +2409,16 @@ p{
   }
 }
 
+.is-subheader{
+  .md-subheader-content{
+    display:flex;
+
+    .no-shrink{
+      flex-shrink:0;
+    }
+  }
+}
+
 .is-plus{
   .fix();
   bottom:@gs;
@@ -2443,6 +2461,31 @@ p{
 
   &--on{
     .col(@col_green, b);
+  }
+}
+
+.is-msg{
+  margin-top:@gs*2;
+  margin-bottom:@gs;
+  padding:@gs/2 @gs;
+  .col(@w);
+  border-radius:@br;
+  display:flex;
+  align-items:center;
+
+  &:before{
+    content:"";
+    .font-awesome();
+    margin-right:@gs/2;
+    font-size:20px;
+  }
+}
+
+.is-error{
+  .col(@red, b);
+
+  &:before {
+    content:"\f06a";
   }
 }
 
@@ -2603,13 +2646,18 @@ p{
 
     h3{
       margin-bottom:0;
-      margin-top:0;
-      .inline-block();
+      margin-top:6px;
+      width: 100%;
 
       small{
         font-family:@ff_default;
         font-weight: 300;
       }
+    }
+
+    .md-button{
+      margin:0 0 0 @gs/4;
+      padding:0 @gs;
     }
   }
 }
@@ -3003,6 +3051,27 @@ p{
 
   md-content{
     width: 100%;
+    padding:@gs*2;
+  }
+
+  .md-button{
+    margin:0;
+  }
+
+  &--flexible{
+    width:auto;
+  }
+}
+
+.is-fa-text{
+  display:flex;
+  align-items: center;
+
+  .fa-main{
+    flex-shrink:0;
+    padding:@gs;
+    margin-right:@gs;
+    font-size:40px;
   }
 }
 
