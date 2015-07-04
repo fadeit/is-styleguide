@@ -52,7 +52,7 @@
  */
 
 //Hues
-header, section, footer, article{
+header, section, footer, article, md-dialog{
   [class*='hue']{
     a{
       .col(@col_text);
@@ -84,6 +84,11 @@ header, section, footer, article{
     }
   }
 
+  md-toolbar.hue-1{
+    .col(darken(@hue50, 15%), b);
+    .col(@w);
+  }
+
   li.hue-1{
     .col(transparent, b);
     color:darken(@hue50, 15%);
@@ -102,6 +107,15 @@ header, section, footer, article{
       &:hover, &:focus{
         .col(darken(@hue50, 15%));
       }
+    }
+  }
+
+  a.hue-1{
+    .col(transparent, b);
+    .col(darken(@hue50, 15%));
+
+    &:hover, &:focus{
+      .col(darken(@hue50, 25%));
     }
   }
 
@@ -133,6 +147,11 @@ header, section, footer, article{
     }
   }
 
+  md-toolbar.hue-5{
+    .col(darken(@hue500, 15%), b);
+    .col(@w);
+  }
+
   li.hue-5{
     .col(transparent, b);
     color:darken(@hue500, 15%);
@@ -151,6 +170,15 @@ header, section, footer, article{
       &:hover, &:focus{
         .col(darken(@hue500, 15%));
       }
+    }
+  }
+
+  a.hue-5{
+    .col(transparent, b);
+    .col(darken(@hue500, 15%));
+
+    &:hover, &:focus{
+      .col(darken(@hue500, 25%));
     }
   }
 
@@ -182,6 +210,11 @@ header, section, footer, article{
     }
   }
 
+  md-toolbar.hue-green{
+    .col(darken(@col_green, 15%), b);
+    .col(@w);
+  }
+
   li.hue-green{
     .col(transparent, b);
 
@@ -199,6 +232,15 @@ header, section, footer, article{
       &:hover, &:focus{
         .col(darken(@col_green, 15%));
       }
+    }
+  }
+
+  a.hue-green{
+    .col(transparent, b);
+    .col(darken(@col_green, 15%));
+
+    &:hover, &:focus{
+      .col(darken(@col_green, 25%));
     }
   }
 
@@ -230,6 +272,11 @@ header, section, footer, article{
     }
   }
 
+  md-toolbar.hue-purple{
+    .col(@col_purple, b);
+    .col(@w);
+  }
+
   li.hue-purple{
     .col(transparent, b);
 
@@ -247,6 +294,15 @@ header, section, footer, article{
       &:hover, &:focus{
         .col(@col_purple);
       }
+    }
+  }
+
+  a.hue-purple{
+    .col(transparent, b);
+    .col(lighten(@col_purple, 10%));
+
+    &:hover, &:focus{
+      .col(lighten(@col_purple, 20%));
     }
   }
 }
@@ -2362,6 +2418,16 @@ p{
   list-style-type: none;
   padding-left:0;
 
+  md-list-item{
+    &.spaced-bottom{
+      margin-bottom:@gs*3;
+    }
+
+    md-select{
+      padding:0;
+    }
+  }
+
   .is-list-item{
     .rel();
     padding:@gs @gs*2;
@@ -2386,6 +2452,10 @@ p{
       }
     }
 
+    h2{
+      margin-top:0;
+    }
+
     &.is-playlist-rows{
       padding:0;
 
@@ -2400,7 +2470,7 @@ p{
           transition: background @animation_time_short @transition_default;
         }
 
-        h3{
+        h3, h2{
           margin-top:0;
         }
 
@@ -2426,6 +2496,37 @@ p{
         }
       }
     }//is-playlist-rows
+  }
+}
+
+.is-group-list{
+  .screen-uid{
+    margin-left:@gs/2;
+  }
+
+  .screen-group{
+    font-size:@fs_small;
+    line-height:@lh_small;
+    font-family:@ff_light;
+  }
+}
+
+.is-schedule-list{
+  .is-list-item{
+    padding-bottom:@gs*3;
+  }
+
+  &__plays{
+    padding-bottom:@gs/2;
+  }
+
+  &__active{
+    .abs();
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: @gs/4 @gs*2;
+    .col(@w);
   }
 }
 
@@ -3092,6 +3193,10 @@ p{
     padding:@gs;
     margin-right:@gs;
     font-size:40px;
+  }
+
+  &--spaced{
+    padding:0 @gs;
   }
 }
 
