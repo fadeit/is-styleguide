@@ -326,6 +326,10 @@ header, section, footer, article, md-dialog{
     outline:0;
   }
 
+  &:not(.md-fab){
+    padding:0 @gs;
+  }
+
   .fa-raised{
     .rel();
     top:1px;
@@ -423,6 +427,25 @@ md-input-container.input-slim{
 md-input-container.input-inline{
   flex-direction: row;
   flex-wrap:wrap;
+
+  md-select{
+    padding:0;
+  }
+}
+
+// For example label + input[text] + md-select
+md-input-container.input-mixed{
+  flex-direction:row;
+  align-items: center;
+
+  md-select{
+    padding:0;
+    order: 3;
+
+    md-select-label{
+      margin-top:12px;
+    }
+  }
 }
 /*
  * Forms and inputs (also includes some link styles [outlines/focus])
@@ -2584,6 +2607,8 @@ p{
   }
 
   &--tight{
+    margin-bottom:@gs*2;
+
     .md-subheader{
       padding:0;
     }
@@ -2615,7 +2640,9 @@ p{
 
 .is-schedule-list{
   .is-list-item{
-    padding-bottom:@gs*3;
+    &--spaced{
+      padding-bottom:@gs*3;
+    }
   }
 
   &__plays{
@@ -2725,7 +2752,7 @@ p{
   background-repeat: no-repeat;
   background-position: center center;
   //.cover();
-  background-size:90%;
+  background-size:80%;
   overflow:hidden;
 
   &:hover, &:focus{
@@ -3272,7 +3299,7 @@ p{
   width: 100%;
   overflow:auto;
 
-  md-content{
+  & > md-content{
     width: 100%;
     padding:@gs*2;
   }
