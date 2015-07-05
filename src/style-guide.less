@@ -263,6 +263,16 @@ header, section, footer, article, md-dialog{
     }
   }
 
+  .hue-purple.accent{
+    .col(fade(@col_purple, 30%), b);
+    .col(darken(@col_purple, 15%));
+
+    .md-subheader, h2{
+      .col(inherit, b);
+      .col(darken(@col_purple, 15%));
+    }
+  }
+
   button.md-button.hue-purple, button.md-button.md-fab.hue-purple{
     .col(@col_purple, b);
     .col(@w);
@@ -323,6 +333,80 @@ header, section, footer, article, md-dialog{
   }
 }
 
+.btn--ripple{
+  &:after {
+    content: '';
+    .abs();
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: content-box;
+  }
+
+  &:before {
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    .block();
+    -webkit-font-smoothing: antialiased;
+  }
+
+  &--on{
+    background: rgba(255,255,255,0.1);
+    transition: transform ease-out 0.1s, background 0.2s;
+    transform: scale(0.93);
+    .col(@w);
+    animation: rippleBackground 1.3s ease-out 75ms;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+
+    &:after {
+      top: 0;
+      left: 0;
+      padding: 0;
+      z-index: -1;
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+      opacity: 0;
+      transform: scale(0.9);
+      animation: rippleEffect 1.3s ease-out 75ms;
+      animation-timing-function:linear;
+      animation-iteration-count:infinite;
+    }
+  }
+}
+
+@keyframes rippleEffect {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px @col_base_2, 0 0 0 10px rgba(255,255,255,0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px @col_base_2, 0 0 0 10px rgba(255,255,255,0.3);
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes rippleBackground{
+  0%{
+    transform: scale(1);
+  }
+  40%{
+    transform: scale(0.9);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+
 //Input additions
 md-input-container.input-dark{
   input, textarea, .fa{
@@ -334,6 +418,11 @@ md-input-container.input-dark{
 md-input-container.input-slim{
   padding-bottom:0;
   padding-top:0;
+}
+
+md-input-container.input-inline{
+  flex-direction: row;
+  flex-wrap:wrap;
 }
 /*
  * Forms and inputs (also includes some link styles [outlines/focus])
@@ -2419,10 +2508,6 @@ p{
   padding-left:0;
 
   md-list-item{
-    &.spaced-bottom{
-      margin-bottom:@gs*3;
-    }
-
     md-select{
       padding:0;
     }
@@ -2496,6 +2581,23 @@ p{
         }
       }
     }//is-playlist-rows
+  }
+
+  &--tight{
+    .md-subheader{
+      padding:0;
+    }
+
+    h3{
+      display: flex;
+      align-items: center;
+    }
+
+    md-select{
+      .rel();
+      top:-1px;
+      margin-left:5px;
+    }
   }
 }
 
