@@ -2253,6 +2253,39 @@ p{
   } //is-menu
 } //is-menu-container
 
+//top bar menu
+.is-tool-menu{
+  padding:0;
+
+  md-icon{
+    font-size: 18px;
+    .rel();
+    top: 3px;
+  }
+
+  .mixed-button{
+    .fa{
+      top:2px;
+      margin-right:@gs/4;
+    }
+  }
+
+  &.right{
+    .fr();
+  }
+}
+
+//related to top bar (appended via js)
+md-menu-item{
+  md-icon.fa{
+    font-size: 18px;
+    .rel();
+    top: 3px;
+    min-width: @gs*2;
+    .ta-c();
+  }
+}
+
 .navigation-anchor{
   line-height:40px;
   .inline-block();
