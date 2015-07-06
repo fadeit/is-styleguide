@@ -73,6 +73,10 @@ header, section, footer, article, md-dialog{
     .silent{
       .col(darken(@w, 5%));
     }
+
+    .fa-inherit{
+      .col(@hue50);
+    }
   }
 
   button.md-button.hue-1, button.md-button.md-fab.hue-1{
@@ -135,6 +139,10 @@ header, section, footer, article, md-dialog{
 
     .silent{
       .col(darken(@w, 5%));
+    }
+
+    .fa-inherit{
+      .col(@hue500);
     }
   }
 
@@ -199,6 +207,10 @@ header, section, footer, article, md-dialog{
     .silent{
       .col(darken(@w, 5%));
     }
+
+    .fa-inherit{
+      .col(@col_green);
+    }
   }
 
   button.md-button.hue-green, button.md-button.md-fab.hue-green{
@@ -260,6 +272,10 @@ header, section, footer, article, md-dialog{
 
     .silent{
       .col(darken(@w, 5%));
+    }
+
+    .fa-inherit{
+      .col(lighten(@col_purple, 15%));
     }
   }
 
@@ -1541,6 +1557,17 @@ p{
 .is-header{
   @header_offset: 10px;
   padding: @gs*2 @gs*2 @gs @gs*2 + @header_offset;
+  display: flex;
+  align-items: center;
+
+  .fa{
+    flex-shrink: 0;
+    margin-top: -16px;
+    color: white;
+    font-size: 25px;
+    min-width: 40px;
+    margin-right: 16px;
+  }
 
   h2{
     margin-top:0;
@@ -1554,6 +1581,7 @@ p{
     margin: 0 0 @gs -@header_offset;
     border-left:@bstm;
     padding: @gs;
+    width: 100%;
 
     &__input{
       padding:@gs*2 0;
@@ -2941,6 +2969,10 @@ p{
     width:100%;
     max-width:none;
   }
+}
+
+.is-hero{
+  padding:@gs*2;
 }
 
 /*
