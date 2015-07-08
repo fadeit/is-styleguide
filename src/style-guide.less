@@ -3017,7 +3017,7 @@ md-menu-item{
 
 //Playlist vars
 @ctrl_w: 80px;
-@ctrl_h: 80px;
+@ctrl_h: 70px;
 @sld_w: 200px;
 @opts_h: 200px;
 
@@ -3031,6 +3031,7 @@ md-menu-item{
   &__controls{
     flex-basis:@ctrl_w;
     flex-grow:0;
+    flex-shrink: 0;
     display:flex;
     flex-direction:column;
     .col(@col_gray_9, b);
@@ -3116,6 +3117,10 @@ md-menu-item{
           }
         }
       }
+
+      md-checkbox{
+        margin:0 @gs/2;
+      }
     }
 
     &__content{
@@ -3165,6 +3170,7 @@ md-menu-item{
 
       &__inner{
         display:flex;
+        flex-wrap: wrap;
 
         md-input-container{
           margin-right: @gs;
@@ -3172,6 +3178,7 @@ md-menu-item{
           flex-wrap:wrap;
           //own flex props
           display:flex;
+          padding-bottom:0;
 
           &:last-child{
             padding-right:0;
@@ -3183,14 +3190,13 @@ md-menu-item{
 
           .md-button{
             margin:0;
-            min-width: 0;
             padding:0;
-            min-width: @gs;
+            min-width: 24px;
           }
 
           p{
             order: 0;
-            margin-top:@gs;
+            margin-top:@gs/2;
             margin-bottom: @gs/2;
             width:100%;
             font-weight: normal;
@@ -3255,6 +3261,7 @@ md-menu-item{
   &__slides{
     flex-basis:@sld_w;
     flex-grow:0;
+    flex-shrink: 0;
     display:flex;
     flex-direction:column;
     .col(@ws, b);
@@ -3433,11 +3440,12 @@ md-menu-item{
 
     span{
       text-align: center;
+      font-size:@fs_small;
     }
 
     .fa{
-      font-size:30px;
-      margin-bottom:10px;
+      font-size:24px;
+      margin-bottom:5px;
     }
   }
 }
