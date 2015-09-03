@@ -1957,6 +1957,11 @@ p{
   } //is-menu
 } //is-menu-container
 
+// Aside details
+.is-details{
+  padding:@gs;
+}
+
 // toolbar
 // Controls before md-content, like sorting.
 .is-toolbar{
@@ -2469,6 +2474,7 @@ md-menu-item{
   .fix();
   bottom:@gs;
   right:@gs;
+  z-index:9999;
 
   &__trigger{
     .md-fab{
@@ -2550,12 +2556,23 @@ md-menu-item{
   //.cover();
   background-size:80%;
   overflow:hidden;
+  cursor:pointer;
+  transition: opacity @animation_time_short @transition_default;
+  outline: 0;
 
   &:hover, &:focus{
+    transition: opacity @animation_time_short @transition_default;
+    opacity:0.8;
+    outline:0;
+
     .is-grid-tile__meta{
       transform:translateY(0px);
       transition:transform @animation_time_short @transition_default;
     }
+  }
+
+  &.active{
+    opacity:0.8;
   }
 
   p{
