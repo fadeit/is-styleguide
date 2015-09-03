@@ -1957,6 +1957,26 @@ p{
   } //is-menu
 } //is-menu-container
 
+// toolbar
+// Controls before md-content, like sorting.
+.is-toolbar{
+  padding: @gs/2 0;
+
+  .md-icon-button{
+    padding-top:3px;
+
+    &.active{
+      md-icon{
+        color:@b;
+      }
+    }
+  }
+
+  &--right{
+    text-align:right;
+  }
+}
+
 //top bar menu
 .is-tool-menu{
   padding:0;
@@ -2516,7 +2536,7 @@ md-menu-item{
 }
 
 .is-grid{
-  padding:@gs/2 0;
+  padding:0 0 @gs 0;
 
   md-grid-tile-footer{
     .col(rgba(0, 0, 0, 0.5), b);
