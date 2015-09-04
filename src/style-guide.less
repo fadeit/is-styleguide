@@ -1440,7 +1440,20 @@ p{
     color: white;
     font-size: 25px;
     min-width: 40px;
-    margin-right: 16px;
+    margin-right: @gs*2;
+  }
+
+  .fa-input{
+    min-width: 30px;
+    margin-top: 0;
+    position:relative;
+    top:2px;
+    margin-right: 5px;
+  }
+
+  input{
+    width: 100%;
+    margin-left:0;
   }
 
   h2{
@@ -3168,6 +3181,13 @@ md-menu-item{
     padding:@gs;
     margin-right:@gs;
     font-size:40px;
+  }
+
+  &__inner{
+    md-select{
+      margin-top:0;
+      margin-bottom:0;
+    }
   }
 
   &--spaced{
