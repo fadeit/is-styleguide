@@ -346,10 +346,13 @@ header, section, footer, article, md-dialog{
     padding:0 @gs;
   }
 
+  .fa{
+    margin-right:@gs/4;
+  }
+
   .fa-raised{
     .rel();
     top:1px;
-    margin-right:@gs/4;
   }
 }
 
@@ -2361,6 +2364,11 @@ md-menu-item{
       }
     }
 
+    .md-primary{
+      right: 0;
+      top: @gs;
+    }
+
     h2{
       margin-top:0;
     }
@@ -2428,10 +2436,6 @@ md-menu-item{
 }
 
 .is-group-list{
-  .screen-uid{
-    margin-left:@gs/2;
-  }
-
   .screen-group{
     font-size:@fs_small;
     line-height:@lh_small;
@@ -2474,7 +2478,7 @@ md-menu-item{
   .fix();
   bottom:@gs;
   right:@gs;
-  z-index:9999;
+  z-index: 20;
 
   &__trigger{
     .md-fab{
