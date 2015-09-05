@@ -452,20 +452,12 @@ md-input-container.input-inline{
   }
 }
 
-// For example label + input[text] + md-select
-md-input-container.input-mixed{
-  flex-direction:row;
-  align-items: center;
-
+md-input-container.aligned-select{
   md-select{
-    padding:0;
-    order: 3;
-
-    md-select-label{
-      margin-top:12px;
-    }
+    margin-top: 25px;
   }
 }
+
 /*
  * Forms and inputs (also includes some link styles [outlines/focus])
  *
@@ -2457,23 +2449,8 @@ md-menu-item{
 }
 
 .is-schedule-list{
-  .is-list-item{
-    &--spaced{
-      padding-bottom:@gs*3;
-    }
-  }
-
   &__plays{
     padding-bottom:@gs/2;
-  }
-
-  &__active{
-    .abs();
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: @gs/4 @gs*2;
-    .col(@w);
   }
 }
 
@@ -3183,6 +3160,10 @@ md-menu-item{
     font-size:40px;
   }
 
+  h3{
+    margin: @gs 0;
+  }
+
   &__inner{
     md-select{
       margin-top:0;
@@ -3253,6 +3234,10 @@ md-menu-item{
       }
     }
   }
+}
+
+.is-content-actions{
+  padding:@gs;
 }
 
 /*
