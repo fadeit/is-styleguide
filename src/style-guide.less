@@ -356,6 +356,12 @@ header, section, footer, article, md-dialog{
   }
 }
 
+.md-button.md-fab{
+  md-icon{
+    color:@w;
+  }
+}
+
 .btn--ripple{
   &:after {
     content: '';
@@ -2365,6 +2371,7 @@ md-menu-item{
       transform:none;
 
       .fa{
+        margin-right:0;
         line-height: 1.6;
       }
     }
@@ -2905,11 +2912,23 @@ md-menu-item{
   .adjustments{
     .boxshadow-left();
 
+    h3{
+      text-transform: uppercase;
+      font-size:@fs_small;
+      line-height: @lh_small;
+      color:@col_gray_7;
+      width:100%;
+    }
+
+    input{
+      width:100%;
+    }
+
     md-content{
       padding:@gs;
     }
 
-    md-input-container{
+    md-input-container, .md-input-container{
       margin-right: @gs;
       flex-direction:row;
       flex-wrap:wrap;
@@ -2943,11 +2962,11 @@ md-menu-item{
 
     &__controls{
       //control size
-      @ctrl_size: 40px;
-
+      @ctrl_size: 38px;
+      margin-top: -3px;
       border-radius:@br;
       .col(@col_gray_4, b);
-      padding: 2px 0;
+      padding: 0;
       width:100%;
       display:flex;
       min-height:@ctrl_size;
@@ -2977,6 +2996,10 @@ md-menu-item{
         }
       }
 
+      md-input-container{
+        padding:0;
+      }
+
       .colorpicker{
         flex-shrink: 0;
       }
@@ -2984,11 +3007,23 @@ md-menu-item{
       &--single{
         .col(transparent, b);
         padding:0;
+        margin-bottom:@gs/2;
 
         .md-button{
           border:0;
           min-height:@ctrl_size;
         }
+      }
+    }
+
+    &--bundle{
+      md-select-value.md-select-value{
+        padding-top: 0;
+        padding-bottom: 5px;
+      }
+
+      &:last-child{
+        margin-top:-3px; //merge to hide own border radius top left & right
       }
     }
   }
