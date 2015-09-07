@@ -2897,6 +2897,7 @@ md-menu-item{
         height:100%;
         background-color:@w;
         flex-shrink:0;
+        .boxshadow-left();
 
         md-content, md-tabs{
           height:100%;
@@ -2910,8 +2911,6 @@ md-menu-item{
   }
 
   .adjustments{
-    .boxshadow-left();
-
     h3{
       text-transform: uppercase;
       font-size:@fs_small;
@@ -2936,7 +2935,6 @@ md-menu-item{
     }
 
     md-input-container, .md-input-container{
-      margin-right: @gs;
       flex-direction:row;
       flex-wrap:wrap;
       //own flex props
@@ -3044,8 +3042,42 @@ md-menu-item{
         width: auto;
       }
 
+      &__unit{
+        margin-top: 29px;
+      }
+
       &__slide{
         width:100%;
+      }
+    }
+
+    &--input-and-select{
+      &__inner{
+        display: flex;
+        flex-wrap:wrap;
+        align-items: center;
+      }
+
+      .fa{
+        top:8px;
+      }
+
+      md-input-container{
+        flex-basis: 80px;
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+
+      md-select{
+        margin-top:12px;
+
+        md-select-value{
+          min-height: 30px;
+        }
+      }
+
+      input.md-input{
+        margin-left: 20px;
       }
     }
 
