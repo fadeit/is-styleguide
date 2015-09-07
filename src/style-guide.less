@@ -1767,7 +1767,6 @@ p{
         font-size:@m_fs_small;
         list-style-type: none;
         border:@bst @col_gray_4;
-        padding: 10px;
         .animate(@animation_time_short, @transition_default);
 
         &:hover:not(.submenu){
@@ -1796,6 +1795,7 @@ p{
           .ta-c();
           min-height:68px;
           .rel();
+          padding: 14px 10px 7px 10px;
 
           &:hover, &:focus{
             .animate(@animation_time_short, @transition_default);
@@ -2020,11 +2020,15 @@ p{
 
 // appended menu (for is-tool-menu)
 .md-open-menu-container{
-  a{
-    color:@col_text;
+  md-menu-content{
+    padding:0;
+  }
 
-    &:hover, &:focus{
-      color:@col_text;
+  button.md-button{
+    border-radius:0;
+
+    &.md-grey-dark-theme{
+      color:@ws;
     }
   }
 }
@@ -3246,8 +3250,40 @@ md-menu-item{
     margin:0;
   }
 
+  .md-toolbar-tools{
+    .md-button{
+      margin-left:@gs;
+    }
+
+    .md-icon-button{
+      //Makes fa buttons (like close) bigger in the header
+      .fa{
+        margin-right: 0;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .md-icon-button.md-button{
+    margin-left:auto;
+  }
+
   &--flexible{
     width:auto;
+  }
+
+  &__header{
+    margin-top:-@gs;
+
+    &__inner{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:@gs;
+
+      &__sort{
+        margin-left: auto;
+      }
+    }
   }
 }
 
@@ -3281,6 +3317,10 @@ md-menu-item{
 
 .is-content-actions{
   padding:@gs;
+}
+
+.is-logo{
+  padding-top: 9px;
 }
 
 /*
