@@ -2918,6 +2918,8 @@ md-menu-item{
       line-height: @lh_small;
       color:@col_gray_7;
       width:100%;
+      cursor:default;
+      margin-top:@gs*2;
     }
 
     input{
@@ -2925,7 +2927,12 @@ md-menu-item{
     }
 
     md-content{
-      padding:@gs;
+      padding:0 @gs @gs @gs;
+    }
+
+    md-checkbox{
+      margin-left:0;
+      margin-right:0;
     }
 
     md-input-container, .md-input-container{
@@ -2958,6 +2965,11 @@ md-menu-item{
         font-weight: normal;
         font-family:@ff_default;
       }
+    }
+
+    &__tip{
+      margin-top:@gs*2;
+      color:@col_gray_7;
     }
 
     &__controls{
@@ -3016,6 +3028,27 @@ md-menu-item{
       }
     }
 
+    &--slide-and-input{
+      input{
+        order:0;
+        width: auto;
+        flex-basis: 45px;
+        flex-shrink:0;
+        margin-left: auto;
+        position: relative;
+        top: 4px;
+        font-size:@fs_small;
+      }
+
+      h3{
+        width: auto;
+      }
+
+      &__slide{
+        width:100%;
+      }
+    }
+
     &--bundle{
       md-select-value.md-select-value{
         padding-top: 0;
@@ -3024,6 +3057,22 @@ md-menu-item{
 
       &:last-child{
         margin-top:-3px; //merge to hide own border radius top left & right
+      }
+    }
+
+    &--compact{
+      &__controls{
+        display:flex;
+
+        h3{
+          margin:0;
+          color:@col_gray_7;
+          font-weight: bold;
+        }
+
+        .md-input-container{
+          flex-direction:column-reverse;
+        }
       }
     }
   }
@@ -3219,6 +3268,18 @@ md-menu-item{
   .sp-dd{
     .rel();
     top:-1px;
+  }
+
+  &--single{
+    width:100%;
+
+    .sp-replacer{
+      width:100%;
+    }
+
+    .sp-preview{
+      width: ~'calc(100% - 18px)';
+    }
   }
 }
 //Color picker container
