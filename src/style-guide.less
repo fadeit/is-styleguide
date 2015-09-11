@@ -437,6 +437,13 @@ header, section, footer, article, md-dialog{
 
 
 //Input additions
+md-input-container{
+  .hint-row{
+    align-self:flex-end;
+    order:10; //move hint to the end of the flex container
+  }
+}
+
 md-input-container.input-dark{
   input, textarea, .fa{
     .col(@w);
@@ -462,6 +469,24 @@ md-input-container.aligned-select{
   md-select{
     margin-top: 25px;
   }
+}
+
+//Tooltip
+md-tooltip{
+  display:flex;
+  max-width: 300px;
+
+  .md-content{
+    white-space:normal;
+    overflow: auto;
+    height:auto;
+  }
+}
+
+
+//Dialog
+md-dialog{
+  min-width: 200px;
 }
 
 /*
@@ -2453,10 +2478,24 @@ md-menu-item{
 }
 
 .is-group-list{
+  .screen-title{
+    .fa{
+      margin-right:@gs/4;
+    }
+  }
+
   .screen-group{
     font-size:@fs_small;
     line-height:@lh_small;
     font-family:@ff_light;
+  }
+
+  .screen-notes{
+    small{
+      white-space: pre-line;
+      display: inline-block;
+      width: 100%;
+    }
   }
 }
 
@@ -3247,8 +3286,24 @@ md-menu-item{
     padding:@gs*2;
   }
 
+  .confirm{
+    h4{
+      margin-bottom:0;
+    }
+
+    p{
+      margin-bottom:@gs*2;
+    }
+  }
+
   .md-button{
     margin:0;
+  }
+
+  md-content{
+    .md-button{
+      margin-right:@gs; // Multiple buttons
+    }
   }
 
   .md-toolbar-tools{
@@ -3322,6 +3377,79 @@ md-menu-item{
 
 .is-logo{
   padding-top: 9px;
+}
+
+//Hints
+.hint-row{
+  width:100%;
+  margin:10px 0 0 0;
+  .rel();
+  left:-15px;
+  padding-left: 15px;
+
+  .hint-title{
+    cursor:pointer;
+    .animate(@animation_time_short, @transition_default);
+
+    &:hover{
+      .col(@col_gray_6);
+      .animate(@animation_time_short, @transition_default);
+
+      .fa{
+        transform:scale(1.1);
+      }
+    }
+  }
+
+  .hint-content{
+    padding-bottom:10px;
+  }
+
+  .fa{
+    font-size:18px;
+    margin-right:5px;
+    .rel();
+    top:1px;
+  }
+
+  p{
+    margin-top:5px;
+    margin-bottom:0;
+  }
+}
+
+.hint-row.active{
+  border-left: @bstt @col_base_3;
+  left: -20px;
+}
+
+.hint-row{
+
+  .ng-hide-remove, .ng-hide-add, .ng-hide-add-active, .ng-hide-remove-active{
+    transition:all 0.2s ease;
+  }
+
+  .ng-hide-add{
+    opacity:1;
+    animation:0.2s fadeOut;
+  }
+
+  .ng-hide-remove{
+    opacity:1;
+    animation:0.2s fadeInUp;
+  }
+}
+
+//Custom sections (s): footer-danger, footer-success
+
+.is-s{
+  margin-left: -@gs*2;
+  margin-right: -@gs*2;
+  padding: @gs*2;
+
+  &--danger{
+    .col(lighten(@red, 35%), b);
+  }
 }
 
 /*
