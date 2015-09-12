@@ -75,6 +75,8 @@
 }
 
 .md-button.md-fab{
+  margin: @gs/4;
+
   md-icon{
     color:@w;
   }
@@ -160,6 +162,10 @@ md-input-container{
     align-self:flex-end;
     order:10; //move hint to the end of the flex container
   }
+
+  .md-input, .md-button{
+    padding:0;
+  }
 }
 
 md-input-container.input-dark{
@@ -205,6 +211,8 @@ md-tooltip{
 //Dialog
 md-dialog{
   min-width: 200px;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 //List
@@ -217,6 +225,10 @@ md-list{
   padding:@gs*2 @gs @gs/2 @gs;
   .col(@col_base_4);
   margin:0;
+
+  .md-subheader-inner{
+    padding: @gs/2 0;
+  }
 }
 
 //Toast
@@ -1565,6 +1577,7 @@ p{
           padding:@gs/2 @gs;
           font-weight: 300;
           letter-spacing: 0.3px;
+          border-radius:0;
 
           span{
             text-overflow: ellipsis;
@@ -2009,7 +2022,7 @@ md-menu-item{
 
   .is-list-item{
     .rel();
-    padding:@gs @gs*2;
+    padding:@gs;
     .col(@w, b);
 
     &:nth-child(even){
@@ -2083,7 +2096,7 @@ md-menu-item{
   }
 
   &--tight{
-    margin-bottom:@gs*2;
+    margin-bottom:0;
 
     .md-subheader{
       padding:0;
@@ -2099,6 +2112,10 @@ md-menu-item{
       top:-1px;
       margin-left:5px;
     }
+  }
+
+  &--bg{
+    background-color:@col_gray_3;
   }
 }
 
@@ -2125,6 +2142,8 @@ md-menu-item{
 }
 
 .is-schedule-list{
+  margin-bottom:0;
+
   &__plays{
     padding-bottom:@gs/2;
   }
@@ -2135,6 +2154,7 @@ md-menu-item{
     display:flex;
 
     .no-shrink{
+      display:flex;
       flex-shrink:0;
     }
   }
@@ -2964,10 +2984,6 @@ md-menu-item{
       display:flex;
       justify-content:space-between;
       margin-bottom:@gs;
-
-      &__sort{
-        margin-left: auto;
-      }
     }
   }
 }
