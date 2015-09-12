@@ -207,6 +207,52 @@ md-dialog{
   min-width: 200px;
 }
 
+//List
+md-list{
+  padding:0;
+}
+
+//Subheader
+.md-subheader{
+  padding:@gs*2 @gs @gs/2 @gs;
+  .col(@col_base_4);
+  margin:0;
+}
+
+//Toast
+md-toast{
+  width:100%;
+  max-width:none;
+  margin-top:0;
+
+  //new center
+  &.md-custom {
+    background-color:@col_base_4;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+
+    @media only screen and (min-width: 600px){
+      max-width:none;
+    }
+
+    @media only screen and (min-width: @bp_lg){
+      max-width:none;
+      width:100%;
+    }
+  }
+
+  &.md-top{
+    top:0;
+  }
+
+  &.md-header{
+    top: 115px;
+  }
+}
+
+
+
 /*
  * Forms and inputs (also includes some link styles [outlines/focus])
  *
@@ -1169,10 +1215,12 @@ p{
   }
 }
 
+
+@header_offset: 10px;
+
 .is-header{
   background-color: @col_gray_7;
   color: @w;
-  @header_offset: 10px;
   padding: @gs*2 @gs*2 @gs @gs*2 + @header_offset;
   display: flex;
   align-items: center;
@@ -1183,7 +1231,7 @@ p{
     color: white;
     font-size: 25px;
     min-width: 40px;
-    margin-right: @gs*2;
+    margin-right: @gs/2;
   }
 
   .fa-input{
@@ -1545,8 +1593,10 @@ p{
             }
           }
         }
+      }
 
-        a.active{
+      li.active{
+        a{
           color:@col_base_4;
         }
       }
@@ -1559,6 +1609,7 @@ p{
           display:flex;
           padding:@gs/4 @gs + @gs/2; //visually align
           color: @col_gray_7;
+          border-radius:0;
 
           .menu-icon{
             margin-right: @gs + @gs/2; //visually align
@@ -1948,6 +1999,7 @@ md-menu-item{
 .is-list{
   list-style-type: none;
   padding-left:0;
+  margin-bottom:@gs*3;
 
   md-list-item{
     md-select{
@@ -2431,6 +2483,8 @@ md-menu-item{
 
           a{
             height:@ctrl_h;
+            margin:0;
+            border-radius:0;
           }
 
           &:last-child{
@@ -2448,7 +2502,7 @@ md-menu-item{
           min-height: @ctrl_h;
           display:flex;
           flex-direction:column;
-          justify-content:center;
+          justify-content: space-around;
           outline:0;
           transition: background-color @animation_time_short @transition_default, color @animation_time_short @transition_default;
 
@@ -2460,13 +2514,19 @@ md-menu-item{
           }
 
           span{
+            padding:0;
+            margin:0;
             text-align: center;
             font-size:@fs_small;
+            line-height: @fs_small;
+            margin-bottom: 5px;
+            font-weight: 400;
           }
 
           .fa{
             font-size:24px;
-            margin-bottom:5px;
+            margin-top:5px;
+            margin-right:0;
           }
         }
       }
@@ -2474,16 +2534,6 @@ md-menu-item{
       ul.exit{
         a{
           .col(@col_gray_6, b);
-        }
-      }
-
-      ul.extra{
-        a{
-          .col(@col_green, b);
-
-          &:hover, &:focus{
-            .col(darken(@col_green, 15%), b);
-          }
         }
       }
     }
