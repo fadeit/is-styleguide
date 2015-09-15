@@ -158,9 +158,12 @@
 
 //Input additions
 md-input-container{
+  padding-left:0;
+  padding-right:0;
+
   .hint-row{
     align-self:flex-end;
-    order:10; //move hint to the end of the flex container
+    order:0; //move hint to the beginning of the flex container
   }
 
   .md-input, .md-button{
@@ -210,7 +213,7 @@ md-tooltip{
 
 //Dialog
 md-dialog{
-  min-width: 200px;
+  min-width: 300px;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -3027,10 +3030,16 @@ md-menu-item{
 //Hints
 .hint-row{
   width:100%;
-  margin:10px 0 0 0;
+  margin:@gs*2 0 0 0; //margin top prevents error messages from overlapping
   .rel();
-  left:-15px;
-  padding-left: 15px;
+  left:-18px;
+  padding: @gs/2 15px;
+  border-left: @bstt transparent;
+  transition:all 0.3s ease;
+
+  &--no-spacing-top{
+    margin-top:@gs/2;
+  }
 
   .hint-title{
     cursor:pointer;
@@ -3047,29 +3056,31 @@ md-menu-item{
   }
 
   .hint-content{
-    padding-bottom:10px;
+    margin-top:@gs;
   }
 
   .fa{
     font-size:18px;
-    margin-right:5px;
+    margin-right:3px;
     .rel();
     top:1px;
   }
 
   p{
+    font-size:0.9em;
     margin-top:5px;
     margin-bottom:0;
+    padding-bottom:0;
   }
 }
 
 .hint-row.active{
   border-left: @bstt @col_base_3;
-  left: -20px;
+  transition:all 0.3s ease;
 }
 
+//Hint Animation
 .hint-row{
-
   .ng-hide-remove, .ng-hide-add, .ng-hide-add-active, .ng-hide-remove-active{
     transition:all 0.2s ease;
   }
@@ -3085,8 +3096,25 @@ md-menu-item{
   }
 }
 
-//Custom sections (s): footer-danger, footer-success
+//Collapsible elements
+.collapsible{
+  margin-bottom:@gs*2;
 
+  &__title{
+    display:inline-block;
+    transition:all 0.2s ease;
+    color:@b;
+    margin-bottom:@gs/2;
+
+    &:hover, &:focus{
+      outline:0;
+      transition:all 0.2s ease;
+      color:@col_gray_7;
+    }
+  }
+}
+
+//Custom sections (s): footer-danger, footer-success
 .is-s{
   margin-left: -@gs*2;
   margin-right: -@gs*2;
@@ -3094,6 +3122,24 @@ md-menu-item{
 
   &--danger{
     .col(lighten(@red, 35%), b);
+  }
+
+  &--note{
+    .col(@col_gray_4, b);
+  }
+
+  &--tight{
+    padding:@gs @gs*2;
+    margin-bottom:@gs;
+  }
+}
+
+
+/* Date / time formatting */
+.week-days{
+  md-checkbox{
+    margin-left:0;
+    font-size:0.8em;
   }
 }
 
