@@ -2928,7 +2928,7 @@ md-menu-item{
   overflow:auto;
   padding-top: 60px;
 
-  & > md-content{
+  & > md-dialog-content{
     width: 100%;
     padding:@gs*2;
   }
@@ -2947,7 +2947,7 @@ md-menu-item{
     margin:0;
   }
 
-  md-content{
+  md-dialog-content{
     .md-button{
       margin-right:@gs/2; // Multiple buttons
     }
@@ -3098,6 +3098,12 @@ md-menu-item{
 
 //Collapsible elements
 .collapsible{
+  margin-top:@gs;
+
+  i{
+    margin-right:4px;
+  }
+
   &__title{
     display:inline-block;
     transition:all 0.2s ease;
