@@ -2158,6 +2158,12 @@ md-menu-item{
   &__plays{
     padding-bottom:@gs/2;
   }
+
+  .md-list-item-text{
+    i{
+      min-width:20px;
+    }
+  }
 }
 
 .is-subheader{
@@ -2786,9 +2792,9 @@ md-menu-item{
       .boxshadow-left();
 
       .md-button{
-        display:flex;
-        justify-content:center;
-        align-items:center;
+        display:block;
+        width:100%;
+        text-align:center;
         border-radius:0;
         margin:0;
         min-width:170px;
