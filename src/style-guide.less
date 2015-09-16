@@ -198,6 +198,11 @@ md-input-container.aligned-select{
   }
 }
 
+//Select
+md-select{
+  flex-grow:1;
+}
+
 //Tooltip
 md-tooltip{
   display:flex;
@@ -1293,6 +1298,12 @@ p{
     &__input{
       padding:@gs*2 0;
     }
+
+    md-input-container{
+      input{
+        flex-grow:1;
+      }
+    }
   }
 }
 
@@ -1569,7 +1580,7 @@ p{
     ul{
       padding-left: 0;
       display: flex;
-      flex-wrap:wrap;
+      flex-wrap:nowrap;
       margin-bottom:0;
       max-width: 100%;
       width: 100%;
@@ -1642,6 +1653,13 @@ p{
         }
       }
     } //ul
+
+
+    @media only screen and (min-width:@bp_lg){
+      ul{
+        flex-wrap:wrap;
+      }
+    }
   } //is-menu
 } //is-menu-container
 
@@ -2456,6 +2474,11 @@ md-menu-item{
     .col(@col_gray_7);
   }
 
+  &__img{
+    width:100px;
+    height:77px;
+  }
+
   li&__tip {
     width:100%;
     max-width:none;
@@ -2883,6 +2906,7 @@ md-menu-item{
       line-height: 35px;
       text-align: center;
       border-right: @bstm @col_gray_5;
+      flex-shrink:1;
     }
 
     .md-input{
@@ -2954,12 +2978,19 @@ md-menu-item{
       margin-top: 29px;
     }
 
+    input{
+      height: 2em; //IE fix
+    }
+
     &__slide{
       width:100%;
     }
   }
 
   &--input-and-select{
+    //The dimensions & weird looking tweaks are the result of IE fixes...
+    margin:@gs*2 0;
+
     &__inner{
       display: flex;
       flex-wrap:wrap;
@@ -2967,7 +2998,8 @@ md-menu-item{
     }
 
     .fa{
-      top:8px;
+      display:flex;
+      align-items:center;
     }
 
     md-input-container{
@@ -2977,15 +3009,20 @@ md-menu-item{
     }
 
     md-select{
-      margin-top:11px;
+      margin:0;
 
       md-select-value{
-        min-height: 30px;
+        min-height: 29px;
       }
     }
 
     input.md-input{
+      min-height: 31px;
       margin-left: 20px;
+      flex-grow:1;
+      margin-top:0;
+      margin-bottom:0;
+      line-height:1em;
     }
   }
 
