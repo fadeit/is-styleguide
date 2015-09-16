@@ -242,7 +242,6 @@ md-toast{
 
   //new center
   &.md-custom {
-    background-color:@col_base_4;
     margin-left: auto;
     margin-right: auto;
     width:100%;
@@ -1242,7 +1241,7 @@ p{
 @header_offset: 10px;
 
 .is-header{
-  background-color: @col_gray_7;
+  background-color: @col_base_4;
   color: @w;
   padding: @gs*2 @gs*2 @gs @gs*2 + @header_offset;
   display: flex;
@@ -1286,10 +1285,10 @@ p{
 
   &__inner{
     margin: 0 0 @gs -@header_offset;
-    border-left:@bstm;
-    padding: @gs;
+    border-left:@bst;
+    padding: @gs @gs @gs @gs*2;
     width: 100%;
-    border-color:@col_gray_6;
+    border-color: fade(@w, 10%);
 
     &__input{
       padding:@gs*2 0;
@@ -1561,10 +1560,10 @@ p{
 @submenu_image_height: 35px;
 
 .is-menu-container{
+  .col(@ws, b);
   border-right:@bst @col_gray_4;
 
   .is-menu{
-    .col(@w, b);
     .clearfix();
 
     ul{
@@ -1578,7 +1577,7 @@ p{
       li{
         width:100%;
         display:flex;
-        border-bottom:@bst @col_gray_3;
+        border-bottom:@bst @col_gray_4;
 
         a{
           width:100%;
@@ -1604,7 +1603,6 @@ p{
             width:@menu_image_height;
             background-repeat:no-repeat;
             background-position: center;
-            .col(@w, b);
             overflow: hidden;
             .rel();
             display:flex;
@@ -1621,6 +1619,7 @@ p{
 
       li.active{
         a{
+          background-color:@w;
           color:@col_base_4;
         }
       }
