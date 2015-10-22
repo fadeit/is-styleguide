@@ -278,7 +278,36 @@ md-toast{
   }
 }
 
+//Datepicker
+md-datepicker{
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  margin-left: -19px; //cancels out icon margin
 
+
+  .md-datepicker-button.md-icon-button.md-button{
+    margin-left:0; //doesn't push content to the right
+  }
+
+  .md-datepicker-input-container{
+    min-width: 180px;
+    margin-left:0;
+
+    &.md-datepicker-focused{
+      border:0;
+    }
+  }
+
+  .md-datepicker-triangle-button{
+    top: 3px; //visually align
+  }
+
+  input{
+    width: 100%;
+    margin-bottom:0;
+  }
+}
 
 /*
  * Forms and inputs (also includes some link styles [outlines/focus])
@@ -2619,6 +2648,12 @@ md-menu-item{
           .rel();
         }
 
+        .icon-button{
+          a.md-button{
+            min-width:0;
+          }
+        }
+
         &__submenu{
           @submenu_height: 64px - @gs; //64px corresponds to fabric.js canvas padding
 
@@ -2668,12 +2703,6 @@ md-menu-item{
 
           ul.slide-actions{
             margin-left:auto;
-
-            .keyboard{
-              a.md-button{
-                min-width:0;
-              }
-            }
           }
         }
       }
@@ -3158,7 +3187,7 @@ md-menu-item{
 
   &--with-button{
     width:100%;
-    padding:0 @gs;
+    padding:@gs;
 
     .is-fa-text__inner{
       width:100%;
@@ -3346,6 +3375,96 @@ md-menu-item{
 
       &--selected{
         background-color: @col_base_4;
+      }
+    }
+  }
+}
+
+/* Drop-list: two columns, 1 with available items and 1 with added items. */
+@drop_list_li_height: 56px;
+.is-drop-list{
+  display:flex;
+
+  &__col{
+    flex-basis:50%;
+    margin-right:@gs;
+
+    ul{
+      position:relative;
+      list-style-type:none;
+      min-height:@drop_list_li_height*2;
+      height:100%;
+    }
+
+    li:not(.is-drop-list__col__tip){
+      padding:0 @gs;
+      min-height: @drop_list_li_height;
+      .col(@ws, b);
+      .animate(@animation_time_short, @transition_default);
+      cursor:move;
+      display:flex;
+      align-items:center;
+
+      &:before{
+        content:"\f0cb";
+        .font-awesome();
+        margin-right:@gs/2;
+      }
+
+      &:nth-child(even){
+        .col(@col_gray_4, b);
+      }
+
+      &:hover{
+        .col(@col_gray_5, b);
+        .animate(@animation_time_short, @transition_default);
+      }
+    }
+
+    .md-button{
+      .fa{
+        margin-left:3px;
+      }
+    }
+
+    &__tip{
+      position:absolute;
+      top:0;
+      left:0;
+      color:@col_gray_6;
+      width:100%;
+      height: 100%;
+      padding:@gs*2;
+      display:flex;
+      align-items:center;
+
+      &:before{
+        visibility: hidden;
+      }
+
+      &:hover{
+        .col(@ws, b);
+      }
+    }
+
+    &--available{
+      ul{
+        padding:0;
+      }
+    }
+
+    &--added{
+      .rel();
+
+      ul{
+        padding:0;
+        margin:0;
+        border: 1px dashed @col_gray_5;
+        background-color:@ws;
+
+        .md-button{
+          margin-left:auto;
+        }
       }
     }
   }
