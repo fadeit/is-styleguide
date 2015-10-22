@@ -3154,6 +3154,18 @@ md-menu-item{
   &--spaced{
     padding:0 @gs;
   }
+
+  &--with-button{
+    width:100%;
+    padding:0 @gs;
+
+    .is-fa-text__inner{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+    }
+  }
 }
 
 .is-content-actions{
@@ -3272,6 +3284,70 @@ md-menu-item{
   &--tight{
     padding:@gs @gs*2;
     margin-bottom:@gs;
+  }
+}
+
+
+/* Screen size ratio display */
+.ratio{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+
+  &__container{
+    width:90px;
+    height:90px;
+    flex-shrink:0;
+    align-items:center;
+    justify-content:center;
+    background-color:@ws;
+    display:flex;
+
+    &__item{
+      flex-shrink:0;
+      background-color: @col_base_3;
+      color: @w;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      cursor: pointer;
+
+      &:after{
+        height:2px;
+        width:100%;
+        color:@col_base_1;
+        position:absolute;
+      }
+
+      &:hover, &:focus{
+        background-color: @col_base_4;
+        outline:0;
+      }
+
+      &--16-9{
+        width: 96%;
+        height: 54%;
+      }
+
+      &--16-10{
+        width: 96%;
+        height: 60%;
+      }
+
+      &--4-3{
+        width: 80%;
+        height: 60%;
+      }
+
+      &--9-16{
+        width: 56%;
+        height: 96%;
+      }
+
+      &--selected{
+        background-color: @col_base_4;
+      }
+    }
   }
 }
 
