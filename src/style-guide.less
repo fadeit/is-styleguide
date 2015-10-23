@@ -3506,6 +3506,56 @@ md-menu-item{
   }
 }
 
+/* Share form and layout */
+.is-share{
+  &__input{
+    input{
+      order:1;
+    }
+
+    md-checkbox{
+      order:2;
+      margin:0;
+    }
+  }
+
+  &__list{
+    margin-top:@gs;
+
+    &--with-users{
+      .is-s{
+        background-color:@col_gray_5;
+      }
+
+      .md-subheader{
+        padding-top:0;
+        border-bottom:@bst @col_gray_3;
+
+        p{
+          margin:@gs @gs @gs/2 @gs;
+          color:@col_gray_6;
+          font-weight:400;
+        }
+      }
+    }
+  }
+
+  // Reduce space for list items
+  .is-list{
+    margin-bottom:0;
+
+    .is-list-item{
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &__btn{
+        top: 18px;
+      }
+    }
+  }
+}
+
+
 /* Date / time formatting */
 .week-days{
   md-checkbox{
