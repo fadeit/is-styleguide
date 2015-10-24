@@ -2082,6 +2082,10 @@ md-menu-item{
     }
   }
 
+  .md-button{
+    flex-shrink: 0;
+  }
+
   .is-list-item{
     .rel();
     padding:@gs @gs*2;
@@ -2177,8 +2181,9 @@ md-menu-item{
     }
   }
 
-  &--bg{
+  &--bg{ //List with a gray background, like the one in schedule management
     background-color:@col_gray_3;
+    border-bottom: @bst @col_gray_5;
   }
 }
 
