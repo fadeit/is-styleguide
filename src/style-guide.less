@@ -2122,6 +2122,7 @@ md-menu-item{
 
     &.is-playlist-rows{
       padding:0;
+      align-items:center;
 
       .is-playlist-rows__inner{
         width:100%;
@@ -2136,6 +2137,7 @@ md-menu-item{
         &__image{
           .col(@col_gray_5, b);
           display:flex;
+          flex-shrink:0;
           justify-content:center;
           align-items:center;
           transition: opacity @animation_time_short @transition_default;
@@ -2159,6 +2161,14 @@ md-menu-item{
           }
         }
       }
+
+      .is-playlist-rows__controls{
+        padding:@gs @gs*2 @gs 0;
+
+        .md-button{
+          top: 0;
+        }
+      }
     }//is-playlist-rows
   }
 
@@ -2178,6 +2188,14 @@ md-menu-item{
       .rel();
       top:-1px;
       margin-left:5px;
+    }
+  }
+
+  &--wide{
+    padding: @gs*2;
+
+    md-list-item{
+      padding:0;
     }
   }
 
@@ -2211,9 +2229,23 @@ md-menu-item{
 
 .is-schedule-list{
   margin-bottom:0;
+  margin-top:-@gs*2;//reduce negative space
 
   md-list-item{
     .rel();
+    margin:0 -@gs*2;
+
+    &:not(.is-list-item){
+      margin:0;
+    }
+  }
+
+  md-input-container{
+    padding-bottom:0;
+  }
+
+  .is-label-md{
+    margin-bottom:@gs;
   }
 
   .md-list-item-text{
