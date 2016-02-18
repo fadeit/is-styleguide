@@ -202,6 +202,68 @@ md-input-container.aligned-select{
   }
 }
 
+md-input-container.switch{
+  padding-bottom: 0;
+
+  md-switch{
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
+}
+
+md-input-container.inline-radios{
+  md-radio-group{
+    display: flex;
+
+    md-radio-button{
+      margin-left: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+//Wrapper for md-input container + select
+.input-select-inline{
+  //The dimensions & weird looking tweaks are the result of IE fixes...
+
+  &__inner{
+   display: flex;
+   flex-wrap:wrap;
+   align-items: center;
+  }
+
+  .fa{
+   display:flex;
+   align-items:center;
+  }
+
+  md-input-container{
+   flex-basis: 80px;
+   flex-grow: 2;
+   flex-shrink: 0;
+  }
+
+  md-select{
+   margin:0;
+
+   md-select-value{
+     min-height: 29px;
+   }
+  }
+
+  input.md-input{
+   min-height: 31px;
+   //margin-left: 20px; needed for .fa
+   flex-grow:1;
+   flex-shrink:1;
+   margin-top:0;
+   margin-bottom:0;
+   line-height:1em;
+  }
+}
+
 //Select
 md-select{
   flex-grow:1;
