@@ -3601,6 +3601,58 @@ md-menu-item{
 }
 
 
+/* Keyboard shortcut UI */
+.key-container{
+  display:flex;
+  justify-content:center;
+  padding-top:@gs;
+}
+
+.keys{
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row-reverse;
+
+  dd, dt{
+    display:inline-block;
+  }
+
+  dd{
+    height:25px;
+    flex-basis:50%;
+    margin-bottom:@gs;
+    flex-grow:0;
+    flex-shrink:0;
+    text-align:right;
+    padding-right:5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  dt{
+    flex-basis:50%;
+    flex-grow:0;
+    flex-shrink:0;
+    height:25px;
+    display: flex;
+    align-items: center;
+
+    em{
+      font-size:0.8em;
+      font-weight: 300;
+      text-decoration: none;
+      font-style: normal;
+      padding:@gs/2;
+      background-color:@col_gray_3;
+      border-radius:3px;
+      border:@bst @col_gray_4;
+      margin: 0 @gs/2;
+    }
+  }
+}
+
+
 /* Date / time formatting */
 .week-days{
   md-checkbox{
