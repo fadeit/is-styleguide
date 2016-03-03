@@ -3617,12 +3617,16 @@ md-menu-item{
 
     &--added{
       .rel();
+      display: flex;
+      flex-direction: column;
 
       ul{
+        flex-grow:1;
         padding:0;
         margin:0;
         border: 1px dashed @col_gray_5;
         background-color:@ws;
+        margin-bottom: 10px; //visually align
 
         .md-button{
           margin-left:auto;
