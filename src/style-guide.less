@@ -2571,7 +2571,7 @@ md-menu-item{
 
 .is-groups{
   padding:0 @gs*2 @gs @gs*2;
-  margin:0;
+  margin: 0;
 
   &:last-child{
     margin-bottom:@gs*2;
@@ -2580,12 +2580,14 @@ md-menu-item{
   md-list-item{
     border: 1px dashed @col_gray_5;
     .inline-block();
-    min-height: 120px;
+    min-height: 116px;
     min-width: 100px;
     width:100%;
   }
 
   .md-subheader{
+    padding-top: 0;
+    padding-bottom: 0;
     .col(transparent, b);
 
     h3{
@@ -2603,6 +2605,10 @@ md-menu-item{
       margin:0 0 0 @gs/4;
       padding:0 @gs;
     }
+  }
+
+  &--standby{
+    margin-top:@gs;
   }
 }
 
