@@ -2222,6 +2222,10 @@ md-menu-item{
 /*
  * NEW! IS-specific el
  */
+
+@thumbnail_width: 300px;
+@thumbnail_height: @thumbnail_width/16 * 9;
+
 .is-list{
   list-style-type: none;
   padding-left:0;
@@ -2294,25 +2298,43 @@ md-menu-item{
           justify-content:center;
           align-items:center;
           transition: opacity @animation_time_short @transition_default;
-          //width: 300px;
-          //height: 169px;
+          width: @thumbnail_width;
+          height: @thumbnail_height;
 
           &:hover, &:focus{
             opacity:0.7;
             transition: opacity @animation_time_short @transition_default;
           }
+
+          a{
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+          }
         }
 
         &__details{
-          padding:@gs @gs*2;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: @gs @gs*2 @gs/2 @gs*2;
 
-          &__duration{
+          &__item{
+            padding-top:@gs;
             font-family:@ff_default;
-            margin-top:-5px;
+            margin-right: @gs/2;
+            position: relative;
+            top: -10px;
           }
 
           &__slides{
             margin-bottom:0;
+          }
+
+          &--top{
+            margin-bottom: auto;
           }
         }
       }
