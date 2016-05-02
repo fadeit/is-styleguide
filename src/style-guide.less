@@ -219,6 +219,10 @@
       font-size:24px;
     }
   }
+
+  &--inside-collapsible{
+    padding-top:@gs*2;
+  }
 }
 
 md-input-container{
@@ -362,6 +366,10 @@ md-tooltip{
   }
 }
 
+//Content
+md-content{
+  background-color:@w;
+}
 
 //Dialog
 md-dialog{
@@ -430,7 +438,7 @@ md-datepicker{
   width: 100%;
   display: flex;
   align-items: center;
-  margin-left: -19px; //cancels out icon margin
+  margin-left: -11px; //cancels out icon margin
   margin-bottom: @gs;
 
   .md-datepicker-button.md-icon-button.md-button{
@@ -1755,20 +1763,31 @@ p{
 
   .is-menu{
     .clearfix();
-    overflow-x: auto;
+    overflow: auto;
+
+    @media only screen and (min-width:@bp_lg){
+      height: 100vh;
+    }
 
     ul{
       padding-left: 0;
       display: flex;
+      flex-direction:row;
       flex-wrap:nowrap;
       margin-bottom:0;
       max-width: 100%;
       width: 100%;
 
+      @media only screen and (min-width:@bp_lg){
+        min-height:100vh;
+        flex-direction:column;
+      }
+
       li{
         width:100%;
         display:flex;
         border-bottom:@bst @col_gray_4;
+        flex-grow:0;
 
         a{
           width:100%;
@@ -1816,6 +1835,12 @@ p{
       }
 
       .submenu{
+        ul{
+          @media only screen and (min-width:@bp_lg){
+            min-height:0;
+          }
+        }
+
         a{
           width:100%;
           margin:0;
@@ -1834,6 +1859,27 @@ p{
       }
     } //ul
 
+
+    &__li{
+      &--controls{
+        display:flex;
+        align-items:center;
+        justify-content: center;
+
+        @media only screen and (min-width:@bp_lg){
+          margin-top:auto;
+        }
+      }
+
+      &--logo{
+        padding:@gs 22px;
+        outline:0;
+
+        figure{
+          outline:0;
+        }
+      }
+    }
 
     @media only screen and (min-width:@bp_lg){
       ul{
@@ -2223,7 +2269,7 @@ md-menu-item{
  * NEW! IS-specific el
  */
 
-@thumbnail_width: 300px;
+@thumbnail_width: 250px;
 @thumbnail_height: @thumbnail_width/16 * 9;
 
 .is-list{
@@ -2250,7 +2296,7 @@ md-menu-item{
     align-items: center;
 
     &:nth-child(even){
-      .col(@col_gray_4, b);
+      .col(@w, b);
     }
 
     &__avatar.md-avatar{
@@ -2318,7 +2364,7 @@ md-menu-item{
         &__details{
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          justify-content: center;
           padding: @gs @gs*2 @gs/2 @gs*2;
 
           &__item{
@@ -2334,7 +2380,7 @@ md-menu-item{
           }
 
           &--top{
-            margin-bottom: auto;
+            margin-bottom: 0;
           }
         }
       }
@@ -2717,6 +2763,14 @@ md-menu-item{
     min-height: 116px;
     min-width: 100px;
     width:100%;
+
+    &.is-list-item{
+      background-color:@ws;
+
+      &:nth-child(even){
+        background-color:@ws;
+      }
+    }
   }
 
   .md-subheader{
@@ -3585,10 +3639,6 @@ md-menu-item{
   padding:@gs;
 }
 
-.is-logo{
-  padding-top: 9px;
-}
-
 //Hints
 .hint-row{
   width:100%;
@@ -3704,15 +3754,17 @@ md-menu-item{
     }
 
     .collapsible__content{
-      &:before, &:after{
+      &:before{
         content:"";
         display:block;
         margin-left: -@gs*2;
         margin-right: -@gs*2;
         padding: @gs @gs*2;
         width:~"calc(100% + @{gs}*4)";
-        border-top: 1px dashed @col_gray_5;
+        height: ~"calc(100% - @{gs}*4)";
+        background-color:fade(@col_base_4, 5%);
         left: 0;
+        top: @gs*2;
         position: absolute;
       }
     }
@@ -3742,7 +3794,7 @@ md-menu-item{
         padding-top:@gs/2;
 
         &:before{
-          border:0;
+          background:0;
         }
       }
     }
@@ -3772,6 +3824,7 @@ md-menu-item{
   display:flex;
   flex-wrap:wrap;
   justify-content: space-between;
+  margin-bottom:@gs*3;
 
   &__container{
     width:90px;
