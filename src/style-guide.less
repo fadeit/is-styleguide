@@ -81,6 +81,10 @@
   &.md-raised.md-raised-plain{
     border: @bst #E6E6E6;
     box-shadow: none;
+
+    &:hover, &:focus{
+      background-color:@col_gray_4;
+    }
   }
 }
 
@@ -1532,6 +1536,8 @@ p{
 }
 
 .is-aside-right, .is-aside-left{
+  z-index: 2;
+
   @media only screen and (min-width:@bp_sm){
     .rel();
   }
@@ -2343,7 +2349,7 @@ md-menu-item{
         }
 
         &__image{
-          .col(@col_gray_5, b);
+          background-color: @col_gray_8;
           display:flex;
           flex-shrink:0;
           justify-content:center;
@@ -2372,9 +2378,18 @@ md-menu-item{
           justify-content: center;
           padding: @gs @gs*2 @gs/2 @gs*2;
 
+          a:not(.md-button){
+            color: @col_gray_7;
+
+            &:hover, &:focus{
+              color: @col_gray_8;
+            }
+          }
+
           &__item{
             padding-top:@gs;
             font-family:@ff_default;
+            font-size:@fs_small;
             margin-right: @gs/2;
             position: relative;
             top: -10px;
@@ -2386,6 +2401,12 @@ md-menu-item{
 
           &--top{
             margin-bottom: 0;
+          }
+
+          &--bottom{
+            margin-top:auto;
+            display:flex;
+            align-items:center;
           }
         }
       }
@@ -2549,9 +2570,13 @@ md-menu-item{
   }
 
   &__actions{
-    md-icon.fa{
-      color:@col_gray_6;
-      line-height:25px;
+    .md-fab{
+      display:flex;
+      justify-content:center;
+
+      .fa{
+        margin-right:-2px;
+      }
     }
   }
 }
@@ -2606,13 +2631,16 @@ md-menu-item{
   md-grid-tile-footer{
     .col(rgba(0, 0, 0, 0.5), b);
   }
+
+  &--with-footer{
+    margin-bottom:@gs*2;
+  }
 }
 
 .is-grid-tile{
   .col(@ws, b);
   background-repeat: no-repeat;
-  background-position: center center;
-  //.cover();
+  background-position: center 22px; // visually align with footer; otherwise center center
   background-size:80%;
   overflow:hidden;
   cursor:pointer;
@@ -2643,13 +2671,6 @@ md-menu-item{
     overflow: hidden;
   }
 
-  .fa{
-    font-size:30px;
-    .rel();
-    padding-bottom: 25px;
-    z-index: 2;
-  }
-
   &__details{
     padding:@gs/2;
 
@@ -2665,7 +2686,7 @@ md-menu-item{
     &__date{
       margin-top:-5px;
       margin-bottom:10px;
-      .col(@col_gray_3);
+      .col(@col_gray_5);
     }
   }
 
@@ -2692,20 +2713,14 @@ md-menu-item{
   }
 
   &--no-bg{
-    .is-grid-tile__meta{
-      .col(transparent, b);
+    background-color:@w;
 
-      p{
-        .col(@hue50);
-      }
-    }
+    .is-grid-tile__details{
+      background-color:@w;
+      color:@b;
 
-    figure{
-      .col(@ws, b);
-
-      .fa{
-        .inline-block();
-        .col(@hue50);
+      &__date{
+        color:@col_gray_8;
       }
     }
   }
@@ -3156,7 +3171,7 @@ md-menu-item{
       padding-bottom:0;
       margin-bottom:0;
       flex-wrap: nowrap;
-      overflow-y:auto;
+      overflow-y:hidden;
       overflow-x:visible;
 
       &:after{
@@ -3177,7 +3192,7 @@ md-menu-item{
         width:167px;
         height: 132px;
         flex-shrink:0;
-        .col(@w, b);
+        background-color:@b;
 
         figure{
           outline:0;
@@ -3189,7 +3204,7 @@ md-menu-item{
         figcaption{
           width: 100%;
           padding: @gs/2;
-          .col(rgba(0, 0, 0, 0.5), b);
+          background-color: @col_gray_8;
           .col(@w);
           cursor:pointer;
           transition: background-color @animation_time_short @transition_default;
@@ -3198,7 +3213,7 @@ md-menu-item{
 
           &:focus{
             outline:0;
-            .col(rgba(0, 0, 0, 0.5), b);
+            background-color: @col_gray_8;
           }
 
           &:hover{
@@ -3560,6 +3575,8 @@ md-menu-item{
   }
 
   .md-toolbar-tools{
+    padding:0 27px 0 @gs*2; //align with content; (x) has hardcoded padding because of position while not focused
+
     .md-button{
       margin-left:@gs;
     }
