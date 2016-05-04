@@ -2985,31 +2985,49 @@ md-menu-item{
       flex-direction:row;
       justify-content:space-between;
 
-      ul{
+      &__group{
         padding:0;
         padding-bottom:0;
         margin-bottom:0;
         display:flex;
 
-        li{
-          display:inline-block;
+        &._md-menu-bar-menu{
+          min-width:0;
+          background-color:@col_gray_9;
 
-          a{
-            height:@ctrl_h;
-            margin:0;
-            border-radius:0;
+          &.md-dense{
+            padding:0;
+
+            .md-button{
+              height:auto;
+              align-items: center;
+              padding:@gs/4 0;
+            }
           }
+
+          .is-playlist__content__controls__group__btn{
+            height: auto;
+          }
+        }
+
+        &__btn{
+          display:inline-block;
 
           &:last-child{
             a{
               border:0;
             }
           }
+
+          a{
+            height:@ctrl_h;
+            margin:0;
+            border-radius:0;
+          }
         }
 
         a{
           .col(@w);
-          .inline-block();
           padding:0 @gs/2;
           min-width: @ctrl_w;
           min-height: @ctrl_h;
@@ -3042,13 +3060,21 @@ md-menu-item{
             margin-right:0;
           }
         }
-      }
 
-      ul.exit{
-        a{
-          .col(@col_gray_6, b);
+        &--preview{
+          a{
+            &:hover, &:focus{
+              color:@col_gray_7;
+            }
+          }
         }
-      }
+
+        &--exit{
+          a{
+            .col(@col_gray_6, b);
+          }
+        }
+      }//end __controls__group
     }
 
     &__inner{
@@ -3338,6 +3364,17 @@ md-menu-item{
   }
 }
 
+//Menu bar (sort of dropdown)
+.is-menu-bar{
+  padding:0;
+
+  &._md-open{
+    .is-playlist__content__controls__group__btn__toggle{
+      opacity:0.6;
+    }
+  }
+}
+
 .adjustments{
   h3{
     text-transform: uppercase;
@@ -3355,6 +3392,10 @@ md-menu-item{
 
   md-content{
     padding:0 @gs @gs @gs;
+  }
+
+  md-tab-item{
+    background-color:@ws;
   }
 
   md-checkbox{
