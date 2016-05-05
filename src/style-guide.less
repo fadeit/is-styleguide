@@ -3455,8 +3455,8 @@ md-menu-item{
   }
 
   md-checkbox{
-    margin-left:0;
-    margin-right:0;
+    margin:@gs/2 0 0 0;
+    width:100%;
   }
 
   md-input-container, .md-input-container{
@@ -3614,10 +3614,26 @@ md-menu-item{
 
     &__unit{
       margin-top: 29px;
+      font-size:@fs_small;
+      position:relative;
+      top:3px;
     }
 
     &__slide{
       width:100%;
+    }
+  }
+
+  &--inline-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:0;
+
+    &__item{
+      font-family:@ff_default;
+      font-size:@fs_small;
+      margin-right: @gs/2;
     }
   }
 
