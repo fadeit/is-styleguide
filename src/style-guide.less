@@ -2640,8 +2640,8 @@ md-menu-item{
 .is-grid-tile{
   .col(@ws, b);
   background-repeat: no-repeat;
-  background-position: center 22px; // visually align with footer; otherwise center center
-  background-size:80%;
+  background-position: center center;
+  background-size: contain;
   overflow:hidden;
   cursor:pointer;
   transition: opacity @animation_time_short @transition_default;
@@ -2679,8 +2679,8 @@ md-menu-item{
     }
 
     &__name{
-      margin-top:10px;
-      margin-bottom:0px;
+      margin-top:@gs;
+      margin-bottom:-3px;
     }
 
     &__date{
@@ -2722,6 +2722,15 @@ md-menu-item{
       &__date{
         color:@col_gray_8;
       }
+    }
+  }
+
+  &--folder{
+    background-position: center 22px; // visually align with footer; otherwise center center
+    background-size:80%;
+
+    .is-grid-tile__details{
+      border-top: @bst @ws;
     }
   }
 
