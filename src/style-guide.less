@@ -232,6 +232,10 @@
   &--inside-collapsible{
     padding-top:@gs*2;
   }
+
+  &--no-padding{
+    padding:0;
+  }
 }
 
 md-input-container{
@@ -263,6 +267,12 @@ md-input-container.input-slim{
 
   &--md-select{
     margin-bottom:@gs*2;
+  }
+
+  &.md-input-invalid{
+    [ng-message]{
+      padding-top:0;
+    }
   }
 }
 
@@ -2280,7 +2290,7 @@ md-menu-item{
  * NEW! IS-specific el
  */
 
-@thumbnail_width: 250px;
+@thumbnail_width: 240px;
 @thumbnail_height: @thumbnail_width/16 * 9;
 
 .is-list{
@@ -2364,11 +2374,14 @@ md-menu-item{
           }
 
           a{
-            height: 100%;
-            width: 100%;
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: cover;
+            background-size: contain;
+            margin: -5px; //needed to cover eventual rounding errors
+            display: block;
+            flex-grow: 1;
+            flex-basis: 100%;
+            height: 100%;
           }
         }
 
@@ -2456,6 +2469,8 @@ md-menu-item{
 
 .is-group-list{
   .screen-title{
+    padding-left: 2px; // fixes a bug where the status icon is cropped
+
     .fa{
       margin-right:@gs/4;
     }
@@ -2986,7 +3001,7 @@ md-menu-item{
       .col(@col_gray_9, b);
       .boxshadow-bottom();
       .rel();
-      z-index: 10;
+      z-index: 11;
       display:flex;
       flex-basis:@ctrl_h;
       flex-grow:0;
@@ -3110,6 +3125,24 @@ md-menu-item{
         .icon-button{
           a.md-button{
             min-width:0;
+            text-align:center;
+
+            i{
+              margin-right:0;
+            }
+          }
+
+          &--active{
+
+            a.md-button{
+              background-color:@col_gray_6;
+              color:@w;
+
+              &:hover, &:focus{
+                background-color:@col_gray_6;
+                color:@w;
+              }
+            }
           }
         }
 
@@ -3396,13 +3429,24 @@ md-menu-item{
     width:100%;
     cursor:default;
     margin-top:@gs*2;
+    margin-bottom: -@gs/4;
+
+    & + .adjustments__controls{
+      margin-top:@gs/2;
+    }
   }
 
   input{
     width:100%;
   }
 
+  md-switch{
+    margin-top:@gs/2;
+    margin-bottom:@gs/2;
+  }
+
   md-content{
+    margin-top: 0;
     padding:0 @gs @gs @gs;
   }
 
@@ -3423,6 +3467,7 @@ md-menu-item{
     padding-bottom:0;
     justify-content: center;
     align-items: center;
+    margin:0;
 
     &:last-child{
       padding-right:0;
@@ -3432,6 +3477,15 @@ md-menu-item{
     input[type="number"]{
       margin-bottom: 0px;
       margin-top: 10px;
+    }
+
+    p{
+      order: 0;
+      margin-top:@gs/2;
+      margin-bottom: @gs/2;
+      width:100%;
+      font-weight: normal;
+      font-family:@ff_default;
     }
 
     md-select{
@@ -3448,13 +3502,8 @@ md-menu-item{
       min-width: 24px;
     }
 
-    p{
-      order: 0;
-      margin-top:@gs/2;
-      margin-bottom: @gs/2;
-      width:100%;
-      font-weight: normal;
-      font-family:@ff_default;
+    &.adjustments--slide-and-input{
+      margin-bottom: -@gs; // to visually align slide + input (slider has margin button for ripple)
     }
   }
 
@@ -3533,6 +3582,10 @@ md-menu-item{
         border-radius:3px;
       }
     }
+
+    &--no-bg{
+      background-color: transparent;
+    }
   }
 
   &--slide-and-input{
@@ -3543,20 +3596,24 @@ md-menu-item{
       flex-shrink:0;
       margin-left: auto;
       position: relative;
-      top: 4px;
+      top: 13px; //visually align with title
       font-size:@fs_small;
+
+      &[type="number"]{
+        height: 1.5em;
+      }
     }
 
     h3{
       width: auto;
     }
 
-    &__unit{
-      margin-top: 29px;
-    }
-
     input{
       height: 2em; //IE fix
+    }
+
+    &__unit{
+      margin-top: 29px;
     }
 
     &__slide{
@@ -3593,7 +3650,6 @@ md-menu-item{
 }
 
 .is-dialog{
-  width: 100%;
   overflow:auto;
   padding-top: 60px;
 
@@ -3649,6 +3705,24 @@ md-menu-item{
 
   &--flexible{
     width:auto;
+  }
+
+  &--small{
+    @media only screen and (min-width:@bp_lg){
+      max-width:480px;
+    }
+  }
+
+  &--medium{
+    @media only screen and (min-width:@bp_lg){
+      max-width:580px;
+    }
+  }
+
+  &--large{
+    @media only screen and (min-width:@bp_lg){
+      max-width:740px;
+    }
   }
 
   &__header{
@@ -4172,6 +4246,7 @@ md-menu-item{
   align-items: center;
 
   .sp-replacer{
+    background-color: #E8E8E8;
     border: 0;
     padding: @gs/2 @gs;
   }
@@ -4191,6 +4266,10 @@ md-menu-item{
     .sp-preview{
       width: ~'calc(100% - 18px)';
     }
+  }
+
+  &--margin-top{
+    margin-top:@gs;
   }
 }
 //Color picker container
