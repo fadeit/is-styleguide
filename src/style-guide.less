@@ -285,14 +285,6 @@ md-input-container.input-inline{
   }
 }
 
-md-input-container.aligned-select{
-  //might not be used anymore
-
-  md-select{
-    margin-top: 25px;
-  }
-}
-
 md-input-container.switch{
   padding-bottom: 0;
 
@@ -359,8 +351,6 @@ md-input-container.inline-radios{
   }
 
   md-select{
-   //margin:0;
-
     md-select-value{
       top:-@gs;
       min-height: 28px;
@@ -2432,6 +2422,12 @@ md-menu-item{
         }
       }
     }//is-playlist-rows
+
+    &--title{
+      [class*='is-label-']{
+        margin: 0;
+      }
+    }
   }
 
   &--tight{
@@ -2464,6 +2460,16 @@ md-menu-item{
   &--bg{ //List with a gray background, like the one in schedule management
     background-color:@col_gray_3;
     border-bottom: @bst @col_gray_5;
+  }
+
+  &--reverse-col{
+    .is-list-item{
+      background-color:@w;
+
+      &:nth-child(even){
+        background-color:@ws;
+      }
+    }
   }
 }
 
@@ -4189,6 +4195,10 @@ md-menu-item{
   }
 }
 
+/* Slide rules */
+.is-rules{
+
+}
 
 /* Keyboard shortcut UI */
 .key-container{
@@ -4354,6 +4364,7 @@ md-menu-item{
     display:flex;
     align-items:center;
     justify-content:center;
+    flex-wrap: wrap;
     padding:@gs/2 @gs;
     margin:0 0 @gs 0;
     background-color:@ws;
