@@ -405,40 +405,40 @@ md-list{
 
 //Toast
 md-toast{
-  width:100%;
-  max-width:none;
-  margin-top:0;
-
-  //new center
-  &.md-custom {
-    margin-left: auto;
-    margin-right: auto;
-    width:100%;
-
-    @media only screen and (min-width: 600px){
-      max-width:none;
+  &._md-custom {
+    @media only screen and (min-width:960px){
+      margin:@gs;
+      width: 400px;
+      min-width: 400px; // overwrite material default
     }
 
-    @media only screen and (min-width: @bp_lg){
-      max-width:none;
-      width:100%;
+    .md-toast-content{
+      max-height: none;
+      padding: @gs/2 @gs;
+      height: auto;
+
+      .md-button.md-highlight{
+        color:@w;
+      }
     }
   }
 
-  &.md-error{
-    background-color: darken(@red, 20%);
+  &._md-error{
+    .md-toast-content{
+      background-color: darken(@red, 20%);
+    }
   }
 
-  &.md-warning{
-    background-color: darken(@col_yellow, 20%);
+  &._md-success{
+    .md-toast-content{
+      background-color: darken(@col_base_4, 20%);
+    }
   }
 
-  &.md-top{
-    top:0;
-  }
-
-  &.md-header{
-    top: 115px;
+  &._md-warning{
+    .md-toast-content{
+      background-color: darken(@col_yellow, 20%);
+    }
   }
 }
 
