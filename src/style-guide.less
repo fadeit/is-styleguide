@@ -3194,6 +3194,27 @@ md-menu-item{
                   .col(@col_gray_6, b);
                   transition: background-color @animation_time_short @transition_default, color @animation_time_short @transition_default;
                 }
+
+                .fa{
+                  @media only screen and (max-width: @bp_lg_max){
+                    margin-right:0;
+                  }
+                }
+
+                &.md-button{
+                  @media only screen and (max-width: @bp_lg_max){
+                    min-width:0;
+                    padding:0 @gs/1.5;
+                  }
+                }
+              }
+
+              span{
+                display:none;
+
+                @media only screen and (min-width: @bp_md){
+                  display:inline;
+                }
               }
             }
           }
