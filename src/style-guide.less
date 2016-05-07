@@ -1536,6 +1536,7 @@ p{
 }
 
 .is-aside-right, .is-aside-left{
+  top:0; //fixes a FF bug while dragging a screen to another group
   z-index: 2;
 
   @media only screen and (min-width:@bp_sm){
@@ -2595,6 +2596,10 @@ md-menu-item{
       display:flex;
       justify-content:center;
 
+      &.md-raised{
+        padding:0; // fixes a FF problem that centered the action button items incorrectly
+      }
+
       .fa{
         margin-right:-2px;
       }
@@ -3013,6 +3018,7 @@ md-menu-item{
       flex-shrink: 0;
       flex-direction:row;
       justify-content:space-between;
+      overflow: hidden; //Fixes FF problem where the container would actually grow larger then the provided height
 
       &__group{
         padding:0;
@@ -3619,6 +3625,7 @@ md-menu-item{
       order:0;
       width: auto;
       flex-basis: 45px;
+      max-width: 45px; //fixes a FF problem where the input would grow to 50%
       flex-shrink:0;
       margin-left: auto;
       position: relative;
@@ -4146,7 +4153,6 @@ md-menu-item{
     &--available{
       ul{
         padding:0;
-        background-color:@ws;
       }
     }
 
