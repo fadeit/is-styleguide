@@ -1960,6 +1960,13 @@ p{
     &.md-grey-dark-theme{
       color:@ws;
     }
+
+    &.profile-button{
+      max-width: 180px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 }
 
@@ -2923,7 +2930,8 @@ md-menu-item{
     height: 100%;
     top: 0;
     left: 0;
-    padding: @gs*2;
+    padding-left: @gs*2;
+    padding-right: @gs*2;
     max-width: none;
     position: absolute;
     display: flex;
