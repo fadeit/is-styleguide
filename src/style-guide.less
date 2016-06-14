@@ -186,6 +186,8 @@
   width:100%;
 
   md-input-container{
+    width:100%;
+
     label{
       &:not(.md-no-float):not(._md-container-ignore){
         padding-left:0;
@@ -229,6 +231,20 @@
 
     @media only screen and (min-width:@bp_lg){
       font-size:24px;
+    }
+  }
+
+  &__tabs{
+    margin: 0 -@gs*2;
+
+    md-tab-content{
+      md-content{
+        padding:@gs @gs*2 0 @gs*2;
+      }
+    }
+
+    md-pagination-wrapper{
+      margin:0 8px;
     }
   }
 
@@ -321,6 +337,10 @@ md-input-container.inline-radios{
    display: flex;
    flex-wrap:wrap;
    align-items: flex-start;
+
+   &--padded{
+    padding: @gs 0;
+   }
   }
 
   &.input-select-inline{
