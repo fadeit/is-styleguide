@@ -1991,14 +1991,19 @@ md-menu-item{
   md-icon{
     &.fa{
       position:relative;
+      top: -2px;
       font-size: 18px;
       min-width: @gs*2;
-      .ta-c();
+      text-align:center;
     }
 
     &.fa-sign-out{
       top:1px;
     }
+  }
+
+  & > .md-button{
+    display:inline-block;
   }
 }
 
