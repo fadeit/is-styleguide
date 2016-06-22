@@ -754,7 +754,8 @@ textarea{
 
 .btn{
   padding: 9px 16px 9px 16px;
-  .dropshadow(0 0 7px -2px rgba(0, 0, 0, 0.2));
+  border-radius: @br;
+  .dropshadow(0 0 7px -2px rgba(0, 0, 0, 0.1));
 
   .animate(@animation_time_s_short, @transition_default);
 
@@ -1977,30 +1978,69 @@ p{
      white-space: nowrap;
   }
 
+  &__item{
+    .md-button{
+      color:@col_gray_6;
+
+      &:hover, &:focus{
+        color:@col_gray_6;
+      }
+    }
+
+    &--active{
+      background-color: @col_gray_3;
+    }
+  }
 
   &--sub-free{
     .is-tool-menu__color{
       color: @col_sub_free;
+
+      &:hover, &:focus{
+        color: @col_sub_free;
+      }
+    }
+
+    &__content{
+      width: 100%;
+
+      a{
+        float:right;
+        position:relative;
+        top:3px;
+      }
     }
   }
 
   &--sub-standard{
     .is-tool-menu__color{
       color: @col_sub_standard;
+
+      &:hover, &:focus{
+        color: @col_sub_standard;
+      }
     }
   }
 
   &--sub-custom{
     .is-tool-menu__color{
       color: @col_sub_custom;
+
+      &:hover, &:focus{
+        color: @col_sub_custom;
+      }
     }
   }
 }
 
 // appended menu (for is-tool-menu)
-.md-open-menu-container{
+._md-open-menu-container{
   md-menu-content{
     padding:0;
+  }
+
+  md-menu-divider{
+    margin:0;
   }
 
   button.md-button{
@@ -2017,7 +2057,7 @@ md-menu-item{
   md-icon{
     &.fa{
       position:relative;
-      top: -2px;
+      top: -1px;
       font-size: 18px;
       min-width: @gs*2;
       text-align:center;
@@ -3072,6 +3112,11 @@ md-menu-item{
     &--negative{
       color:@col_green;
     }
+  }
+
+  .dt-header-cell-label:focus{
+    outline:0;
+    color:black;
   }
 }
 
