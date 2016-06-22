@@ -1461,20 +1461,18 @@ p{
 }
 
 
-@header_offset: 10px;
-
 .is-header{
   background-color: @col_base_4;
   color: @w;
-  padding: @gs*2 @gs*2 @gs @gs*2 + @header_offset;
+  padding: @gs*2.5 @gs*2;
   display: flex;
   align-items: center;
+  justify-content:center;
 
   .fa{
     flex-shrink: 0;
-    margin-top: -16px;
-    color: white;
-    font-size: 25px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 30px;
     min-width: 40px;
     margin-right: @gs/2;
   }
@@ -1507,11 +1505,8 @@ p{
   }
 
   &__inner{
-    margin: 0 0 @gs -@header_offset;
-    border-left:@bst;
-    padding: @gs @gs @gs @gs*2;
+    margin: 0;
     width: 100%;
-    border-color: fade(@w, 10%);
 
     &__input{
       padding:@gs*2 0;
@@ -2596,6 +2591,8 @@ md-menu-item{
 }
 
 .is-subheader{
+  padding:0;
+
   ._md-subheader-inner{
     padding: @gs 0 @gs/2 0;
 
@@ -2891,7 +2888,7 @@ md-menu-item{
   }
 
   &--standby{
-    margin-top:@gs;
+    margin-top:0;
   }
 }
 
