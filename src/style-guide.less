@@ -1980,19 +1980,19 @@ p{
 
   &--sub-free{
     .is-tool-menu__color{
-      color: @red;
+      color: @col_sub_free;
     }
   }
 
   &--sub-standard{
     .is-tool-menu__color{
-      color: @col_green;
+      color: @col_sub_standard;
     }
   }
 
   &--sub-custom{
     .is-tool-menu__color{
-      color: @col_base_3;
+      color: @col_sub_custom;
     }
   }
 }
@@ -3053,18 +3053,17 @@ md-menu-item{
   padding:@gs*2;
 }
 
+
+/* Data tables */
 .is-data-table-container{
   padding: @gs @gs*2;
 }
 
 .is-data-table{
-  &__download{
-    text-align: center;
-  }
-
   &__price{
     font-family: @ff_default;
     font-weight: 400;
+    text-align: right;
 
     &--positive{
       color:@red;
@@ -3072,6 +3071,85 @@ md-menu-item{
 
     &--negative{
       color:@col_green;
+    }
+  }
+}
+
+/* Balance page */
+.is-balance-container{
+  padding: @gs*3 @gs*2 @gs @gs*2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.is-balance{
+  &__inner{
+    width:150px;
+    height:150px;
+    padding:@gs/2;
+    border:8px solid @col_gray_4;
+    border-radius:50%;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    &__label, &__text{
+      margin-bottom:0;
+    }
+
+    &__label{
+      font-size:0.7em;
+      line-height:1.2em;
+      color:@col_gray_6;
+      text-transform: uppercase;
+    }
+
+    &__text{
+      font-size:1.5em;
+
+      &--danger{
+        color:@red;
+      }
+
+      &--success{
+        color:@col_green;
+      }
+    }
+
+    &__icon{
+      margin-top:@gs/2;
+      margin-bottom:-@gs/2;
+      line-height:1em;
+      font-size:1.5em;
+    }
+
+    &--sub{
+      &--free{
+        border-color: @col_sub_free;
+
+        md-icon{
+          color: @col_sub_free;
+        }
+      }
+
+      &--standard{
+        border-color: @col_sub_standard;
+
+        md-icon{
+          color: @col_sub_standard;
+        }
+      }
+
+      &--custom{
+        border-color: @col_sub_custom;
+
+        md-icon{
+          color: @col_sub_custom;
+        }
+      }
     }
   }
 }
