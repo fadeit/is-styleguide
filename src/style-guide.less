@@ -3053,6 +3053,29 @@ md-menu-item{
   padding:@gs*2;
 }
 
+.is-data-table-container{
+  padding: @gs @gs*2;
+}
+
+.is-data-table{
+  &__download{
+    text-align: center;
+  }
+
+  &__price{
+    font-family: @ff_default;
+    font-weight: 400;
+
+    &--positive{
+      color:@red;
+    }
+
+    &--negative{
+      color:@col_green;
+    }
+  }
+}
+
 /*
  * Flex-row
  */
