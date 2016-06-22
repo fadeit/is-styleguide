@@ -375,7 +375,7 @@ md-input-container.inline-radios{
 
   md-select{
     md-select-value{
-      top:-@gs;
+      top:-16px;
       min-height: 28px;
     }
   }
@@ -2618,8 +2618,12 @@ md-menu-item{
   &__trigger{
     .md-fab{
       font-size:20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       md-icon{
+        margin:0;
         display: flex;
         width: 100%;
         height: 100%;
@@ -3357,6 +3361,7 @@ md-menu-item{
         }
 
         figcaption{
+          font-size: 0.9em;
           width: 100%;
           padding: @gs/2;
           background-color: @col_gray_8;
