@@ -1960,6 +1960,10 @@ p{
     font-size: 18px;
   }
 
+  &.right{
+    .fr();
+  }
+
   .mixed-button{
     .fa{
       margin-right:@gs/4;
@@ -1973,8 +1977,23 @@ p{
      white-space: nowrap;
   }
 
-  &.right{
-    .fr();
+
+  &--sub-free{
+    .is-tool-menu__color{
+      color: @red;
+    }
+  }
+
+  &--sub-standard{
+    .is-tool-menu__color{
+      color: @col_green;
+    }
+  }
+
+  &--sub-custom{
+    .is-tool-menu__color{
+      color: @col_base_3;
+    }
   }
 }
 
