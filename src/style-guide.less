@@ -3356,6 +3356,7 @@ md-menu-item{
           align-items: center;
           justify-content: center;
           flex-grow: 1;
+          overflow: hidden;
         }
 
         figcaption{
@@ -3398,30 +3399,44 @@ md-menu-item{
       li.active{
         opacity:0.6;
       }
+
+      li.conditioned{
+        border:1px dashed @w;
+      }
     }
 
-    &__remove{
-      .abs();
-      top:0;
+    &__controls{
+      position:absolute;
       right:0;
-      padding:0;
-      border:0;
+      top:0;
       z-index:2;
-      color:@w;
-      background-color:fade(@col_gray_6, 80%);
-      height: 30px;
-      width: 30px;
-      line-height: 30px;
-      text-align: center;
+      width:100%;
+      height:30px;
+      display:flex;
+      overflow:hidden;
+      pointer-events: none;
 
-      &:hover, &:focus{
-        outline:0;
-        background-color:@col_gray_7;
-      }
+      &__remove{
+        color:@w;
+        padding:0;
+        border:0;
+        background-color:fade(@col_gray_6, 80%);
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-left:auto;
+        pointer-events: all;
 
-      .fa{
-        .rel();
-        top:-1px;
+        &:hover, &:focus{
+          outline:0;
+          background-color:@col_gray_7;
+        }
+
+        .fa{
+          .rel();
+          top:-1px;
+        }
       }
     }
 
@@ -3454,6 +3469,17 @@ md-menu-item{
       left:0;
       opacity:0;
       cursor:ew-resize;
+    }
+
+    &__transition{
+      float:right;
+      margin-right:5px;
+      font-size: 12px;
+
+      .fa{
+        position: relative;
+        top: 1px;
+      }
     }
 
     &--locked{
