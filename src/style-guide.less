@@ -1989,45 +1989,13 @@ p{
 
     &--active{
       background-color: @col_gray_3;
-    }
-  }
 
-  &--sub-free{
-    .is-tool-menu__color{
-      color: @col_sub_free;
+      .md-button{
+        color:@col_gray_8;
 
-      &:hover, &:focus{
-        color: @col_sub_free;
-      }
-    }
-
-    &__content{
-      width: 100%;
-
-      a{
-        float:right;
-        position:relative;
-        top:3px;
-      }
-    }
-  }
-
-  &--sub-standard{
-    .is-tool-menu__color{
-      color: @col_sub_standard;
-
-      &:hover, &:focus{
-        color: @col_sub_standard;
-      }
-    }
-  }
-
-  &--sub-custom{
-    .is-tool-menu__color{
-      color: @col_sub_custom;
-
-      &:hover, &:focus{
-        color: @col_sub_custom;
+        &:hover, &:focus{
+          color:@col_gray_8;
+        }
       }
     }
   }
@@ -3120,7 +3088,7 @@ md-menu-item{
   }
 }
 
-/* Balance page */
+/* Balance/billing page */
 .is-balance-container{
   padding: @gs*3 @gs*2 @gs @gs*2;
   display:flex;
@@ -3154,14 +3122,6 @@ md-menu-item{
 
     &__text{
       font-size:1.5em;
-
-      &--danger{
-        color:@red;
-      }
-
-      &--success{
-        color:@col_green;
-      }
     }
 
     &__icon{
@@ -3171,32 +3131,27 @@ md-menu-item{
       font-size:1.5em;
     }
 
-    &--sub{
-      &--free{
-        border-color: @col_sub_free;
+    &--danger{
+      border-color: @red;
+    }
 
-        md-icon{
-          color: @col_sub_free;
-        }
-      }
+    &--warning{
+      border-color: @col_yellow;
+    }
 
-      &--standard{
-        border-color: @col_sub_standard;
+    &--success{
+      border-color: @col_green;
+    }
 
-        md-icon{
-          color: @col_sub_standard;
-        }
-      }
-
-      &--custom{
-        border-color: @col_sub_custom;
-
-        md-icon{
-          color: @col_sub_custom;
-        }
-      }
+    &--awesome{
+      border-color: @col_base_3;
     }
   }
+}
+
+/* Credit cards on billing page */
+.is-credit-cards{
+  padding: @gs @gs*2 @gs @gs*2;
 }
 
 /*
