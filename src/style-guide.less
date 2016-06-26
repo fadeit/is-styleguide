@@ -3087,6 +3087,7 @@ md-menu-item{
 }
 
 /* Balance/billing page */
+@is_balance_size: 150px;
 .is-balance-container{
   padding: @gs*3 @gs*2 @gs @gs*2;
   display:flex;
@@ -3095,9 +3096,15 @@ md-menu-item{
 }
 
 .is-balance{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width: @is_balance_size;
+  height: @is_balance_size;
+
   &__inner{
-    width:150px;
-    height:150px;
+    width: @is_balance_size;
+    height: @is_balance_size;
     padding:@gs/2;
     border:8px solid @col_gray_4;
     border-radius:50%;
@@ -3106,6 +3113,32 @@ md-menu-item{
     justify-content:center;
     align-items:center;
     text-align:center;
+    transition: all 0.5s ease;
+
+    &.ng-enter {
+      opacity:0;
+      transform:scale(0.8);
+    }
+
+    &.ng-enter-active {
+      opacity:1;
+      transform:scale(1);
+    }
+
+    &.ng-enter-stagger {
+      transition-delay: 1s;
+      transition-duration: 0;
+    }
+
+    &.ng-leave {
+      opacity:1;
+      transform:scale(1);
+    }
+
+    &.ng-leave-active {
+      opacity:0;
+      transform:scale(0.8);
+    }
 
     &__label, &__text{
       margin-bottom:0;
@@ -3148,8 +3181,53 @@ md-menu-item{
 }
 
 /* Credit cards on billing page */
-.is-credit-cards{
-  padding: @gs @gs*2 @gs @gs*2;
+.is-ccards-container{
+  padding: @gs 0;
+
+  &__header, &__footer{
+    padding: 0 @gs*2 0 @gs*2;
+  }
+
+  &__footer{
+    margin-top: -@gs*2;
+  }
+}
+
+.is-ccard{
+  display:flex;
+  align-items: center;
+  width:100%;
+
+  p{
+    margin-bottom:0;
+  }
+
+  figcaption{
+    width:100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo{
+    margin-right:@gs*2;
+  }
+
+  &__expires, &__number{
+    text-transform:uppercase;
+    display:flex;
+    flex-direction: column;
+    margin-right:@gs*2;
+  }
+
+  &__label{
+    color:@col_gray_6;
+    font-size: 0.8em;
+    line-height:1em;
+  }
+
+  &__actions{
+    margin-left:auto;
+  }
 }
 
 /*
