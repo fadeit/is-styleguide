@@ -2265,7 +2265,7 @@ md-menu-item{
 
 //material progress container{
 .is-progress-container{
-  width:100&;
+  width:100%;
   padding:@gs*2;
   display:flex;
   justify-content:center;
@@ -2390,10 +2390,10 @@ md-menu-item{
   .is-list-item{
     .rel();
     padding:@gs @gs*2;
-    .col(@ws, b);
     display: flex;
     justify-content: center;
     align-items: center;
+    .col(@ws, b);
 
     &:nth-child(even){
       .col(@w, b);
@@ -3224,7 +3224,8 @@ md-menu-item{
     padding: 0 @gs*2 0 @gs*2;
   }
 
-  &__first-card{
+  &__form{
+    margin-bottom: -@gs*3;
     padding: 0 @gs*2 @gs*2 @gs*2;
 
     &__tip{
