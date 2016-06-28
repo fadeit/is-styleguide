@@ -175,7 +175,6 @@
   }
 }
 
-
 /*
  * Input & form additions
  */
@@ -379,6 +378,11 @@ md-input-container.inline-radios{
       min-height: 28px;
     }
   }
+}
+
+//Wrapper for autocomplete inputs.
+.input-autocomplete{
+  margin-bottom:@gs;
 }
 
 //Select
@@ -2258,6 +2262,18 @@ md-menu-item{
  * Spinners and loaders
  *
  */
+
+//material progress container{
+.is-progress-container{
+  width:100&;
+  padding:@gs*2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+//loader container
 .is-loader-container{
   width:200px;
   height:200px;
@@ -2295,7 +2311,7 @@ md-menu-item{
       }
     }//element-animation
   }//is-loader
-}//loader container
+}
 
 .is-story-container{
   .is-loader-container{
@@ -2717,6 +2733,11 @@ md-menu-item{
     .font-awesome();
     margin-right:@gs/2;
     font-size:20px;
+  }
+
+  &--claim-error{
+    margin-top:-@gs*2;
+    margin-bottom: @gs*2;
   }
 }
 
@@ -3190,12 +3211,25 @@ md-menu-item{
   }
 }
 
+.is-balance-disclaimer{
+  padding: 0 @gs*2 @gs*2 @gs*2;
+  color:@col_gray_6;
+}
+
 /* Credit cards on billing page */
 .is-ccards-container{
   padding: @gs 0;
 
   &__header, &__footer{
     padding: 0 @gs*2 0 @gs*2;
+  }
+
+  &__first-card{
+    padding: 0 @gs*2 @gs*2 @gs*2;
+
+    &__tip{
+      padding-bottom: @gs;
+    }
   }
 
   &__footer{
