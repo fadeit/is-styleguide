@@ -3124,6 +3124,7 @@ md-menu-item{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  flex-wrap:wrap;
 }
 
 .is-balance{
@@ -3212,8 +3213,10 @@ md-menu-item{
 }
 
 .is-balance-disclaimer{
-  padding: 0 @gs*2 @gs*2 @gs*2;
+  padding: @gs @gs*2 0 @gs*2;
   color:@col_gray_6;
+  width:100%;
+  flex-shrink:0;
 }
 
 /* Credit cards on billing page */
