@@ -4602,9 +4602,43 @@ md-menu-item{
   }
 }
 
-/* Slide rules */
+/* Slide rules / conditions */
 .is-rules{
   padding-bottom: @gs*2;
+
+  .is-list {
+    margin: -4px -@gs*2 @gs*2 -@gs*2;
+  }
+
+  .is-fa-text {
+    margin: @gs 0 @gs*2 0;
+  }
+}
+
+.is-conditions {
+  background-color: transparent;
+  margin: @gs 0;
+
+  md-datepicker {
+    margin: 0 @gs 0 @gs/2;
+    padding: 0;
+    width: auto;
+    max-width: 165px;
+  }
+
+  .md-datepicker-input-container {
+    min-width: 0px;
+    width: 100%;
+  }
+}
+
+.is-condition-form {
+  display: flex;
+  align-items: center;
+
+  span {
+    flex-shrink: 0;
+  }
 }
 
 /* Keyboard shortcut UI */
