@@ -4696,9 +4696,36 @@ md-menu-item{
 .is-condition-form {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: @gs;
 
-  span {
+  &__row {
+    width: 100%;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__label {
+    min-width: 100px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  &__time {
+    margin: 0;
+    flex-basis: 70px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    .md-input {
+      margin: 0;
+      height: 26px;
+    }
+
+    .md-errors-spacer {
+      display: none;
+    }
   }
 }
 
