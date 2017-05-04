@@ -218,7 +218,7 @@
     width:100%;
 
     label{
-      &:not(.md-no-float):not(._md-container-ignore){
+      &:not(.md-no-float):not(.md-container-ignore){
         padding-left:0;
       }
     }
@@ -234,7 +234,7 @@
     }
   }
 
-  ._md-select-value{
+  .md-select-value{
     padding:0;
   }
 
@@ -462,7 +462,7 @@ md-list{
 
 //Toast
 md-toast{
-  &._md-custom {
+  &.md-custom {
     @media only screen and (min-width:960px){
       margin:@gs;
       width: 400px;
@@ -490,19 +490,19 @@ md-toast{
     }
   }
 
-  &._md-error{
+  &.md-error{
     .md-toast-content{
       background-color: darken(@red, 20%);
     }
   }
 
-  &._md-success{
+  &.md-success{
     .md-toast-content{
       background-color: darken(@col_base_4, 20%);
     }
   }
 
-  &._md-warning{
+  &.md-warning{
     .md-toast-content{
       background-color: darken(@col_yellow, 20%);
     }
@@ -530,10 +530,6 @@ md-datepicker{
     &.md-datepicker-focused{
       border:0;
     }
-  }
-
-  .md-datepicker-triangle-button{
-    top: 3px; //visually align
   }
 
   input{
@@ -2046,7 +2042,7 @@ p{
 }
 
 // appended menu (for is-tool-menu)
-._md-open-menu-container{
+.md-open-menu-container{
   md-menu-content{
     padding:0;
   }
@@ -2733,11 +2729,16 @@ md-menu-item{
 .is-subheader{
   padding:0;
 
-  ._md-subheader-inner{
+  .md-subheader-inner{
     padding: @gs 0 @gs/2 0;
 
-    ._md-subheader-content{
+    .md-subheader-content{
       display:flex;
+
+      h3 {
+        width: auto;
+        flex-grow: 1;
+      }
 
       .no-shrink{
         display:flex;
@@ -3414,7 +3415,7 @@ md-menu-item{
         margin-bottom:0;
         display:flex;
 
-        &._md-menu-bar-menu{
+        &.md-menu-bar-menu{
           min-width:0;
           background-color:@col_gray_9;
 
@@ -3858,7 +3859,7 @@ md-menu-item{
 .is-menu-bar{
   padding:0;
 
-  &._md-open{
+  &.md-open{
     .is-playlist__content__controls__group__btn__toggle{
       opacity:0.6;
     }
