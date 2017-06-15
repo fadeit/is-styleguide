@@ -4095,6 +4095,7 @@ md-menu-item{
   }
 
   &--bundle{
+    // Dropdown top + buttons underneath
     md-select-value.md-select-value{
       padding-top: 0;
       padding-bottom: 5px;
@@ -4106,8 +4107,11 @@ md-menu-item{
   }
 
   &--compact{
+    // Multiple inputs, like X, Y, WIDTH, HEIGHT on the same line
+
     &__controls{
       display:flex;
+      align-items: flex-end;
 
       h3{
         margin:0;
@@ -4116,7 +4120,25 @@ md-menu-item{
       }
 
       .md-input-container{
+        flex-grow: 1;
         flex-direction:column-reverse;
+
+        .ng-invalid {
+          border-color: @red;
+        }
+      }
+
+      .colorpicker-container {
+        width: 35%;
+        flex-grow: 0;
+      }
+
+      .colorpicker {
+        .sp-replacer {
+          background: transparent;
+          border-bottom: 2px solid gray;
+          padding: 0 @gs/2 1px 0;
+        }
       }
     }
   }
